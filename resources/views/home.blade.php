@@ -200,7 +200,7 @@
                                         </div>
                                         <div class="we-provide__tab-main-content-right">
                                             <div class="we-provide__tab-main-content-right-img">
-                                                <img src="{{asset('assets/Photos/mission1.png')}}" alt="">
+                                                <img src="{{asset('assets/photos/mission1.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -221,7 +221,7 @@
                                         </div>
                                         <div class="we-provide__tab-main-content-right">
                                             <div class="we-provide__tab-main-content-right-img">
-                                                <img src="{{asset('assets/Photos/vision1.png')}}" alt="">
+                                                <img src="{{asset('assets/photos/vision1.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -247,7 +247,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/Photos/estab.png')}}" alt="">
+                        <img src="{{asset('assets/photos/estab.png')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -268,7 +268,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/Photos/milestone-mission.png')}}" alt="">
+                        <img src="{{asset('assets/photos/milestone-mission.png')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -289,7 +289,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/Photos/joint.png')}}" alt="">
+                        <img src="{{asset('assets/photos/joint.png')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -343,7 +343,7 @@
                 <div class="about-two__middle">
                     <div class="about-two__img-box">
                         <div class="about-two__img">
-                            <img src="{{asset('assets/Photos/about.jpg')}}" alt="">
+                            <img src="{{asset('assets/photos/about.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -667,7 +667,7 @@
 <!-- Company Culture End-->
 <!-- Ecommerce Start-->
 <section class="about-one">
-    <div class="about-one-bg wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms" style="background-image: url({{asset('assets/Photos/gra.png')}})">
+    <div class="about-one-bg wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms" style="background-image: url({{asset('assets/photos/gra.png')}})">
     </div>
     <div class="container">
         <div class="row">
@@ -676,10 +676,10 @@
                     <div class="about-one__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                         <div class="about-one__img">
                             <a target="_blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18">
-                                <img src="{{asset('assets/Photos/e-commerceads5.png')}}" alt=""></a>
+                                <img src="{{asset('assets/photos/e-commerceads5.png')}}" alt=""></a>
                         </div>
                         <!-- <div class="about-one__img-two">
-                            <img src="assets/Photos/secbanner5.png" alt="">
+                            <img src="assets//secbanner5.png" alt="">
                         </div> -->
                         <a target="_blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18">
                             <div class="about-one__experience">
@@ -692,7 +692,7 @@
                             </div>
                         </a>
                         <!-- <div class="about-one__shape-1">
-                            <img src="assets/Photos/secbanner5.png" alt="">
+                            <img src="assets/photos/secbanner5.png" alt="">
                         </div> -->
                     </div>
                 </div>
@@ -803,7 +803,7 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="download__right">
                     <div class="download__img wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
-                        <img src="{{asset('assets/Photos/ecommerceapp.png')}}" alt="">
+                        <img src="{{asset('assets/photos/ecommerceapp.png')}}" alt="">
                         <div class="download__badge">
                             <!-- <img src="assets/images/shapes/download-dadge.png" alt=""> -->
                         </div>
@@ -851,7 +851,7 @@
                     <div class="services-one__single">
                         <a href="{{route('product_information')}}">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Product Information.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Product Information.png')}}" alt="">
                             </div>
                         </a>
                         <div class="service-one__content">
@@ -867,7 +867,7 @@
                     <a href="{{route('delivery_service')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Delivery Service.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Delivery Service.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -884,7 +884,7 @@
                     <a href="{{route('special_order')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Special Order.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Special Order.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -901,7 +901,7 @@
                     <a href="{{route('product_return')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Product Return.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Product Return.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -918,7 +918,7 @@
                     <a href="{{route('consulting_service')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Consulting Service.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Consulting Service.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -935,7 +935,7 @@
                     <a href="{{route('contractor_information')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Contractor Information.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Contractor Information.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -952,7 +952,7 @@
                     <a href="{{route('member_service')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Member Service.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Member Service.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -969,7 +969,7 @@
                     <a href="{{route('repair_service')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/Photos/Only Icon/Power Tools Repair Service_2.png')}}" alt="">
+                                <img src="{{asset('assets/photos/Only Icon/Power Tools Repair Service_2.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -1019,7 +1019,7 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="download__right">
                     <div class="download__img wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
-                        <img src="{{asset('assets/Photos/memberapp.png')}}" alt="">
+                        <img src="{{asset('assets/photos/memberapp.png')}}" alt="">
                         <div class="download__badge">
                         </div>
                     </div>
@@ -1060,9 +1060,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/lanthit.png')}}" alt="">
+                        <img src="{{asset('assets/photos/lanthit.png')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/lanthit.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/lanthit.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Lanthit Branch, Yangon</p>
@@ -1078,9 +1078,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/satsan.png')}}" alt="">
+                        <img src="{{asset('assets/photos/satsan.png')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/satsan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/satsan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Satsan Branch, Yangon</p>
@@ -1098,9 +1098,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi poli">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/eastdagon.png')}}" alt="">
+                        <img src="{{asset('assets/photos/eastdagon.png')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/eastdagon.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/eastdagon.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">East Dagon Branch, Yangon</p>
@@ -1117,9 +1117,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi poli">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/hlaingtharyar.png')}}" alt="">
+                        <img src="{{asset('assets/photos/hlaingtharyar.png')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/hlaingtharyar.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/hlaingtharyar.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">HlaingTharYar Branch, Yangon</p>
@@ -1136,9 +1136,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi poli">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/terminal.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/terminal.jpg')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/terminal.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/terminal.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">PRO 1 PLUS Terminal M Branch, Yangon</p>
@@ -1154,9 +1154,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi poli">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/southdagon.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/southdagon.jpg')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/southdagon.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/southdagon.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">South Dagon, Yangon</p>
@@ -1173,9 +1173,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi poli">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/shwepyithar.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/shwepyithar.jpg')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/shwepyithar.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/shwepyithar.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Shwe Pyi Thar Branch, Yangon</p>
@@ -1199,9 +1199,9 @@
         <div class="row filter-layout masonary-layout mt-3">
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__img">
-                    <img src="{{asset('assets/Photos/theikpan.png')}}" alt="">
+                    <img src="{{asset('assets/photos/theikpan.png')}}" alt="">
                     <div class="portfolio__plus">
-                        <a href="{{asset('assets/Photos/theikpan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                        <a href="{{asset('assets/photos/theikpan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                     </div>
                     <div class="portfolio__content">
                         <p class="portfolio__sub-title">Theikpan Branch, Mandalay</p>
@@ -1217,9 +1217,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/tampawady.png')}}" alt="">
+                        <img src="{{asset('assets/photos/tampawady.png')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/tampawady.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/tampawady.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Tampawady Branch, Mandalay</p>
@@ -1244,9 +1244,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/bago.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/bago.jpg')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Bago Branch, Bago</p>
@@ -1271,9 +1271,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/bago.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/bago.jpg')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Mawlamyine Branch, Mandalay</p>
@@ -1298,9 +1298,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/bago.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/bago.jpg')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/Photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Aye Tharyar Branch, Mandalay</p>
@@ -1390,7 +1390,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&sortBy=1&searchText=OPPLE">
-                                                <img src="{{asset('assets/Photos/Brands/B2.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/Brands/B2.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1419,7 +1419,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=49">
-                                                <img src="{{asset('assets/Photos/Brands/B3.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/Brands/B3.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1444,7 +1444,7 @@
                                             </div>
                                             <div class="testimonial-one__client-info">
                                                 <div class="testimonial-one__client-img-box">
-                                                    <img src="assets/Photos/Brands/B8.png" alt="">
+                                                    <img src="assets/photos/Brands/B8.png" alt="">
                                                     <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div>
@@ -1467,7 +1467,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=82">
-                                                <img src="{{asset('assets/Photos/Brands/B5.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/Brands/B5.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1496,7 +1496,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=81">
-                                                <img src="{{asset('assets/Photos/Brands/B6.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/Brands/B6.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1525,7 +1525,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=87">
-                                                <img src="{{asset('assets/Photos/Brands/B7.jpg')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/Brands/B7.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="testimonial-one__client-content">
 
@@ -1578,9 +1578,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act1.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act1.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act1.png')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act1.png')}}" class="img-popup"></a>
                         </div>
                         <div>
                             <ul class="list-unstyled about-one__points">
@@ -1622,9 +1622,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act2.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act2.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act2.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act2.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div>
                             <ul class="list-unstyled about-one__points">
@@ -1666,9 +1666,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act3.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act3.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act3.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act3.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div>
                             <ul class="list-unstyled about-one__points">
@@ -1710,9 +1710,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act4.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act4.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act4.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act4.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1726,9 +1726,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act5.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act5.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act5.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act5.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1757,9 +1757,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/training1.pn')}}g" alt="">
+                        <img src="{{asset('assets/photos/training1.pn')}}g" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/training1.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/training1.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1773,9 +1773,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/training2.png')}}" alt="">
+                        <img src="{{asset('assets/photos/training2.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/training2.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/training2.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1789,9 +1789,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/Photos/training3.png')}}" alt="">
+                        <img src="{{asset('assets/photos/training3.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/training3.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/training3.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1806,9 +1806,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act17.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act17.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act17.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act17.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1820,9 +1820,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act10.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act10.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act10.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act10.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1836,9 +1836,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act18.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act18.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act18.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act18.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1852,9 +1852,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act13.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act13.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act13.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act13.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1866,42 +1866,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act12.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act12.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act12.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/Photos/act11.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/Photos/act11.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/Photos/act16.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/Photos/act16.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act12.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1915,9 +1882,26 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act14.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act11.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act14.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act11.png')}}" class="img-popup"><span class=""></span></a>
+                        </div>
+                        <div class="portfolio__content">
+
+                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Portfolio Single End-->
+            <!--Portfolio Single Start-->
+
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/act16.png')}}" alt="">
+                        <div class="">
+                            <a href="{{asset('assets/photos/act16.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
@@ -1931,9 +1915,25 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act15.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act14.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act15.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act14.png')}}" class="img-popup"><span class=""></span></a>
+                        </div>
+                        <div class="portfolio__content">
+
+                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Portfolio Single End-->
+            <!--Portfolio Single Start-->
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/act15.png')}}" alt="">
+                        <div class="">
+                            <a href="{{asset('assets/photos/act15.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 
