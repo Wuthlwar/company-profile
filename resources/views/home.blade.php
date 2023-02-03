@@ -23,11 +23,11 @@
         <div class="swiper-wrapper">
 
             <div class="swiper-slide">
-                <div class="image-layer" style="background-image: url({{asset('assets/photos/Banner/Banner-1.jpg')}})"></div>
+                <div class="image-layer" style="background-image: url({{asset('assets/photos/banner/Banner-1.jpg')}})"></div>
                 <!-- /.image-layer -->
 
                 <div class="main-slider-shape-1 float-bob-x">
-                    <img src="{{asset('assets/photos/Banner/Banner-1.jpg')}}" alt="">
+                    <img src="{{asset('assets/photos/banner/Banner-1.jpg')}}" alt="">
                 </div>
 
                 <div class="container">
