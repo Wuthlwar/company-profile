@@ -23,11 +23,11 @@
         <div class="swiper-wrapper">
 
             <div class="swiper-slide">
-                <div class="image-layer" style="background-image: url({{asset('assets/Photos/Banner/Banner-1.jpg')}})"></div>
+                <div class="image-layer" style="background-image: url({{asset('assets/photos/Banner/Banner-1.jpg')}})"></div>
                 <!-- /.image-layer -->
 
                 <div class="main-slider-shape-1 float-bob-x">
-                    <img src="{{asset('assets/images/shapes/main-slider-shape-1.png')}}" alt="">
+                    <img src="{{asset('assets/photos/Banner/Banner-1.jpg')}}" alt="">
                 </div>
 
                 <div class="container">
@@ -36,7 +36,7 @@
                             <div class="main-slider__content">
                                 <h2 class="main-slider__title"><span>PRO1 GLOBAL </span><br> HOME CENTER
                                 </h2>
-                                <p class="main-slider__text">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</p>
+                                <p class="main-slider__text"><span class="fw-bold text-dark">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</span></p>
                                 <div class="main-slider__btn-box">
                                     <a href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">"Buy Now"</a>
                                 </div>
@@ -60,7 +60,7 @@
                             <div class="main-slider__content">
                                 <h2 class="main-slider__title"><span>PRO1 GLOBAL </span><br> HOME CENTER
                                 </h2>
-                                <p class="main-slider__text">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</p>
+                                <p class="main-slider__text"><span class="fw-bold text-dark">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</span></p>
                                 <div class="main-slider__btn-box">
                                     <a href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
                                 </div>
@@ -75,7 +75,7 @@
                 <!-- /.image-layer -->
 
                 <div class="main-slider-shape-1 float-bob-x">
-                    <img src="{{asset('assets/Photos/Banner/Banner-3.jpg')}}" alt="">
+                    <img src="{{asset('assets/photos/Banner/Banner-3.jpg')}}" alt="">
                 </div>
 
                 <div class="container">
@@ -84,7 +84,7 @@
                             <div class="main-slider__content">
                                 <h2 class="main-slider__title"><span>PRO1 GLOBAL </span><br> HOME CENTER
                                 </h2>
-                                <p class="main-slider__text">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</p>
+                                <p class="main-slider__text"><span class="fw-bold text-dark">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</span></p>
                                 <div class="main-slider__btn-box">
                                     <a href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
                                 </div>
@@ -132,8 +132,8 @@
                     <div class="col-xl-3 col-lg-3">
                         <div class="we-provide__tab-btn-box">
                             <ul class="tab-buttons clearfix list-unstyled">
-                                <li data-tab="#goals" class="tab-btn active-btn"><span>Company Vission</span></li>
-                                <li data-tab="#mission" class="tab-btn "><span>Company Mission</span>
+                                <li data-tab="#goals" class="tab-btn active-btn"><span>{{__('home.company_vission')}}</span></li>
+                                <li data-tab="#mission" class="tab-btn "><span>{{__('home.company_mission')}}</span>
                                 </li>
 
 
@@ -149,7 +149,7 @@
                                         <div class="we-provide-shape-1">
                                             <img src="{{asset('assets/images/shapes/we-provide-shape-1.png')}}" alt="">
                                         </div>
-                                        <div class="we-provide__tab-main-content-left">
+                                        {{-- <div class="we-provide__tab-main-content-left">
                                             <div class="we-provide__tab-main-content-icon">
                                                 <span class="icon-mission"></span>
                                             </div>
@@ -174,7 +174,7 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                         <div class="we-provide__tab-main-content-right">
                                             <div class="we-provide__tab-main-content-right-img">
                                                 <img src="{{asset('assets/images/resources/we-provide-tab-main-content-right-img.jpg')}}" alt="">
@@ -1742,9 +1742,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/Photos/act6.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act26.png')}}" alt="">
                         <div class="">
-                            <a href="{{asset('assets/Photos/act6.png')}}" class="img-popup"><span class=""></span></a>
+                            <a href="{{asset('assets/photos/act26.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
                         <div class="portfolio__content">
 

@@ -13,8 +13,10 @@ return [
     |
     */
 
-    'slide_word_1' => 'PRO 1 Global Home Center is the first and largest company',
-    'slide_word_2' => 'selling home building products in Myanmar.',
+    'slide_word_1'                  => 'PRO 1 Global Home Center is the first and largest company',
+    'slide_word_2'                  => 'selling home building products in Myanmar.',
     'buy_now' => 'Buy Now',
-    'company_vision_mission' => 'Company Vission & Mission',
+    'company_vision_mission'        => 'Company Vission & Mission',
+    'company_vission'               => 'Company vission',
+    'company_mission'               => 'Company Mission',
 ];
