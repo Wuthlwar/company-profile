@@ -11,7 +11,7 @@
                     <div class="about-four__left">
                         <div class="about-four__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div class="about-four__img">
-                                <img src="{{asset('companyprofile/assets/photos/services/cs1.png')}}" alt="">
+                                <img src="{{asset('/assets/photos/services/cs1.png')}}" alt="">
                             </div>
 
                         </div>
@@ -23,7 +23,7 @@
                             <div class="section-sub-title-box">
                                 <p class="section-sub-title">Consulting Service</p>
                                 <div class="section-title-shape-1">
-                                    <img src="{{asset('companyprofile/assets/images/shapes/section-title-shape-1.png')}}" alt="">
+                                    <img src="{{asset('/assets/images/shapes/section-title-shape-1.png')}}" alt="">
                                 </div>
                                 <div class="section-title-shape-2">
                                     <img src="{{asset('assets/images/shapes/section-title-shape-2.png')}}" alt="">
@@ -79,28 +79,28 @@
                 }}'>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <a href="ProductInformation.html"><img src="{{asset('companyprofile/assets/photos/Service Photo/Product Information.png')}}" alt=""></a>
+                                    <a  href="{{route('product_information')}}"><img src="{{asset('/assets/photos/Service Photo/Product Information.png')}}" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="DeliveryService.html"> <img src="{{asset('companyprofile/assets/photos/Service Photo/Delivery Service.jpg')}}" alt=""></a>
+                                    <a  href="{{route('delivery_service')}}"> <img src="{{asset('/assets/photos/Service Photo/Delivery Service.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="SpecialOrder.html"><img src="{{asset('companyprofile/assets/photos/Service Photo/Special Order.jpg')}}" alt=""></a>
+                                    <a  href="{{route('special_order')}}"><img src="{{asset('/assets/photos/Service Photo/Special Order.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="ProductReturn.html"><img src="{{asset('companyprofile/assets/photos/Service Photo/Product Return.jpg')}}" alt=""></a>
+                                    <a  href="{{route('product_return')}}"><img src="{{asset('/assets/photos/Service Photo/Product Return.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="ConsultingService.html"><img src="{{asset('companyprofile/assets/photos/Service Photo/Consulting Service.jpg')}}" alt=""></a>
+                                    <a  href="{{route('consulting_service')}}"><img src="{{asset('/assets/photos/Service Photo/Consulting Service.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="ContractorInformation.html"><img src="{{asset('companyprofile/assets/photos/Service Photo/Contractor Information.jpg')}}" alt=""></a>
+                                    <a  href="{{route('contractor_information')}}"><img src="{{asset('/assets/photos/Service Photo/Contractor Information.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="MemberService.html"><img src="{{asset('companyprofile/assets/photos/Service Photo/Member Service.jpg')}}" alt=""></a>
+                                    <a  href="{{route('member_service')}}"><img src="{{asset('/assets/photos/Service Photo/Member Service.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="RepairService.html"><img src="{{asset('companyprofile/assets/photos/Service Photo/Power Tools Repair Service.jpg')}}" alt=""></a>
+                                    <a href="{{route('repair_service')}}"><img src="{{asset('/assets/photos/Service Photo/Power Tools Repair Service.jpg')}}" alt=""></a>
                                 </div>
                             </div>
                         </div>
