@@ -1390,7 +1390,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&sortBy=1&searchText=OPPLE">
-                                                <img src="{{asset('assets/photos/Brands/B2.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/brands/B2.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1419,7 +1419,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=49">
-                                                <img src="{{asset('assets/photos/Brands/B3.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/brands/B3.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1467,7 +1467,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=82">
-                                                <img src="{{asset('assets/photos/Brands/B5.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/brands/B5.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1496,7 +1496,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=81">
-                                                <img src="{{asset('assets/photos/Brands/B6.png')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/brands/B6.png')}}" alt=""></a>
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1525,7 +1525,7 @@
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                             <a target="_blank" href="https://pro1globalhomecenter.com/product-list.html?divisionId=1&townshipId=18&brandId=87">
-                                                <img src="{{asset('assets/photos/Brands/B7.jpg')}}" alt=""></a>
+                                                <img src="{{asset('assets/photos/brands/B7.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="testimonial-one__client-content">
 
