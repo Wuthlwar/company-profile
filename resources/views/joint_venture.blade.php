@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="portfolio-details__img">
-                        <img src="{{asset('assets/Photos/joint1.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/joint1.jpg')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                         <div class="portfolio-details__content-right">
                             <div class="portfolio-details__details-box">
 
-                                <a href=""><img src="{{asset('assets/Photos/pro1.png')}}" alt=""></a>
+                                <a href=""><img src="{{asset('assets/photos/pro1.png')}}" alt=""></a>
 
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                         <div class="portfolio-details__content-right">
                             <div class="portfolio-details__details-box">
 
-                                <a href=""><img src="{{asset('assets/Photos/scg2.png')}}" alt=""></a>
+                                <a href=""><img src="{{asset('assets/photos/scg2.png')}}" alt=""></a>
 
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                         <div class="portfolio-details__content-right">
                             <div class="portfolio-details__details-box">
 
-                                <a href=""><img src="{{asset('assets/Photos/gb1.png')}}" alt=""></a>
+                                <a href=""><img src="{{asset('assets/photos/gb1.png')}}" alt=""></a>
 
                             </div>
                         </div>

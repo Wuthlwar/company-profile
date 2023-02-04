@@ -27,7 +27,7 @@
                         <ul class="list-unstyled main-header__top-menu">
                             <li>
                                 <div class="languagebox">
-                                    @php $locale = session()->get('locale');@endphp  
+                                    @php $locale = session()->get('locale');@endphp
                                     @switch($locale)
                                         @case('en')
                                             <a class="iq-sub-card" href="{{ route('lang','mm')}}">
@@ -43,7 +43,7 @@
                                             <a class="iq-sub-card" href="{{ route('lang','mm')}}">
                                                 Eng
                                             </a>
-                                    @endswitch   
+                                    @endswitch
                                 </div>
                             </li>
                         </ul>
@@ -81,7 +81,7 @@
 
                                     </li>
                                     <li class="dropdown ">
-                                        <a href="{{route('home')}}#ourCenter">Our Centers</a>
+                                        <a href="{{route('home')}}#ourCenter">{{__('our_center.our_center')}}</a>
 
                                     </li>
                                     <li class="dropdown">

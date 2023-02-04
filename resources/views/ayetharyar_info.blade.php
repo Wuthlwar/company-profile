@@ -21,10 +21,10 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="portfolio-details__content-left">
-                            <div>&nbsp;PRO 1 Global Home Center(HlaingTharYar Branch)</div>
-                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No ( 4 / 5 ), Corner of Yangon- Pathein & Yangon -Twan Tay Road, HlaingTharYar Township, Yangon</div>
+                            <div>&nbsp;PRO 1 Global Home Center (Aye Tharyar Branch)</div>
+                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp; No. (6 to 17), Pyi Htaung Su Road, 5-Quarter, Aye Tharyar, Taunggyi Township,Shan State</div>
                             <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 09:00 AM ~ 05:00 PM</div>
-                            <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777002840 , 09-777002850</div>
+                            <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp; 09-777003701, 09-777003702,09-777003703</div>
 
                         </div>
 

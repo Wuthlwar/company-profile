@@ -1208,7 +1208,7 @@
                         <h4 class="portfolio__title"><a href="{{route('theikpan_info')}}">Show Detail</a></h4>
                     </div>
                     <div>&nbsp;PRO 1 Global Home Center (Theikpan Branch )</div>
-                    <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(70), Corner of Upper Main Road and A Lal Tan Street, ( Kha Pa Ya Compound) , Maung Ngan Quarter, Mawlamyine.</div>
+                    <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(70), Corner of Upper Main Road and A Lal Tan Street, Maung Ngan Quarter, Mawlamyine.</div>
                     <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:00 PM</div>
                     <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp; 09-695523359, 09-777000828</div>
                 </div>
@@ -1253,9 +1253,9 @@
                             <h4 class="portfolio__title"><a href="{{route('bago_info')}}">Show Detail</a></h4>
                         </div>
                         <div>&nbsp;PRO 1 Global Home Center (Bago Branch)</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(Ma-8/6), Theik Pan Road, Between 62 st & 63 st, Chanmyatharsi Township, Mandalay.</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;Ward.8, Oakthar Myo Thit, Bago Township, Bago, Myanmar</div>
                         <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM</div>
-                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000942, 09-777000943</div>
+                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-799695755</div>
                     </div>
                 </div>
             </div>
@@ -1271,9 +1271,9 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/photos/bago.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/mawlamyine.png')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/mawlamyine.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Mawlamyine Branch, Mandalay</p>
@@ -1298,18 +1298,18 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
                 <div class="portfolio__single">
                     <div class="portfolio__img">
-                        <img src="{{asset('assets/photos/bago.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/ayetharyar.png')}}" alt="">
                         <div class="portfolio__plus">
-                            <a href="{{asset('assets/photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                            <a href="{{asset('assets/photos/ayetharyar.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">Aye Tharyar Branch, Mandalay</p>
                             <h4 class="portfolio__title"><a href="{{route('ayetharyar_info')}}">Show Detail</a></h4>
                         </div>
                         <div>&nbsp;PRO 1 Global Home Center (Aye Tharyar Branch )</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(70), Corner of Upper Main Road & A Lal Tan Street, Maung Ngan Quarter, Mawlamyine</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;  No. (6 to 17), Pyi Htaung Su Road, 5-Quarter, Aye Tharyar, Taunggyi Township,Shan State</div>
                         <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM</div>
-                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000942, 09-777000943</div>
+                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777003701, 09-777003702,09-777003703</div>
                     </div>
                 </div>
             </div>
@@ -1570,11 +1570,8 @@
                 </ul>
             </div>
         </div>
-        <!-- Employee=stra
-        CSR=busi -->
-        <!-- stra=donation busi=training insur=teambuilding -->
+
         <div class="row filter-layout masonary-layout">
-            <!--Portfolio Single Start-->
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
