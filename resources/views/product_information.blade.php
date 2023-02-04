@@ -19,7 +19,7 @@
                     <div class="about-four__left">
                         <div class="about-four__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div class="about-four__img">
-                                <img src="{{asset('/assets/photos/Services/pi3.png')}}" alt="">
+                                <img src="{{asset('/assets/photos/services/pi3.png')}}" alt="">
                             </div>
 
                         </div>
@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     <div class="brand-one__title">
-                        <h2>Take a look at the Super Services of PRO 1 Global Home Center</h2>
+                        <h2>Take a look at the Super services of PRO 1 Global Home Center</h2>
                     </div>
                 </div>
                 <div class="col-xl-9">
