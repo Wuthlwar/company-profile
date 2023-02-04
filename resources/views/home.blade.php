@@ -1739,7 +1739,10 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/act26.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act26.png')}}" alt="" style="
+                        width: 100%;
+                        height: 402px;
+                    ">
                         <div class="">
                             <a href="{{asset('assets/photos/act26.png')}}" class="img-popup"><span class=""></span></a>
                         </div>
