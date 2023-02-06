@@ -1,6 +1,6 @@
 <!--Site Footer Start-->
 <footer class="site-footer">
-    <div class="site-footer-bg" style=`background-image: url("{{asset('assets/images/backgrounds/site-footer-bg.png')}}")`>
+    <div class="site-footer-bg" style=`background-image: url("{{asset('assets/images/backgrounds/site-footer-bg.png')}}")>
     </div>
     <div class="container">
         <div class="site-footer__top">
@@ -8,7 +8,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="index.html"><img src="{{asset('assets/Photos/footerlogo.png')}}" alt=""></a>
+                            <a href="index.html"><img src="{{asset('assets/photos/footerlogo.png')}}" alt=""></a>
                         </div>
                         <div class="footer-widget__about-text-box">
                             <p class="footer-widget__about-text ">PRO 1 Global Home Center Myanmar<br>"One Place, Get All "</p>
@@ -50,7 +50,7 @@
                             <li class="col-md-4 ">
                                 <div class="footer-widget__gallery-img ">
 
-                                    <img src="{{asset('assets/Photos/sc-fb8.png')}} " alt=" ">
+                                    <img src="{{asset('assets/photos/sc-fb8.png')}} " alt=" ">
 
                                     <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><span class="fa fa-link "></span></a>
                                 </div>
