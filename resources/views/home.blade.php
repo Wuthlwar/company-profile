@@ -1575,7 +1575,10 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/act1.png')}}" alt="">
+                        <img src="{{asset('assets/photos/act1.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
                         <div class="">
                             <a href="{{asset('assets/photos/act1.png')}}" class="img-popup"></a>
                         </div>
@@ -1615,8 +1618,52 @@
                 </div>
             </div>
             <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/act2.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
+                        <div class="">
+                            <a href="{{asset('assets/photos/act2.jpg')}}" class="img-popup"></a>
+                        </div>                        <div>
+                            <ul class="list-unstyled about-one__points">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Donation for Football Academy (Mandalay)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>25.1.2023</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title"></p>
+                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Portfolio Single Start-->
+            {{-- <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
                         <img src="{{asset('assets/photos/act2.png')}}" alt="">
@@ -1657,10 +1704,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!--Portfolio Single End-->
             <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+            {{-- <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
                         <img src="{{asset('assets/photos/act3.png')}}" alt="">
@@ -1941,7 +1988,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!--Portfolio Single End-->
         </div>
     </div>
