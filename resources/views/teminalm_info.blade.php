@@ -27,10 +27,10 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="portfolio-details__content-left">
-                            <div>&nbsp;PRO 1 Global Home Center(AyeTharYar Branch)</div>
-                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No. (6 to 17), Pyi Htaung Su Road, 5-Quarter,Taunggyi Aye Tharyar, Taunggyi Township, Shan State</div>
+                            <div>&nbsp;PRO 1 Global Home Center(Terminal M Branch)</div>
+                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.523, Pin Lone Road , Corner of Mingalar Thiri street & Industrial Zone street, 23 Ward, Yangon.</div>
                             <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 09:00 AM ~ 05:00 PM</div>
-                            <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777003701, 09-777003702</div>
+                            <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09 777047282, 09 777047283</div>
 
                         </div>
 

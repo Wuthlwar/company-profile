@@ -11,8 +11,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="portfolio-details__img">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15270.791837318397!2d96.11381380000002!3d16.89082943602387!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9c75e4d568eb20a1!2sPRO%201%20Global%20Home%20Center%20-%20Lanthit%20Branch%20(Insein)!5e0!3m2!1sen!2smm!4v1657271276010!5m2!1sen!2smm"
-                            width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121906.4493462385!2d96.3968068150254!3d17.287709952845592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x30c3d75698e6bfc1%3A0xea020ec3b9310a16!2sOak%20Kar%20Myo%20Thit%2C%20No%2C%20Yangon-Mandalay%2C%20Main%20Road%2C%20Bago%2008017!3m2!1d17.2877221!2d96.4668473!5e0!3m2!1sen!2smm!4v1675660442531!5m2!1sen!2smm" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

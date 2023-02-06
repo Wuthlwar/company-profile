@@ -1198,19 +1198,21 @@
         </div>
         <div class="row filter-layout masonary-layout mt-3">
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
-                <div class="portfolio__img">
-                    <img src="{{asset('assets/photos/theikpan.png')}}" alt="">
-                    <div class="portfolio__plus">
-                        <a href="{{asset('assets/photos/theikpan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                <div class="portfolio__single">
+                    <div class="portfolio__img">
+                        <img src="{{asset('assets/photos/theikpan.png')}}" alt="">
+                        <div class="portfolio__plus">
+                            <a href="{{asset('assets/photos/theikpan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title">Theikpan Branch, Mandalay</p>
+                            <h4 class="portfolio__title"><a href="{{route('theikpan_info')}}">Show Detail</a></h4>
+                        </div>
+                        <div>&nbsp;PRO 1 Global Home Center (Theikpan Branch )</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(Ma-8/6), Theik Pan Road, Chanmyatharsi Township,Mandalay</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp; Open Hour : 08:30 AM ~ 05:30 PM</div>
+                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000942, 09-777000943, 09-777000944</div>
                     </div>
-                    <div class="portfolio__content">
-                        <p class="portfolio__sub-title">Theikpan Branch, Mandalay</p>
-                        <h4 class="portfolio__title"><a href="{{route('theikpan_info')}}">Show Detail</a></h4>
-                    </div>
-                    <div>&nbsp;PRO 1 Global Home Center (Theikpan Branch )</div>
-                    <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(70), Corner of Upper Main Road and A Lal Tan Street, Maung Ngan Quarter, Mawlamyine.</div>
-                    <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:00 PM</div>
-                    <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp; 09-695523359, 09-777000828</div>
                 </div>
             </div>
 

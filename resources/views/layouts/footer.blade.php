@@ -57,19 +57,19 @@
                             </li>
                             <li class="col-md-4 ">
                                 <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/Photos/sc-vb6.png')}} " alt=" ">
+                                    <img src="{{asset('assets/photos/sc-vb6.png')}} " alt=" ">
                                     <a target="_blank" href="https://invite.viber.com/?g2=AQB%2BIxt%2BiHONWkjqz%2FbmgmTW2jaFd73U66dVh7ZdzTh5iUk5ZWHHexew8X%2F%2FPIXM"><span class="fa fa-link "></span></a>
                                 </div>
                             </li>
                             <li class="col-md-4 ">
                                 <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/Photos/sc-yt1.png ')}}" alt=" ">
+                                    <img src="{{asset('assets/photos/sc-yt1.png ')}}" alt=" ">
                                     <a target="_blank" href="https://www.youtube.com/channel/UCvTMpi4etgXlCdnIEMkO8Ig "><span class="fa fa-link "></span></a>
                                 </div>
                             </li>
                             <li class="col-md-4 ">
                                 <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/Photos/sc-yt3.png')}} " alt=" ">
+                                    <img src="{{asset('assets/photos/sc-yt3.png')}} " alt=" ">
                                     <a target="_blank" href="https://instagram.com/pro1_global_home_center?igshid=YmMyMTA2M2Y= "><span class="fa fa-link "></span></a>
                                 </div>
                             </li>

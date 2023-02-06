@@ -13,8 +13,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="portfolio-details__img">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15278.787345889321!2d96.1855129!3d16.791752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x16be570afb7a1fa5!2sPRO%201%20Global%20Home%20Center%20-%20Satsan%20Branch!5e0!3m2!1smy!2smm!4v1657339089146!5m2!1smy!2smm"
-                            width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d122197.65222231353!2d96.15219260851347!3d16.842390728264792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x30c1935f305b4b99%3A0x7a2e7fe696d37d18!2sNo.523%2C%20Pin%20Lone%20Road%20Corner%20of%20Mingalar%20Thiri%20street%20%26%20Industrial%20Zone%20street%2023%20Ward%2C%20Near%20of%20South%20Dagon%20(Ka.Nya.Na%2C%203%20Industrial%20Zone%20Rd%2C%20Yangon%2011431!3m2!1d16.8424026!2d96.2222331!5e0!3m2!1sen!2smm!4v1675657644916!5m2!1sen!2smm" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

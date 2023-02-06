@@ -17,8 +17,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="portfolio-details__img">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15278.787345889321!2d96.1855129!3d16.791752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x16be570afb7a1fa5!2sPRO%201%20Global%20Home%20Center%20-%20Satsan%20Branch!5e0!3m2!1smy!2smm!4v1657339089146!5m2!1smy!2smm"
-                            width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d122142.86424811398!2d96.01824300973873!3d16.927042875686613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x30c197eca01cea83%3A0xc69798a1512fc574!2sNo.103%2F104%2C%20Bayintnaung%20Road%2C%20Industrial%20Zone%20(4%2C%2011411!3m2!1d16.9270548!2d96.08828349999999!5e0!3m2!1sen!2smm!4v1675657964483!5m2!1sen!2smm" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
