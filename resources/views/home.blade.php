@@ -62,7 +62,7 @@
                                 </h2>
                                 <p class="main-slider__text"><span class="fw-bold text-dark">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</span></p>
                                 <div class="main-slider__btn-box">
-                                    <a href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
+                                    <a target="blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                                 </h2>
                                 <p class="main-slider__text"><span class="fw-bold text-dark">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</span></p>
                                 <div class="main-slider__btn-box">
-                                    <a href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
+                                    <a target="blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
                                 </div>
                             </div>
                         </div>
