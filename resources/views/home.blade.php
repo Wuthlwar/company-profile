@@ -494,7 +494,7 @@
                     <div class="services-two__single">
                         <div class="services-two__icon-box">
                             <div class="services-two__icon">
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50%" height="124.245px" viewBox="0 0 124.245 124.245" style="enable-background:new 0 0 124.245 124.245;" xml:space="preserve">
+                               {{-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50%" height="124.245px" viewBox="0 0 124.245 124.245" style="enable-background:new 0 0 124.245 124.245;" xml:space="preserve">
                                     <g>
                                         <g>
                                             <path style="fill: white;" d="M70.266,28.635c-0.097-0.059-0.201-0.093-0.3-0.145c-1.421-0.94-3.015-1.634-4.64-2.032l-3.203,3.224l-3.105-3.26
@@ -515,7 +515,8 @@
                                         C56.642,58.998,52.417,61.141,48.965,61.894z" />
                                         </g>
                                     </g>
-                                </svg>
+                                </svg> --}}
+                                <a href="{{asset('assets/photos/lanthit.png')}}" class="img-popup"></a>
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Humility</a></h3>
@@ -1334,7 +1335,7 @@
                     <div class="testimonial-one__top-left">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">OUR PATANERS</p>
+                                <p class="section-sub-title">OUR PARTNERS</p>
                                 <div class="section-title-shape-1">
                                     <img src="assets/images/shapes/section-title-shape-1.png" alt="">
                                 </div>
