@@ -1623,12 +1623,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity 2.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/activity2.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity 2.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/activity2.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
