@@ -1574,7 +1574,7 @@
         </div>
 
         <div class="row filter-layout masonary-layout">
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
                         <img src="{{asset('assets/photos/activity1.jpg')}}" alt="" style="object-fit:contain;
@@ -1620,7 +1620,7 @@
                 </div>
             </div>
             <!--Portfolio Single End-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
                         <img src="{{asset('assets/photos/activity 2.jpg')}}" alt="" style="object-fit:contain;
@@ -1664,7 +1664,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
                         <img src="{{asset('assets/photos/activity3.jpg')}}" alt="" style="object-fit:contain;
@@ -1708,16 +1708,16 @@
                     </div>
                 </div>
             </div>
-
-            <!--Portfolio Single Start-->
-            {{-- <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/act2.png')}}" alt="">
+                        <img src="{{asset('assets/photos/activity4.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/act2.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div>
+                            <a href="{{asset('assets/photos/activity4.jpg')}}" class="img-popup"></a>
+                        </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
                                     <div class="icon">
@@ -1746,12 +1746,235 @@
                             </ul>
                         </div>
                         <div class="portfolio__content">
-
+                            <p class="portfolio__sub-title"></p>
                             <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/activity5.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
+                        <div class="">
+                            <a href="{{asset('assets/photos/activity5.jpg')}}" class="img-popup"></a>
+                        </div>                        <div>
+                            <ul class="list-unstyled about-one__points">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Donation for Football Academy (Mandalay)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>25.1.2023</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title"></p>
+                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/activity6.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
+                        <div class="">
+                            <a href="{{asset('assets/photos/activity6.jpg')}}" class="img-popup"></a>
+                        </div>                        <div>
+                            <ul class="list-unstyled about-one__points">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Donation for Football Academy (Mandalay)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>25.1.2023</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title"></p>
+                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/activity7.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
+                        <div class="">
+                            <a href="{{asset('assets/photos/activity7.jpg')}}" class="img-popup"></a>
+                        </div>                        <div>
+                            <ul class="list-unstyled about-one__points">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Donation for Football Academy (Mandalay)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>25.1.2023</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title"></p>
+                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/activity8.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
+                        <div class="">
+                            <a href="{{asset('assets/photos/activity8.jpg')}}" class="img-popup"></a>
+                        </div>                        <div>
+                            <ul class="list-unstyled about-one__points">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Donation for Football Academy (Mandalay)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>25.1.2023</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title"></p>
+                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
+                <div class="portfolio__single">
+                    <div class="">
+                        <img src="{{asset('assets/photos/activity11.jpg')}}" alt="" style="object-fit:contain;
+                        width:380px;
+                        height:420px;
+                        border: solid 1px #CCC">
+                        <div class="">
+                            <a href="{{asset('assets/photos/activity11.jpg')}}" class="img-popup"></a>
+                        </div>                        <div>
+                            <ul class="list-unstyled about-one__points">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Donation for Football Academy (Mandalay)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>25.1.2023</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title"></p>
+                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Portfolio Single Start-->
+
             <!--Portfolio Single End-->
             <!--Portfolio Single Start-->
             {{-- <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
