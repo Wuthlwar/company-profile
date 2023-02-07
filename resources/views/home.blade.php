@@ -75,7 +75,7 @@
                 <!-- /.image-layer -->
 
                 <div class="main-slider-shape-1 float-bob-x">
-                    <img src="{{asset('assets/photos/Banner/Banner-3.jpg')}}" alt="">
+                    <img src="{{asset('assets/photos/banner/Banner-3.jpg')}}" alt="">
                 </div>
 
                 <div class="container">

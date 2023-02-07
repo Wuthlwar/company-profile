@@ -9,7 +9,7 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/photos/PRO1LOGO (2).png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/hotos/PRO1LOGO (2).png')}}" />
-    <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" />
+    {{-- <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" /> --}}
     <meta name="description" content="Insur HTML 5 Template " />
 
     <!-- fonts -->
