@@ -55,4 +55,4 @@ Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lan
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
