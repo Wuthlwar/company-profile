@@ -867,7 +867,7 @@
                     <a href="{{route('delivery_service')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/photos/Only Icon/Delivery Service.png')}}" alt="">
+                                <img src="{{asset('assets/csr_photos/delivery.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
@@ -969,7 +969,7 @@
                     <a href="{{route('repair_service')}}">
                         <div class="services-one__single">
                             <div class="service-one__img">
-                                <img src="{{asset('assets/photos/Only Icon/Power Tools Repair Service_2.png')}}" alt="">
+                                <img src="{{asset('assets/csr_photos/service.png')}}" alt="">
                             </div>
                             <div class="service-one__content">
 
