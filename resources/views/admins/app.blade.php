@@ -35,13 +35,13 @@
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Vendors styles-->
-    <link rel="stylesheet" href="{{ asset('admins/dist/vendors/simplebar/css/simplebar.css') }}">
-    <link rel="stylesheet" href="{{ asset('admins/dist/css/vendors/simplebar.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/dist/vendors/simplebar/css/simplebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/dist/css/vendors/simplebar.css')}}">
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
-    <link href="css/examples.css" rel="stylesheet">
+    <link href="{{ asset('admin/dist/css/examples.css') }}" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
