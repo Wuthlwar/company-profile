@@ -52,7 +52,15 @@ Route::get('/ayetharyar_info', [HomeController::class, 'ayetharyar_info'])->name
 
 Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
 
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/app', function () {
+    return view('admins.app');
+});
+});
+Route::get('/login',[HomeController::class,'login'])->name('login');
+Route::post('/check',[HomeController::class,'checkLogin'])->name('check');
+Route::get('/logout',[HomeController::class,'logout'])->name('logout');
+

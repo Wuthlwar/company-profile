@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -119,10 +119,44 @@ class HomeController extends Controller
     {
         return view('mawlamyine_info');
     }
-    
+
     public function ayetharyar_info()
     {
         return view('ayetharyar_info');
     }
-    
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('login');
+    }
+
+    public function login()
+    {
+        return view('admins.auth.login');
+    }
+
+    public function checkLogin(Request $request)
+    {
+        // dd($request->all());
+        $data = $request->validate([
+            'email'=>'required',
+            'password' => 'required',
+        ]);
+        $password = Hash::make($data['password']);
+        // $this->repository->saveLog($data);
+        $user = User::where(["email" => $data['email']])->first();
+        // dd($user);
+            if($user)
+            {
+                Auth::login($user);
+                return redirect('/app');
+            }
+            else{
+
+                return redirect('/login')->with('fails','Wrong Password');
+            }
+
+    }
+
 }
