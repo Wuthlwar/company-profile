@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,9 @@ use App\Http\Controllers\LocalizationController;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-
+Route::get('/act_detail',function(){
+    return view('act_detail');
+});
 //History Note
 Route::get('/establish_year', [HomeController::class, 'establish_year'])->name('establish_year');
 Route::get('/mile_stone', [HomeController::class, 'mile_stone'])->name('mile_stone');
@@ -49,3 +52,7 @@ Route::get('/ayetharyar_info', [HomeController::class, 'ayetharyar_info'])->name
 
 Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
