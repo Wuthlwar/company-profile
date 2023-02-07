@@ -85,7 +85,7 @@
 
                                     </li>
                                     <li class="dropdown">
-                                        <a href="{{route('home')}}#ourPatner">Our Patners</a>
+                                        <a href="{{route('home')}}#ourPatner">Our Partners</a>
 
                                     </li>
                                     <li class="dropdown">
