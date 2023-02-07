@@ -1577,12 +1577,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity1.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act1.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity1.png')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act1.png')}}" class="img-popup"></a>
                         </div>
                         <div>
                             <ul class="list-unstyled about-one__points">
@@ -1623,12 +1623,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity2.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act2.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity2.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act2.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1667,12 +1667,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity3.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act3.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity3.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act3.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1711,12 +1711,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity4.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act4.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity4.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act4.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1755,12 +1755,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity5.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act5.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity5.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act5.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1799,12 +1799,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity6.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act6.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity6.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act6.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1843,12 +1843,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity7.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act7.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity7.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act7.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1887,12 +1887,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity8.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act8.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity8.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act8.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1931,12 +1931,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="{{asset('assets/photos/activity11.jpg')}}" alt="" style="object-fit:contain;
+                        <img src="{{asset('assets/photos/act9.jpg')}}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
                         <div class="">
-                            <a href="{{asset('assets/photos/activity11.jpg')}}" class="img-popup"></a>
+                            <a href="{{asset('assets/photos/act9.jpg')}}" class="img-popup"></a>
                         </div>                        <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
