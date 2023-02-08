@@ -516,7 +516,7 @@
                                         </g>
                                     </g>
                                 </svg> --}}
-                                <a href="{{asset('assets/photos/lanthit.png')}}" class="img-popup"></a>
+                                <img src="{{asset('assets/photos/vision1.')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Humility</a></h3>
@@ -2281,7 +2281,7 @@
                             <a href="tel:959428751328"><i class="fas fa-phone"></a></i>
                         </div>
                         <div class="cta-one__call-number">
-                            <a href="tel:959428751328">+959428751328</a>
+                            <a href="tel:+959777048315 , +959777048316">+959777048315 , +959777048316</a>
                             <p>Call to Our Phone</p>
                         </div>
                     </div>
@@ -2312,7 +2312,7 @@
                                 <img src="{{asset('assets/images/shapes/section-title-shape-2.png')}}" alt="">
                             </div>
                         </div>
-                        <h2 class="section-title__title">Feel free to get in touch</h2>
+                        <h2 class="section-title__title">To contact our Head Office</h2>
                     </div>
                     <div class="contact-page__call-email">
                         <div class="contact-page__call-icon">
@@ -2320,7 +2320,7 @@
                         </div>
                         <div class="contact-page__call-email-content">
                             <h4>
-                                <a href="tel:959428751328" class="contact-page__call-number">+959428751328</a>
+                                <a href="tel:+959777048315, +959777048316" class="contact-page__call-number">+959777048315 , +959777048316</a>
                                 <a href="mailto:info@pro1globalhomecenter.com">info@pro1globalhomecenter.com</a>
                             </h4>
                         </div>
