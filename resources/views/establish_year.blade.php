@@ -10,7 +10,7 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="news-details__left">
                         <div class="news-details__img">
-                            <img src="{{asset('assets/photos/currentbranch.png')}}" alt="">
+                            <img src="{{asset('assets/photos/currentbranch.jpg')}}" alt="">
                         </div>
                         <div class="news-details__content">
                             <h3 class="news-details__title">PRO 1 Global Home Center</h3>
