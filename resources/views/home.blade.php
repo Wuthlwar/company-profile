@@ -221,7 +221,7 @@
                                         </div>
                                         <div class="we-provide__tab-main-content-right">
                                             <div class="we-provide__tab-main-content-right-img">
-                                                <img src="{{asset('assets/photos/vision1.png')}}" alt="">
+                                                <img src="{{asset('assets/csr_photos/vision.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -268,7 +268,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/milestone-mission.png')}}" alt="">
+                        <img src="{{asset('assets/csr_photos/mission.png')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
