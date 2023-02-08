@@ -247,7 +247,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/estab.png')}}" alt="">
+                        <img src="{{asset('assets/photos/estab.jpg')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -268,7 +268,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/milestone-mission.png')}}" alt="">
+                        <img src="{{asset('assets/photos/milestone-mission.jpg')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -289,7 +289,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/joint.png')}}" alt="">
+                        <img src="{{asset('assets/photos/joint.jpg')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
