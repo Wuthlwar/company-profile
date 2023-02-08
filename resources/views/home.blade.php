@@ -221,7 +221,7 @@
                                         </div>
                                         <div class="we-provide__tab-main-content-right">
                                             <div class="we-provide__tab-main-content-right-img">
-                                                <img src="{{asset('assets/csr_photos/vision.png')}}" alt="">
+                                                <img src="{{asset('assets/photos/vision1.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
