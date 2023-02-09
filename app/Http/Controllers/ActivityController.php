@@ -45,19 +45,23 @@ class ActivityController extends Controller
         $file->storeAs($folderName,$savedFileName);
         $data['preview_img'] = $savedFileName;
         $act = Activity::create($data);
-        foreach($files=$request->file as $file)
+        if($request->file!=null)
         {
-        $folderName = "uploads/activity_images";
-        $fileName = $file->getClientOriginalName();
-        $originalFileName = preg_replace('/\\.[^.\\s]{3,4}$/', '', $fileName);
-        $savedFileName = $originalFileName.rand(0,9999).'.'.$file->getClientOriginalExtension();
-        $saveFile = new ActivityImage();
-        $file->storeAs($folderName,$savedFileName);
-        $saveFile->activity_id = $act->id;
-        $saveFile->name = $fileName;
-        $saveFile->file = $savedFileName;
-        $saveFile->save();
+            foreach($files=$request->file as $file)
+            {
+            $folderName = "uploads/activity_images";
+            $fileName = $file->getClientOriginalName();
+            $originalFileName = preg_replace('/\\.[^.\\s]{3,4}$/', '', $fileName);
+            $savedFileName = $originalFileName.rand(0,9999).'.'.$file->getClientOriginalExtension();
+            $saveFile = new ActivityImage();
+            $file->storeAs($folderName,$savedFileName);
+            $saveFile->activity_id = $act->id;
+            $saveFile->name = $fileName;
+            $saveFile->file = $savedFileName;
+            $saveFile->save();
+            }
         }
+
         // dd('hi');
         return redirect()->route('activities.index');
     }
@@ -103,19 +107,22 @@ class ActivityController extends Controller
             $data['preview_img'] = $savedFileName;
         }
         $act->update($data);
-        foreach($files=$request->file as $file)
+        if($request->file!=null)
         {
-        $folderName = "uploads/activity_images";
-        $fileName = $file->getClientOriginalName();
-        $originalFileName = preg_replace('/\\.[^.\\s]{3,4}$/', '', $fileName);
-        $savedFileName = $originalFileName.rand(0,9999).'.'.$file->getClientOriginalExtension();
-        $saveFile = new ActivityImage();
-        $file->storeAs($folderName,$savedFileName);
-        $saveFile->activity_id = $act->id;
-        $saveFile->name = $fileName;
-        $saveFile->file = $savedFileName;
-        $saveFile->save();
-        // dd($saveFile);
+            foreach($files=$request->file as $file)
+            {
+            $folderName = "uploads/activity_images";
+            $fileName = $file->getClientOriginalName();
+            $originalFileName = preg_replace('/\\.[^.\\s]{3,4}$/', '', $fileName);
+            $savedFileName = $originalFileName.rand(0,9999).'.'.$file->getClientOriginalExtension();
+            $saveFile = new ActivityImage();
+            $file->storeAs($folderName,$savedFileName);
+            $saveFile->activity_id = $act->id;
+            $saveFile->name = $fileName;
+            $saveFile->file = $savedFileName;
+            $saveFile->save();
+            // dd($saveFile);
+            }
         }
         // dd('hi');
         return redirect()->route('activities.index');
@@ -127,5 +134,12 @@ class ActivityController extends Controller
         $act = Activity::find($activity->id);
         $act->delete();
         return redirect()->route('activities.index');
+    }
+    public function del_act_imgs($img_id)
+    {
+       $img = ActivityImage::find($img_id);
+       $img->delete();
+       return back();
+
     }
 }

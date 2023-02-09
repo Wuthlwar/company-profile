@@ -30,5 +30,6 @@ Route::group(['prefix' => 'admins'], function(){
     // Route::resource('permissions', PermissionController::class);
     Route::resource('activity_type', ActivityTypeController::class);
     Route::resource('activities', ActivityController::class);
+    Route::post('/del_act_imgs/img_id',[ActivityController::class,'del_act_imgs'])->name('del_act_imgs');
 });
 

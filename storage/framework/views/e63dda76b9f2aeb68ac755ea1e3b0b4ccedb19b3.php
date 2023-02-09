@@ -47,25 +47,37 @@
                 <div class="mb-3 col-6">
                     <label class="form-label" for="preview_img">First Image</label>
                     <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img">
+                </div>
+                <div class="mb-3 col-6">
+                    <label class="form-label" for="preview_img">Other Images</label>
+                    <input class="form-control" id="preview_img" type="file" placeholder="" name="file">
                     <button class="btn btn-success mt-2" type="button" id="addBtn">Add More</button>
                 </div>
                 </div>
                 <div class="row">
-                    <?php if($act->preview_img!==null): ?>
-                    <div class="col-4">
-                        <img src="<?php echo e(asset("storage/uploads/activity/$act->preview_img")); ?>" alt="<?php echo e($act->preview_img); ?>" class="rounded img-fluid">
-                    </div>
-                    <?php endif; ?>
-                    <?php if(count($act->act_imgs)!=0): ?>
-                    <?php $__currentLoopData = $act->act_imgs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col-4">
-                            <img src="<?php echo e(asset("storage/uploads/activity_images/$img->file")); ?>" alt="<?php echo e($img->name); ?>" class="rounded img-fluid"/>
+
+                        <?php if($act->preview_img!==null): ?>
+                        <div class="card col-2 m-1">
+                            <img src="<?php echo e(asset("storage/uploads/activity/$act->preview_img")); ?>" alt="<?php echo e($act->preview_img); ?>" class="card-img-top rounded img-fluid mt-3">
+
+                            <div class="card-body">
+                                <p>First Image</p>
+                            </div>
                         </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php endif; ?>
+                        <?php if(count($act->act_imgs)!=0): ?>
+                        <div class="card row m-1">
+                            <?php $__currentLoopData = $act->act_imgs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class=" col-2 m-1">
+                                <img src="<?php echo e(asset("storage/uploads/activity_images/$img->file")); ?>" alt="<?php echo e($img->name); ?>" class="card-img-top rounded img-fluid mt-3"/>
+                            </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <div class="card-body">
+                                <p>Other Images</p>
+                            </div>
+                        </div>
 
-                    <?php endif; ?>
-
-
+                        <?php endif; ?>
                 </div>
 
                 <div class="mb-3">
@@ -102,6 +114,7 @@
            x--;
        });
     });
+
 </script>
 <?php $__env->stopSection(); ?>
 

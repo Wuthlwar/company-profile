@@ -57,6 +57,11 @@
       gtag('config', 'UA-118965717-5');
     </script>
     <link href="<?php echo e(asset('admin/dist/vendors/@coreui/chartjs/css/coreui-chartjs.css')); ?>" rel="stylesheet">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
   </head>
   <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">

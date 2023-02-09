@@ -48,25 +48,37 @@
                 <div class="mb-3 col-6">
                     <label class="form-label" for="preview_img">First Image</label>
                     <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img">
+                </div>
+                <div class="mb-3 col-6">
+                    <label class="form-label" for="preview_img">Other Images</label>
+                    <input class="form-control" id="preview_img" type="file" placeholder="" name="file">
                     <button class="btn btn-success mt-2" type="button" id="addBtn">Add More</button>
                 </div>
                 </div>
                 <div class="row">
-                    @if ($act->preview_img!==null)
-                    <div class="col-4">
-                        <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="{{ $act->preview_img }}" class="rounded img-fluid">
-                    </div>
-                    @endif
-                    @if (count($act->act_imgs)!=0)
-                    @foreach($act->act_imgs as $img)
-                        <div class="col-4">
-                            <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" class="rounded img-fluid"/>
+
+                        @if ($act->preview_img!==null)
+                        <div class="card col-2 m-1">
+                            <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="{{ $act->preview_img }}" class="card-img-top rounded img-fluid mt-3">
+
+                            <div class="card-body">
+                                <p>First Image</p>
+                            </div>
                         </div>
-                    @endforeach
+                        @endif
+                        @if (count($act->act_imgs)!=0)
+                        <div class="card row m-1">
+                            @foreach($act->act_imgs as $img)
+                            <div class=" col-2 m-1">
+                                <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" class="card-img-top rounded img-fluid mt-3"/>
+                            </div>
+                            @endforeach
+                            <div class="card-body">
+                                <p>Other Images</p>
+                            </div>
+                        </div>
 
-                    @endif
-
-
+                        @endif
                 </div>
 
                 <div class="mb-3">
@@ -103,5 +115,6 @@
            x--;
        });
     });
+
 </script>
 @endsection
