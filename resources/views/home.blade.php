@@ -1574,10 +1574,10 @@
                     </div>
                     <p class="section-title__title">Let's take a look at<br> our company's activities </p>
                 </div>
-                <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled">
-                    <li data-filter=".filter-item" class="active"><span class="filter-text">All</span></li>
+                <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled ">
+                    <li data-filter=".filter-item " class="active"><span class="filter-text">All</span></li>
                     @foreach ($act_types as $type)
-                        <li data-filter=".stra"><span class="filter-text ">{{ $type->name }}</span></li>
+                        <li data-filter=".stra"><button class="btn bg-transparent" data-id="filter{{ $type->name }}" id="act_type"><span class="filter-text ">{{ $type->name }}</span></button></li>
                     @endforeach
                     {{-- <li data-filter=".stra"><span class="filter-text">EMPLOYEE ACTIVITIES</span></li>
                     <li data-filter=".busi"><span class="filter-text">CSR ACTIVITIES</span></li> --}}
@@ -1590,13 +1590,14 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
+                        <a href="{{route('act_detail',$act->id)}}">
                         <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act1.png')}}" class="img-popup"></a>
-                        </div>
+                        {{-- <div class="">
+                            <a href="{{route('act_detail',$act->id)}}">{{ $act->title }}</a>
+                        </div> --}}
                         <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1622,15 +1623,14 @@
                                     <div class="text">
                                         <p>{{ $act->description }}</p>
                                     </div>
-
-
                                 </li>
                             </ul>
                         </div>
-                        <div class="portfolio__content">
+                    </a>
+                        {{-- <div class="portfolio__content">
                             <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
+                            <h4 class="portfolio__title"><a href="#ouractivities">{{}}</a></h4>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -2345,7 +2345,23 @@
             <div class="col-xl-8 col-lg-7">
                 <div class="contact-page__right">
                     <div class="contact-page__form">
-                        <form action="{{asset('assets/inc/sendemail.php')}}" class="comment-one__form contact-form-validated" novalidate="novalidate">
+                        @if(Session::has('fails'))
+                            <div class="mt-2" role="alert">
+                                <div class="text-sm font-bold bg-danger border-l-4 border-danger text-danger p-2 w-50">{{ Session::get('fails') }}</div>
+                                @php
+                                Session::forget('success');
+                                @endphp
+                            </div>
+                        @elseif(Session::has('success'))
+                            <div class="mt-2" role="alert">
+                                <div class="text-sm font-bold bg-success border-l-4 border-success text-white p-2 w-50">{{ Session::get('success') }}</div>
+                                @php
+                                Session::forget('success');
+                                @endphp
+                            </div>
+                        @endif
+                        <form action="{{route('feedbacks.store')}}" class="" novalidate="novalidate" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
@@ -2359,7 +2375,7 @@
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Phone number" name="phone">
+                                        <input type="text" placeholder="Phone number" name="ph_no">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
@@ -2371,7 +2387,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="comment-form__input-box text-message-box">
-                                        <textarea name="message" placeholder="Write a message"></textarea>
+                                        <textarea name="description" placeholder="Write a message"></textarea>
                                     </div>
                                     <div class="comment-form__btn-box">
                                         <button type="submit" class="thm-btn comment-form__btn">Send a
@@ -2387,4 +2403,21 @@
     </div>
 </section>
 <!-- Contact Us End -->
+@endsection
+@section('script')
+    <script>
+         $(document).ready(function () {
+        $("body").on("click","#act_type",function(e){
+        if(!confirm("Do you really want to do this?")) {
+            return false;
+            }
+        e.preventDefault();
+        var id = $(this).data("id");
+        console.log(id);
+        // var deleteField = '<input type="hidden" name="delete" value="'+id+'" />';
+        // $('#myForm').append(deleteField);
+        // $('#myForm').submit();
+        });
+        });
+    </script>
 @endsection

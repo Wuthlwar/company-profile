@@ -1388,10 +1388,10 @@
                     </div>
                     <p class="section-title__title">Let's take a look at<br> our company's activities </p>
                 </div>
-                <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled">
-                    <li data-filter=".filter-item" class="active"><span class="filter-text">All</span></li>
+                <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled ">
+                    <li data-filter=".filter-item " class="active"><span class="filter-text">All</span></li>
                     <?php $__currentLoopData = $act_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li data-filter=".stra"><span class="filter-text "><?php echo e($type->name); ?></span></li>
+                        <li data-filter=".stra"><button class="btn bg-transparent" data-id="filter<?php echo e($type->name); ?>" id="act_type"><span class="filter-text "><?php echo e($type->name); ?></span></button></li>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                 </ul>
@@ -1403,13 +1403,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
+                        <a href="<?php echo e(route('act_detail',$act->id)); ?>">
                         <img src="<?php echo e(asset("storage/uploads/activity/$act->preview_img")); ?>" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act1.png')); ?>" class="img-popup"></a>
-                        </div>
+                        
                         <div>
                             <ul class="list-unstyled about-one__points">
                                 <li>
@@ -1435,15 +1434,11 @@
                                     <div class="text">
                                         <p><?php echo e($act->description); ?></p>
                                     </div>
-
-
                                 </li>
                             </ul>
                         </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
+                    </a>
+                        
                     </div>
                 </div>
             </div>
@@ -1526,7 +1521,23 @@
             <div class="col-xl-8 col-lg-7">
                 <div class="contact-page__right">
                     <div class="contact-page__form">
-                        <form action="<?php echo e(asset('assets/inc/sendemail.php')); ?>" class="comment-one__form contact-form-validated" novalidate="novalidate">
+                        <?php if(Session::has('fails')): ?>
+                            <div class="mt-2" role="alert">
+                                <div class="text-sm font-bold bg-danger border-l-4 border-danger text-danger p-2 w-50"><?php echo e(Session::get('fails')); ?></div>
+                                <?php
+                                Session::forget('success');
+                                ?>
+                            </div>
+                        <?php elseif(Session::has('success')): ?>
+                            <div class="mt-2" role="alert">
+                                <div class="text-sm font-bold bg-success border-l-4 border-success text-white p-2 w-50"><?php echo e(Session::get('success')); ?></div>
+                                <?php
+                                Session::forget('success');
+                                ?>
+                            </div>
+                        <?php endif; ?>
+                        <form action="<?php echo e(route('feedbacks.store')); ?>" class="" novalidate="novalidate" method="POST">
+                            <?php echo csrf_field(); ?>
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
@@ -1540,7 +1551,7 @@
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Phone number" name="phone">
+                                        <input type="text" placeholder="Phone number" name="ph_no">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
@@ -1552,7 +1563,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="comment-form__input-box text-message-box">
-                                        <textarea name="message" placeholder="Write a message"></textarea>
+                                        <textarea name="description" placeholder="Write a message"></textarea>
                                     </div>
                                     <div class="comment-form__btn-box">
                                         <button type="submit" class="thm-btn comment-form__btn">Send a
@@ -1568,6 +1579,23 @@
     </div>
 </section>
 <!-- Contact Us End -->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script>
+         $(document).ready(function () {
+        $("body").on("click","#act_type",function(e){
+        if(!confirm("Do you really want to do this?")) {
+            return false;
+            }
+        e.preventDefault();
+        var id = $(this).data("id");
+        console.log(id);
+        // var deleteField = '<input type="hidden" name="delete" value="'+id+'" />';
+        // $('#myForm').append(deleteField);
+        // $('#myForm').submit();
+        });
+        });
+    </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/current_projects/company-profile/resources/views/home.blade.php ENDPATH**/ ?>

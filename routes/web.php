@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
+use App\Models\Activity;
+use App\Models\ActivityImage;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -17,9 +20,11 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/act_detail',function(){
-    return view('act_detail');
-});
+Route::get('/act_detail/{act_id}',function($id){
+    $act = Activity::whereId($id)->first();
+    $act_imgs = ActivityImage::where('activity_id',$id)->get();
+    return view('act_detail',compact('act','act_imgs'));
+})->name('act_detail');
 //History Note
 Route::get('/establish_year', [HomeController::class, 'establish_year'])->name('establish_year');
 Route::get('/mile_stone', [HomeController::class, 'mile_stone'])->name('mile_stone');
@@ -59,3 +64,4 @@ Route::get('/login',[HomeController::class,'login'])->name('login');
 Route::post('/check',[HomeController::class,'checkLogin'])->name('check');
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');
 
+Route::resource('feedbacks',FeedbackController::class);

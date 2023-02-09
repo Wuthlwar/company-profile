@@ -78,6 +78,7 @@
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
             </svg> Dashboard</a></li>
+            <hr>
         <li class="nav-title">Activity</li>
         <li class="nav-item"><a class="nav-link" href="{{ route('activity_type.index') }}">
             <svg class="nav-icon">
@@ -87,7 +88,11 @@
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
             </svg> Activity</a></li>
-
+            <hr>
+        <li class="nav-item"><a class="nav-link" href="{{ route('feedbacks.index') }}">
+            <svg class="nav-icon">
+                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
+            </svg> Feedbacks</a></li>
       </ul>
       <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
