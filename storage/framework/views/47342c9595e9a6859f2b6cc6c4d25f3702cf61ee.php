@@ -29,7 +29,8 @@
                     <td scope="col"><?php echo e($act->act_types->name); ?></td>
                     <td scope="col"><?php echo e($act->location); ?></td>
                     <td scope="col">
-                        <img src="<?php echo e(asset('storage/uploads/activity/'.$act->preview_img)); ?>" alt="<?php echo e($act->preview_img); ?>" width="100px">
+
+                        <img src="<?php echo e(asset("storage/uploads/activity/$act->preview_img")); ?>" alt="<?php echo e($act->preview_img); ?>" width="150px">
                     </td>
                     <td scope="col"><?php echo e($act->date); ?></td>
                     <td>

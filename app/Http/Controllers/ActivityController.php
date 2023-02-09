@@ -124,6 +124,8 @@ class ActivityController extends Controller
 
     public function destroy(Activity $activity)
     {
-        //
+        $act = Activity::find($activity->id);
+        $act->delete();
+        return back();
     }
 }

@@ -30,7 +30,8 @@
                     <td scope="col">{{ $act->act_types->name }}</td>
                     <td scope="col">{{ $act->location }}</td>
                     <td scope="col">
-                        <img src="{{ asset('storage/uploads/activity/'.$act->preview_img) }}" alt="{{ $act->preview_img }}" width="100px">
+
+                        <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="{{ $act->preview_img }}" width="150px">
                     </td>
                     <td scope="col">{{ $act->date }}</td>
                     <td>

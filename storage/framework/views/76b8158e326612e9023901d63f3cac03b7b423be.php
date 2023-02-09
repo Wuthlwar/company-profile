@@ -3,31 +3,17 @@
     <div class="card-header">
         <strong>Activity Detail</strong><span class="small ms-1"></span>
         <div class="row-reverse float-end">
-            <a class="btn btn-info" href="<?php echo e(route('activity_type.create')); ?>">Add</a>
+            <a class="btn btn-info" href="<?php echo e(route('activities.index')); ?>"><< Back</a>
         </div>
     </div>
     <div class="card-body table-responsive">
-
-        <table class="table table-hover">
-            <thead>
-                <tr>Images</tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                    <?php $__currentLoopData = $act_imgs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <td><?php echo e($img->file); ?>
-
-                        <img src="<?php echo e(Storage::url("uploads/activity_images/$img->file")); ?>" alt="<?php echo e($img->name); ?>" />
-                        
-                        
-                    </td>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                </tr>
-
-            </tbody>
-          </table>
+        <div class="row col-12">
+            <?php $__currentLoopData = $act_imgs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="col-4">
+                <img src="<?php echo e(asset("storage/uploads/activity_images/$img->file")); ?>" alt="" class="rounded img-fluid"/>
+            </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
 
     </div>
   </div>
