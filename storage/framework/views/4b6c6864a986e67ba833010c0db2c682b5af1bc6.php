@@ -12,7 +12,7 @@
                     <div class="about-four__left">
                         <div class="about-four__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div class="about-four__img">
-                                <img src="<?php echo e(asset('/assets/photos/services/re1.png')); ?>" alt="">
+                                <img src="<?php echo e(asset('/assets/photos/service.png')); ?>" alt="">
                             </div>
 
                         </div>
