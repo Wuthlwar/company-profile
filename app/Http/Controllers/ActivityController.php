@@ -126,6 +126,6 @@ class ActivityController extends Controller
     {
         $act = Activity::find($activity->id);
         $act->delete();
-        return back();
+        return redirect()->route('activities.index');
     }
 }
