@@ -4,7 +4,12 @@
     <div class="card-header bg-primary text-white">
         <strong>Activity</strong><span class="small ms-1"></span></div>
     <div class="card-body table-responsive">
-        <form action="{{ route('activities.store') }}" method="POST" enctype="multipart/form-data">
+        @if ($act->id!=null)
+            <form action="{{ route('activities.update',$act->id) }}" method="POST" enctype="multipart/form-data">
+                @method('PATCH')
+        @else
+            <form action="{{ route('activities.store') }}" method="POST" enctype="multipart/form-data">
+        @endif
             @csrf
             <div class="row">
                 <div class="mb-3 col-6">
@@ -18,21 +23,21 @@
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label" for="title">Activity Title</label>
-                    <input class="form-control" id="title" type="text" placeholder="name@example.com" name="title">
+                    <input class="form-control" id="title" type="text" placeholder="name@example.com" name="title" value="{{ old('title',$act->title) }}">
                 </div>
 
                 <div class="mb-3 col-6">
                     <label class="form-label" for="description">Description</label>
-                   <textarea class="form-control" name="description" id="" cols="30" rows="5"></textarea>
+                   <textarea class="form-control" name="description" id="" cols="30" rows="5">{{ $act->description }}</textarea>
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label" for="location">location</label>
-                    <input class="form-control" id="location" type="text" placeholder="" name="location">
+                    <input class="form-control" id="location" type="text" placeholder="" name="location" value="{{ old('location',$act->location) }}">
                 </div>
                 <div class="row fieldContainer">
                 <div class="mb-3 col-6">
                     <label class="form-label" for="date">Date</label>
-                    <input class="form-control" id="date" type="date" placeholder="" name="date">
+                    <input class="form-control" id="date" type="date" placeholder="" name="date" value="{{ old('date',$act->date) }}">
                 </div>
 
                 <div class="mb-3 col-6">

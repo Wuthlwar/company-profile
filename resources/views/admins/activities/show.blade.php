@@ -17,8 +17,10 @@
 
                 <tr>
                     @foreach ($act_imgs as $img)
-                    <td>
-                        <img src="{{ asset('storage/uploads/activity_images/'.$img->file) }}" alt="{{ $img->name }}" width="100px">
+                    <td>{{ $img->file }}
+                        <img src="{{ Storage::url("uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" />
+                        {{-- <img src="{{asset('storage/uploads/activity_images/'.$img->file)}}"  alt="photo"> --}}
+                        {{-- <img src="{{ asset('/storage/uploads/activity_images/'.$img->file) }}" alt="{{ $img->name }}" width="100px"> --}}
                     </td>
                     @endforeach
 

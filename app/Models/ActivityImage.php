@@ -9,4 +9,5 @@ class ActivityImage extends Model
 {
     use HasFactory;
     protected $fillable=['activity_id','file','name'];
+
 }
