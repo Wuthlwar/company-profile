@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Hash;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -147,10 +149,10 @@ class HomeController extends Controller
         // $this->repository->saveLog($data);
         $user = User::where(["email" => $data['email']])->first();
         // dd($user);
-            if($user)
+            if($user->email=='superadmin@mail.com')
             {
                 Auth::login($user);
-                return redirect('/app');
+                return redirect('/admins/');
             }
             else{
 
