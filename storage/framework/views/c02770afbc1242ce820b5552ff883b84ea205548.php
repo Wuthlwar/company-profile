@@ -1390,17 +1390,20 @@
                 </div>
                 <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled">
                     <li data-filter=".filter-item" class="active"><span class="filter-text">All</span></li>
-                    <li data-filter=".stra"><span class="filter-text">EMPLOYEE ACTIVITIES</span></li>
-                    <li data-filter=".busi"><span class="filter-text">CSR ACTIVITIES</span></li>
+                    <?php $__currentLoopData = $act_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li data-filter=".stra"><span class="filter-text "><?php echo e($type->name); ?></span></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    
                 </ul>
             </div>
         </div>
 
         <div class="row filter-layout masonary-layout">
+            <?php $__currentLoopData = $acts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $act): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
                 <div class="portfolio__single">
                     <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act1.jpg')); ?>" alt="" style="object-fit:contain;
+                        <img src="<?php echo e(asset("storage/uploads/activity/$act->preview_img")); ?>" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
                         border: solid 1px #CCC">
@@ -1414,7 +1417,7 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
+                                        <p><?php echo e($act->title); ?> (<?php echo e($act->location); ?>)</p>
                                     </div>
                                 </li>
                                 <li>
@@ -1422,7 +1425,7 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>25.1.2023</p>
+                                        <p><?php echo e($act->date); ?></p>
                                     </div>
                                 </li>
                                 <li>
@@ -1430,7 +1433,7 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                        <p><?php echo e($act->description); ?></p>
                                     </div>
 
 
@@ -1444,359 +1447,10 @@
                     </div>
                 </div>
             </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
             <!--Portfolio Single End-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act2.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act2.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act3.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act3.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act4.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act4.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act5.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act5.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act6.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act6.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act7.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act7.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act8.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act8.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="<?php echo e(asset('assets/photos/act9.jpg')); ?>" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="<?php echo e(asset('assets/photos/act9.jpg')); ?>" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
             <!--Portfolio Single Start-->
 

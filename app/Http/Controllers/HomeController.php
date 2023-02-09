@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Activity;
+use App\Models\ActivityType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Hash;
@@ -10,7 +13,9 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $act_types = ActivityType::all();
+        $acts = Activity::all();
+        return view('home',compact('act_types','acts'));
     }
     public function establish_year()
     {
