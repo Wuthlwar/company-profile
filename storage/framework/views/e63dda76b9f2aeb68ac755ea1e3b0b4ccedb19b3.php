@@ -14,9 +14,14 @@
                 <div class="mb-3 col-6">
                     <label class="form-label" for="activity_type_id">Activity Type</label>
                     <select class="form-select" aria-label="Default select example" name="activity_type_id">
-                        <option selected="">Select Activity Type</option>
+                        <option>Select Activity Type</option>
                         <?php $__currentLoopData = $act_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($type->id); ?>"><?php echo e($type->name); ?></option>
+                            <?php if($type->id==$act->activity_type_id): ?>
+                                <option value="<?php echo e($type->id); ?>" selected><?php echo e($type->name); ?></option>
+                            <?php else: ?>
+                                <option value="<?php echo e($type->id); ?>"><?php echo e($type->name); ?></option>
+                            <?php endif; ?>
+
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                       </select>
                 </div>
@@ -44,6 +49,22 @@
                     <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img">
                     <button class="btn btn-success mt-2" type="button" id="addBtn">Add More</button>
                 </div>
+                </div>
+                <div class="row">
+                    <?php if($act->preview_img!==null): ?>
+                    <div class="col-4">
+                        <img src="<?php echo e(asset("storage/uploads/activity/$act->preview_img")); ?>" alt="<?php echo e($act->preview_img); ?>" class="rounded img-fluid">
+                    </div>
+                    <?php endif; ?>
+                    <?php if(count($act->act_imgs)!=0): ?>
+                    <?php $__currentLoopData = $act->act_imgs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-4">
+                            <img src="<?php echo e(asset("storage/uploads/activity_images/$img->file")); ?>" alt="<?php echo e($img->name); ?>" class="rounded img-fluid"/>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                    <?php endif; ?>
+
 
                 </div>
 

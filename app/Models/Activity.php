@@ -14,4 +14,8 @@ class Activity extends Model
     {
         return $this->belongsTo(ActivityType::class,'activity_type_id')->withDefault();
     }
+    public function act_imgs()
+    {
+        return $this->hasMany(ActivityImage::class,'activity_id');
+    }
 }

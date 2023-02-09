@@ -15,9 +15,14 @@
                 <div class="mb-3 col-6">
                     <label class="form-label" for="activity_type_id">Activity Type</label>
                     <select class="form-select" aria-label="Default select example" name="activity_type_id">
-                        <option selected="">Select Activity Type</option>
+                        <option>Select Activity Type</option>
                         @foreach ($act_types as $type)
-                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @if ($type->id==$act->activity_type_id)
+                                <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
+                            @else
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @endif
+
                         @endforeach
                       </select>
                 </div>
@@ -45,6 +50,22 @@
                     <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img">
                     <button class="btn btn-success mt-2" type="button" id="addBtn">Add More</button>
                 </div>
+                </div>
+                <div class="row">
+                    @if ($act->preview_img!==null)
+                    <div class="col-4">
+                        <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="{{ $act->preview_img }}" class="rounded img-fluid">
+                    </div>
+                    @endif
+                    @if (count($act->act_imgs)!=0)
+                    @foreach($act->act_imgs as $img)
+                        <div class="col-4">
+                            <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" class="rounded img-fluid"/>
+                        </div>
+                    @endforeach
+
+                    @endif
+
 
                 </div>
 
