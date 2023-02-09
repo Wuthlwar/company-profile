@@ -1,11 +1,13 @@
-@extends('layouts.main')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 
     <div class="stricky-header stricked-menu main-menu">
         <div class="sticky-header__content"></div>
-
+        <!-- /.sticky-header__content -->
     </div>
+    <!-- /.stricky-header -->
 
+    <!--About Four Start-->
     <section class="about-four">
         <div class="container">
             <div class="row">
@@ -13,7 +15,7 @@
                     <div class="about-four__left">
                         <div class="about-four__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div class="about-four__img">
-                                <img src="{{asset('/assets/photos/service.png')}}" alt="">
+                                <img src="<?php echo e(asset('companyprofile/assets/Photos/Services/ms1.png')); ?>" alt="">
                             </div>
 
                         </div>
@@ -23,20 +25,24 @@
                     <div class="about-four__right">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">Repair & Installation</p>
+                                <p class="section-sub-title">Member Service</p>
                                 <div class="section-title-shape-1">
-                                    <img src="{{asset('/assets/images/shapes/section-title-shape-1.png')}}" alt="">
+                                    <img src="<?php echo e(asset('companyprofile/assets/images/shapes/section-title-shape-1.png')); ?>" alt="">
                                 </div>
                                 <div class="section-title-shape-2">
-                                    <img src="{{asset('/assets/images/shapes/section-title-shape-2.png')}}" alt="">
+                                    <img src="<?php echo e(asset('companyprofile/assets/images/shapes/section-title-shape-2.png')); ?>" alt="">
                                 </div>
                             </div>
 
                         </div>
                         <p class="about-four__text-1">
-                            PRO 1 Global Home Center also provides customized installation & repair services. Installation services included the installation of ceilings, roofing, Parquet flooring, and installation of home appliances. We provide Repairing services which are purchase
-                            from us. Repair services included repairing power tools, Aircon, TV, and other home appliances as a One-Stop Service with the professional staff of PRO 1 Global Home Center. In addition, we are discussing in detail what
-                            you want to do. And we take special care not to waste materials during the servicing.</p>
+                            Our PRO 1 Global VIP membership service is we're giving back VIP members points for every purchase and can redeem VIP presents, cash coupons, and others with member points. And the best benefit is VIP members get special discounted prices for a specific
+                            brand. If you want to apply for PRO 1 Global VIP membership, you will get it by simply purchasing 500,000 Kyats per day by completing the required information at the Service Counter.
+                        </p>
+                        <h3>How to Redeem PRO 1 Global Member Card</h3>
+                        <p>Receive a PRO 1 Global Member Card for every 500,000 Kyats spent on Purchasing at the service counter. (Not calculate member point for 1st time Purchased)</p>
+                        <p>Not include Structure Products and Project sales.</p>
+                        <p>Member Card Discount</p>
                     </div>
                 </div>
             </div>
@@ -83,28 +89,28 @@
                 }}'>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <a  href="{{route('product_information')}}"><img src="{{asset('/assets/photos/Service Photo/Product Information.png')}}" alt=""></a>
+                                    <a href="ProductInformation.html"><img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Product Information.png')); ?>" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a  href="{{route('delivery_service')}}"> <img src="{{asset('/assets/photos/Service Photo/Delivery Service.jpg')}}" alt=""></a>
+                                    <a href="DeliveryService.html"> <img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Delivery Service.jpg')); ?>" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a  href="{{route('special_order')}}"><img src="{{asset('/assets/photos/Service Photo/Special Order.jpg')}}" alt=""></a>
+                                    <a href="SpecialOrder.html"><img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Special Order.jpg')); ?>" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a  href="{{route('product_return')}}"><img src="{{asset('/assets/photos/Service Photo/Product Return.jpg')}}" alt=""></a>
+                                    <a href="ProductReturn.html"><img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Product Return.jpg')); ?>" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a  href="{{route('consulting_service')}}"><img src="{{asset('/assets/photos/Service Photo/Consulting Service.jpg')}}" alt=""></a>
+                                    <a href="ConsultingService.html"><img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Consulting Service.jpg')); ?>" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a  href="{{route('contractor_information')}}"><img src="{{asset('/assets/photos/Service Photo/Contractor Information.jpg')}}" alt=""></a>
+                                    <a href="ContractorInformation.html"><img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Contractor Information.jpg')); ?>" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a  href="{{route('member_service')}}"><img src="{{asset('/assets/photos/Service Photo/Member Service.jpg')}}" alt=""></a>
+                                    <a href="MemberService.html"><img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Member Service.jpg')); ?>" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="repair_service"><img src="{{asset('/assets/photos/Service Photo/Power Tools Repair Service.jpg')}}" alt=""></a>
+                                    <a href="RepairService.html"><img src="<?php echo e(asset('companyprofile/assets/Photos/Service Photo/Power Tools Repair Service.jpg')); ?>" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -114,4 +120,5 @@
         </div>
     </section>
     <!--Brand One End-->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\company-profile - Copy\resources\views/member_service.blade.php ENDPATH**/ ?>
