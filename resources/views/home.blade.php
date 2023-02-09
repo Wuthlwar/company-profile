@@ -691,14 +691,14 @@
                             <img src="assets//secbanner5.png" alt="">
                         </div> -->
                         <a target="_blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18">
-                            <div class="about-one__experience ">
+                            {{-- <div class="about-one__experience ">
 
                                 <h2 class="about-one__experience-year">Go TO
                                 </h2>
                                 <p class="about-one__experience-text">Online Shop<br>E-commerce</p>
 
 
-                            </div>
+                            </div> --}}
                         </a>
                         <!-- <div class="about-one__shape-1">
                             <img src="assets/photos/secbanner5.png" alt="">
