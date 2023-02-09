@@ -439,7 +439,7 @@ ul {
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    background-image: url('/assets/photos/pro1global_logo_blank.png');
+    background-image: url;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 60px auto;
@@ -5772,7 +5772,7 @@ label{
 .services-two {
     position: relative;
     display: block;
-    background-color: var(--insur-black);
+    background-color: #3769c7;
     padding: 90px 0 90px;
     z-index: 1;
 }
@@ -5831,7 +5831,7 @@ label{
 .services-two__single {
     position: relative;
     display: block;
-    background-color: #1c2a44;
+    background-color: #18356b;
     border-radius: var(--insur-bdr-radius);
     text-align: center;
     padding: 40px 35px 33px;
@@ -5859,7 +5859,7 @@ label{
     left: 50%;
     height: 4px;
     width: 40px;
-    background-color: #111d32;
+    background-color: #e2e7f0;
     transform: translateX(-50%);
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
@@ -5871,9 +5871,9 @@ label{
 
 .services-two__icon {
     position: relative;
-    height: 85px;
-    width: 85px;
-    background-color: #111d32;
+    height: 120px;
+    width: 120px;
+    background-color: #ebedf1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5894,7 +5894,7 @@ label{
     height: 100%;
     content: "";
     background-image: -moz-linear-gradient(0deg, rgb(1, 95, 201) 0%, rgb(12, 224, 255) 100%);
-    background-image: -webkit-linear-gradient(0deg, rgb(1, 95, 201) 0%, rgb(12, 224, 255) 100%);
+    /* background-image: -webkit-linear-gradient(0deg, rgb(1, 95, 201) 0%, rgb(12, 224, 255) 100%); */
     background-image: -ms-linear-gradient(0deg, rgb(1, 95, 201) 0%, rgb(12, 224, 255) 100%);
     border-radius: 50%;
     background-color: var(--insur-white);

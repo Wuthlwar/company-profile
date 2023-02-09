@@ -89,7 +89,7 @@
                                 <span class="icon-telephone"></span>
                             </div>
                             <div class="footer-widget__phone-text ">
-                                <a href="tel:959428751328">+959428751328</a>
+                                <a href="tel:+959777048315 , +959777048316">+959777048315 , +959777048316</a>
                                 <p>Call to Our Head Office</p>
                             </div>
                         </div>

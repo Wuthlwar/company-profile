@@ -189,9 +189,9 @@
                                             <img src="{{asset('assets/images/shapes/we-provide-shape-1.png')}}" alt="">
                                         </div>
                                         <div class="we-provide__tab-main-content-left">
-                                            <div class="we-provide__tab-main-content-icon">
+                                            {{-- <div class="we-provide__tab-main-content-icon">
                                                 <span class="icon-mission"></span>
-                                            </div>
+                                            </div> --}}
                                             <h3 class="we-provide__tab-main-content-title">Company Mission</h3>
                                             <p class="we-provide__tab-main-content-text">To be "One place, get all" with competitive price and innovative products to improve people living standard. To do operation excellence and make customer satisfy. To be sustainable growth together with
                                                 the stakeholders. To do emphasize to develop PRO 1 Global people capabilities by good organization, working culture and welfare. To apply innovation technology to develop business efficiency. To
@@ -199,7 +199,7 @@
                                             </p>
                                         </div>
                                         <div class="we-provide__tab-main-content-right">
-                                            <div class="we-provide__tab-main-content-right-img">
+                                            <div class="we-provide__tab-main-content-right-img mt-20">
                                                 <img src="{{asset('assets/photos/mission1.png')}}" alt="">
                                             </div>
                                         </div>
@@ -212,9 +212,9 @@
                                             <img src="{{asset('assets/images/shapes/we-provide-shape-1.png')}}" alt="">
                                         </div>
                                         <div class="we-provide__tab-main-content-left">
-                                            <div class="we-provide__tab-main-content-icon">
+                                            {{-- <div class="we-provide__tab-main-content-icon">
                                                 <span class="icon-mission"></span>
-                                            </div>
+                                            </div> --}}
                                             <h3 class="we-provide__tab-main-content-title">Company Vission</h3>
                                             <p class="we-provide__tab-main-content-text">To be the leader of the construction material and home improvement retail industry in Myanmar.
                                             </p>
@@ -247,7 +247,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/estab.png')}}" alt="">
+                        <img src="{{asset('assets/photos/estab.jpg')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -268,7 +268,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/milestone-mission.png')}}" alt="">
+                        <img src="{{asset('assets/photos/milestone-mission.jpg')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -289,7 +289,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/joint.png')}}" alt="">
+                        <img src="{{asset('assets/photos/joint.jpg')}}" alt="">
                     </div>
                     <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -343,7 +343,7 @@
                 <div class="about-two__middle">
                     <div class="about-two__img-box">
                         <div class="about-two__img">
-                            <img src="{{asset('assets/photos/about.jpg')}}" alt="">
+                            <img src="{{asset('assets/photos/about3.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -354,10 +354,10 @@
                         <li>
                             <div class="about-two__counter-single">
                                 <div class="about-two__counter-count count-box">
-                                    <h3 class="count-text" data-speed="4000" data-stop="2500">00</h3>
+                                    <h3 class="count-text" data-speed="4000" data-stop="3000">3000</h3>
                                 </div>
                                 <p class="about-two__counter-text-1">Total Employee</p>
-                                <p class="about-two__counter-text-2">We can employ 2500 employees in various PRO 1 company departments.
+                                <p class="about-two__counter-text-2">We can employ 3000 employees in various PRO 1 company departments.
                                 </p>
                             </div>
                         </li>
@@ -421,11 +421,12 @@
                 <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="services-two__single">
-                        <div class="services-two__icon-box">
+                        <div class="">
                             <div class="services-two__icon">
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.608 240.608" style="enable-background:new 0 0 240.608 240.608;" xml:space="preserve" width="50%">
+                                {{-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.608 240.608" style="enable-background:new 0 0 240.608 240.608;" xml:space="preserve" width="50%">
                                     <path style="fill:white" d="M208.789,29.972l31.819,31.82L91.763,210.637L0,118.876l31.819-31.82l59.944,59.942L208.789,29.972z" />
-                                </svg>
+                                </svg> --}}
+                                <img src="{{asset('assets/photos/a.png')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Accountability</a></h3>
@@ -436,9 +437,9 @@
                 <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="services-two__single">
-                        <div class="services-two__icon-box">
+                        <div class="">
                             <div class="services-two__icon">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; " xml:space="preserve" width="50%">
+                                {{-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; " xml:space="preserve" width="50%">
                                     <g>
                                         <g>
                                             <path style="fill:white" d="M256,0c-26.193,0-47.504,21.31-47.504,47.504S229.807,95.006,256,95.006s47.504-21.31,47.504-47.504S282.193,0,256,0z" />
@@ -481,18 +482,21 @@
                                                     c6.518,6.52,17.09,6.52,23.611,0C320.98,364.545,320.98,353.975,314.46,347.453z" />
                                         </g>
                                     </g>
-                                </svg>
+                                </svg> --}}
+                                <img src="{{asset('assets/photos/c.png')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Collaboration</a></h3>
 
                     </div>
                 </div>
+
+
                 <!--Services Two Single End-->
                 <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="services-two__single">
-                        <div class="services-two__icon-box">
+                        <div class="">
                             <div class="services-two__icon">
                                {{-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50%" height="124.245px" viewBox="0 0 124.245 124.245" style="enable-background:new 0 0 124.245 124.245;" xml:space="preserve">
                                     <g>
@@ -516,7 +520,7 @@
                                         </g>
                                     </g>
                                 </svg> --}}
-                                <a href="{{asset('assets/photos/lanthit.png')}}" class="img-popup"></a>
+                                <img src="{{asset('assets/photos/h.png')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Humility</a></h3>
@@ -527,11 +531,12 @@
                 <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                     <div class="services-two__single">
-                        <div class="services-two__icon-box">
+                        <div class="">
                             <div class="services-two__icon">
-                                <svg width="50%" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                {{-- <svg width="50%" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                                     <path style="fill: white;" fill="#000" d="M256.3 19.95c-41 0-74.1 32.7-74.1 73.27 0 22.98 8 33.78 16.8 47.78 5.9 9.3 12 20.1 15.5 35.6h83c3.5-15.9 9.6-26.8 15.5-36.2 8.9-14.1 16.8-24.7 16.8-47.18 0-40.57-32.8-73.27-73.5-73.27zm-142.1 7.7L81 35.4l81.2 40.25-48-48zm283.6 0l-48 48L431 35.4l-33.2-7.75zM210.5 79.2l45.5 22.7 45.5-22.7-20.8 83-17.4-4.4 11.2-45-18.5 9.3-18.5-9.3 11.2 45-17.4 4.4-20.8-83zM64 96.03v32.07l96-16.1-96-15.97zm384 0L352 112l96 16V96.03zM334.2 144.3l39.9 63.3 24.1-15.3-64-48zm-156.4.1l-64 48 24.1 15.3 39.9-63.3zM216 191v16h80v-16h-80zm34.4 28.3c-13.7 0-26.9.5-35.7 1-68.2 10.7-82.9 105.4-66.7 191.6h23.6l-1-105.4 18.6-.2c-1.4 63.7 1.6 126.6 5.5 189.7h51.4V390.3h18.7V496h50.4c4.5-65 5.9-131.5 6.5-189.7l18.7.2-1.1 105.4h24.6c18.3-88.5-4.8-178.9-67.1-190.6-9.4-1.4-24.9-2-40.6-2h-5.8z" />
-                                </svg>
+                                </svg> --}}
+                                <img src="{{asset('assets/photos/innovation.png')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Innovation</a>
@@ -543,9 +548,9 @@
                 <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                     <div class="services-two__single">
-                        <div class="services-two__icon-box">
+                        <div class="">
                             <div class="services-two__icon">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" width="60%">
+                                {{-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" width="60%">
                                     <path style="fill: white;" id="ai--ethics_1_" d="M16,31.36c-0.647,0-1.19-0.454-1.327-1.061c-2.894-0.264-5.588-1.377-7.828-3.235
                                     C6.613,27.249,6.319,27.36,6,27.36c-0.75,0-1.36-0.61-1.36-1.36c0-0.319,0.11-0.613,0.295-0.846
                                     c-1.857-2.24-2.971-4.934-3.235-7.827C1.094,17.19,0.64,16.647,0.64,16s0.454-1.19,1.061-1.327c0.264-2.894,1.377-5.587,3.235-7.828
@@ -585,7 +590,8 @@
                                     c0.164,0.732,0.819,1.28,1.6,1.28s1.436-0.548,1.6-1.279L7.4,17.36L7.4,17.36z M21.582,16.64h2.836L23,13.805L21.582,16.64z
                                     M7.583,16.64h2.835L9,13.805L7.583,16.64z" />
                                     <rect id="_Transparent_Rectangle" style="fill:none;" width="32" height="32" />
-                                </svg>
+                                </svg> --}}
+                                <img src="{{asset('assets/photos/ethics.png')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Ethics</a>
@@ -597,9 +603,9 @@
                 <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
                     <div class="services-two__single">
-                        <div class="services-two__icon-box">
+                        <div class="">
                             <div class="services-two__icon">
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 942.5 942.5" style="enable-background:new 0 0 942.5 942.5;" xml:space="preserve" width="50%">
+                                {{-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 942.5 942.5" style="enable-background:new 0 0 942.5 942.5;" xml:space="preserve" width="50%">
                                     <g>
                                         <g>
                                             <path style="fill: white;" d="M612.8,50v49.2l156.7,156.7V50c0-27.6-22.399-50-50-50h-56.7C635.2,0,612.8,22.4,612.8,50z" />
@@ -613,7 +619,8 @@
                                         C368.799,657.3,380,668.5,393.799,668.5z M496.9,668.5h25.7v62.1h-25.7V668.5z M418.799,556.4H446.9v62.1h-28.101V556.4z" />
                                         </g>
                                     </g>
-                                </svg>
+                                </svg> --}}
+                                <img src="{{asset('assets/photos/value.png')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Values</a></h3>
@@ -624,9 +631,9 @@
                 <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="700ms">
                     <div class="services-two__single">
-                        <div class="services-two__icon-box">
+                        <div class="">
                             <div class="services-two__icon">
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 491.86 491.86" style="enable-background:new 0 0 491.86 491.86;" xml:space="preserve" width="50%">
+                                {{-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 491.86 491.86" style="enable-background:new 0 0 491.86 491.86;" xml:space="preserve" width="50%">
                                     <g>
                                         <g>
                                             <polygon style="fill:white;" points="250.354,205.709 0,205.709 0,232.497 21.404,232.497 21.404,476.057 198.398,476.057
@@ -653,7 +660,8 @@
                                         h105.968c0.829,0,1.5-0.671,1.5-1.5v-17.145C205.034,177.825,204.363,177.154,203.534,177.154z" />
                                         </g>
                                     </g>
-                                </svg>
+                                </svg> --}}
+                                <img src="{{asset('assets/photos/en.png')}}">
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Energy</a>
@@ -677,20 +685,20 @@
                     <div class="about-one__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                         <div class="about-one__img">
                             <a target="_blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18">
-                                <img src="{{asset('assets/photos/e-commerceads5.png')}}" alt=""></a>
+                                <img src="{{asset('assets/photos/e-commerceads5.jpg')}}" alt=""></a>
                         </div>
                         <!-- <div class="about-one__img-two">
                             <img src="assets//secbanner5.png" alt="">
                         </div> -->
                         <a target="_blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18">
-                            <div class="about-one__experience">
+                            {{-- <div class="about-one__experience">
 
                                 <h2 class="about-one__experience-year">Go TO
                                 </h2>
                                 <p class="about-one__experience-text">Online Shop<br>E-commerce</p>
 
 
-                            </div>
+                            </div> --}}
                         </a>
                         <!-- <div class="about-one__shape-1">
                             <img src="assets/photos/secbanner5.png" alt="">
@@ -2281,7 +2289,7 @@
                             <a href="tel:959428751328"><i class="fas fa-phone"></a></i>
                         </div>
                         <div class="cta-one__call-number">
-                            <a href="tel:959428751328">+959428751328</a>
+                            <a href="tel:+959777048315 , +959777048316">+959777048315 , +959777048316</a>
                             <p>Call to Our Phone</p>
                         </div>
                     </div>
@@ -2312,7 +2320,7 @@
                                 <img src="{{asset('assets/images/shapes/section-title-shape-2.png')}}" alt="">
                             </div>
                         </div>
-                        <h2 class="section-title__title">Feel free to get in touch</h2>
+                        <h2 class="section-title__title">To contact our Head Office</h2>
                     </div>
                     <div class="contact-page__call-email">
                         <div class="contact-page__call-icon">
@@ -2320,7 +2328,7 @@
                         </div>
                         <div class="contact-page__call-email-content">
                             <h4>
-                                <a href="tel:959428751328" class="contact-page__call-number">+959428751328</a>
+                                <a href="tel:+959777048315, +959777048316" class="contact-page__call-number">+959777048315 , +959777048316</a>
                                 <a href="mailto:info@pro1globalhomecenter.com">info@pro1globalhomecenter.com</a>
                             </h4>
                         </div>
