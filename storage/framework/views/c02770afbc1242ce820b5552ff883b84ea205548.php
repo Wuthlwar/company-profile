@@ -1401,13 +1401,13 @@
         <div class="row filter-layout masonary-layout">
             <?php $__currentLoopData = $acts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $act): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
+                <div class="portfolio__single ">
                     <div class="">
                         <a href="<?php echo e(route('act_detail',$act->id)); ?>">
                         <img src="<?php echo e(asset("storage/uploads/activity/$act->preview_img")); ?>" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
-                        border: solid 1px #CCC">
+                        border: solid 1px #CCC" class="rounded">
                         
                         <div>
                             <ul class="list-unstyled about-one__points">

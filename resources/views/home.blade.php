@@ -1588,13 +1588,13 @@
         <div class="row filter-layout masonary-layout">
             @foreach ($acts as $act)
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
+                <div class="portfolio__single ">
                     <div class="">
                         <a href="{{route('act_detail',$act->id)}}">
                         <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="" style="object-fit:contain;
                         width:380px;
                         height:420px;
-                        border: solid 1px #CCC">
+                        border: solid 1px #CCC" class="rounded">
                         {{-- <div class="">
                             <a href="{{route('act_detail',$act->id)}}">{{ $act->title }}</a>
                         </div> --}}
