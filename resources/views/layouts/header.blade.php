@@ -31,12 +31,12 @@
                                     @switch($locale)
                                         @case('en')
                                             <a class="iq-sub-card" href="{{ route('lang','mm')}}">
-                                                Eng
+                                                <img src="{{ asset('assets/photos/uk.png') }}" alt="" style="width:20px">
                                             </a>
                                         @break
                                         @case('mm')
                                         <a class="iq-sub-card" href="{{ route('lang','en')}}">
-                                            Myan
+                                            <img src="{{ asset('assets/photos/myanmar.png') }}" alt="" style="width:20px">
                                         </a>
                                         @break
                                         @default

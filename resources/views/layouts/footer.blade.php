@@ -47,32 +47,65 @@
                     <div class="footer-widget__column footer-widget__gallery clearfix">
                         <h3 class="footer-widget__title">Social Media</h3>
                         <ul class="footer-widget__gallery-list list-unstyled clearfix">
-                            <li class="col-md-4 ">
+                            <li class="col-2 ">
                                 <div class="footer-widget__gallery-img ">
 
-                                    <img src="{{asset('assets/photos/sc-fb8.png')}} " alt=" ">
+                                    <img src="{{asset('assets/photos/facebook.png')}} " alt=" ">
 
                                     <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><span class="fa fa-link "></span></a>
                                 </div>
                             </li>
-                            <li class="col-md-4 ">
+                            <li class="col-2 ">
                                 <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/photos/sc-vb6.png')}} " alt=" ">
+
+                                    <img src="{{asset('assets/photos/viber.png')}} " alt=" ">
+
+                                    <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><span class="fa fa-link "></span></a>
+                                </div>
+                            </li>
+                            <li class="col-2 ">
+                                <div class="footer-widget__gallery-img ">
+
+                                    <img src="{{asset('assets/photos/yt.png')}} " alt=" ">
+
+                                    <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><span class="fa fa-link "></span></a>
+                                </div>
+                            </li>
+                            <li class="col-2 ">
+                                <div class="footer-widget__gallery-img ">
+
+                                    <img src="{{asset('assets/photos/instagram.png')}} " alt=" ">
+
+                                    <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><span class="fa fa-link "></span></a>
+                                </div>
+                            </li>
+
+                            <li class="col-2 ">
+                                <div class="footer-widget__gallery-img ">
+
+                                    <img src="{{asset('assets/photos/telegram.png')}} " alt=" ">
+
+                                    <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><span class="fa fa-link "></span></a>
+                                </div>
+                            </li>
+                            {{-- <li class="col-md-4 ">
+                                <div class="footer-widget__gallery-img ">
+                                    <img src="{{asset('assets/photos/viber.png')}} " alt=" ">
                                     <a target="_blank" href="https://invite.viber.com/?g2=AQB%2BIxt%2BiHONWkjqz%2FbmgmTW2jaFd73U66dVh7ZdzTh5iUk5ZWHHexew8X%2F%2FPIXM"><span class="fa fa-link "></span></a>
                                 </div>
                             </li>
                             <li class="col-md-4 ">
                                 <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/photos/sc-yt1.png ')}}" alt=" ">
+                                    <img src="{{asset('assets/photos/youtube.png ')}}" alt="">
                                     <a target="_blank" href="https://www.youtube.com/channel/UCvTMpi4etgXlCdnIEMkO8Ig "><span class="fa fa-link "></span></a>
                                 </div>
                             </li>
                             <li class="col-md-4 ">
                                 <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/photos/sc-yt3.png')}} " alt=" ">
+                                    <img src="{{asset('assets/photos/insta.png')}} " alt="">
                                     <a target="_blank" href="https://instagram.com/pro1_global_home_center?igshid=YmMyMTA2M2Y= "><span class="fa fa-link "></span></a>
                                 </div>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

@@ -2282,7 +2282,7 @@
 </section>
 <!-- Our Activities End -->
 <!-- Call Head Office Start -->
-<section class="cta-one cta-three">
+{{-- <section class="cta-one cta-three">
     <div class="container">
         <div class="cta-one__content">
             <div class="cta-one__inner">
@@ -2308,7 +2308,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- Call Head Office End -->
 <!-- Contact Us Start -->
 <section class="contact-page" id="contactus">

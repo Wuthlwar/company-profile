@@ -18,6 +18,7 @@
                     <th scope="col">Phone No</th>
                     <th scope="col">Subject</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@
                     <td scope="col">{{  $feedback->ph_no }}</td>
                     <td scope="col">{{  $feedback->subject }}</td>
                     <td scope="col">{{  $feedback->description }}</td>
+                    <td scope="col">{{  $feedback->created_at }}</td>
 
                 </tr>
             @endforeach
