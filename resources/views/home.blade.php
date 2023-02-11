@@ -343,7 +343,7 @@
                 <div class="about-two__middle">
                     <div class="about-two__img-box">
                         <div class="about-two__img">
-                            <img src="{{asset('assets/photos/about3.jpg')}}" alt="">
+                            <img src="{{asset('assets/photos/about3.png')}}" alt="">
                         </div>
                     </div>
                 </div>
