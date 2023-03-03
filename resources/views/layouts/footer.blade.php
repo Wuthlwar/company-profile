@@ -39,7 +39,7 @@
                         </ul>
                         <div class="footer-widget__open-hour ">
                             <h3 class="footer-widget__open-hour-title ">Open Hours</h3>
-                            <h3 class="footer-widget__open-hour-text ">Mon – Sat: 8:00 am to 6:00 pm Sunday: Closed</h3>
+                            <h3 class="footer-widget__open-hour-text ">Mon – Sat: 9:00 am to 5:00 pm Sunday: Closed</h3>
                         </div>
                     </div>
                 </div>
