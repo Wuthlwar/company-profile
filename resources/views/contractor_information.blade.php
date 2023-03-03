@@ -25,7 +25,7 @@
                     <div class="about-four__right">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">Contractor Information</p>
+                                <p class="section-sub-title">{{__('contractorinformation.contra_title')}}</p>
                                 <div class="section-title-shape-1">
                                     <img src="{{asset('/assets/images/shapes/section-title-shape-1.png')}}" alt="">
                                 </div>
@@ -37,7 +37,7 @@
                         </div>
                         <p class="about-four__text-1">
 
-                            One of the best services is contractor information services. We support contractor information whoever buys from us and require installation services with reliable and professional contractors.</p>
+                        {{__('contractorinformation.contra_info')}}</p>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     <div class="brand-one__title">
-                        <h2>Take a look at the Super Services of PRO 1 Global Home Center</h2>
+                        <h2>{{__('contractorinformation.contra_look')}}</h2>
                     </div>
                 </div>
                 <div class="col-xl-9">

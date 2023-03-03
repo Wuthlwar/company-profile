@@ -31,5 +31,4 @@
 
         </div>
     </section>
-    <!--Portfolio Details End-->
 @endsection

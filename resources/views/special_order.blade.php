@@ -25,7 +25,7 @@
                     <div class="about-four__right">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">Special Order</p>
+                                <p class="section-sub-title">{{__('specialorder.special_info_title')}}</p>
                                 <div class="section-title-shape-1">
                                     <img src="{{asset('/assets/images/shapes/section-title-shape-1.png')}}" alt="">
                                 </div>
@@ -36,7 +36,7 @@
 
                         </div>
                         <p class="about-four__text-1">
-                            PRO1 Global Home Center also provides special order services for your convenience.</p>
+                            {{__('specialorder.special_info')}}</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     <div class="brand-one__title">
-                        <h2>Take a look at the Super Services of PRO 1 Global Home Center</h2>
+                        <h2><{{__('specialorder.special_look')}}/h2>
                     </div>
                 </div>
                 <div class="col-xl-9">

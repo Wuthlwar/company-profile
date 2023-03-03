@@ -25,7 +25,7 @@
                     <div class="about-four__right">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">Product Return</p>
+                                <p class="section-sub-title">{{__('productreturn.pro_return_info_title')}}</p>
                                 <div class="section-title-shape-1">
                                     <img src="{{asset('/assets/images/shapes/section-title-shape-1.png')}}" alt="">
                                 </div>
@@ -36,7 +36,7 @@
 
                         </div>
                         <p class="about-four__text-1">
-                            At PRO1 Global Home Center, we also provide the service of exchanging products that you bought incorrectly for your convenience.</p>
+                            At PRO1 Global Home Center, we also provide the service of exchanging products that you bought incorrectly for your convenience.{{__('productreturn.pro_return_info')}}</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     <div class="brand-one__title">
-                        <h2>Take a look at the Super services of PRO 1 Global Home Center</h2>
+                        <h2>Take a look at the Super services of PRO 1 Global Home Center{{__('productreturn.pro_return_look')}}</h2>
                     </div>
                 </div>
                 <div class="col-xl-9">

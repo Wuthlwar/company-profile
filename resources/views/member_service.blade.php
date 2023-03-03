@@ -35,14 +35,46 @@
                             </div>
 
                         </div>
-                        <p class="about-four__text-1">
-                            Our PRO 1 Global VIP membership service is we're giving back VIP members points for every purchase and can redeem VIP presents, cash coupons, and others with member points. And the best benefit is VIP members get special discounted prices for a specific
-                            brand. If you want to apply for PRO 1 Global VIP membership, you will get it by simply purchasing 500,000 Kyats per day by completing the required information at the Service Counter.
+                        <p class="">
+                            {{__('memberservice.mem_info1')}}
                         </p>
-                        <h3>How to Redeem PRO 1 Global Member Card</h3>
-                        <p>Receive a PRO 1 Global Member Card for every 500,000 Kyats spent on Purchasing at the service counter. (Not calculate member point for 1st time Purchased)</p>
-                        <p>Not include Structure Products and Project sales.</p>
-                        <p>Member Card Discount</p>
+                        <h4>{{__('memberservice.mem_info2')}}</h4>
+                        <p>{{__('memberservice.mem_info3')}}</p>
+                        <p>{{__('memberservice.mem_info4')}}</p>
+
+                        <h4>{{__('memberservice.mem_info5')}}</h4>
+                        <p>{{__('memberservice.mem_info6')}}</p>
+
+                        <h4>{{__('memberservice.mem_info7')}}</h4>
+                        <p>{{__('memberservice.mem_info8')}}</p>
+                        <p>{{__('memberservice.mem_info9')}}</p>
+                        <p>{{__('memberservice.mem_info10')}}</p>
+                        <p>{{__('memberservice.mem_info11')}}</p>
+
+                        <h4>{{__('memberservice.mem_info12')}}</h4>
+                        <p>{{__('memberservice.mem_info13')}}</p>
+                        <p>{{__('memberservice.mem_info14')}}</p>
+                        <p>{{__('memberservice.mem_info15')}}</p>
+                        <p>{{__('memberservice.mem_info16')}}</p>
+                        <p>{{__('memberservice.mem_info17')}}</p>
+                        <p>{{__('memberservice.mem_info18')}}</p>
+                        <p>{{__('memberservice.mem_info19')}}</p>
+
+                        <h4>{{__('memberservice.mem_info12')}}</h4>
+                        <p>{{__('memberservice.mem_info20')}}</p>
+                        <p>{{__('memberservice.mem_info21')}}</p>
+                        <p>{{__('memberservice.mem_info22')}}</p>
+                        <p>{{__('memberservice.mem_info23')}}</p>
+                        <p>{{__('memberservice.mem_info24')}}</p>
+                        <p>{{__('memberservice.mem_info25')}}</p>
+                        <p>{{__('memberservice.mem_info26')}}</p>
+                        <p>{{__('memberservice.mem_info27')}}</p>
+
+                        <h4>{{__('memberservice.mem_info28')}}</h4>
+                        <p>{{__('memberservice.mem_info29')}}</p>
+                        <p>{{__('memberservice.mem_info30')}}</p>
+                        <p>{{__('memberservice.mem_info31')}}</p>
+                        <p>{{__('memberservice.mem_info32')}}</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +88,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     <div class="brand-one__title">
-                        <h2>Take a look at the Super Services of PRO 1 Global Home Center</h2>
+                        <h2>{{__('memberservice.mem_look')}}</h2>
                     </div>
                 </div>
                 <div class="col-xl-9">

@@ -29,7 +29,7 @@
                     <div class="about-four__right">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">Production Information</p>
+                                <p class="section-sub-title">{{__('productinformation.pro_title')}}</p>
                                 <div class="section-title-shape-1">
                                     <img src="{{asset('/assets/images/shapes/section-title-shape-1.png')}}" alt="">
                                 </div>
@@ -39,7 +39,7 @@
                             </div>
 
                         </div>
-                        <p class="about-four__text-1">At our PRO1 Global Home Center, we provide a professional explanation of product details by our experienced sales staff.</p>
+                        <p class="about-four__text-1">{{__('productinformation.produ_info')}}</p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     <div class="brand-one__title">
-                        <h2>Take a look at the Super services of PRO 1 Global Home Center</h2>
+                        <h2>{{__('productinformation.ser_look')}}</h2>
                     </div>
                 </div>
                 <div class="col-xl-9">
