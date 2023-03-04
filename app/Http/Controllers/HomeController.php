@@ -32,6 +32,17 @@ class HomeController extends Controller
         return view('joint_venture');
     }
 
+    public function coporate()
+    {
+        return view('coporate');
+    }
+
+    public function accountability()
+    {
+        return view('accountability');
+    }
+
+
     public function product_information()
     {
         return view('product_information');

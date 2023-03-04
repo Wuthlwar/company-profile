@@ -88,31 +88,12 @@
                                     <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><span class="fa fa-link "></span></a>
                                 </div>
                             </li>
-                            {{-- <li class="col-md-4 ">
-                                <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/photos/viber.png')}} " alt=" ">
-                                    <a target="_blank" href="https://invite.viber.com/?g2=AQB%2BIxt%2BiHONWkjqz%2FbmgmTW2jaFd73U66dVh7ZdzTh5iUk5ZWHHexew8X%2F%2FPIXM"><span class="fa fa-link "></span></a>
-                                </div>
-                            </li>
-                            <li class="col-md-4 ">
-                                <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/photos/youtube.png ')}}" alt="">
-                                    <a target="_blank" href="https://www.youtube.com/channel/UCvTMpi4etgXlCdnIEMkO8Ig "><span class="fa fa-link "></span></a>
-                                </div>
-                            </li>
-                            <li class="col-md-4 ">
-                                <div class="footer-widget__gallery-img ">
-                                    <img src="{{asset('assets/photos/insta.png')}} " alt="">
-                                    <a target="_blank" href="https://instagram.com/pro1_global_home_center?igshid=YmMyMTA2M2Y= "><span class="fa fa-link "></span></a>
-                                </div>
-                            </li> --}}
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                     <div class="footer-widget__column footer-widget__newsletter">
                         <h3 class="footer-widget__title ">Useful Link</h3>
-                        <!-- <p class="footer-widget__newsletter-text "><a target="_blank " href="https://pro1globalhomecenter.com/news.html?divisionId=11&townshipId=18 ">- News</a></p> -->
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="https://pro1globalhomecenter.com/work_with_us_data.html?divisionId=1&townshipId=18">- Work With Us</a></p>
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="https://pro1globalhomecenter.com/supplier_info.html?divisionId=1&townshipId=18">- Become Our Supplier</a></p>
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18">- Go To E-commerce Website</a></p>
@@ -134,7 +115,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© All Copyright 2022 by PRO1 Global Company</p>
+                        <p class="site-footer__bottom-text">© All Copyright 2023 by PRO1 Global Company</p>
                     </div>
                 </div>
             </div>

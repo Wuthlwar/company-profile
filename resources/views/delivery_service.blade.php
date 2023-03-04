@@ -29,7 +29,7 @@
                     <div class="about-four__right">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">Delivery Services</p>
+                                <p class="section-sub-title">{{__('deliveryservice.deli_info_title')}}</p>
                                 <div class="section-title-shape-1">
                                     <img src="{{asset('/assets/images/shapes/section-title-shape-1.png')}}" alt="">
                                 </div>
@@ -39,7 +39,7 @@
                             </div>
 
                         </div>
-                        <p class="about-four__text-1">Mainly service of our PRO1 Global Home Center is that we provide fast and accurate home delivery of your purchased items.</p>
+                        <p class="about-four__text-1">{{__('deliveryservice.deli_information')}}</p>
 
 
                     </div>
@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     <div class="brand-one__title">
-                        <h2>Take a look at the Super Services of PRO 1 Global Home Center</h2>
+                        <h2>{{__('deliveryservice.deli_look')}}</h2>
                     </div>
                 </div>
                 <div class="col-xl-9">

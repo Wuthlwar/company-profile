@@ -29,6 +29,8 @@ Route::get('/act_detail/{act_id}',function($id){
 Route::get('/establish_year', [HomeController::class, 'establish_year'])->name('establish_year');
 Route::get('/mile_stone', [HomeController::class, 'mile_stone'])->name('mile_stone');
 Route::get('/joint_venture', [HomeController::class, 'joint_venture'])->name('joint_venture');
+Route::get('/coporate', [HomeController::class, 'coporate'])->name('coporate');
+Route::get('/accountability', [HomeController::class, 'accountability'])->name('accountability');
 
 //Services
 Route::get('/product_information', [HomeController::class, 'product_information'])->name('product_information');
