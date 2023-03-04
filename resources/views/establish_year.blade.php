@@ -14,9 +14,7 @@
                         </div>
                         <div class="news-details__content">
                             <h3 class="news-details__title">PRO 1 Global Home Center</h3>
-                            <p class="news-details__text-1">PRO1 GLOBAL HOME CENTER has an experience of home building and living store center 10 years, which offers construction material, home decorative products, tools and equipment used in construction, home improvement, and
-                                household and gardening decoration in modern trade warehouse style. Currently, PRO 1 Global Home Center has totally 11 branches and trying to expansion branches to cover all Myanmar region and become the leader of one
-                                stop service home living product center</p>
+                            <p class="news-details__text-1">{{__('establishyear.establish_detail')}}</p>
                         </div>
                     </div>
                 </div>
@@ -24,7 +22,7 @@
                     <div class="sidebar">
                         <div class="sidebar__single sidebar__search">
                             <form action="#" class="sidebar__search-form">
-                                <h5>If you want to go to PRO 1 Global Coampany's Social Media, click on the relevant Social Platform Photos below</h5>
+                                <h5>{{__('establishyear.establish_social')}}</h5>
                             </form>
                         </div>
                         <div class="sidebar__single sidebar__post">

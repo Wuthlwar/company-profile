@@ -149,32 +149,6 @@
                                         <div class="we-provide-shape-1">
                                             <img src="{{asset('assets/images/shapes/we-provide-shape-1.png')}}" alt="">
                                         </div>
-                                        {{-- <div class="we-provide__tab-main-content-left">
-                                            <div class="we-provide__tab-main-content-icon">
-                                                <span class="icon-mission"></span>
-                                            </div>
-                                            <h3 class="we-provide__tab-main-content-title">Our Values</h3>
-                                            <p class="we-provide__tab-main-content-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore dolore magna aliqua enim ad minim veniam quis nostrud.
-                                            </p>
-                                            <ul class="list-unstyled we-provide__tab-main-content-points">
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>Pina & Associates Insurance</p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>Payment at Contingency</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div> --}}
                                         <div class="we-provide__tab-main-content-right">
                                             <div class="we-provide__tab-main-content-right-img">
                                                 <img src="{{asset('assets/images/resources/we-provide-tab-main-content-right-img.jpg')}}" alt="">
@@ -192,10 +166,8 @@
                                             {{-- <div class="we-provide__tab-main-content-icon">
                                                 <span class="icon-mission"></span>
                                             </div> --}}
-                                            <h3 class="we-provide__tab-main-content-title">Company Mission</h3>
-                                            <p class="we-provide__tab-main-content-text">To be "One place, get all" with competitive price and innovative products to improve people living standard. To do operation excellence and make customer satisfy. To be sustainable growth together with
-                                                the stakeholders. To do emphasize to develop PRO 1 Global people capabilities by good organization, working culture and welfare. To apply innovation technology to develop business efficiency. To
-                                                operate based on social-responsible and good relationships with the environment.
+                                            <h3 class="we-provide__tab-main-content-title">{{__('home.mission_title')}}</h3>
+                                            <p class="we-provide__tab-main-content-text">{{__('home.mission_detail')}}
                                             </p>
                                         </div>
                                         <div class="we-provide__tab-main-content-right">
@@ -215,8 +187,8 @@
                                             {{-- <div class="we-provide__tab-main-content-icon">
                                                 <span class="icon-mission"></span>
                                             </div> --}}
-                                            <h3 class="we-provide__tab-main-content-title">Company Vission</h3>
-                                            <p class="we-provide__tab-main-content-text">To be the leader of the construction material and home improvement retail industry in Myanmar.
+                                            <h3 class="we-provide__tab-main-content-title">{{__('home.vission_title')}}</h3>
+                                            <p class="we-provide__tab-main-content-text">{{__('home.vission_detail')}}
                                             </p>
                                         </div>
                                         <div class="we-provide__tab-main-content-right">
@@ -317,7 +289,7 @@
                 <div class="about-two__left">
                     <div class="section-title text-left">
                         <div class="section-sub-title-box">
-                            <p class="section-sub-title">About company</p>
+                            <p class="section-sub-title">{{__('home.about_title')}}</p>
                             <div class="section-title-shape-1">
                                 <img src="{{asset('assets/images/shapes/section-title-shape-1.png')}}" alt="">
                             </div>
@@ -327,12 +299,10 @@
                         </div>
 
                     </div>
-                    <p class="about-two__text">PRO 1 Global Home Center is the leading of home building & home living product shopping center in Myanmar. PRO 1 Global Home Center is dedicated to provide the right product with good services in reasonable price to develop
-                        Myanmar people living standard by get everything's in one place like PRO 1 Global Home Center motto “One Place, Get All”. Nowadays, we have 14 product categories to cover from the construction to decoration in one place.
-                        We are aiming to improve continuously in our service standard & product variety for make our Country more successful in the future.</p>
+                    <p class="about-two__text">{{__('home.about_detail1')}}</p>
                     <div class="about-two__awards-box">
                         <div class="about-two__awards-inner">
-                            <p class="about-two__awards-content">The Biggest Building Materials & Home Living Product Shopping Center In Myanmar</p>
+                            <p class="about-two__awards-content">{{__('home.about_detail2')}}</p>
                         </div>
                     </div>
 
@@ -356,8 +326,8 @@
                                 <div class="about-two__counter-count count-box">
                                     <h3 class="count-text" data-speed="4000" data-stop="3000">3000</h3>
                                 </div>
-                                <p class="about-two__counter-text-1">Total Employee</p>
-                                <p class="about-two__counter-text-2">We can employ 3000 employees in various PRO 1 company departments.
+                                <p class="about-two__counter-text-1">{{__('home.about_emptitle')}}</p>
+                                <p class="about-two__counter-text-2">{{__('home.about_empdetail')}}
                                 </p>
                             </div>
                         </li>
@@ -366,8 +336,8 @@
                                 <div class="about-two__counter-count count-box">
                                     <h3 class="count-text" data-speed="4000" data-stop="12">00</h3>
                                 </div>
-                                <p class="about-two__counter-text-1">Current Branch</p>
-                                <p class="about-two__counter-text-2">Our PRO1 Company has been able to open 12 branches in various regions.
+                                <p class="about-two__counter-text-1">{{__('home.about_curbranch1')}}</p>
+                                <p class="about-two__counter-text-2">{{__('home.about_curbranch2')}}
                                 </p>
                             </div>
                         </li>
@@ -377,8 +347,8 @@
                                     <h3 class="count-text" data-speed="4000" data-stop="5">00</h3>
                                     <!-- <span class="about-two__counter-percent">%</span> -->
                                 </div>
-                                <p class="about-two__counter-text-1">Division or Region</p>
-                                <p class="about-two__counter-text-2">We have been able to open branches in 5 divisions and regions of Myanmar.
+                                <p class="about-two__counter-text-1">{{__('home.about_division1')}}</p>
+                                <p class="about-two__counter-text-2">{{__('home.about_division2')}}
                                 </p>
                             </div>
                         </li>
@@ -888,7 +858,7 @@
                         <img src="{{asset('assets/images/shapes/section-title-shape-2.png')}}" alt="">
                     </div>
                 </div>
-                <h2 class="section-title__title">Information of our currently opened centers</h2>
+                <h2 class="section-title__title">{{__('home.center_title')}}</h2>
             </div>
         </div>
         <div class="section-sub-title-box">
@@ -1369,7 +1339,7 @@
             <div class="col-xl-12">
                 <div class="section-title text-left">
                     <div class="section-sub-title-box">
-                        <p class="section-sub-title">Our Activities</p>
+                        <p class="section-sub-title">{{__('home.activities_title')}}</p>
                         <div class="section-title-shape-1">
                             <img src="{{asset('assets/images/shapes/section-title-shape-1.png')}}" alt="">
                         </div>
@@ -1377,7 +1347,7 @@
                             <img src="{{asset('assets/images/shapes/section-title-shape-2.png')}}" alt="">
                         </div>
                     </div>
-                    <p class="section-title__title">Let's take a look at<br> our company's activities </p>
+                    <p class="section-title__title">{{__('home.activities_title1')}}<br> {{__('home.activities_title2')}} </p>
                 </div>
                 <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled ">
                     <li data-filter=".filter-item " class="active"><span class="filter-text">All</span></li>
