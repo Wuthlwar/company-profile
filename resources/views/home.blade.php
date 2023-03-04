@@ -519,17 +519,17 @@
                             <p class="section-sub-title"></p>
 
                         </div>
-                        <h2 class="section-title__title"> E-commerce website</h2>
+                        <h2 class="section-title__title">{{__('home.e_com1')}}</h2>
                     </div>
                     <p class="about-one__text-1">
-                        Benefit of our e-commerce website:</p>
+                    {{__('home.e_com2')}}</p>
                     <ul class="list-unstyled about-one__points">
                         <li>
                             <div class="icon">
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Can find the product from anywhere.</p>
+                                <p>{{__('home.e_com3')}}</p>
                             </div>
 
                         </li>
@@ -540,7 +540,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Can check the promotion and special offer.</p>
+                                <p>{{__('home.e_com4')}}</p>
                             </div>
 
                         </li>
@@ -551,7 +551,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Can check product information and service information.</p>
+                                <p>{{__('home.e_com5')}}</p>
                             </div>
 
                         </li>
@@ -562,7 +562,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Can place the order from anywhere.</p>
+                                <p>{{__('home.e_com6')}}</p>
                             </div>
 
                         </li>
@@ -573,7 +573,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Delivery from all branches on Current Ecommerce Website.</p>
+                                <p>{{__('home.e_com7')}}</p>
                             </div>
 
                         </li>

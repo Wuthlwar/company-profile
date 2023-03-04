@@ -40,4 +40,13 @@ return [
     'about_curbranch2'              => 'Our PRO1 Company has been able to open 12 branches in various regions.',
     'about_division1'               => 'Division or Region',
     'about_division2'               => 'We have been able to open branches in 5 divisions and regions of Myanmar.',
+
+    'e_com1'                        => 'E-commerce website',
+    'e_com2'                        => 'Benefit of our e-commerce website:',
+    'e_com3'                        => 'Can find the product from anywhere.',
+    'e_com4'                        => 'Can check the promotion and special offer.',
+    'e_com5'                        => 'Can check product information and service information.',
+    'e_com6'                        => 'Can place the order from anywhere.',
+    'e_com7'                        => 'Delivery from all branches on Current Ecommerce Website.',
+
 ];
