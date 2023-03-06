@@ -73,27 +73,27 @@
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
                                     <li class="dropdown">
-                                        <a href="{{route('home')}}">Home </a>
+                                        <a href="{{route('home')}}">{{__('header.menu_1')}}</a>
 
                                     </li>
                                     <li class="dropdown current ">
-                                        <a href="{{route('home')}}#ourServices">Our Services</a>
+                                        <a href="{{route('home')}}#ourServices">{{__('header.menu_2')}}</a>
 
                                     </li>
                                     <li class="dropdown ">
-                                        <a href="{{route('home')}}#ourCenter">{{__('our_center.our_center')}}</a>
+                                        <a href="{{route('home')}}#ourCenter">{{__('header.menu_3')}}</a>
 
                                     </li>
                                     <li class="dropdown">
-                                        <a href="{{route('home')}}#ourPatner">Our Partners</a>
+                                        <a href="{{route('home')}}#ourPatner">{{__('header.menu_4')}}</a>
 
                                     </li>
                                     <li class="dropdown">
-                                        <a href="{{route('home')}}#ouractivities">Our Activities</a>
+                                        <a href="{{route('home')}}#ouractivities">{{__('header.menu_5')}}</a>
 
                                     </li>
                                     <li class="dropdown">
-                                        <a href="{{route('home')}}#contactus">Contact Us</a>
+                                        <a href="{{route('home')}}#contactus">{{__('header.menu_6')}}</a>
 
                                     </li>
                                 </ul>

@@ -395,7 +395,7 @@
                                 <img src="{{asset('assets/photos/a.png')}}">
                             </div>
                         </div>
-                        <h3 class="services-two__title"><a href="" onclick="return false;"><a href="{{route('accountability')}}">Accountability</a></h3>
+                        <h3 class="services-two__title"><a href="" onclick="return false;">Accountability</a></h3>
 
                     </div>
                 </div>
@@ -1156,7 +1156,7 @@
                                     <img src="assets/images/shapes/section-title-shape-2.png" alt="">
                                 </div>
                             </div>
-                            <p class="section-title__title">Let's take a look at the pataner companies<br>we work with</p>
+                            <p class="section-title__title">{{__('home.part_1')}}<br>{{__('home.part_2')}}</p>
                         </div>
                     </div>
                 </div>
@@ -2103,7 +2103,7 @@
                         </div>
                         <h2 class="section-title__title">To contact our Head Office</h2>
                     </div>
-                    <div class="contact-page__call-email">
+                    {{-- <div class="contact-page__call-email">
                         <div class="contact-page__call-icon">
                             <i class="fas fa-phone"></i>
                         </div>
@@ -2113,8 +2113,8 @@
                                 <a href="mailto:info@pro1globalhomecenter.com">info@pro1globalhomecenter.com</a>
                             </h4>
                         </div>
-                    </div>
-                    <p class="contact-page__location-text">Near Arlain Ngar Sint Pagoda,<br> Lanthit, Insein</p>
+                    </div> --}}
+                    {{-- <p class="contact-page__location-text">Near Arlain Ngar Sint Pagoda,<br> Lanthit, Insein</p> --}}
                 </div>
             </div>
             <div class="col-xl-8 col-lg-7">

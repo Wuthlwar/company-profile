@@ -111,8 +111,8 @@
                                             <img src="assets/images/shapes/testimonial-two-shape-2.png" alt="">
                                         </div>
                                         <div class="testimonial-two__content-box">
-                                            <h5 class="testimonial-two__client-name">Accountability</h5>
-                                            <p class="testimonial-two__text-2">Accountability is a willingness to accept responsibility for our own actions and understand that what is our assignment and what we should and shouldn't do even nobody assign to do. Don't only attendee the working time then go back home.PRO1, 1Team.</p>
+                                            <h5 class="testimonial-two__client-name">{{__('coporate.coporate_1')}}</h5>
+                                            <p class="testimonial-two__text-2">{{__('coporate.coporate_2')}}</p>
                                         </div>
                                         <div class="testimonial-two__client-review">
                                             <i class="fa fa-star"></i>
@@ -143,8 +143,8 @@
                                             <img src="assets/images/shapes/testimonial-two-shape-2.png" alt="">
                                         </div>
                                         <div class="testimonial-two__content-box">
-                                            <h5 class="testimonial-two__client-name">Collaboration </h5>
-                                            <p class="testimonial-two__text-2">Collaboration is the action of working and supporting to other person and department to complete the organization goal with team work and understanding each other.</p>
+                                            <h5 class="testimonial-two__client-name"> {{__('coporate.coporate_3')}}</h5>
+                                            <p class="testimonial-two__text-2">{{__('coporate.coporate_4')}}</p>
                                         </div>
                                         <div class="testimonial-two__client-review">
                                             <i class="fa fa-star"></i>
@@ -177,9 +177,8 @@
                                             <img src="assets/images/shapes/testimonial-two-shape-2.png" alt="">
                                         </div>
                                         <div class="testimonial-two__content-box">
-                                            <h5 class="testimonial-two__client-name">
-                                                Humility</h5>
-                                            <p class="testimonial-two__text-2">Humility is the kind of good attitude and action that being humble and respect when interacting with other people including customers, suppliers, senior colleagues and junior colleagues.</p>
+                                            <h5 class="testimonial-two__client-name">{{__('coporate.coporate_5')}}</h5>
+                                            <p class="testimonial-two__text-2">{{__('coporate.coporate_6')}}</p>
                                         </div>
                                         <div class="testimonial-two__client-review">
                                             <i class="fa fa-star"></i>
@@ -210,8 +209,8 @@
                                             <img src="assets/images/shapes/testimonial-two-shape-2.png" alt="">
                                         </div>
                                         <div class="testimonial-two__content-box">
-                                            <h5 class="testimonial-two__client-name">Innovation</h5>
-                                            <p class="testimonial-two__text-2">Innovation is opening to learn the new thing and challenge to improve an idea, working process and efficiency to complete business goal. In example of change familiar working process by paper to software for paperless, reduce the working time and human error.</p>
+                                            <h5 class="testimonial-two__client-name">{{__('coporate.coporate_7')}}</h5>
+                                            <p class="testimonial-two__text-2">{{__('coporate.coporate_8')}}</p>
                                         </div>
                                         <div class="testimonial-two__client-review">
                                             <i class="fa fa-star"></i>
@@ -244,10 +243,8 @@
                                             <img src="assets/images/shapes/testimonial-two-shape-2.png" alt="">
                                         </div>
                                         <div class="testimonial-two__content-box">
-                                            <h5 class="testimonial-two__client-name">Ethics</h5>
-                                            <p class="testimonial-two__text-2">Ethics is a system of moral principles which affect how people make decisions and also how they lead their lives. Ethics is described as moral philosophy that refers to what is good for both individuals and the society.
-
-                                               </p>
+                                            <h5 class="testimonial-two__client-name">{{__('coporate.coporate_9')}}</h5>
+                                            <p class="testimonial-two__text-2">{{__('coporate.coporate_10')}}</p>
                                         </div>
                                         <div class="testimonial-two__client-review">
                                             <i class="fa fa-star"></i>
@@ -278,10 +275,8 @@
                                             <img src="assets/images/shapes/testimonial-two-shape-2.png" alt="">
                                         </div>
                                         <div class="testimonial-two__content-box">
-                                            <h5 class="testimonial-two__client-name">Values</h5>
-                                            <p class="testimonial-two__text-2">Values (Corporate Value/Cooperation Values /
-                                                Teamwork Values / Service Values)
-                                                All position and career has their own important role to support company to achieve the goal even security, housemaid and other position.</p>
+                                            <h5 class="testimonial-two__client-name">{{__('coporate.coporate_11')}}</h5>
+                                            <p class="testimonial-two__text-2">{{__('coporate.coporate_12')}}</p>
                                         </div>
                                         <div class="testimonial-two__client-review">
                                             <i class="fa fa-star"></i>
@@ -313,10 +308,8 @@
                                         </div>
                                         <div class="testimonial-two__content-box">
                                             <h5 class="testimonial-two__client-name">
-                                                Energy</h5>
-                                            <p class="testimonial-two__text-2">Values (Corporate Value/Cooperation Values /
-                                                Teamwork Values / Service Values)
-                                                All position and career has their own important role to support company to achieve the goal even security, housemaid and other position.</p>
+                                                {{__('coporate.coporate_13')}}</h5>
+                                            <p class="testimonial-two__text-2">{{__('coporate.coporate_14')}}/p>
                                         </div>
                                         <div class="testimonial-two__client-review">
                                             <i class="fa fa-star"></i>

@@ -49,4 +49,15 @@ return [
     'e_com6'                        => 'Can place the order from anywhere.',
     'e_com7'                        => 'Delivery from all branches on Current Ecommerce Website.',
 
+    'part_1'                       => 'Let take a look at the pataner companies',
+    'part_2'                       => 'we work with',
+
+    'copo_1'                       => 'Accountability',
+    'copo_2'                       => 'Collaboration',
+    'copo_3'                       => 'Accountability',
+    'copo_4'                       => 'Accountability',
+    'copo_5'                       => 'Accountability',
+    'copo_6'                       => 'Accountability',
+    'copo_7'                       => 'Accountability',
+
 ];
