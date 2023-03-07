@@ -1187,10 +1187,10 @@
                                 "items": 3
                             },
                             "992": {
-                                "items": 4
+                                "items": 2
                             },
                             "1200": {
-                                "items": 4
+                                "items": 2
                             }
                         }
                     }'>
@@ -1201,11 +1201,11 @@
                                         <img src="{{asset('assets/images/shapes/testimonial-one-shape-1.png')}}" alt="">
                                     </div>
                                     <div class="partaner mb-5">
-                                        <h6>"OPPLE Lighting Company"</h6>
+                                        <h6>"Farmer Lighting Company Limited"</h6>
                                     </div>
                                     <div class="testimonial-one__client-info">
                                         <div class=>
-                                           <img src="{{asset('assets/photos/brands/B2.png')}}" alt="">
+                                           <img src="{{asset('assets/photos/Farmer Lighting Company Limited.jpg')}}" alt="">
                                         </div>
                                         <div class="testimonial-one__client-content">
 
@@ -1225,12 +1225,12 @@
                                         <img src="{{asset('assets/images/shapes/testimonial-one-shape-1.png')}}" alt="">
                                     </div>
                                     <div class="partaner mb-5">
-                                        <h6>"Mitsubishi Corporation"</h6>
+                                        <h6>"Zinhtet Trading Company Limited"</h6>
                                     </div>
                                     <div class="testimonial-one__client-info">
                                         <div class=>
 
-                                                <img src="{{asset('assets/photos/brands/B3.png')}}" alt="">
+                                                <img src="{{asset('assets/photos/Zinhtet Trading Company Limited.jpg')}}" alt="">
                                             <!-- <div class="testimonial-one__quote">
                                                         <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
                                                     </div> -->
@@ -1243,85 +1243,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{asset('assets/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="partaner mb-4">
-                                        <h6>"Panasonic Holdings Corporation"</h6>
-                                    </div>
-                                    <div class="testimonial-one__client-info">
-                                        <div class=>
-                                                <img src="{{asset('assets/photos/brands/B5.png')}}" alt="">
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-
-                                            <div class="testimonial-one__client-details">
-                                                <!-- <h3 class="testimonial-one__client-name">PANASONIC</h3> -->
-                                                <p class="testimonial-one__client-sub-title"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{asset('assets/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="partaner mb-4">
-                                        <h6>"Panasonic Holdings Corporation"</h6>
-                                    </div>
-                                    <div class="testimonial-one__client-info">
-                                        <div class=>
-
-                                                <img src="{{asset('assets/photos/brands/B6.png')}}" alt="">
-                                            <!-- <div class="testimonial-one__quote">
-                                                        <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
-                                                    </div> -->
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-
-                                            <div class="testimonial-one__client-details">
-                                                <!-- <h3 class="testimonial-one__client-name">LEGRAND</h3> -->
-                                                <p class="testimonial-one__client-sub-title"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <p class="testimonial-one__text">Pellentesque habitant morbi tristique senectus netus et malesuada fames ac turp egestas. Aliquam viverra arcu. Donec aliquet blandit enim feugiat mattis.</p> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{asset('assets/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="partaner mb-4">
-                                        <h6>"Panasonic Holdings Corporation"</h6>
-                                    </div>
-                                    <div class="testimonial-one__client-info">
-                                        <div class=>
-
-                                                <img src="{{asset('assets/photos/brands/B7.jpg')}}" alt="">
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-
-                                            <div class="testimonial-one__client-details">
-                                                <!-- <h3 class="testimonial-one__client-name">TOTO</h3> -->
-                                                <p class="testimonial-one__client-sub-title"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <p class="testimonial-one__text">Pellentesque habitant morbi tristique senectus netus et malesuada fames ac turp egestas. Aliquam viverra arcu. Donec aliquet blandit enim feugiat mattis.</p> -->
                                 </div>
                             </div>
                         </div>
@@ -2093,7 +2014,7 @@
                 <div class="contact-page__left">
                     <div class="section-title text-left">
                         <div class="section-sub-title-box">
-                            <p class="section-sub-title">Contact us</p>
+                            <p class="section-sub-title">{{__('home.contact_us1')}}</p>
                             <div class="section-title-shape-1">
                                 <img src="{{asset('assets/images/shapes/section-title-shape-1.png')}}" alt="">
                             </div>
@@ -2101,20 +2022,8 @@
                                 <img src="{{asset('assets/images/shapes/section-title-shape-2.png')}}" alt="">
                             </div>
                         </div>
-                        <h2 class="section-title__title">To contact our Head Office</h2>
+                        <h2 class="section-title__title">{{__('home.contact_us2')}}</h2>
                     </div>
-                    {{-- <div class="contact-page__call-email">
-                        <div class="contact-page__call-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-page__call-email-content">
-                            <h4>
-                                <a href="tel:+959777048315, +959777048316" class="contact-page__call-number">+959777048315 , +959777048316</a>
-                                <a href="mailto:info@pro1globalhomecenter.com">info@pro1globalhomecenter.com</a>
-                            </h4>
-                        </div>
-                    </div> --}}
-                    {{-- <p class="contact-page__location-text">Near Arlain Ngar Sint Pagoda,<br> Lanthit, Insein</p> --}}
                 </div>
             </div>
             <div class="col-xl-8 col-lg-7">

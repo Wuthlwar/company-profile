@@ -60,4 +60,7 @@ return [
     'copo_6'                       => 'Accountability',
     'copo_7'                       => 'Accountability',
 
+    'contact_us1'                  => 'Contact us',
+    'contact_us2'                  => 'To contact our Head Office',
+
 ];

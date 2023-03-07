@@ -66,7 +66,7 @@
                 <div class="main-menu__wrapper-inner clearfix">
                     <div class="main-menu__left">
                         <div class="main-menu__logo">
-                            <a href="index.html"><img src="{{asset('assets/photos/pro1global_logo_blank.png')}}" alt=""></a>
+                            <a href="index.html"><img src="{{asset('assets/photos/pro_1.png')}}" alt="" width="147px" height="48px"></a>
                         </div>
                         <div class="main-menu__main-menu-box">
                             <div class="main-menu__main-menu-box-inner">
