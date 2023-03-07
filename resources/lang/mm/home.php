@@ -2,18 +2,8 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
 
-    'slide_word_1'                  => 'PRO 1 Global Home Center သည် မြန်မာနိုင်ငံတွင် အကြီးဆုံးသော',
+    'slide_word_1'                  => 'PRO 1 Global Home Center သည် မြန်မာနိုင်ငံတွင် အကြီးဆုံး',
     'slide_word_2'                  => 'အိမ်ဆောက်ပစ္စည်းရောင်းချပေးသော နေရာဖြစ်ပါသည်',
     'buy_now'                       => 'ဝယ်မည်',
     'company_vision_mission'        => 'ကုမ္ပဏီ၏ ရည်မှန်းချက်နှင့် ပန်းတိုင်များ',
@@ -59,17 +49,33 @@ return [
     'e_com6'                        => 'ဘယ်နေရာမဆို အော်ဒါတင်လို့ရပါတယ်။',
     'e_com7'                        => 'လက်ရှိ Ecommerce ဝဘ်ဆိုက်ရှိ အရောင်းစင်တာများအားလုံးမှ ပစ္စည်းပို့ဆောင်ပေးသောဝန်ဆောင်မှုရှိခြင်း။',
 
-    'part_1'                       => '',
-    'part_2'                       => ' ပူးပေါင်းလုပ်ကိုင်လျှက်ရှိသော ကုမ္ပဏီများ',
+    'part_1'                        => '',
+    'part_2'                        => ' ပူးပေါင်းလုပ်ကိုင်လျှက်ရှိသော ကုမ္ပဏီများ',
 
-    'copo_1'                       => 'တာဝန်ယူမှု/တာဝန်ခံမှု',
-    'copo_2'                       => 'အဖွဲ့အစည်းနှင့်အတူတကွ ပူးပေါင်းဆောင်ရွက်မှု',
-    'copo_3'                       => 'Accountability',
-    'copo_4'                       => 'Accountability',
-    'copo_5'                       => 'Accountability',
-    'copo_6'                       => 'Accountability',
-    'copo_7'                       => 'Accountability',
+    'copo_1'                        => 'တာဝန်ယူမှု/တာဝန်ခံမှု',
+    'copo_2'                        => 'အဖွဲ့အစည်းနှင့်အတူတကွ ပူးပေါင်းဆောင်ရွက်မှု',
+    'copo_3'                        => 'Accountability',
+    'copo_4'                        => 'Accountability',
+    'copo_5'                        => 'Accountability',
+    'copo_6'                        => 'Accountability',
+    'copo_7'                        => 'Accountability',
 
-    'contact_us1'                  => 'ဆက်သွယ်ရန်',
-    'contact_us2'                  => 'ရုံးချုပ်ကို ဆက်သွယ်ရန်',
+    'contact_us1'                   => 'ဆက်သွယ်ရန်',
+    'contact_us2'                   => 'ရုံးချုပ်ဌာနသို့ ဆက်သွယ်ရန်',
+
+    'ecom_ads'                      => 'Onlineမှ စျေးဝယ်ရန် PRO 1 Global အပလီကေးရှင်းကို အခမဲ့ ဒေါင်းလုပ်ဒ်ရယူပါ',
+    'member_ads'                    => 'PRO 1 Global VIP Member ခံစားခွင့်များကို သိရှိအသုံးပြုနိုင်ရန် PRO 1 Member Applicationကို အခမဲ့ ဒေါင်းလုပ်ဒ်ရယူပါ',
+
+    'footer_1'                      => 'အိမ်ဆောက်ပစ္စည်းနှင့်အိမ်သုံးပစ္စည်းများ တစ်နေရာထဲမှာ အားလုံးရယူပါ',
+    'footer_2'                      => 'PRO 1 Global Home Center သည် မြန်မာနိုင်ငံတွင် အကြီးဆုံး အိမ်ဆောက်ပစ္စည်းရောင်းချပေးသော နေရာဖြစ်ပါသည်',
+    'footer_3'                      => 'အာလိန်ငါးဆင့်ဘုရားအနီး, လမ်းသစ်လမ်း, အင်းစိန်မြို့နယ်',
+    'footer_4'                      => 'ရုံးဖွင့်ချိန် ',
+    'footer_5'                      => 'တနင်္လာ-စနေ မနက် 9:00နာရီမှ ညနေ 5:00နာရီအထိရုံးဖွင့်သည်',
+    'footer_6'                      => 'တနင်္ဂနွေနေ့တိုင်း ရုံးပိတ်သည်',
+    'footer_7'                      => 'ကျွန်ုပ်တို့၏ ဆိုရှယ်မီဒီယာများ',
+    'footer_8'                      => '- ကျွန်ုပ်တို့နှင့်အလုပ်တွဲလုပ်ရန်',
+    'footer_9'                      => '- ကျွန်ုပ်တို့ Supplierဖြစ်လာရန်',
+    'footer_10'                     => '- E-commerce Websiteသို့ ကြည့်ရှုရန်',
+    'footer_11'                     => 'ဆက်သွယ်ရန်',
+    'footer_12'                     => 'ရုံးချုပ်ဌာနသို့ ဆက်သွယ်ရန်',
 ];
