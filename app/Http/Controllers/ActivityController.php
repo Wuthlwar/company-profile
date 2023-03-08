@@ -28,9 +28,11 @@ class ActivityController extends Controller
 
     public function store(StoreActivityRequest $request)
     {
+        // dd($request->all());
         $data = $request->validate([
             'title'             => 'required',
             'description'       => 'required',
+            'description_mm'       => 'required',
             'preview_img'       => 'required',
             'activity_type_id'  => 'required',
             'location'          => 'nullable',
@@ -70,9 +72,10 @@ class ActivityController extends Controller
     public function show(Activity $activity)
     {
         $act      = $activity->id;
+        $activity = Activity::find($act);
         $act_imgs = ActivityImage::where('activity_id', $act)->get();
         // dd($act_imgs);
-        return view('admins.activities.show',compact('act_imgs','act'));
+        return view('admins.activities.show',compact('act_imgs','act','activity'));
     }
 
 
@@ -135,11 +138,16 @@ class ActivityController extends Controller
         $act->delete();
         return redirect()->route('activities.index');
     }
-    public function del_act_imgs($img_id)
+
+
+    public function del_imgs($img_id)
     {
-       $img = ActivityImage::find($img_id);
-       $img->delete();
-       return back();
+        $act = ActivityImage::find($img_id)->delete();
+        // ->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Success Deleted user',
+            ]);
 
     }
 }

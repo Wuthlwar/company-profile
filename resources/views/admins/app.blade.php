@@ -16,6 +16,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>CoreUI Free Bootstrap Admin Template</title>
     <link rel="apple-touch-icon" sizes="57x57" href="{{ ('admin/dist/assets/favicon/apple-icon-57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ ('admin/dist/assets/favicon/apple-icon-60x60.png')}}">
@@ -42,6 +43,7 @@
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
     <link href="{{ asset('admin/dist/css/examples.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6411669479.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics-->
     {{-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script> --}}
     <script>
@@ -61,7 +63,12 @@
         body{
             font-family: Arial, Helvetica, sans-serif;
         }
-        .sidebar{
+        .sidebar
+        {
+            background-color: #0e7490;
+        }
+        .custom-bg-info
+        {
             background-color: #0e7490;
         }
     </style>
@@ -108,11 +115,11 @@
           <a class="header-brand d-md-none" href="#">
         <img src="{{ asset('assets/photos/pro_1.png') }}" width="118" height="46" alt="">
            </a>
-          <ul class="header-nav d-none d-md-flex">
+          {{-- <ul class="header-nav d-none d-md-flex">
             <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-          </ul>
+          </ul> --}}
           <ul class="header-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#">
                 <svg class="icon icon-lg">
@@ -200,11 +207,12 @@
     <script src="{{ asset('admin/dist/vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('admin/dist/vendors/simplebar/js/simplebar.min.js') }}"></script>
     <!-- Plugins and scripts required by this view-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('admin/dist/vendors/chart.js/js/chart.min.js') }}"></script>
     <script src="{{ asset('admin/dist/vendors/@coreui/chartjs/js/coreui-chartjs.js') }}"></script>
     <script src="{{ asset('admin/dist/vendors/@coreui/utils/js/coreui-utils.js') }}"></script>
     <script src="{{ asset('admin/dist/js/main.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     @yield('script')
     <script>
     </script>

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserController;
+// use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PermissionController;
@@ -35,11 +35,12 @@ Route::group(['prefix' => 'admins'], function(){
         return view('admins.app');
     });
     // Route::resource('roles', RoleController::class);
-    Route::resource('users', UserController::class);
+    // Route::resource('users', UserController::class);
     // Route::resource('permissions', PermissionController::class);
     Route::resource('activity_type', ActivityTypeController::class);
     Route::resource('activities', ActivityController::class);
-    Route::post('/del_act_imgs/img_id',[ActivityController::class,'del_act_imgs'])->name('del_act_imgs');
+    Route::post('/del_act_imgs/{img_id}/delete',[ActivityController::class,'del_act_imgs'])->name('del_act_imgs');
+    Route::delete('/act_img/{img_id}/delete',[ActivityController::class,'del_imgs'])->name('del_imgs');
 
 
 });

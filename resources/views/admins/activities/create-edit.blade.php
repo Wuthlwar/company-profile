@@ -1,7 +1,7 @@
 @extends('admins.app')
 @section('content')
 <div class="card mb-4">
-    <div class="card-header bg-primary text-white">
+    <div class="card-header custom-bg-info text-white">
         <strong>Activity</strong><span class="small ms-1"></span></div>
     <div class="card-body table-responsive">
         @if ($act->id!=null)
@@ -36,6 +36,10 @@
                    <textarea class="form-control" name="description" id="" cols="30" rows="5">{{ $act->description }}</textarea>
                 </div>
                 <div class="mb-3 col-6">
+                    <label class="form-label" for="description_mm">Description (Myanmar)</label>
+                   <textarea class="form-control" name="description_mm" id="" cols="30" rows="5">{{ $act->description_mm }}</textarea>
+                </div>
+                <div class="mb-3 col-6">
                     <label class="form-label" for="location">location</label>
                     <input class="form-control" id="location" type="text" placeholder="" name="location" value="{{ old('location',$act->location) }}">
                 </div>
@@ -56,9 +60,8 @@
                 </div>
                 </div>
                 <div class="row">
-
                         @if ($act->preview_img!==null)
-                        <div class="card col-2 m-1">
+                        <div class="card col-4 col-xl-2 m-1">
                             <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="{{ $act->preview_img }}" class="card-img-top rounded img-fluid mt-3">
 
                             <div class="card-body">
@@ -67,15 +70,18 @@
                         </div>
                         @endif
                         @if (count($act->act_imgs)!=0)
-                        <div class="card row m-1">
+                        <div class="row col-12">
                             @foreach($act->act_imgs as $img)
-                            <div class=" col-2 m-1">
-                                <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" class="card-img-top rounded img-fluid mt-3"/>
+                            <div class="card col-4 col-xl-2 m-1 border rounded">
+                            <div style="height:100px;overflow:hidden;">
+                                <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" class="card-img-top img-fluid mt-3"/>
+                            </div>
+                            <div class="card-body d-flex justify-content-center">
+                                 <button type="button" class="btn btn-danger"  id="btn-delete" data-id="{{ $img->id }}"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
                             </div>
                             @endforeach
-                            <div class="card-body">
-                                <p>Other Images</p>
-                            </div>
+
                         </div>
 
                         @endif
@@ -93,7 +99,6 @@
     </div>
   </div>
 @endsection
-
 @section('script')
 <script type="text/javascript">
     $(document).ready(function(){
@@ -114,7 +119,48 @@
            $(this).parent('div').remove();
            x--;
        });
+ });
+
+ $(document).on('click','#btn-delete',function(e) {
+    e.preventDefault();
+    let dataDelete = $(this).data('id');
+    // console.log(dataDelete);
+    Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this! ",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+    if (result.isConfirmed) {
+    $.ajax({
+    type:'DELETE',
+    dataType: 'JSON',
+    url: `/admins/act_img/${dataDelete}/delete`,
+    data:{
+    '_token':$('meta[name="csrf-token"]').attr('content'),
+    },
+    success:function(response){
+    Swal.fire(
+    'Deleted!',
+    'Your file has been deleted.',
+    'success'
+    )
+    location.reload();
+
+    },
+    error:function(err){
+    console.log(err);
+    }
     });
+    }
+    })
+    });
+
+
+
 
 </script>
 @endsection
