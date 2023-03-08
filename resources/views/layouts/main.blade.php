@@ -7,8 +7,8 @@
     <title> PRO 1 Global </title>
     <!-- favicons Icons -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/photos/PRO1LOGO (2).png')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/hotos/PRO1LOGO (2).png')}}" />
+    <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
+    <link rel="icon" type="image/png" href="{{asset('assets/hotos/favicon.png')}}" />
     {{-- <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" /> --}}
     <meta name="description" content="Insur HTML 5 Template " />
 

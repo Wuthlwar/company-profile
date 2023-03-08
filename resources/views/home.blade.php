@@ -1,10 +1,8 @@
 @extends('layouts.main')
 @section('content')
 <div class="stricky-header stricked-menu main-menu">
-    <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-</div><!-- /.stricky-header -->
-
-<!--Main Slider Start-->
+    <div class="sticky-header__content"></div>
+</div>
 <section class="main-slider clearfix">
     <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
             "effect": "fade",
@@ -482,7 +480,7 @@
                 </div>
                 <div>
                     <div class="section-sub-title-box">
-                        <p class="section-sub-title"><a href="{{ route('coporate') }}">Details</a></p>
+                        <p class="section-sub-title"><a href="{{ route('coporate') }}" class="thm-btn main-slider__btn">See More</a></p>
                         <div class="section-title-shape-1">
                             <img src="{{asset('assets/images/shapes/section-title-shape-5.png')}}" alt="">
                         </div>
@@ -597,7 +595,7 @@
         <div class="row">
             <div class="col-xl-7 col-lg-6">
                 <div class="download__left">
-                    <p class="download__sub-title">Get our Shop application free now!</p>
+                    <p class="download__sub-title">{{__('home.ecom_ads')}}</p>
                     <h1 class="download__title">Download our application</h1>
                     <div class="download__apps">
                         <div class="download__app-one">
@@ -812,7 +810,7 @@
         <div class="row">
             <div class="col-xl-7 col-lg-6">
                 <div class="download__left">
-                    <p class="download__sub-title">Get member application free now!</p>
+                    <p class="download__sub-title">{{__('home.member_ads')}}</p>
                     <h1 class="download__title">Download our application</h1>
                     <div class="download__apps">
                         <div class="download__app-one">

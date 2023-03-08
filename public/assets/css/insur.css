@@ -892,7 +892,7 @@ label{
     left: 50%;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 4px solid var(--insur-base);
+    border-bottom: px solid var(--insur-base);
     transform: translateX(-50%);
     opacity: 0;
     -webkit-transition: all 500ms ease;
@@ -5772,7 +5772,7 @@ label{
 .services-two {
     position: relative;
     display: block;
-    background-color: #3769c7;
+    background-color:var(--insur-black);
     padding: 90px 0 90px;
     z-index: 1;
 }
@@ -5844,7 +5844,7 @@ label{
 .services-two__single:hover {
     border-bottom: 3px solid var(--insur-primary);
     transform: translateY(-10px);
-    background-color: #111d32;
+    background-color: #070e1b;
 }
 
 .services-two__icon-box {

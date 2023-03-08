@@ -63,4 +63,21 @@ return [
     'contact_us1'                  => 'Contact us',
     'contact_us2'                  => 'To contact our Head Office',
 
+    'ecom_ads'                     => 'Get our Shop application free now!',
+    'member_ads'                   => 'Get member application free now!',
+
+    'footer_1'                     => 'One Place, Get All',
+    'footer_2'                     => 'PRO 1 Global Home Center is the first and largest company selling home building products in Myanmar. ',
+    'footer_3'                     => 'Near Arlain Ngar Sint Pagoda, Lanthit, Insein',
+    'footer_4'                     => 'Open Hours',
+    'footer_5'                     => 'Mon – Sat: 9:00 am to 5:00 pm ',
+    'footer_6'                     => 'Sunday: Closed',
+    'footer_8'                     => '- Work With Us',
+    'footer_9'                     => '- Become Our Supplier',
+    'footer_10'                    => '- Go To E-commerce Website',
+    'footer_11'                    => 'Contact',
+    'footer_12'                    => 'Call to Our Head Office',
+
+
+
 ];
