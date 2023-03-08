@@ -9,6 +9,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ActivityTypeController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\HomeController;
 use App\Models\Feedback;
 
 /*
@@ -25,6 +26,12 @@ use App\Models\Feedback;
 Route::group(['prefix' => 'admins'], function(){
     Route::get('/',function()
     {
+        return redirect('admins/login');
+    });
+    Route::get('/login',[HomeController::class,'login'])->name('login');
+    Route::post('/check',[HomeController::class,'checkLogin'])->name('check');
+    Route::get('/logout',[HomeController::class,'logout'])->name('logout');
+    Route::get('/home', function(){
         return view('admins.app');
     });
     // Route::resource('roles', RoleController::class);

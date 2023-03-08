@@ -10,7 +10,7 @@
     <div class="card-body table-responsive">
         <div class="row col-12">
             @foreach ($act_imgs as $img)
-            <div class="col-4">
+            <div class="col-6 col-sm-2">
                 <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="" class="rounded img-fluid"/>
             </div>
             @endforeach

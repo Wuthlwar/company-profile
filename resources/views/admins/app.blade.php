@@ -61,14 +61,15 @@
         body{
             font-family: Arial, Helvetica, sans-serif;
         }
+        .sidebar{
+            background-color: #0e7490;
+        }
     </style>
   </head>
   <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-      <div class="sidebar-brand d-none d-md-flex">
-        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlink:href="{{ ('admin/dist/assets/brand/coreui.svg#full')}}"></use>
-        </svg>
+      <div class="sidebar-brand d-none d-md-flex bg-white">
+        <img src="{{ asset('assets/photos/pro_1.png') }}" width="118" height="46" alt="">
         <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
           <use xlink:href="{{ ('admin/dist/assets/brand/coreui.svg#signet')}}"></use>
         </svg>
@@ -103,10 +104,10 @@
             <svg class="icon icon-lg">
               <use xlink:href="{{ asset('admin/dist/vendors/@coreui/icons/svg/free.svg#cil-menu') }}"></use>
             </svg>
-          </button><a class="header-brand d-md-none" href="#">
-            <svg width="118" height="46" alt="CoreUI Logo">
-              <use xlink:href="{{ ('admin/dist/assets/brand/coreui.svg#full')}}"></use>
-            </svg></a>
+          </button>
+          <a class="header-brand d-md-none" href="#">
+        <img src="{{ asset('assets/photos/pro_1.png') }}" width="118" height="46" alt="">
+           </a>
           <ul class="header-nav d-none d-md-flex">
             <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Users</a></li>

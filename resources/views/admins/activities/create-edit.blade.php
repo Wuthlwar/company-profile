@@ -51,7 +51,7 @@
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label" for="preview_img">Other Images</label>
-                    <input class="form-control" id="preview_img" type="file" placeholder="" name="file">
+                    <input class="form-control" id="preview_img" type="file" placeholder="" name="file[]">
                     <button class="btn btn-success mt-2" type="button" id="addBtn">Add More</button>
                 </div>
                 </div>

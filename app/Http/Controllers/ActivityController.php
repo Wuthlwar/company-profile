@@ -36,7 +36,7 @@ class ActivityController extends Controller
             'location'          => 'nullable',
             'date'              => 'nullable'
         ]);
-        // dd('hi');
+        // dd($request->all());
         $file = $request->preview_img;
         $folderName = "uploads/activity";
         $fileName = $file->getClientOriginalName();

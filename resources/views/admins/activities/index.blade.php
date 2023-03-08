@@ -32,7 +32,7 @@
                     <td scope="col">{{ $act->location }}</td>
                     <td scope="col">
 
-                        <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="{{ $act->preview_img }}" width="150px">
+                        <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="{{ $act->preview_img }}" height="100px">
                     </td>
                     <td scope="col">{{ $act->date }}</td>
                     <td>
