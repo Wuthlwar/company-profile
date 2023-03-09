@@ -1,7 +1,7 @@
 @extends('admins.app')
 @section('content')
 <div class="card mb-4">
-    <div class="card-header custom-bg-info text-white">
+    <div class="card-header">
         <strong>Activity</strong><span class="small ms-1"></span></div>
     <div class="card-body table-responsive">
         @if ($act->id!=null)
@@ -28,16 +28,16 @@
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label" for="title">Activity Title</label>
-                    <input class="form-control" id="title" type="text" placeholder="name@example.com" name="title" value="{{ old('title',$act->title) }}">
+                    <input class="form-control" id="title" type="text" placeholder="Enter Activity Title" name="title" value="{{ old('title',$act->title) }}">
                 </div>
 
                 <div class="mb-3 col-6">
                     <label class="form-label" for="description">Description</label>
-                   <textarea class="form-control" name="description" id="" cols="30" rows="5">{{ $act->description }}</textarea>
+                   <textarea class="form-control" name="description" id="" cols="30" rows="2">{{ $act->description }}</textarea>
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label" for="description_mm">Description (Myanmar)</label>
-                   <textarea class="form-control" name="description_mm" id="" cols="30" rows="5">{{ $act->description_mm }}</textarea>
+                   <textarea class="form-control" name="description_mm" id="" cols="30" rows="2">{{ $act->description_mm }}</textarea>
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label" for="location">location</label>

@@ -7,14 +7,28 @@ use App\Http\Requests\UpdateActivityRequest;
 use App\Models\Activity;
 use App\Models\ActivityImage;
 use App\Models\ActivityType;
+use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $acts = Activity::latest()->get();
-        return view('admins.activities.index',compact('acts'));
+        $acts = Activity::latest()->paginate(30);
+        $act_types = ActivityType::all();
+        $act_id = $request->session()->get('act_id')?$request->session()->get('act_id'):1;
+        $act =Activity::whereId($act_id)->first();
+        // dd($act);
+        if($request->ajax()){
+
+            return response()->json([
+               'success'        => true,
+               'acts'           => $acts,
+               'act_types'      => $act_types,
+               'act'            => $act
+            ]);
+      }
+        return view('admins.activities.index',compact('acts','act_types','act'));
     }
 
 
@@ -83,6 +97,10 @@ class ActivityController extends Controller
     {
         $act = Activity::find($activity->id);
         $act_types = ActivityType::all();
+        return response()->json([
+            'success' => true,
+            'act' => $act,
+        ]);
         return view('admins.activities.create-edit',compact('act','act_types'));
     }
 
