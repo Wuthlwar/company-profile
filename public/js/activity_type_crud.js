@@ -1,37 +1,29 @@
 // const baseUrl = 'http://127.0.0.1:8000';
 // function for show posts without refresh
-showActivity();
+showActivityType();
 // table row with ajax
-function table_activity_row(res){
-    console.log(res.acts);
+function table_activity_type_row(res){
+
 let htmlView = '';
-   if(res.acts.data.length <= 0){
+   if(res.act_types.data.length <= 0){
        htmlView+= `
     <tr>
           <td colspan="4">No data.</td>
          </tr>`;
 }
-for(let i = 0; i < res.acts.data.length; i++){
-    console.log(res.acts.data[i].preview_img);
+for(let i = 0; i < res.act_types.data.length; i++){
+    console.log(res.act_types.data[i].name);
       htmlView += `
                     <tr style="border:1px solid #ff00!important;">
                     <td></td>
-                    <td scope="col">`+res.acts.data[i].title+`</td>
-                    <td scope="col">`+res.acts.data[i].description+`</td>
-                    <td scope="col">`+res.acts.data[i].description+`</td>
-                    <td scope="col">`+res.acts.data[i].location+`</td>
-                    <td scope="col">
-
-                        <img class="rounded border" src="/storage/uploads/activity/`+res.acts.data[i].preview_img+`" alt="No Image" height="80px">
-                    </td>
-                    <td scope="col">`+res.acts.data[i].date+`</td>
+                    <td scope="col">`+res.act_types.data[i].name+`</td>
                     <td>
                         <div class="d-flex align-items-center list-action">
-                            <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                href="#"><i class="ri-eye-line mr-0"></i></a>
-                            <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                href="/admins/activities/`+res.acts.data[i].id+`" id="editModal"><i class="ri-pencil-line mr-0"></i></a>
-                            <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                            <button class="badge btn-warning mr-2" title="Edit"
+                                id="editModal" data-id="`+res.act_types.data[i].id+`" data-action="/admins/activity_type/`+res.act_types.data[i].id+`/update" data-toggle="modal" data-target="#actTypeModal"><i class="ri-pencil-line mr-0"></i></button>
+                            <a class="badge bg-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                href="/admins/activity_type/`+res.act_types.data[i].id+`" ><i class="ri-eye-line mr-0  "></i></a>
+                            <a class="badge btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
                                 href="#"><i class="ri-delete-bin-line mr-0"></i></a>
                         </div>
                     </td>
@@ -40,14 +32,14 @@ for(let i = 0; i < res.acts.data.length; i++){
 
 $('#tbody').html(htmlView);
 }
-function showActivity(){
+function showActivityType(){
    $.ajax({
       type : 'GET',
       dataType: "json",
-      url  : '/admins/activities',
+      url  : '/admins/activity_type',
       success : function (res) {
-        console.log(res.acts)
-           table_activity_row(res);
+        console.log(res.act_types)
+           table_activity_type_row(res);
    },error : function(error){
     console.log(error);
    }
@@ -57,19 +49,18 @@ function showActivity(){
 
 $('#openModal').click(function() {
     let url = $(this).data('action');
-    console.log(url);
-    $('#actModal').show();
-    $('#formData').trigger("reset");
-    $('#formData').attr('action',url);
+    $('#actTypeModal').show();
+    $('#actTypeFormData').trigger("reset");
+    $('#actTypeFormData').attr('action',url);
     $('#name').focus();
     })
     // Event for created and updated posts
-    $('#formData').submit(function(e) {
+    $('#actTypeFormData').submit(function(e) {
         e.preventDefault();
-         let formData = new FormData(this);
+         let actTypeFormData = new actTypeFormData(this);
          $.ajax({
             type: 'POST',
-            data : formData,
+            data : actTypeFormData,
             contentType: false,
              processData: false,
              url: $(this).attr('action'),
@@ -83,15 +74,15 @@ $('#openModal').click(function() {
          success: function(res){
 
          if(res.success == true){
-         $('#formData').trigger("reset");
-         $('#actModal').hide();
-         showActivity(); // call function show Posts
+         $('#actTypeFormData').trigger("reset");
+         $('#actTypeModal').hide();
+         showActivityType(); // call function show Posts
          Swal.fire(
          'Success!',
          res.message,
          'success'
          )
-        //  $('#actModal').hide();
+        //  $('#actTypeModal').hide();
          location.reload();
          }
          },
@@ -105,18 +96,20 @@ $('#openModal').click(function() {
     })
 
 //open edit modal
-$(document).on('click','button#editModal',function() {
+$(document).on('click','#editModal',function() {
     let id = $(this).data('id');
      let dataAction = $(this).data('action');
-     $('#formData').attr('action',dataAction);
+     $('#actTypeFormData').attr('action',dataAction);
+    //  console.log(dataAction);
       $.ajax({
          type: 'GET',
-         url : `/admins/activities/${id}/edit`,
+         url : `/admins/activity_type/${id}/edit`,
          dataType: "json",
          success: function(res) {
-           $('input[name=name]').val(res.act.name);
-         $('#actModal').show();
-            // console.log(res);
+
+           $('input[name=name]').val(res.act_type.name);
+           $('#actTypeModal').show();
+            console.log('passed');
   },
   error:function(error) {
      console.log(error)
@@ -143,7 +136,7 @@ $(document).on('click','button#editModal',function() {
     $.ajax({
     type:'DELETE',
     dataType: 'JSON',
-    url: `/admins/activities/${dataDelete}/delete`,
+    url: `/admins/activity_type/${dataDelete}/delete`,
     data:{
     '_token':$('meta[name="csrf-token"]').attr('content'),
     },
@@ -153,7 +146,7 @@ $(document).on('click','button#editModal',function() {
     'Your file has been deleted.',
     'success'
     )
-    showActivity();
+    showActivityType();
 
     },
     error:function(err){

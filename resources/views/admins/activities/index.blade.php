@@ -51,9 +51,9 @@
 
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header d-flex justify-content-between bg-info rounded">
+                        <div class="card-header d-flex justify-content-between bg-info rounded-sm">
                             <div class="header-title ">
-                                <h4 class="card-title">Add Activity</h4>
+                                <h6 class="card-title">Add Activity</h6>
                             </div>
                         </div>
                         <div class="card-body">
@@ -141,7 +141,7 @@
 @section('script')
 <script type="text/javascript">
     $(document).ready(function(){
-        // $('#actModal').hide();
+
         var maxField = 10;
         console.log(maxField);
         var addBtn = $('#addBtn');
