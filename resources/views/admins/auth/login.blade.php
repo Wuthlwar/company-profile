@@ -1,7 +1,7 @@
 @extends('admins.auth.app')
 
 @section('content')
-<div class="wrap-login100">
+<div class="wrap-login100" >
     <div class="login100-pic js-tilt" data-tilt>
         <img src="{{ asset('assets/photos/pro_1.png') }}" alt="IMG">
     </div>
@@ -19,7 +19,6 @@
                 <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
         </div>
-
         <div class="wrap-input100 validate-input" data-validate = "Password is required">
             <input class="input100" type="password" name="password" required placeholder="Password">
             <span class="focus-input100"></span>
