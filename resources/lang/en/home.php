@@ -136,10 +136,10 @@ return [
     'center_Tpw5'                  => 'Open Hour : 08:30 AM ~ 05:30 PM',
 
     'center_title2'                => 'Bago Region',
-    'center_'                      => 'Bago Branch, Bago',
-    'center_'                      => 'Bago Branch, Bago',
-    'center_'                      => 'PRO 1 Global Home Center (Bago Branch )',
-    'center_'                      => 'No. (489/490), Corner of LanthitStreet & ShweSanKaing Pagoda,Chanmyatharsi, Mandalay.',
-    'center_'                      => 'Open Hour : 08:30 AM ~ 05:30 PM',
+    'center_bago1'                 => 'Bago Branch, Bago',
+    'center_bago2'                 => 'Show Detail',
+    'center_bago3'                 => 'PRO 1 Global Home Center (Bago Branch )',
+    'center_bago4'                 => 'Ward.8, Oakthar Myo Thit, Bago Township, Bago, Myanmar',
+    'center_bago5'                 => 'Open Hour : 08:30 AM ~ 05:30 PM',
 
 ];

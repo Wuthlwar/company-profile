@@ -1061,10 +1061,10 @@
                         </div>
                         <div class="portfolio__content">
                             <p class="portfolio__sub-title">{{__('home.center_bago1')}}</p>
-                            <h4 class="portfolio__title"><a href="{{route('bago_info')}}">Show Detail{{__('home.center_bago2')}}</a></h4>
+                            <h4 class="portfolio__title"><a href="{{route('bago_info')}}">{{__('home.center_bago2')}}</a></h4>
                         </div>
                         <div>&nbsp;{{__('home.center_bago3')}}</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;Ward.8, Oakthar Myo Thit, Bago Township, Bago, Myanmar{{__('home.center_bago4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_bago4')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM{{__('home.center_bago5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-799695755</div>
                     </div>
