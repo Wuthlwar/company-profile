@@ -196,9 +196,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--tab-->
-
-                                <!--tab-->
 
                             </div>
                         </div>
@@ -848,7 +845,7 @@
         <div class="row">
             <div class="section-title text-left">
                 <div class="section-sub-title-box">
-                    <p class="section-sub-title">Our Centers</p>
+                    <p class="section-sub-title">{{__('home.center_header')}}</p>
                     <div class="section-title-shape-1">
                         <img src="{{asset('assets/images/shapes/section-title-shape-1.png')}}" alt="">
                     </div>
@@ -860,7 +857,7 @@
             </div>
         </div>
         <div class="section-sub-title-box">
-            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>Yangon Region<i class="fas fa-map-marker-alt px-2"></i></h3>
+            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>{{__('home.center_yangon')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
             <!-- <div class="section-title-shape-1">
                 <img src="assets/images/shapes/section-title-shape-1.png" alt="">
             </div>
@@ -877,12 +874,12 @@
                             <a href="{{asset('assets/photos/lanthit.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Lanthit Branch, Yangon</p>
-                            <h4 class="portfolio__title"><a href="{{route('lanthit_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_lanthit1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('lanthit_info')}}">{{__('home.center_lanthit2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (Lanthit Branch )</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(Ma-8/6), Theik Pan Road, Between 62 st & 63 st, Chanmyatharsi Township, Mandalay.</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM</div>
+                        <div>&nbsp;{{__('home.center_lanthit3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_lanthit4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_lanthit5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000942, 09-777000943</div>
                     </div>
                 </div>
@@ -895,12 +892,12 @@
                             <a href="{{asset('assets/photos/satsan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Satsan Branch, Yangon</p>
-                            <h4 class="portfolio__title"><a href="{{route('satsan_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_satsan1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('satsan_info')}}">{{__('home.center_satsan2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (Satsan Branch)</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No . 05, Upper Pazundaung Road, 9th Street Bus Stop, Mingalar Taung Nyunt Township, Yangon.</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:00 PM</div>
+                        <div>&nbsp;{{__('home.center_satsan3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_satsan4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_satsan5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;01-201849, 01-201850, 09-777000849</div>
                     </div>
                 </div>
@@ -915,12 +912,12 @@
                             <a href="{{asset('assets/photos/eastdagon.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">East Dagon Branch, Yangon</p>
-                            <h4 class="portfolio__title"><a href="{{route('eastdagon_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_ed1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('eastdagon_info')}}">{{__('home.center_ed2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (East Dagon Branch )</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(1/ka), No(2) Main Road, Near School of Nursing and Midwifery,East Dagon , Yangon</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 06:00 PM</div>
+                        <div>&nbsp;{{__('home.center_ed3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_ed4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_ed5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp; 01-2585158, 01-2585159, 09-777000867</div>
                     </div>
                 </div>
@@ -934,12 +931,12 @@
                             <a href="{{asset('assets/photos/hlaingtharyar.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">HlaingTharYar Branch, Yangon</p>
-                            <h4 class="portfolio__title"><a href="{{route('hlaingtharyar_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_hty1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('hlaingtharyar_info')}}">{{__('home.center_hty2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center(HlaingTharYar Branch)</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No (4/5),Corner of Yangon-Pathein & Yangon-TwanTay Road, HlaingTharYar Township,Yangon</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 09:00 AM ~ 05:00 PM</div>
+                        <div>&nbsp;{{__('home.center_hty3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_hty4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_hty5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777002840 , 09-777002850</div>
                     </div>
                 </div>
@@ -953,12 +950,12 @@
                             <a href="{{asset('assets/photos/terminal.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">PRO 1 PLUS Terminal M Branch, Yangon</p>
-                            <h4 class="portfolio__title"><a href="{{route('teminalm_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_Tm1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('teminalm_info')}}">{{__('home.center_Tm2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center(Terminal M Branch)</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.196, 1st Floor, Terminal M Shopping Mall, Mingalardon Township, Yangon.</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 09:00 AM ~ 05:00 PM</div>
+                        <div>&nbsp;{{__('home.center_Tm3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_Tm4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_Tm5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09777047310</div>
                     </div>
                 </div>
@@ -971,13 +968,13 @@
                             <a href="{{asset('assets/photos/southdagon.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">South Dagon, Yangon</p>
-                            <h4 class="portfolio__title"><a href="{{route('southdagon_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_sdg1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('southdagon_info')}}">{{__('home.center_sdg2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center(South Dagon Branch)</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.196, 1st Floor, Terminal M Shopping Mall, Mingalardon Township, Yangon.</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 09:00 AM ~ 05:00 PM</div>
-                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09777047310</div>
+                        <div>&nbsp;{{__('home.center_sdg3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_sdg4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_sdg5')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09 777047282, 09 777047283</div>
                     </div>
                 </div>
             </div>
@@ -990,13 +987,13 @@
                             <a href="{{asset('assets/photos/shwepyithar.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Shwe Pyi Thar Branch, Yangon</p>
-                            <h4 class="portfolio__title"><a href="{{route('shwepyithar_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_spt1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('shwepyithar_info')}}">{{__('home.center_spt2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center(Shwe Pyi Thar Branch)</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.196, 1st Floor, Terminal M Shopping MallYangon Industrial Zone, Mingalardon Township, Yangon.</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 09:00 AM ~ 05:00 PM</div>
-                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09777047310</div>
+                        <div>&nbsp;{{__('home.center_spt3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_spt4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_spt5')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777047384, 09-777047385</div>
                     </div>
                 </div>
             </div>
@@ -1006,7 +1003,7 @@
 <section class="ourcenter mt-5" id="ourCenter">
     <div class="container">
         <div class="section-sub-title-box">
-            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>Mandalay Region<i class="fas fa-map-marker-alt px-2"></i></h3>
+            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>{{__('home.center_title2')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
         </div>
         <div class="row filter-layout masonary-layout mt-3">
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
@@ -1017,12 +1014,12 @@
                             <a href="{{asset('assets/photos/theikpan.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Theikpan Branch, Mandalay</p>
-                            <h4 class="portfolio__title"><a href="{{route('theikpan_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_Tp1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('theikpan_info')}}">{{__('home.center_Tp2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (Theikpan Branch )</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(Ma-8/6), Theik Pan Road, Chanmyatharsi Township,Mandalay</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp; Open Hour : 08:30 AM ~ 05:30 PM</div>
+                        <div>&nbsp;{{__('home.center_Tp3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_Tp4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp; {{__('home.center_Tp5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000942, 09-777000943, 09-777000944</div>
                     </div>
                 </div>
@@ -1036,12 +1033,12 @@
                             <a href="{{asset('assets/photos/tampawady.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Tampawady Branch, Mandalay</p>
-                            <h4 class="portfolio__title"><a href="{{route('tampawady_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_Tpw1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('tampawady_info')}}">{{__('home.center_Tpw2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (Tampawady Branch )</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No. (489/490), Corner of LanthitStreet & ShweSanKaing Pagoda,Chanmyatharsi, Mandalay.</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp; Open Hour : 08:30 AM ~ 05:30 PM</div>
+                        <div>&nbsp;{{__('home.center_Tpw3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_Tpw4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_Tpw5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp; 09-777000925 , 09-777000929</div>
                     </div>
                 </div>
@@ -1052,7 +1049,7 @@
 <section class="ourcenter mt-5" id="ourCenter">
     <div class="container">
         <div class="section-sub-title-box">
-            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>Bago Region<i class="fas fa-map-marker-alt px-2"></i></h3>
+            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>Bago Region{{__('home.center_title3')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
         </div>
         <div class="row filter-layout masonary-layout mt-3">
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
@@ -1063,12 +1060,12 @@
                             <a href="{{asset('assets/photos/bago.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Bago Branch, Bago</p>
-                            <h4 class="portfolio__title"><a href="{{route('bago_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_bago1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('bago_info')}}">Show Detail{{__('home.center_bago2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (Bago Branch)</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;Ward.8, Oakthar Myo Thit, Bago Township, Bago, Myanmar</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM</div>
+                        <div>&nbsp;{{__('home.center_bago3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;Ward.8, Oakthar Myo Thit, Bago Township, Bago, Myanmar{{__('home.center_bago4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM{{__('home.center_bago5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-799695755</div>
                     </div>
                 </div>
@@ -1203,7 +1200,7 @@
                                     </div>
                                     <div class="testimonial-one__client-info">
                                         <div class=>
-                                           <img src="{{asset('assets/photos/Farmer Lighting Company Limited.jpg')}}" alt="">
+                                           <img src="{{asset('assets/photos/Farmer Lighting Company Limited.png')}}" alt="">
                                         </div>
                                         <div class="testimonial-one__client-content">
 

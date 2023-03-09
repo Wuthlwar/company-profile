@@ -78,6 +78,68 @@ return [
     'footer_11'                    => 'Contact',
     'footer_12'                    => 'Call to Our Head Office',
 
+    'center_header'                => 'Our Center',
+    'center_yangon'                => 'Yangon Region',
+    'center_lanthit1'              => 'Lanthit Branch, Yangon',
+    'center_lanthit2'              => 'Show Detail',
+    'center_lanthit3'              => 'PRO 1 Global Home Center (Lanthit Branch )',
+    'center_lanthit4'              => 'No.76,Lanthit Street, Near Arleing Ngar Sint Pagoda,Insein Township, Yangon .',
+    'center_lanthit5'              => 'Open Hour : 08:30 AM ~ 05:30 PM',
 
+    'center_satsan1'               => 'Satsan Branch, Yangon',
+    'center_satsan2'               => 'Show Detail',
+    'center_satsan3'               => 'PRO 1 Global Home Center (Satsan Branch)',
+    'center_satsan4'               => 'No.05, Upper Pazundaung Road, 9th Street Bus Stop, Mingalar Taung Nyunt Township, Yangon.',
+    'center_satsan5'               => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'center_ed1'                   => 'Satsan Branch, Yangon',
+    'center_ed2'                   => 'Show Detail',
+    'center_ed3'                   => 'PRO 1 Global Home Center (Satsan Branch)',
+    'center_ed4'                   => 'No.05, Upper Pazundaung Road, 9th Street Bus Stop, Mingalar Taung Nyunt Township, Yangon.',
+    'center_ed5'                   => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'center_hty1'                  => 'HlaingTharYar Branch, Yangon',
+    'center_hty2'                  => 'Show Detail',
+    'center_hty3'                  => 'PRO 1 Global Home Center(HlaingTharYar Branch)',
+    'center_hty4'                  => 'No (4/5),Corner of Yangon-Pathein & Yangon-TwanTay Road, HlaingTharYar Township,Yangon',
+    'center_hty5'                  => 'Open Hour : 09:00 AM ~ 05:00 PM',
+
+    'center_Tm1'                   => 'PRO 1 Plus (TerminalM), Yangon',
+    'center_Tm2'                   => 'Show Detail',
+    'center_Tm3'                   => 'PRO 1 Global Home Center(TerminalM Branch)',
+    'center_Tm4'                   => 'No.196, 1st Floor, Terminal M Shopping Mall, No.3 Highway, Mingalardon Township, Yangon.',
+    'center_Tm5'                   => 'Open Hour : 09:00 AM ~ 05:00 PM',
+
+    'center_sdg1'                  => 'Southdagon Branch, Yangon',
+    'center_sdg2'                  => 'Show Detail',
+    'center_sdg3'                  => 'PRO 1 Global Home Center(Southdagon Branch)',
+    'center_sdg4'                  => 'No.523, Pin Lone Road , 23 Ward, Near of South Dagon (Ka.Nya.Na) , Yangon.',
+    'center_sdg5'                  => 'Open Hour : 09:00 AM ~ 05:00 PM',
+
+    'center_spt1'                  => 'Shwe Pyi Thar Branch, Yangon',
+    'center_spt2'                  => 'Show Detail',
+    'center_spt3'                  => 'PRO 1 Global Home Center(Shwe Pyi Thar Branch)',
+    'center_spt4'                  => 'No (103/104), Bayint Naung Street, Industrial Zone (4), Shwe Pyi Thar Township, Yangon.',
+    'center_spt5'                  => 'Open Hour : 09:00 AM ~ 05:00 PM',
+
+    'center_title2'                => 'Mandalay Region',
+    'center_Tp1'                   => 'Theikpan Branch, Mandalay',
+    'center_Tp2'                   => 'Show Detail',
+    'center_Tp3'                   => 'PRO 1 Global Home Center (Theikpan Branch )',
+    'center_Tp4'                   => 'No.(Ma-8/6), Theik Pan Road, Chanmyatharsi Township,Mandalay',
+    'center_Tp5'                   => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'center_Tpw1'                  => 'Tampawady Branch, Mandalay',
+    'center_Tpw2'                  => 'Show Detail',
+    'center_Tpw3'                  => 'PRO 1 Global Home Center (Tampawady Branch )',
+    'center_Tpw4'                  => 'No. (489/490), Corner of LanthitStreet & ShweSanKaing Pagoda,Chanmyatharsi, Mandalay.',
+    'center_Tpw5'                  => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'center_title2'                => 'Bago Region',
+    'center_'                      => 'Bago Branch, Bago',
+    'center_'                      => 'Bago Branch, Bago',
+    'center_'                      => 'PRO 1 Global Home Center (Bago Branch )',
+    'center_'                      => 'No. (489/490), Corner of LanthitStreet & ShweSanKaing Pagoda,Chanmyatharsi, Mandalay.',
+    'center_'                      => 'Open Hour : 08:30 AM ~ 05:30 PM',
 
 ];

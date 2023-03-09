@@ -20,9 +20,9 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="portfolio-details__content-left">
-                            <div>&nbsp;PRO 1 Global Home Center (Lanthit Branch )</div>
-                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(Ma-8/6), Theik Pan Road, Between 62 st & 63 st, Chanmyatharsi Township, Mandalay.</div>
-                            <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM</div>
+                            <div>&nbsp;{{__('home.center_lanthit3')}}</div>
+                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_lanthit4')}}</div>
+                            <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_lanthit5')}}</div>
                             <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000942, 09-777000943</div>
 
                         </div>
