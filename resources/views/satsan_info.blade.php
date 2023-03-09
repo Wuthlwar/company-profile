@@ -26,9 +26,9 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="portfolio-details__content-left">
-                            <div>&nbsp;PRO 1 Global Home Center (Satsan Branch)</div>
-                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No . 05, Upper Pazundaung Road, 9th Street Bus Stop, Mingalar Taung Nyunt Township, Yangon.</div>
-                            <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:00 PM</div>
+                            <div>&nbsp;{{__('home.center_satsan3')}}</div>
+                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_satsan4')}}</div>
+                            <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_satsan5')}}</div>
                             <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;01-201849, 01-201850, 09-777000849</div>
 
                         </div>

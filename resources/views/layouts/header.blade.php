@@ -33,16 +33,25 @@
                                             <a class="iq-sub-card" href="{{ route('lang','mm')}}">
                                                 <img src="{{ asset('assets/photos/uk.png') }}" alt="" style="width:20px">
                                             </a>
+                                            <input type="checkbox">
+                                            <label for="" class="onbtn languagefont">Myan</label>
+                                            <label for="" class="ofbtn languagefont">Eng</label>
+
                                         @break
                                         @case('mm')
                                         <a class="iq-sub-card" href="{{ route('lang','en')}}">
                                             <img src="{{ asset('assets/photos/myanmar.png') }}" alt="" style="width:20px">
+
+
+                                        <input type="checkbox">
+                                            <label for="" class="onbtn languagefont">Myan</label>
+                                            <label for="" class="ofbtn languagefont">Eng</label>
                                         </a>
                                         @break
                                         @default
-                                            <a class="iq-sub-card" href="{{ route('lang','mm')}}">
-                                                Eng
-                                            </a>
+                                        <a class="iq-sub-card" href="{{ route('lang','mm')}}">
+                                        Eng
+                                        </a>
                                     @endswitch
                                 </div>
                             </li>

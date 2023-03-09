@@ -23,9 +23,9 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="portfolio-details__content-left">
-                            <div>&nbsp;PRO 1 Global Home Center (East Dagon Branch )</div>
-                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(1/ka), No(2) Main Road,15 Quarter, Near School of Nursing and Midwifery,East Dagon , Yangon</div>
-                            <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 06:00 PM</div>
+                            <div>&nbsp;{{__('home.center_ed3')}}</div>
+                            <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_ed4')}}</div>
+                            <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_ed5')}}</div>
                             <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp; 01-2585158, 01-2585159, 09-777000867</div>
 
                         </div>

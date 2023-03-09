@@ -18,6 +18,18 @@
             .custom-textarea{
                 height: 70px!important;
             }
+            .btn-danger{
+                background-color: #be123c!important;
+                border: 1px solid #881337;
+            }
+            .btn-warning{
+                background-color: #eab308!important;
+                border: 1px solid #ca8a04;
+            }
+            .card-header{
+                padding: 10px!important;
+                
+            }
         </style>
     </head>
   <body class="">
