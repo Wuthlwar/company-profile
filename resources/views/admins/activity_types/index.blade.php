@@ -1,44 +1,81 @@
 @extends('admins.app')
 @section('content')
-<div class="card mb-4">
-    <div class="card-header">
-        <strong>Activity</strong><span class="small ms-1"></span>
-        <div class="row-reverse float-end">
-            <a class="btn btn-info" href="{{ route('activity_type.create') }}">Add</a>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+            <div>
+                <h4 class="mb-3">Activity Type List</h4>
+
+            </div>
+            {{-- <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add</a> --}}
+            <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#actTypeModal" id="openModal" data-action="{{ route('activity_type.store') }}"><i class="las la-plus mr-3"></i>Add</button>
+
         </div>
     </div>
-    <div class="card-body table-responsive">
-
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Activity Type Name</th>
-                <th scope="col">Created At</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-             @foreach ($act_types as $type)
-                <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $type->name }}</td>
-                    <td>{{ $type->created_at }}</td>
-                    <td>
-                        <form action="{{ route('activity_type.destroy',$type->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <a type="button" href="{{ route('activity_type.edit',$type->id) }}" class="btn btn-warning">Edit</a>
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                        </form>
-
-                    </td>
+    <div class="col-lg-12">
+        <div class="table-responsive rounded mb-3">
+        <table class="table table-striped">
+            <thead class="bg-white text-uppercase">
+                <tr class="ligth ligth-data">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Actions</th>
                 </tr>
-             @endforeach
+            </thead>
+            <tbody id="tbody" >
 
             </tbody>
-          </table>
-
+        </table>
+        </div>
     </div>
-  </div>
+</div>
+
+{{-- Create Modal  --}}
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true" id='actTypeModal'>
+    <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title"> Activity Type</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <form action="{{ route('activity_type.store') }}" method="POST" id="actTypeFormData">
+            @csrf
+          <div class="modal-body">
+
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between bg-info rounded-sm">
+                            <div class="header-title ">
+                                <h6 class="card-title">Add Activity Type</h6>
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+                                <div class="row fieldContainer">
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input class="form-control" id="name" type="text" placeholder="Enter ativity type name" name="name" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <button type="submit" class="btn btn-primary" id="btn-create">Save changes</button>
+          </div>
+        </form>
+       </div>
+    </div>
+ </div>
+@endsection
+@section('script')
+
+<script src="{{ asset('/js/activity_type_crud.js') }}"></script>
 @endsection

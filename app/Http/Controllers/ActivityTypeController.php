@@ -4,14 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\ActivityType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ActivityTypeController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $act_types = ActivityType::latest()->get();
+        $act_types = ActivityType::latest()->paginate(30);
         // dd($act_types);
+        if($request->ajax()){
+
+            return response()->json([
+               'success'        => true,
+               'act_types'      => $act_types,
+            ]);
+      }
         return view('admins.activity_types.index',compact('act_types'));
     }
 
@@ -42,25 +50,46 @@ class ActivityTypeController extends Controller
     public function edit($id)
     {
         $act_type=ActivityType::find($id);
+        return response()->json([
+            'success' => true,
+            'act_type' => $act_type,
+        ]);
         return view('admins.activity_types.create-edit',['act_type'=>$act_type]);
     }
 
-    public function update(Request $request, $id)
+    public function act_type_update(Request $request, $id)
     {
-        $request->validate([
-            'name' =>'required',
+
+        // $act_type = ActivityType::find($id);
+        // $act_type->update(['name'=>$request->name]);
+        // return redirect()->route('activity_type.index')->with('success','You have successfully updated');
+        $validator = Validator::make($request->all(),[
+            'name' => 'required'
         ]);
+        if($validator->fails()){
+            return response()->json($validator->errors(),400);
+        }
         $act_type = ActivityType::find($id);
         $act_type->update(['name'=>$request->name]);
-        return redirect()->route('activity_type.index')->with('success','You have successfully updated');
+        return response()->json([
+            'success' => true,
+             'message' => 'Success Updated Activity Type',
+            ]);
 
     }
 
-    public function destroy($id)
+    public function act_type_delete($id)
     {
         // dd($id);
-        $act_type=ActivityType::find($id);
-        $act_type->delete();
-        return back()->with('success','You have successfully deleted');
+        // $act_type=ActivityType::find($id);
+        // $act_type->delete();
+        // return back()->with('success','You have successfully deleted');
+
+        ActivityType::find($id)->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Success Deleted activity type',
+            ]);
     }
 }

@@ -7,14 +7,28 @@ use App\Http\Requests\UpdateActivityRequest;
 use App\Models\Activity;
 use App\Models\ActivityImage;
 use App\Models\ActivityType;
+use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $acts = Activity::latest()->get();
-        return view('admins.activities.index',compact('acts'));
+        $acts = Activity::latest()->paginate(30);
+        $act_types = ActivityType::all();
+        $act_id = $request->session()->get('act_id')?$request->session()->get('act_id'):1;
+        $act =Activity::whereId($act_id)->first();
+        // dd($act);
+        if($request->ajax()){
+
+            return response()->json([
+               'success'        => true,
+               'acts'           => $acts,
+               'act_types'      => $act_types,
+               'act'            => $act
+            ]);
+      }
+        return view('admins.activities.index',compact('acts','act_types','act'));
     }
 
 
@@ -28,15 +42,17 @@ class ActivityController extends Controller
 
     public function store(StoreActivityRequest $request)
     {
+        // dd($request->all());
         $data = $request->validate([
             'title'             => 'required',
             'description'       => 'required',
+            'description_mm'       => 'required',
             'preview_img'       => 'required',
             'activity_type_id'  => 'required',
             'location'          => 'nullable',
             'date'              => 'nullable'
         ]);
-        // dd('hi');
+        // dd($request->all());
         $file = $request->preview_img;
         $folderName = "uploads/activity";
         $fileName = $file->getClientOriginalName();
@@ -70,9 +86,10 @@ class ActivityController extends Controller
     public function show(Activity $activity)
     {
         $act      = $activity->id;
+        $activity = Activity::find($act);
         $act_imgs = ActivityImage::where('activity_id', $act)->get();
         // dd($act_imgs);
-        return view('admins.activities.show',compact('act_imgs','act'));
+        return view('admins.activities.show',compact('act_imgs','act','activity'));
     }
 
 
@@ -80,6 +97,10 @@ class ActivityController extends Controller
     {
         $act = Activity::find($activity->id);
         $act_types = ActivityType::all();
+        return response()->json([
+            'success' => true,
+            'act' => $act,
+        ]);
         return view('admins.activities.create-edit',compact('act','act_types'));
     }
 
@@ -135,11 +156,16 @@ class ActivityController extends Controller
         $act->delete();
         return redirect()->route('activities.index');
     }
-    public function del_act_imgs($img_id)
+
+
+    public function del_imgs($img_id)
     {
-       $img = ActivityImage::find($img_id);
-       $img->delete();
-       return back();
+        $act = ActivityImage::find($img_id)->delete();
+        // ->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Success Deleted user',
+            ]);
 
     }
 }
