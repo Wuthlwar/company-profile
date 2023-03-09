@@ -140,12 +140,13 @@ class HomeController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('login');
+        return redirect()->route('login');
     }
 
     public function login()
     {
         return view('admins.auth.login');
+        // return view('admins.auth.new_auth');
     }
 
     public function checkLogin(Request $request)
@@ -162,7 +163,7 @@ class HomeController extends Controller
             if($user->email=='superadmin@mail.com')
             {
                 Auth::login($user);
-                return redirect('/admins/');
+                return redirect('/admins/home');
             }
             else{
 

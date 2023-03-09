@@ -4,7 +4,7 @@
     <div class="card-header">
         <strong>Activity</strong><span class="small ms-1"></span>
         <div class="row-reverse float-end">
-            <a class="btn btn-info" href="{{ route('activity_type.create') }}">Add</a>
+            <a class="btn custom-bg-info" href="{{ route('activity_type.create') }}">Add</a>
         </div>
     </div>
     <div class="card-body table-responsive">
