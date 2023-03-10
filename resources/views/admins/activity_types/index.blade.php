@@ -8,7 +8,7 @@
 
             </div>
             {{-- <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add</a> --}}
-            <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#actTypeModal" id="openModal" data-action="{{ route('activity_type.store') }}"><i class="las la-plus mr-3"></i>Add</button>
+            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#actTypeModal" id="openModal" data-action="{{ route('activity_type.store') }}"><i class="las la-plus mr-3"></i>Add</button>
 
         </div>
     </div>
@@ -18,7 +18,7 @@
             <thead class="bg-white text-uppercase">
                 <tr class="ligth ligth-data">
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Type Name</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -40,7 +40,7 @@
              <span aria-hidden="true">&times;</span>
              </button>
           </div>
-          <form action="{{ route('activity_type.store') }}" method="POST" id="actTypeFormData">
+          <form method="POST" enctype="multipart/form-data" id="formData">
             @csrf
           <div class="modal-body">
 
@@ -53,14 +53,14 @@
                         </div>
                         <div class="card-body">
 
-                                <div class="row fieldContainer">
-
-                                    <div class="col-12">
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Title</label>
-                                            <input class="form-control" id="name" type="text" placeholder="Enter ativity type name" name="name" value="">
+                                            <label>Name</label>
+                                            <input class="form-control" id="name" type="text" placeholder="Enter Activity Type" name="name" value="">
                                         </div>
                                     </div>
+
                                 </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
           </div>
           <div class="modal-footer">
              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             <button type="submit" class="btn btn-primary" id="btn-create">Save changes</button>
+             <button type="submit" class="btn btn-primary" id   ="btn-create">Save changes</button>
           </div>
         </form>
        </div>
@@ -76,6 +76,5 @@
  </div>
 @endsection
 @section('script')
-
 <script src="{{ asset('/js/activity_type_crud.js') }}"></script>
 @endsection

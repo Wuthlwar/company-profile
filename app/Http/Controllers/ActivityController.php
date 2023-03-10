@@ -78,8 +78,11 @@ class ActivityController extends Controller
             }
         }
 
-        // dd('hi');
-        return redirect()->route('activities.index');
+        return response()->json([
+            'success' => true,
+             'message' => 'Success created position',
+         ]);
+        // return redirect()->route('activities.index');
     }
 
 
@@ -153,8 +156,19 @@ class ActivityController extends Controller
     public function destroy(Activity $activity)
     {
         $act = Activity::find($activity->id);
-        $act->delete();
+        $act->delete();#fffafa
         return redirect()->route('activities.index');
+    }
+
+    public function delete($id)
+    {
+        $act = Activity::find($id);
+        $act_img = ActivityImage::where('activity_id',$act->id)->delete();
+        $act->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Success Deleted Activity',
+            ]);
     }
 
 

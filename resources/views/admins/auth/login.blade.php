@@ -1,7 +1,7 @@
 @extends('admins.auth.app')
 
 @section('content')
-<div class="wrap-login100" >
+<div class="wrap-login100" style="background-color: #fffafa ;">
     <div class="login100-pic js-tilt" data-tilt>
         <img src="{{ asset('assets/photos/pro_1.png') }}" alt="IMG">
     </div>

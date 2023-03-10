@@ -39,10 +39,11 @@ Route::group(['prefix' => 'admins'], function(){
     // Route::resource('permissions', PermissionController::class);
     Route::resource('activity_type', ActivityTypeController::class);
     Route::post('activity_type/{id}/update',[ActivityTypeController::class,'act_type_update']);
-         Route::delete('activity_type/{id}/delete',[ActivityTypeController::class,'act_type_delete']);
+    Route::delete('activity_type/{id}/delete',[ActivityTypeController::class,'act_type_delete']);
     Route::resource('activities', ActivityController::class);
     Route::post('/del_act_imgs/{img_id}/delete',[ActivityController::class,'del_act_imgs'])->name('del_act_imgs');
     Route::delete('/act_img/{img_id}/delete',[ActivityController::class,'del_imgs'])->name('del_imgs');
+    Route::delete('/activities/{id}/delete',[ActivityController::class,'delete']);
 
 
 });

@@ -5,10 +5,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>POS Dash | Responsive Bootstrap 4 Admin Dashboard Template</title>
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+
         <link rel="stylesheet" href="{{ asset('html/assets/css/backend-plugin.min.css') }}">
         <link rel="stylesheet" href="/css/backend.css?v=1.0.0">
         <link rel="stylesheet" href="{{ asset('html/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
@@ -28,7 +30,15 @@
             }
             .card-header{
                 padding: 10px!important;
-                
+
+            }
+            .iq-sidebar{
+                background: #9053c7;
+                background: -webkit-linear-gradient(-135deg, #67e8f9, #c850c0);
+                background: -o-linear-gradient(-135deg, #67e8f9, #c850c0);
+                background: -moz-linear-gradient(-135deg, #67e8f9, #c850c0);
+                background: linear-gradient(-135deg, #67e8f9, #c850c0);
+                /* background-image: url('../images/4color.jpg'); */
             }
         </style>
     </head>
@@ -54,15 +64,15 @@
           <div class="data-scrollbar" data-scroll="1">
               <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="iq-menu">
-                      <li class="active">
+                      <li class="{{ request()->url()==url('/admins/home')?'active':'' }}">
                           <a href="../backend/index.html" class="svg-icon">
                               <svg  class="svg-icon" id="p-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
                               </svg>
-                              <span class="ml-4">Dashboards</span>
+                              <span class="ml-4">Dashboard</span>
                           </a>
                       </li>
-                      <li class=" ">
+                      <li class="">
                           <a href="#product" class="collapsed" data-toggle="collapse" aria-expanded="false">
                               <svg class="svg-icon" id="p-dash2" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
                                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -73,12 +83,12 @@
                               </svg>
                           </a>
                           <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                              <li class="">
+                              <li class="{{  request()->url()==route('activity_type.index')?'active':'' }}">
                                   <a href="{{ route('activity_type.index') }}">
                                       <i class="las la-minus"></i><span>Activity Type</span>
                                   </a>
                               </li>
-                              <li class="">
+                              <li class="{{  request()->url()==route('activities.index')?'active':'' }}">
                                 <a href="{{ route('activities.index') }}">
                                     <i class="las la-minus"></i><span>Activity</span>
                                 </a>
@@ -98,7 +108,7 @@
                               </svg>
                           </a>
                           <ul id="sale" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                  <li class="">
+                                  <li class="{{  request()->url()==route('feedbacks.index')?'active':'' }}">
                                           <a href="{{ route('feedbacks.index') }}">
                                               <i class="las la-minus"></i><span>Feedback</span>
                                           </a>
