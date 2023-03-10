@@ -32,6 +32,14 @@
                 padding: 10px!important;
 
             }
+            .iq-sidebar{
+                background: #9053c7;
+                background: -webkit-linear-gradient(-135deg, #67e8f9, #c850c0);
+                background: -o-linear-gradient(-135deg, #67e8f9, #c850c0);
+                background: -moz-linear-gradient(-135deg, #67e8f9, #c850c0);
+                background: linear-gradient(-135deg, #67e8f9, #c850c0);
+                /* background-image: url('../images/4color.jpg'); */
+            }
         </style>
     </head>
   <body class="">
