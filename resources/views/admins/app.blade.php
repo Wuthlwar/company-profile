@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <title>POS Dash | Responsive Bootstrap 4 Admin Dashboard Template</title>
+        <title>Pro1 Admin</title>
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico" />
