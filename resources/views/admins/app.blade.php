@@ -5,10 +5,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>POS Dash | Responsive Bootstrap 4 Admin Dashboard Template</title>
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+
         <link rel="stylesheet" href="{{ asset('html/assets/css/backend-plugin.min.css') }}">
         <link rel="stylesheet" href="/css/backend.css?v=1.0.0">
         <link rel="stylesheet" href="{{ asset('html/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
@@ -28,7 +30,7 @@
             }
             .card-header{
                 padding: 10px!important;
-                
+
             }
         </style>
     </head>

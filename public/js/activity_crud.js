@@ -28,11 +28,11 @@ for(let i = 0; i < res.acts.data.length; i++){
                     <td>
                         <div class="d-flex align-items-center list-action">
                             <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                href="#"><i class="ri-eye-line mr-0"></i></a>
-                            <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                href="/admins/activities/`+res.acts.data[i].id+`" id="editModal"><i class="ri-pencil-line mr-0"></i></a>
-                            <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                href="#"><i class="ri-delete-bin-line mr-0"></i></a>
+                            href="/admins/activity_type/`+res.acts.data[i].id+`"><i class="ri-eye-line mr-0"></i></a>
+                            <button class="badge btn-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                id="editModal" data-id="`+res.acts.data[i].id+`"><i class="ri-pencil-line mr-0"></i></button>
+                            <button class="badge btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                            data-id="`+res.acts.data[i].id+`" id="btn-delete"><i class="ri-delete-bin-line mr-0"></i></button>
                         </div>
                     </td>
                 </tr>`;
