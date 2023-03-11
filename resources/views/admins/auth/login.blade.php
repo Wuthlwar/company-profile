@@ -1,7 +1,7 @@
 @extends('admins.auth.app')
 
 @section('content')
-<div class="wrap-login100 shadow" style="background-color: rgba(255, 255, 255,0.9); box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; border-radius:30px;">
+<div class="wrap-login100 shadow" style="background-color: rgba(255, 255, 255,0.9); box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; border-radius:40px; ">
     <div class="login100-pic js-tilt" data-tilt>
         <img src="{{ asset('html/pro1logo.png') }}" alt="IMG">
     </div>
