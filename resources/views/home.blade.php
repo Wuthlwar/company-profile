@@ -36,7 +36,7 @@
                                 </h2>
                                 <p class="main-slider__text"><span class="fw-bold text-dark">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</span></p>
                                 <div class="main-slider__btn-box">
-                                    <a href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">"Buy Now"</a>
+                                    <a href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
                                 </div>
                             </div>
                         </div>
@@ -1049,7 +1049,7 @@
 <section class="ourcenter mt-5" id="ourCenter">
     <div class="container">
         <div class="section-sub-title-box">
-            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>Bago Region{{__('home.center_title3')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
+            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>{{__('home.center_title3')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
         </div>
         <div class="row filter-layout masonary-layout mt-3">
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
@@ -1065,7 +1065,7 @@
                         </div>
                         <div>&nbsp;{{__('home.center_bago3')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_bago4')}}</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM{{__('home.center_bago5')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_bago5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-799695755</div>
                     </div>
                 </div>
@@ -1076,7 +1076,7 @@
 <section class="ourcenter mt-5" id="ourCenter">
     <div class="container">
         <div class="section-sub-title-box">
-            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>Mon Region<i class="fas fa-map-marker-alt px-2"></i></h3>
+            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>{{__('home.center_title4')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
         </div>
         <div class="row filter-layout masonary-layout mt-3">
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
@@ -1087,12 +1087,12 @@
                             <a href="{{asset('assets/photos/mawlamyine.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Mawlamyine Branch, Mandalay</p>
-                            <h4 class="portfolio__title"><a href="{{route('mawlamyine_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_mon1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('mawlamyine_info')}}">{{__('home.center_mon2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (Mawlamyine Branch )</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;No.(70), Corner of Upper Main Road & A Lal Tan Street, Maung Ngan Quarter, Mawlamyine</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM</div>
+                        <div>&nbsp;{{__('home.center_mon3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_mon4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_mon5')}}Open Hour : 08:30 AM ~ 05:30 PM</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000942, 09-777000943</div>
                     </div>
                 </div>
@@ -1103,7 +1103,7 @@
 <section class="ourcenter mt-5" id="ourCenter">
     <div class="container">
         <div class="section-sub-title-box">
-            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>Shan Region<i class="fas fa-map-marker-alt px-2"></i></h3>
+            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>{{__('home.center_title5')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
         </div>
         <div class="row filter-layout masonary-layout mt-3">
             <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
@@ -1114,12 +1114,12 @@
                             <a href="{{asset('assets/photos/ayetharyar.png')}}" class="img-popup"><span class="icon-plus"></span></a>
                         </div>
                         <div class="portfolio__content">
-                            <p class="portfolio__sub-title">Aye Tharyar Branch, Mandalay</p>
-                            <h4 class="portfolio__title"><a href="{{route('ayetharyar_info')}}">Show Detail</a></h4>
+                            <p class="portfolio__sub-title">{{__('home.center_shan1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('ayetharyar_info')}}">{{__('home.center_shan2')}}</a></h4>
                         </div>
-                        <div>&nbsp;PRO 1 Global Home Center (Aye Tharyar Branch )</div>
-                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;  No. (6 to 17), Pyi Htaung Su Road, 5-Quarter, Aye Tharyar, Taunggyi Township,Shan State</div>
-                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;Open Hour : 08:30 AM ~ 05:30 PM</div>
+                        <div>&nbsp;{{__('home.center_shan3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp; {{__('home.center_shan4')}} </div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_shan5')}}</div>
                         <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777003701, 09-777003702,09-777003703</div>
                     </div>
                 </div>
@@ -1143,7 +1143,7 @@
                     <div class="testimonial-one__top-left">
                         <div class="section-title text-left">
                             <div class="section-sub-title-box">
-                                <p class="section-sub-title">OUR PARTNERS</p>
+                                <p class="section-sub-title">{{__('home.part_title')}}</p>
                                 <div class="section-title-shape-1">
                                     <img src="assets/images/shapes/section-title-shape-1.png" alt="">
                                 </div>
@@ -1151,14 +1151,11 @@
                                     <img src="assets/images/shapes/section-title-shape-2.png" alt="">
                                 </div>
                             </div>
-                            <p class="section-title__title">{{__('home.part_1')}}<br>{{__('home.part_2')}}</p>
+                            <p class="section-title__title">{{__('home.part_1')}}{{__('home.part_2')}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    {{-- <div class="testimonial-one__top-right">
-                        <p class="testimonial-one__top-text">Just click on the brands below and you can order those brand products on our E-commerce website.</p>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -1192,20 +1189,15 @@
                         <div class="item">
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{asset('assets/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
                                     <div class="partaner mb-5">
-                                        <h6>"Farmer Lighting Company Limited"</h6>
+                                        <h6>Farmer Lighting Company Limited</h6>
                                     </div>
                                     <div class="testimonial-one__client-info">
                                         <div class=>
                                            <img src="{{asset('assets/photos/Farmer Lighting Company Limited.png')}}" alt="">
                                         </div>
                                         <div class="testimonial-one__client-content">
-
                                             <div class="testimonial-one__client-details">
-                                                <!-- <h3 class="testimonial-one__client-name">OPPLE</h3> -->
                                                 <p class="testimonial-one__client-sub-title"></p>
                                             </div>
                                         </div>
@@ -1216,24 +1208,15 @@
                         <div class="item">
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{asset('assets/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="partaner mb-5">
-                                        <h6>"Zinhtet Trading Company Limited"</h6>
+                                    <div class="partaner mb-5 ">
+                                        <h6>Zinhtet Trading Company Limited</h6>
                                     </div>
                                     <div class="testimonial-one__client-info">
                                         <div class=>
-
                                                 <img src="{{asset('assets/photos/Zinhtet Trading Company Limited.jpg')}}" alt="">
-                                            <!-- <div class="testimonial-one__quote">
-                                                        <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
-                                                    </div> -->
                                         </div>
                                         <div class="testimonial-one__client-content">
-
                                             <div class="testimonial-one__client-details">
-                                                <!-- <h3 class="testimonial-one__client-name">MITSUBISHI</h3> -->
                                                 <p class="testimonial-one__client-sub-title"></p>
                                             </div>
                                         </div>
@@ -2053,33 +2036,32 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Your name" name="name">
+                                        <input type="text" placeholder="{{__('home.contact_name')}}" name="name">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
-                                        <input type="email" placeholder="Email address" name="email">
+                                        <input type="email" placeholder="{{__('home.contact_mail')}}" name="email">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Phone number" name="ph_no">
+                                        <input type="text" placeholder="{{__('home.contact_ph')}}" name="ph_no">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Subject" name="subject">
+                                        <input type="text" placeholder="{{__('home.contact_sub')}}" name="subject">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="comment-form__input-box text-message-box">
-                                        <textarea name="description" placeholder="Write a message"></textarea>
+                                        <textarea name="description" placeholder="{{__('home.contact_message')}}"></textarea>
                                     </div>
                                     <div class="comment-form__btn-box">
-                                        <button type="submit" class="thm-btn comment-form__btn">Send a
-                                            Message</button>
+                                        <button type="submit" class="thm-btn comment-form__btn">{{__('home.contact_send')}}</button>
                                     </div>
                                 </div>
                             </div>
