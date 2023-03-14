@@ -21,7 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('admin/login/css/main.css') }}">
 <!--===============================================================================================-->
 </head>
-<body class="h-screen" style="background-image: url({{ asset('html/1920.png') }});">
+<body class="h-screen" style="background-image: url({{ asset('html/wall.jpg') }});background-repeat: no-repeat!important; background-size: cover!important;
+background-position: center!important;">
 
 	<div class="limiter">
 		<div class="container-login100">
