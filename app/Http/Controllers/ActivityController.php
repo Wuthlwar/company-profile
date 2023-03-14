@@ -45,11 +45,13 @@ class ActivityController extends Controller
         // dd($request->all());
         $data = $request->validate([
             'title'             => 'required',
+            'title_mm'          => 'required',
             'description'       => 'required',
-            'description_mm'       => 'required',
+            'description_mm'    => 'required',
             'preview_img'       => 'required',
             'activity_type_id'  => 'required',
-            'location'          => 'nullable',
+            'location'          => 'required',
+            'location_mm'       => 'required',
             'date'              => 'nullable'
         ]);
         // dd($request->all());
@@ -110,13 +112,16 @@ class ActivityController extends Controller
 
     public function update(UpdateActivityRequest $request, Activity $activity)
     {
-        $act = Activity::find($activity->id);
+        $act = $activity;
         $data = $request->validate([
             'title'             => 'required',
+            'title_mm'          => 'required',
             'description'       => 'required',
-            'preview_img'       => 'nullable',
+            'description_mm'    => 'required',
+            'preview_img'       => 'required',
             'activity_type_id'  => 'required',
-            'location'          => 'nullable',
+            'location'          => 'required',
+            'location_mm'       => 'required',
             'date'              => 'nullable'
         ]);
         // dd('hi');
@@ -148,8 +153,12 @@ class ActivityController extends Controller
             // dd($saveFile);
             }
         }
+        return response()->json([
+            'success' => true,
+             'message' => 'Success Updated Activity'
+            ]);
         // dd('hi');
-        return redirect()->route('activities.index');
+        // return redirect()->route('activities.index');
     }
 
 
@@ -178,7 +187,7 @@ class ActivityController extends Controller
         // ->delete();
         return response()->json([
             'success' => true,
-            'message' => 'Success Deleted user',
+            'message' => 'Success Deleted image',
             ]);
 
     }

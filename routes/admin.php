@@ -33,12 +33,13 @@ Route::group(['prefix' => 'admins'], function(){
     Route::get('/logout',[HomeController::class,'logout'])->name('logout');
     Route::get('/home', function(){
         return view('admins.app');
-    });
+    })->name('admins.home');
     // Route::resource('roles', RoleController::class);
     // Route::resource('users', UserController::class);
     // Route::resource('permissions', PermissionController::class);
     Route::resource('activity_type', ActivityTypeController::class);
     Route::post('activity_type/{id}/update',[ActivityTypeController::class,'act_type_update']);
+    Route::post('activities/{id}/update',[ActivityController::class,'update']);
     Route::delete('activity_type/{id}/delete',[ActivityTypeController::class,'act_type_delete']);
     Route::resource('activities', ActivityController::class);
     Route::post('/del_act_imgs/{img_id}/delete',[ActivityController::class,'del_act_imgs'])->name('del_act_imgs');

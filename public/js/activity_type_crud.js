@@ -20,7 +20,7 @@ for(let i = 0; i < res.act_types.data.length; i++){
                             <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                             href="/admins/activity_type/`+res.act_types.data[i].id+`"><i class="ri-eye-line mr-0"></i></a>
                             <button class="badge btn-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                 id="editModal" data-id="`+res.act_types.data[i].id+`"><i class="ri-pencil-line mr-0"></i></button>
+                                 id="editModal" data-id="`+res.act_types.data[i].id+`" data-action="/admins/activity_type/`+res.acts.data[i].id+`/update"><i class="ri-pencil-line mr-0"></i></button>
                             <button class="badge btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
                             data-id="`+res.act_types.data[i].id+`" id="btn-delete"><i class="ri-delete-bin-line mr-0"></i></button>
                         </div>

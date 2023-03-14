@@ -45,7 +45,7 @@
              <span aria-hidden="true">&times;</span>
              </button>
           </div>
-          <form action="{{ route('activities.store') }}" method="POST" enctype="multipart/form-data" id="formData">
+          <form method="POST" enctype="multipart/form-data" id="formData">
             @csrf
           <div class="modal-body">
 
@@ -59,52 +59,62 @@
                         <div class="card-body">
 
                                 <div class="row fieldContainer">
-                                    <div class="col-md-6">
+                                    <div class="col-12">
                                         <div class="form-group">
-                                            <label>Default</label>
+                                            <label>Activity Type</label>
                                             <select class="form-control mb-3" name="activity_type_id">
                                                 @foreach ($act_types as $type)
-                                                @if ($type->id==$act->activity_type_id)
                                                     <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
-                                                @else
-                                                    <option value="{{ $type->id }}">{{ $type->name }}</option>
-                                                @endif
+
                                                 @endforeach
 
                                             </select>
                                          </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input class="form-control" id="title" type="text" placeholder="Enter Activity Title" name="title" value="{{ old('title',$act->title) }}">
+                                            <input class="form-control" id="title" type="text" placeholder="Enter Activity Title" name="title" value="">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Title(MM)</label>
+                                            <input class="form-control" id="title" type="text" placeholder="Enter Activity Title" name="title_mm" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control custom-textarea" name="description" id="" cols="30" rows="5" required>{{ $act->description }}</textarea>
+                                            <textarea class="form-control custom-textarea" name="description" id="" cols="30" rows="5" required></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-6">
                                         <div class="form-group">
-                                            <label>Description MM</label>
-                                            <textarea class="form-control custom-textarea" name="description_mm" id="" cols="30" rows="5">{{ $act->description_mm }}</textarea>
+                                            <label>Description (MM)</label>
+                                            <textarea class="form-control custom-textarea" name="description_mm" id="" cols="30" rows="5"></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-label" for="location">location</label>
-                                            <input class="form-control" id="location" type="text" placeholder="" name="location" value="{{ old('location',$act->location) }}" required>
+                                            <label class="form-label" for="location">Location</label>
+                                            <input class="form-control" id="location" type="text" placeholder="" name="location" value="" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="location">Location (MM)</label>
+                                            <input class="form-control" id="location" type="text" placeholder="" name="location_mm" value="" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label" for="date">Date</label>
-                                            <input class="form-control" id="date" type="date" placeholder="" name="date" value="{{ old('date',$act->date) }}" required>
+                                            <input class="form-control" id="date" type="date" placeholder="" name="date" value="" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>

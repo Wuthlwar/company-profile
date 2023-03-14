@@ -28,9 +28,9 @@ for(let i = 0; i < res.acts.data.length; i++){
                     <td>
                         <div class="d-flex align-items-center list-action">
                             <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                            href="/admins/activity_type/`+res.acts.data[i].id+`"><i class="ri-eye-line mr-0"></i></a>
-                            <button class="badge btn-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                id="editModal" data-id="`+res.acts.data[i].id+`"><i class="ri-pencil-line mr-0"></i></button>
+                            href="/admins/activities/`+res.acts.data[i].id+`"><i class="ri-eye-line mr-0"></i></a>
+                            <button class="badge btn-warning mr-2" data-toggle="modal" data-target="#actModal"  title="" data-original-title="Edit"
+                                id="editModal" data-id="`+res.acts.data[i].id+`" data-action="/admins/activities/`+res.acts.data[i].id+`/update"><i class="ri-pencil-line mr-0"></i></button>
                             <button class="badge btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
                             data-id="`+res.acts.data[i].id+`" id="btn-delete"><i class="ri-delete-bin-line mr-0"></i></button>
                         </div>
@@ -81,7 +81,7 @@ $('#openModal').click(function() {
          $('#btn-create').removeClass("disabled").html("Save   Change").attr('disabled',false);
          },
          success: function(res){
-
+            console.log(res)
          if(res.success == true){
          $('#formData').trigger("reset");
          $('#actModal').hide();
@@ -105,7 +105,8 @@ $('#openModal').click(function() {
     })
 
 //open edit modal
-$(document).on('click','button#editModal',function() {
+$(document).on('click','#editModal',function() {
+    console.log('hi');
     let id = $(this).data('id');
      let dataAction = $(this).data('action');
      $('#formData').attr('action',dataAction);
@@ -114,7 +115,14 @@ $(document).on('click','button#editModal',function() {
          url : `/admins/activities/${id}/edit`,
          dataType: "json",
          success: function(res) {
-           $('input[name=name]').val(res.act.name);
+            console.log(res);
+           $('input[name=title]').val(res.act.title);
+           $('input[name=title_mm]').val(res.act.title_mm);
+           $('input[name=location]').val(res.act.location);
+           $('input[name=location_mm]').val(res.act.location_mm);
+           $('input[name=date]').val(res.act.date);
+           $('textarea[name=description]').val(res.act.description);
+           $('textarea[name=description_mm]').val(res.act.description_mm);
          $('#actModal').show();
             // console.log(res);
   },
@@ -164,3 +172,40 @@ $(document).on('click','button#editModal',function() {
     })
     });
 
+    $(document).on('click','#img-btn-delete',function(e) {
+        e.preventDefault();
+        let dataDelete = $(this).data('id');
+        // console.log(dataDelete);
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this! ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+        $.ajax({
+        type:'DELETE',
+        dataType: 'JSON',
+        url: `/admins/act_img/${dataDelete}/delete`,
+        data:{
+        '_token':$('meta[name="csrf-token"]').attr('content'),
+        },
+        success:function(response){
+        Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+        )
+        location.reload();
+
+        },
+        error:function(err){
+        console.log(err);
+        }
+        });
+        }
+        })
+        });
