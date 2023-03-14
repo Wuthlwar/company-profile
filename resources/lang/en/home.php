@@ -71,6 +71,7 @@ return [
     'footer_3'                     => 'Near Arlain Ngar Sint Pagoda, Lanthit, Insein',
     'footer_4'                     => 'Open Hours',
     'footer_5'                     => 'Mon – Sat: 9:00 am to 5:00 pm ',
+    'footer_7'                     => 'Social Media',
     'footer_6'                     => 'Sunday: Closed',
     'footer_8'                     => '- Work With Us',
     'footer_9'                     => '- Become Our Supplier',
@@ -135,11 +136,34 @@ return [
     'center_Tpw4'                  => 'No. (489/490), Corner of LanthitStreet & ShweSanKaing Pagoda,Chanmyatharsi, Mandalay.',
     'center_Tpw5'                  => 'Open Hour : 08:30 AM ~ 05:30 PM',
 
-    'center_title2'                => 'Bago Region',
+    'center_title3'                => 'Bago Region',
     'center_bago1'                 => 'Bago Branch, Bago',
     'center_bago2'                 => 'Show Detail',
     'center_bago3'                 => 'PRO 1 Global Home Center (Bago Branch )',
     'center_bago4'                 => 'Ward.8, Oakthar Myo Thit, Bago Township, Bago, Myanmar',
     'center_bago5'                 => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'center_title4'                => 'Mon Region',
+    'center_mon1'                  => 'Mawlamyine Branch, Bago',
+    'center_mon2'                  => 'Show Detail',
+    'center_mon3'                  => 'PRO 1 Global Home Center (Mawlamyine Branch )',
+    'center_mon4'                  => 'No.(70), Corner of Upper Main Road and A Lal Tan Street, ( Kha Pa Ya Compound) , Maung Ngan Quarter, Mawlamyine.',
+    'center_mon5'                  => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'center_title5'                => 'Shan Region',
+    'center_shan1'                 => 'Aye Tharyar Branch, Mandalay',
+    'centershan2'                  => 'Show Detail',
+    'center_shan3'                 => 'PRO 1 Global Home Center (Aye Tharyar Branch )',
+    'center_shan4'                 => 'No. (6 to 17), Pyi Htaung Su Road, 5-Quarter, Aye Tharyar, Taunggyi Township,Shan State',
+    'center_shan5'                 => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'part_title'                   => 'OUR PARTNERS',
+
+    'contact_name'                 => 'Your name',
+    'contact_mail'                 => 'Email address',
+    'contact_ph'                   => 'Phone Number',
+    'contact_sub'                  => 'Subject',
+    'contact_message'              => 'Write a message',
+    'contact_send'                 => 'Send a Message',
 
 ];

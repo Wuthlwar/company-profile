@@ -350,7 +350,7 @@ ul {
 .section-title__title {
     margin: 0;
     color: var(--insur-black);
-    font-size: 45px;
+    font-size: 40px;
     line-height: 55px;
     font-weight: 700;
     letter-spacing: var(--insur-letter-spacing);
@@ -490,6 +490,10 @@ ul {
     text-align: right;
     padding: auto;
 
+}
+
+.languagebox_lang {
+padding-right: 20px;
 }
 input[type="checkbox"] {
     position: relative;
@@ -660,7 +664,8 @@ label{
 }
 
 .main-header__top-social-box {
-    margin-left: 40px;
+    margin-left: 80px;
+    margin-top: 5px;
 }
 
 .main-header__top-social {
@@ -4343,7 +4348,7 @@ label{
     position: relative;
     display: block;
     background-color: var(--insur-extra);
-    padding: 120px 0 120px;
+    padding: 90px 0 90px;
     overflow: hidden;
     z-index: 1;
 }
@@ -4426,13 +4431,19 @@ label{
 }
 
 .testimonial-one__single-inner {
+    font-size: 50px;
     position: relative;
     display: block;
     overflow: hidden;
-    padding: 65px 60px 55px;
+    padding: 25px 140px 20px;
     border-radius: 20px;
     background-color: var(--insur-white);
 }
+
+.partaner mb-5 {
+    font-size: 15px;
+}
+
 
 .testimonial-one__shape-1 {
     position: absolute;

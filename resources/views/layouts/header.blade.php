@@ -26,6 +26,7 @@
                     <div class="main-header__top-menu-box">
                         <ul class="list-unstyled main-header__top-menu">
                             <li>
+   
                                 <div class="languagebox">
                                     @php $locale = session()->get('locale');@endphp
                                     @switch($locale)
@@ -33,19 +34,10 @@
                                             <a class="iq-sub-card" href="{{ route('lang','mm')}}">
                                                 <img src="{{ asset('assets/photos/uk.png') }}" alt="" style="width:20px">
                                             </a>
-                                            <input type="checkbox">
-                                            <label for="" class="onbtn languagefont">Myan</label>
-                                            <label for="" class="ofbtn languagefont">Eng</label>
-
-                                        @break
+                                             @break
                                         @case('mm')
                                         <a class="iq-sub-card" href="{{ route('lang','en')}}">
                                             <img src="{{ asset('assets/photos/myanmar.png') }}" alt="" style="width:20px">
-
-
-                                        <input type="checkbox">
-                                            <label for="" class="onbtn languagefont">Myan</label>
-                                            <label for="" class="ofbtn languagefont">Eng</label>
                                         </a>
                                         @break
                                         @default
@@ -117,7 +109,7 @@
                             </div>
                             <div class="main-menu__call-content mt-10">
                                 <a href="tel:+959777048315 , +959777048316">+959777048315</a>
-                                <p>Call to Our Head Office</p>
+                                <p>{{__('header.menu_7')}}</p>
                             </div>
                         </div>
                     </div>

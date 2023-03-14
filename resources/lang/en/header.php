@@ -8,5 +8,6 @@ return [
     'menu_4'               => 'Our Partners',
     'menu_5'               => 'Our Activities',
     'menu_6'               => 'Contact Us',
+    'menu_7'               => 'Call to Our Head Office',
 
 ];
