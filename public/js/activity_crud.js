@@ -3,7 +3,6 @@
 showActivity();
 // table row with ajax
 function table_activity_row(res){
-    console.log(res.acts);
 let htmlView = '';
    if(res.acts.data.length <= 0){
        htmlView+= `
@@ -12,7 +11,7 @@ let htmlView = '';
          </tr>`;
 }
 for(let i = 0; i < res.acts.data.length; i++){
-    console.log(res.acts.data[i].preview_img);
+
       htmlView += `
                     <tr style="border:1px solid #ff00!important;">
                     <td></td>
@@ -115,7 +114,7 @@ $(document).on('click','#editModal',function() {
          url : `/admins/activities/${id}/edit`,
          dataType: "json",
          success: function(res) {
-            console.log(res);
+            var src =`/storage/uploads/activity/`+res.act.preview_img;
            $('input[name=title]').val(res.act.title);
            $('input[name=title_mm]').val(res.act.title_mm);
            $('input[name=location]').val(res.act.location);
@@ -123,7 +122,29 @@ $(document).on('click','#editModal',function() {
            $('input[name=date]').val(res.act.date);
            $('textarea[name=description]').val(res.act.description);
            $('textarea[name=description_mm]').val(res.act.description_mm);
+           $('#showOldImage').attr('src',src);
+           console.log(res.act_imgs);
+           $.each(res.act_imgs, function (index, value) {
+            var src =`/storage/uploads/activity/`+value.file;
+            var imgWrapper =  `<div class="col-6 col-sm-4 border rounded m-1">
+                                <form method="post">
+                                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                    <div class="card" >
+                                        <div  style="overflow: hidden; height:70px;">
+                                            <img src="/storage/uploads/activity_images/`+value.file+`" alt="" class="rounded card-img-top"/>
+                                        </div>
+
+                                        <div class="card-body text-center">
+                                            <button class="badge btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                        id="img-btn-delete" data-id="`+value.id+`" data-action="{{route('del_imgs',`+value.id+`)}}"><i class="ri-delete-bin-line mr-0"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>`
+            $('#old_act_imgs').append(imgWrapper);
+           });
          $('#actModal').show();
+
             // console.log(res);
   },
   error:function(error) {
@@ -200,6 +221,7 @@ $(document).on('click','#editModal',function() {
         'success'
         )
         location.reload();
+        // $('#old_act_imgs').load()
 
         },
         error:function(err){
@@ -209,3 +231,38 @@ $(document).on('click','#editModal',function() {
         }
         })
         });
+
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                var div_id  = $(input).attr('set-to');
+                reader.onload = function (e) {
+                    $('#'+div_id).attr('src', e.target.result);
+
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(document).ready(function(){
+
+            var maxField = 10;
+            console.log(maxField);
+            var addBtn = $('#addBtn');
+            var wrapper = $('.fieldContainer');
+            var fieldHTML = '<div class="col-md-6"><input class="form-control" id="preview_img" type="file" placeholder="" name="file[]"><button class="btn btn-danger mt-2" type="button" id="removeBtn">Remove</button></div>';
+            var x=1;
+            $(addBtn).click(function () {
+                if(x < maxField) {
+                    x++;
+                    console.log(x);
+                    $(wrapper).append(fieldHTML);
+                }
+            });
+           $(wrapper).on('click','#removeBtn', function (e) {
+               e.preventDefault();
+               $(this).parent('div').remove();
+               x--;
+           });
+     });

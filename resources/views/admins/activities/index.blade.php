@@ -121,8 +121,11 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label" for="preview_img">First Image</label>
-                                            <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img">
+                                            <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img" set-to="showOldImage" onchange="readURL(this)">
                                             <div class="help-block with-errors"></div>
+                                            <div class="row" >
+                                                <img src="" alt="" height="80px" id="showOldImage" class="rounded mt-2">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -131,6 +134,9 @@
                                             <label class="form-label" for="preview_img">Other Images</label>
                                             <input class="form-control" id="preview_img" type="file" placeholder="" name="file[]">
                                             <button class="btn btn-success mt-2" type="button" id="addBtn">Add More</button>
+                                        </div>
+                                        <div class="row " id="old_act_imgs">
+
                                         </div>
                                     </div>
 
@@ -150,65 +156,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(document).ready(function(){
 
-        var maxField = 10;
-        console.log(maxField);
-        var addBtn = $('#addBtn');
-        var wrapper = $('.fieldContainer');
-        var fieldHTML = '<div class="col-md-6"><input class="form-control" id="preview_img" type="file" placeholder="" name="file[]"><button class="btn btn-danger mt-2" type="button" id="removeBtn">Remove</button></div>';
-        var x=1;
-        $(addBtn).click(function () {
-            if(x < maxField) {
-                x++;
-                console.log(x);
-                $(wrapper).append(fieldHTML);
-            }
-        });
-       $(wrapper).on('click','#removeBtn', function (e) {
-           e.preventDefault();
-           $(this).parent('div').remove();
-           x--;
-       });
- });
-
- $(document).on('click','#btn-delete',function(e) {
-    e.preventDefault();
-    let dataDelete = $(this).data('id');
-    // console.log(dataDelete);
-    Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this! ",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-    if (result.isConfirmed) {
-    $.ajax({
-    type:'DELETE',
-    dataType: 'JSON',
-    url: `/admins/act_img/${dataDelete}/delete`,
-    data:{
-    '_token':$('meta[name="csrf-token"]').attr('content'),
-    },
-    success:function(response){
-    Swal.fire(
-    'Deleted!',
-    'Your file has been deleted.',
-    'success'
-    )
-    location.reload();
-
-    },
-    error:function(err){
-    console.log(err);
-    }
-    });
-    }
-    })
-    });
 
 
 

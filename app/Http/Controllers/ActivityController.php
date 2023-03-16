@@ -8,27 +8,24 @@ use App\Models\Activity;
 use App\Models\ActivityImage;
 use App\Models\ActivityType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ActivityController extends Controller
 {
 
     public function index(Request $request)
     {
-        $acts = Activity::latest()->paginate(30);
+        $acts = Activity::with('act_imgs')->latest()->paginate(30);
         $act_types = ActivityType::all();
-        $act_id = $request->session()->get('act_id')?$request->session()->get('act_id'):1;
-        $act =Activity::whereId($act_id)->first();
-        // dd($act);
         if($request->ajax()){
 
             return response()->json([
                'success'        => true,
                'acts'           => $acts,
-               'act_types'      => $act_types,
-               'act'            => $act
+               'act_types'      => $act_types
             ]);
       }
-        return view('admins.activities.index',compact('acts','act_types','act'));
+        return view('admins.activities.index',compact('acts','act_types'));
     }
 
 
@@ -102,31 +99,32 @@ class ActivityController extends Controller
     {
         $act = Activity::find($activity->id);
         $act_types = ActivityType::all();
+        $act_imgs  = ActivityImage::where('activity_id',$act->id)->get();
         return response()->json([
-            'success' => true,
-            'act' => $act,
+            'success'       => true,
+            'act'           => $act,
+            'act_imgs'      =>$act_imgs
         ]);
         return view('admins.activities.create-edit',compact('act','act_types'));
     }
 
 
-    public function update(UpdateActivityRequest $request, Activity $activity)
+    public function update(Request $request, $id)
     {
-        $act = $activity;
+        $act = Activity::find($id);
         $data = $request->validate([
             'title'             => 'required',
             'title_mm'          => 'required',
             'description'       => 'required',
             'description_mm'    => 'required',
-            'preview_img'       => 'required',
+            'preview_img'       => 'nullable',
             'activity_type_id'  => 'required',
             'location'          => 'required',
             'location_mm'       => 'required',
             'date'              => 'nullable'
         ]);
-        // dd('hi');
-        if($request->preview_img!=null)
-        {
+
+         if ($request->has('preview_img')) {
             $file = $request->preview_img;
             $folderName = "uploads/activity";
             $fileName = $file->getClientOriginalName();
@@ -134,8 +132,25 @@ class ActivityController extends Controller
             $savedFileName = $originalFileName.rand(0,9999).'.'.$file->getClientOriginalExtension();
             $file->storeAs($folderName,$savedFileName);
             $data['preview_img'] = $savedFileName;
+            if ($act->preview_img) {
+                Storage::delete('public/uploads/activit/' . $act->preview_img);
+            }
+        }else{
+            $data['preview_img'] = $act->preview_img;
         }
-        $act->update($data);
+        // dd($data);
+        $act->update([
+            'title'             =>$data['title'],
+            'title_mm'          =>$data['title_mm'],
+            'description'       =>$data['description'],
+            'description_mm'    =>$data['description_mm'],
+            'preview_img'       =>$data['preview_img'],
+            'activity_type_id'  =>$data['activity_type_id'],
+            'location'          =>$data['location'],
+            'location_mm'       =>$data['location_mm'],
+            'date'              =>$data['date']
+        ]);
+
         if($request->file!=null)
         {
             foreach($files=$request->file as $file)
