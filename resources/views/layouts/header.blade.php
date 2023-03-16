@@ -26,7 +26,6 @@
                     <div class="main-header__top-menu-box">
                         <ul class="list-unstyled main-header__top-menu">
                             <li>
-   
                                 <div class="languagebox">
                                     @php $locale = session()->get('locale');@endphp
                                     @switch($locale)
@@ -56,6 +55,9 @@
                             <a target="_blank" href="https://invite.viber.com/?g2=AQB%2BIxt%2BiHONWkjqz%2FbmgmTW2jaFd73U66dVh7ZdzTh5iUk5ZWHHexew8X%2F%2FPIXM"><i class="fab fa-viber"></i></a>
                             <a target="_blank" href="https://www.instagram.com/pro1_global_home_center/?igshid=YmMyMTA2M2Y%3D"><i class="fab fa-instagram"></i></a>
                         </div> --}}
+                        <input type="checkbox">
+                                            <label for="" class="onbtn languagefont">Myan</label>
+                                            <label for="" class="ofbtn languagefont">Eng</label>
                     </div>
                 </div>
             </div>
