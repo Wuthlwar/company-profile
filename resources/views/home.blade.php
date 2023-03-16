@@ -1190,7 +1190,7 @@
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__single-inner">
                                     <div class="partaner mb-5">
-                                        <h6>Farmer Lighting Company Limited</h6>
+                                        <h4>Farmer Lighting Company Limited</h4>
                                     </div>
                                     <div class="testimonial-one__client-info">
                                         <div class=>
@@ -1209,7 +1209,7 @@
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__single-inner">
                                     <div class="partaner mb-5 ">
-                                        <h6>Zinhtet Trading Company Limited</h6>
+                                        <h4>Zinhtet Trading Company Limited</h4>
                                     </div>
                                     <div class="testimonial-one__client-info">
                                         <div class=>
