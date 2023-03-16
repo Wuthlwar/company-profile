@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     use HasFactory;
-    protected $fillable=['title','description','description_mm','preview_img','activity_type_id','location','date'];
+    protected $fillable=['title','title_mm','description','description_mm','preview_img','activity_type_id','location','location_mm','date'];
 
     public function act_types()
     {

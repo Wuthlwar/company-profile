@@ -39,12 +39,26 @@
                         <th class="col-3">Other Images</th>
                         <td class="col-9">
                             <div class="row col-12">
-                            @foreach ($act_imgs as $img)
-                            <div class="col-6 col-sm-2 border rounded m-1" style="overflow: hidden; height:100px;">
-                                <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="" class="rounded img-fluid"/>
+                                    @foreach ($act_imgs as $img)
+                                    <div class="col-6 col-sm-2 border rounded m-1">
+                                        <form method="post">
+                                            @csrf
+                                            <div class="card" >
+                                                <div  style="overflow: hidden; height:70px;">
+                                                    <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="" class="rounded card-img-top"/>
+                                                </div>
+
+                                                <div class="card-body text-center">
+                                                    <button class="badge btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                                id="img-btn-delete" data-id="{{$img->id}}" data-action="{{route('del_imgs',$img->id)}}"><i class="ri-delete-bin-line mr-0"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    @endforeach
                             </div>
-                            @endforeach
-                        </div></td>
+                        </td>
                     </tr>
                     <tr>
                         <th class="col-3">Location</th>
@@ -65,4 +79,7 @@
 
     </div>
   </div>
+@endsection
+@section('script')
+  <script src="{{asset('js/activity_crud.js')}}"></script>
 @endsection

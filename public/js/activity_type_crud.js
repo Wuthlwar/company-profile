@@ -11,6 +11,7 @@ let htmlView = '';
          </tr>`;
 }
 for(let i = 0; i < res.act_types.data.length; i++){
+    console.log(res.act_types.data[i])
       htmlView += `
                     <tr style="border:1px solid #ff00!important;">
                     <td></td>
@@ -19,8 +20,8 @@ for(let i = 0; i < res.act_types.data.length; i++){
                         <div class="d-flex align-items-center list-action">
                             <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                             href="/admins/activity_type/`+res.act_types.data[i].id+`"><i class="ri-eye-line mr-0"></i></a>
-                            <button class="badge btn-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                 id="editModal" data-id="`+res.act_types.data[i].id+`"><i class="ri-pencil-line mr-0"></i></button>
+                            <button class="badge btn-warning mr-2" data-toggle="modal" data-target="#actTypeModal" title="" data-original-title="Edit"
+                                 id="editModal" data-id="`+res.act_types.data[i].id+`" data-action="/admins/activity_type/`+res.act_types.data[i].id+`/update"><i class="ri-pencil-line mr-0"></i></button>
                             <button class="badge btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
                             data-id="`+res.act_types.data[i].id+`" id="btn-delete"><i class="ri-delete-bin-line mr-0"></i></button>
                         </div>
@@ -95,7 +96,7 @@ $('#openModal').click(function() {
     })
 
 //open edit modal
-$(document).on('click','button#editModal',function() {
+$(document).on('click','#editModal',function() {
     let id = $(this).data('id');
      let dataAction = $(this).data('action');
      $('#formData').attr('action',dataAction);
@@ -104,8 +105,9 @@ $(document).on('click','button#editModal',function() {
          url : `/admins/activity_type/${id}/edit`,
          dataType: "json",
          success: function(res) {
-           $('input[name=name]').val(res.act.name);
-         $('#actTypeModal').show();
+            console.log(res.act_type.name)
+           $('input[name=name]').val(res.act_type.name);
+            $('#actTypeModal').show();
             // console.log(res);
   },
   error:function(error) {

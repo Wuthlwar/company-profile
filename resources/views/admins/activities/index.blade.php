@@ -45,7 +45,7 @@
              <span aria-hidden="true">&times;</span>
              </button>
           </div>
-          <form action="{{ route('activities.store') }}" method="POST" enctype="multipart/form-data" id="formData">
+          <form method="POST" enctype="multipart/form-data" id="formData">
             @csrf
           <div class="modal-body">
 
@@ -59,60 +59,73 @@
                         <div class="card-body">
 
                                 <div class="row fieldContainer">
-                                    <div class="col-md-6">
+                                    <div class="col-12">
                                         <div class="form-group">
-                                            <label>Default</label>
+                                            <label>Activity Type</label>
                                             <select class="form-control mb-3" name="activity_type_id">
                                                 @foreach ($act_types as $type)
-                                                @if ($type->id==$act->activity_type_id)
                                                     <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
-                                                @else
-                                                    <option value="{{ $type->id }}">{{ $type->name }}</option>
-                                                @endif
+
                                                 @endforeach
 
                                             </select>
                                          </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input class="form-control" id="title" type="text" placeholder="Enter Activity Title" name="title" value="{{ old('title',$act->title) }}">
+                                            <input class="form-control" id="title" type="text" placeholder="Enter Activity Title" name="title" value="">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Title(MM)</label>
+                                            <input class="form-control" id="title" type="text" placeholder="Enter Activity Title" name="title_mm" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control custom-textarea" name="description" id="" cols="30" rows="5" required>{{ $act->description }}</textarea>
+                                            <textarea class="form-control custom-textarea" name="description" id="" cols="30" rows="5" required></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-6">
                                         <div class="form-group">
-                                            <label>Description MM</label>
-                                            <textarea class="form-control custom-textarea" name="description_mm" id="" cols="30" rows="5">{{ $act->description_mm }}</textarea>
+                                            <label>Description (MM)</label>
+                                            <textarea class="form-control custom-textarea" name="description_mm" id="" cols="30" rows="5"></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-label" for="location">location</label>
-                                            <input class="form-control" id="location" type="text" placeholder="" name="location" value="{{ old('location',$act->location) }}" required>
+                                            <label class="form-label" for="location">Location</label>
+                                            <input class="form-control" id="location" type="text" placeholder="" name="location" value="" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="location">Location (MM)</label>
+                                            <input class="form-control" id="location" type="text" placeholder="" name="location_mm" value="" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label" for="date">Date</label>
-                                            <input class="form-control" id="date" type="date" placeholder="" name="date" value="{{ old('date',$act->date) }}" required>
+                                            <input class="form-control" id="date" type="date" placeholder="" name="date" value="" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label" for="preview_img">First Image</label>
-                                            <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img">
+                                            <input class="form-control" id="preview_img" type="file" placeholder="" name="preview_img" set-to="showOldImage" onchange="readURL(this)">
                                             <div class="help-block with-errors"></div>
+                                            <div class="row" >
+                                                <img src="" alt="" height="80px" id="showOldImage" class="rounded mt-2">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -121,6 +134,9 @@
                                             <label class="form-label" for="preview_img">Other Images</label>
                                             <input class="form-control" id="preview_img" type="file" placeholder="" name="file[]">
                                             <button class="btn btn-success mt-2" type="button" id="addBtn">Add More</button>
+                                        </div>
+                                        <div class="row " id="old_act_imgs">
+
                                         </div>
                                     </div>
 
@@ -140,65 +156,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(document).ready(function(){
 
-        var maxField = 10;
-        console.log(maxField);
-        var addBtn = $('#addBtn');
-        var wrapper = $('.fieldContainer');
-        var fieldHTML = '<div class="col-md-6"><input class="form-control" id="preview_img" type="file" placeholder="" name="file[]"><button class="btn btn-danger mt-2" type="button" id="removeBtn">Remove</button></div>';
-        var x=1;
-        $(addBtn).click(function () {
-            if(x < maxField) {
-                x++;
-                console.log(x);
-                $(wrapper).append(fieldHTML);
-            }
-        });
-       $(wrapper).on('click','#removeBtn', function (e) {
-           e.preventDefault();
-           $(this).parent('div').remove();
-           x--;
-       });
- });
-
- $(document).on('click','#btn-delete',function(e) {
-    e.preventDefault();
-    let dataDelete = $(this).data('id');
-    // console.log(dataDelete);
-    Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this! ",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-    if (result.isConfirmed) {
-    $.ajax({
-    type:'DELETE',
-    dataType: 'JSON',
-    url: `/admins/act_img/${dataDelete}/delete`,
-    data:{
-    '_token':$('meta[name="csrf-token"]').attr('content'),
-    },
-    success:function(response){
-    Swal.fire(
-    'Deleted!',
-    'Your file has been deleted.',
-    'success'
-    )
-    location.reload();
-
-    },
-    error:function(err){
-    console.log(err);
-    }
-    });
-    }
-    })
-    });
 
 
 

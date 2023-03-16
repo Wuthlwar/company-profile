@@ -1279,7 +1279,12 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>{{ $act->title }} ({{ $act->location }})</p>
+                                        @if (session()->get('locale')=='en')
+                                            <p>{{ $act->title }} ({{ $act->location }})</p>
+                                        @else
+                                        <p>{{ $act->title_mm }} ({{ $act->location_mm }})</p>
+                                        @endif
+
                                     </div>
                                 </li>
                                 <li>
@@ -1295,7 +1300,11 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>{{ $act->description }}</p>
+                                        @if (session()->get('locale')=='en')
+                                        <p>{{ Str::limit($act->description,70) }}</p>
+                                        @else
+                                        <p>{{ Str::limit($act->description_mm,70) }}</p>
+                                        @endif
                                     </div>
                                 </li>
                             </ul>
