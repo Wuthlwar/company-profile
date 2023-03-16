@@ -54,7 +54,7 @@
 
     <div class="iq-sidebar  sidebar-default " style="background-color: #32bdea;">
           <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-              <a href="../backend/index.html" class="header-logo">
+              <a href="{{ url('/') }}" class="header-logo">
                   <img src="{{ asset('assets/photos/pro_1.png') }}" class="img-fluid rounded-normal " alt="logo" style="height:55px;">
               </a>
               <div class="iq-menu-bt-sidebar ml-0">
