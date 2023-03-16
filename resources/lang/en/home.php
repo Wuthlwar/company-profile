@@ -16,8 +16,8 @@ return [
     'slide_word_1'                  => 'PRO 1 Global Home Center is the first and largest company',
     'slide_word_2'                  => 'selling home building products in Myanmar.',
     'buy_now'                       => 'Buy Now',
-    'company_vision_mission'        => 'Company Vission & Mission',
-    'company_vission'               => 'Company vission',
+    'company_vision_mission'        => 'Company Vision & Mission',
+    'company_vission'               => 'Company vision',
     'company_mission'               => 'Company Mission',
 
     'center_title'                  => 'Information of our currently opened centers',
@@ -26,7 +26,7 @@ return [
     'activities_title2'             => 'our company activities',
 
     'vission_detail'                => 'To be the leader of the construction material and home improvement retail industry in Myanmar.',
-    'vission_title'                 => 'Company Vission',
+    'vission_title'                 => 'Company Vision',
 
     'mission_title'                 =>'Company Mission',
     'mission_detail'                => 'To be "One place, get all" with competitive price and innovative products to improve people living standard. To do operation excellence and make customer satisfy. To be sustainable growth together with the stakeholders. To do emphasize to develop PRO 1 Global people capabilities by good organization, working culture and welfare. To apply innovation technology to develop business efficiency. To operate based on social-responsible and good relationships with the environment.',
@@ -49,7 +49,7 @@ return [
     'e_com6'                        => 'Can place the order from anywhere.',
     'e_com7'                        => 'Delivery from all branches on Current Ecommerce Website.',
 
-    'part_1'                       => 'Let take a look at the pataner companies',
+    'part_1'                       => 'Let take a look at the partner companies',
     'part_2'                       => 'we work with',
 
     'copo_1'                       => 'Accountability',

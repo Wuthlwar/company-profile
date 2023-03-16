@@ -30,9 +30,7 @@
                             {{-- <h2 class="section-title__title">What our happy customers are talking about our
                                 insurance company</h2> --}}
                         </div>
-                        <p class="testimonial-two__text">Pellentesque habitant morbi tristique senectus netus et
-                            malesuada fames ac turp egestas. Aliquam viverra arcu. Donec aliquet blandit enim
-                            feugiat mattis.</p>
+                        <p class="testimonial-two__text">{{__('coporate.coporate_15')}}</p>
                             <div class="about-one__img">
                                 <a target="_blank" href="">
                                     <img src="{{asset('assets/photos/coporate-culture.jpg')}}" alt=""></a>

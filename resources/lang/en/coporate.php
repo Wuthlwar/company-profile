@@ -24,4 +24,6 @@ return [
 
     'coporate_13'              => 'Energy',
     'coporate_14'              => 'Energy is the important part to make every person active and fresh while working both on physically and mentally. Source of energy can come from senior encouragement and self motivation. The person who has energy will have more chance to success and can learn new thing more than other person.',
+
+    'coporate_15'              => 'Mingalabr Welcome to PRO 1 Global Home Center. Let take a look at our company culture in the slide on the right',
 ];
