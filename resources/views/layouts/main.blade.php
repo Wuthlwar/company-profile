@@ -159,12 +159,7 @@
 
     <!-- template js -->
     <script src="{{asset('assets/js/insur.js')}}"></script>
-    {{-- <script>
-        $(document).ready(function () {
-           if()
-        });
-
-    </script> --}}
+    @yield('script')
 </body>
 
 </html>

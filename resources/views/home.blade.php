@@ -2076,18 +2076,21 @@
 @endsection
 @section('script')
     <script>
-         $(document).ready(function () {
-        $("body").on("click","#act_type",function(e){
-        if(!confirm("Do you really want to do this?")) {
-            return false;
-            }
-        e.preventDefault();
-        var id = $(this).data("id");
-        console.log(id);
-        // var deleteField = '<input type="hidden" name="delete" value="'+id+'" />';
-        // $('#myForm').append(deleteField);
-        // $('#myForm').submit();
-        });
+        $(document).ready(function () {
+            var locale = "{{ session()->get('locale')}}";
+            $("#langSwitch").change(function(e) {
+               
+               if(locale=='en')
+               {
+                window.open("{{ route('lang','en') }}","_self");
+
+               }
+               else{
+                window.open("{{ route('lang','mm') }}","_self");
+               }
+
+            });
+
         });
     </script>
 @endsection

@@ -49,15 +49,10 @@
                         </ul>
                     </div>
                     <div class="main-header__top-social-box">
-                        {{-- <div class="main-header__top-social">
-                            <a target="_blank" href="https://www.facebook.com/pro1homecenter/"><i class="fab fa-facebook"></i></a>
-                            <a target="_blank" href="https://www.youtube.com/channel/UCvTMpi4etgXlCdnIEMkO8Ig"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-                            <a target="_blank" href="https://invite.viber.com/?g2=AQB%2BIxt%2BiHONWkjqz%2FbmgmTW2jaFd73U66dVh7ZdzTh5iUk5ZWHHexew8X%2F%2FPIXM"><i class="fab fa-viber"></i></a>
-                            <a target="_blank" href="https://www.instagram.com/pro1_global_home_center/?igshid=YmMyMTA2M2Y%3D"><i class="fab fa-instagram"></i></a>
-                        </div> --}}
-                        <input type="checkbox">
-                                            <label for="" class="onbtn languagefont">Myan</label>
-                                            <label for="" class="ofbtn languagefont">Eng</label>
+                        <input type="checkbox" id="langSwitch" >
+                        <label for="eng" class="onbtn languagefont">Myan</label>
+                        <label for="mm" class="ofbtn languagefont">Eng</label>
+
                     </div>
                 </div>
             </div>
