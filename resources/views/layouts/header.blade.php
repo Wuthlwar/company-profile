@@ -67,7 +67,7 @@
                         @break
                         @default
                         <a class="iq-sub-card" href="{{ route('lang','mm')}}">
-                            <input type="checkbox" id="langSwitch3">
+                            <input type="checkbox" id="langSwitch2">
                             <label for="langSwitch" class="onbtn languagefont">Eng</label>
                             <label for="langSwitch" class="ofbtn languagefont">Myan</label>
                         </a>
