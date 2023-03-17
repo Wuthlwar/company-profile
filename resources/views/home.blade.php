@@ -2077,18 +2077,16 @@
 @section('script')
     <script>
         $(document).ready(function () {
-            var locale = "{{ session()->get('locale')}}";
-            $("#langSwitch").change(function(e) {
-               
-               if(locale=='en')
-               {
-                window.open("{{ route('lang','en') }}","_self");
+           var sessionLang = "{{session()->get('locale') }}"
+           console.log(sessionLang);
+            var switchStatus = true;
+             var lang1 = $('#langSwitch2').val();
 
-               }
-               else{
-                window.open("{{ route('lang','mm') }}","_self");
-               }
-
+            $("#langSwitch2").on('change', function() {
+                window.location.href="{{ route('lang','en') }}"
+            });
+            $("#langSwitch1").on('change', function() {
+                window.location.href="{{ route('lang','mm') }}"
             });
 
         });

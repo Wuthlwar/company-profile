@@ -49,11 +49,32 @@
                         </ul>
                     </div>
                     <div class="main-header__top-social-box">
-                        <input type="checkbox" id="langSwitch" >
-                        <label for="eng" class="onbtn languagefont">Myan</label>
-                        <label for="mm" class="ofbtn languagefont">Eng</label>
-
+                    @php $locale = session()->get('locale');@endphp
+                    @switch($locale)
+                        @case('en')
+                        <a class="iq-sub-card" href="{{ route('lang','mm')}}">
+                        <input type="checkbox" id="langSwitch1" checked>
+                        <label for="langSwitch" class="onbtn languagefont">Eng</label>
+                        <label for="langSwitch" class="ofbtn languagefont">Myan</label>
+                        </a>
+                        @break
+                        @case('mm')
+                        <a class="iq-sub-card" href="{{ route('lang','en')}}">
+                        <input type="checkbox" id="langSwitch2">
+                        <label for="langSwitch" class="onbtn languagefont">Eng</label>
+                        <label for="langSwitch" class="ofbtn languagefont">Myan</label>
+                        </a>
+                        @break
+                        @default
+                        <a class="iq-sub-card" href="{{ route('lang','mm')}}">
+                            <input type="checkbox" id="langSwitch3">
+                            <label for="langSwitch" class="onbtn languagefont">Eng</label>
+                            <label for="langSwitch" class="ofbtn languagefont">Myan</label>
+                        </a>
+                    @endswitch
                     </div>
+
+
                 </div>
             </div>
         </div>
