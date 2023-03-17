@@ -41,7 +41,7 @@
                                         @break
                                         @default
                                         <a class="iq-sub-card" href="{{ route('lang','mm')}}">
-                                        Eng
+                                            <img src="{{ asset('assets/photos/uk.png') }}" alt="" style="width:20px">
                                         </a>
                                     @endswitch
                                 </div>
