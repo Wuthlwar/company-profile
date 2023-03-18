@@ -70,7 +70,6 @@
 
             <div class="swiper-slide">
                 <div class="image-layer" style="background-image: url({{asset('assets/photos/banner/Banner-3.jpg')}})"></div>
-                <!-- /.image-layer -->
 
                 <div class="main-slider-shape-1 float-bob-x">
                     <img src="{{asset('assets/photos/banner/Banner-3.jpg')}}" alt="">
@@ -91,10 +90,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-        <!-- If we need navigation buttons -->
         <div class="main-slider__nav">
             <div class="swiper-button-prev" id="main-slider__swiper-button-next">
                 <i class="icon-right-arrow"></i>
@@ -103,11 +99,8 @@
                 <i class="icon-right-arrow1"></i>
             </div>
         </div>
-
     </div>
 </section>
-<!--Main Slider End-->
-<!--Company Vision & Mission Start-->
 <section class="we-provide">
     <div class="we-provide-bg" style="background-image: url({{asset('assets/images/backgrounds/we-provide-bg.jpg')}})">
     </div>
@@ -122,7 +115,6 @@
                     <img src="{{asset('assets/images/shapes/section-title-shape-2.png')}}" alt="">
                 </div>
             </div>
-            <!-- <h2 class="section-title__title">Take a look at the Super Services of PRO 1 Global Home Center</h2> -->
         </div>
         <div class="we-provide__tab">
             <div class="we-provide__tab-box tabs-box">
@@ -133,8 +125,6 @@
                                 <li data-tab="#goals" class="tab-btn active-btn"><span>{{__('home.company_vission')}}</span></li>
                                 <li data-tab="#mission" class="tab-btn "><span>{{__('home.company_mission')}}</span>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
@@ -161,9 +151,6 @@
                                             <img src="{{asset('assets/images/shapes/we-provide-shape-1.png')}}" alt="">
                                         </div>
                                         <div class="we-provide__tab-main-content-left">
-                                            {{-- <div class="we-provide__tab-main-content-icon">
-                                                <span class="icon-mission"></span>
-                                            </div> --}}
                                             <h3 class="we-provide__tab-main-content-title">{{__('home.mission_title')}}</h3>
                                             <p class="we-provide__tab-main-content-text">{{__('home.mission_detail')}}
                                             </p>
@@ -182,9 +169,6 @@
                                             <img src="{{asset('assets/images/shapes/we-provide-shape-1.png')}}" alt="">
                                         </div>
                                         <div class="we-provide__tab-main-content-left">
-                                            {{-- <div class="we-provide__tab-main-content-icon">
-                                                <span class="icon-mission"></span>
-                                            </div> --}}
                                             <h3 class="we-provide__tab-main-content-title">{{__('home.vission_title')}}</h3>
                                             <p class="we-provide__tab-main-content-text">{{__('home.vission_detail')}}
                                             </p>
@@ -205,12 +189,9 @@
         </div>
     </div>
 </section>
-<!--Company Vision & Mission End-->
-<!--History Note Start-->
 <section class="feature-two">
     <div class="container">
         <div class="row">
-            <!--Feature Two Single Start-->
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
@@ -230,8 +211,6 @@
                     </div>
                 </div>
             </div>
-            <!--Feature Two Single End-->
-            <!--Feature Two Single Start-->
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
@@ -250,9 +229,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--Feature Two Single End-->
-            <!--Feature Two Single Start-->
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
@@ -271,12 +247,9 @@
                     </div>
                 </div>
             </div>
-            <!--Feature Two Single End-->
         </div>
     </div>
 </section>
-<!--History Note End-->
-<!--About Company Start-->
 <section class="about-two">
     <div class="container">
         <div class="row">
@@ -340,7 +313,6 @@
                             <div class="about-two__counter-single">
                                 <div class="about-two__counter-count count-box">
                                     <h3 class="count-text" data-speed="4000" data-stop="5">00</h3>
-                                    <!-- <span class="about-two__counter-percent">%</span> -->
                                 </div>
                                 <p class="about-two__counter-text-1">{{__('home.about_division1')}}</p>
                                 <p class="about-two__counter-text-2">{{__('home.about_division2')}}
@@ -353,8 +325,6 @@
         </div>
     </div>
 </section>
-<!--About Company End-->
-<!-- Company Culture Start-->
 <section class="services-two">
     <div class="services-two-shape-1" style="background-image: url({{asset('assets/images/shapes/services-two-shape-1.png')}})"></div>
     <div class="container">
@@ -391,11 +361,8 @@
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Accountability</a></h3>
-
                     </div>
                 </div>
-                <!--Services Two Single End-->
-                <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="services-two__single">
                         <div class="">
@@ -404,11 +371,8 @@
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Collaboration</a></h3>
-
                     </div>
                 </div>
-                <!--Services Two Single End-->
-                <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="services-two__single">
                         <div class="">
@@ -417,11 +381,8 @@
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Humility</a></h3>
-
                     </div>
                 </div>
-                <!--Services Two Single End-->
-                <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                     <div class="services-two__single">
                         <div class="">
@@ -431,11 +392,8 @@
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Innovation</a>
                         </h3>
-
                     </div>
                 </div>
-                <!--Services Two Single End-->
-                <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                     <div class="services-two__single">
                         <div class="">
@@ -445,11 +403,8 @@
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Ethics</a>
                         </h3>
-
                     </div>
                 </div>
-                <!--Services Two Single End-->
-                <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
                     <div class="services-two__single">
                         <div class="">
@@ -458,11 +413,8 @@
                             </div>
                         </div>
                         <h3 class="services-two__title"><a href="" onclick="return false;">Values</a></h3>
-
                     </div>
                 </div>
-                <!--Services Two Single End-->
-                <!--Services Two Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="700ms">
                     <div class="services-two__single">
                         <div class="">
@@ -578,8 +530,6 @@
         </div>
     </div>
 </section>
-<!-- Ecommerce End-->
-<!-- Ecommerce Download Start-->
 <section class="download">
     <div class="download-bg" style="background-image: url({{asset('assets/images/shapes/services-two-shape-1.png')}})"></div>
     <div class="download-shape-1 float-bob-y">
@@ -615,7 +565,6 @@
                     <div class="download__img wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
                         <img src="{{asset('assets/photos/ecommerceapp.png')}}" alt="">
                         <div class="download__badge">
-                            <!-- <img src="assets/images/shapes/download-dadge.png" alt=""> -->
                         </div>
                     </div>
                 </div>
@@ -623,8 +572,6 @@
         </div>
     </div>
 </section>
-<!-- Ecommerce Download End-->
-<!-- Service Start -->
 <section class="services-one" id="ourServices">
     <div class="services-one__top">
         <div class="container">
@@ -656,7 +603,6 @@
     <div class="services-one__bottom">
         <div class="services-one__container">
             <div class="row">
-                <!--Services One Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="services-one__single">
                         <a href="{{route('product_information')}}">
@@ -671,8 +617,6 @@
                         </div>
                     </div>
                 </div>
-                <!--Services One Single End-->
-                <!--Services One Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                     <a href="{{route('delivery_service')}}">
                         <div class="services-one__single">
@@ -688,8 +632,6 @@
                         </div>
                     </a>
                 </div>
-                <!--Services One Single End-->
-                <!--Services One Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                     <a href="{{route('special_order')}}">
                         <div class="services-one__single">
@@ -701,12 +643,9 @@
                                 <h2 class="service-one__title"><a href="{{route('special_order')}}">{{__('ourservices.see_more')}}</a></h2>
                                 <h5>{{__('ourservices.spec_or')}}</h5>
                                 </h2>
-
                             </div>
                         </div>
-                </div>
-                <!--Services One Single End-->
-                <!--Services One Single Start-->
+                    </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                     <a href="{{route('product_return')}}">
                         <div class="services-one__single">
@@ -722,8 +661,6 @@
                             </div>
                         </div>
                 </div>
-                <!--Services One Single End-->
-                <!--Services One Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                     <a href="{{route('consulting_service')}}">
                         <div class="services-one__single">
@@ -737,9 +674,7 @@
                                 </h2>
                             </div>
                         </div>
-                </div>
-                <!--Services One Single End-->
-                <!--Services One Single Start-->
+                    </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
                     <a href="{{route('contractor_information')}}">
                         <div class="services-one__single">
@@ -755,8 +690,6 @@
                             </div>
                         </div>
                 </div>
-                <!--Services One Single End-->
-                <!--Services One Single Start-->
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="700ms">
                     <a href="{{route('member_service')}}">
                         <div class="services-one__single">
@@ -768,12 +701,9 @@
                                 <h2 class="service-one__title"><a href="{{route('member_service')}}">{{__('ourservices.see_more')}}</a></h2>
                                 <h5>{{__('ourservices.our_ser')}}</h5>
                                 </h2>
-
                             </div>
                         </div>
-                </div>
-                <!--Services One Single End-->
-                <!--Services One Single Start-->
+                    </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="800ms">
                     <a href="{{route('repair_service')}}">
                         <div class="services-one__single">
@@ -1310,690 +1240,13 @@
                             </ul>
                         </div>
                     </a>
-                        {{-- <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">{{}}</a></h4>
-                        </div> --}}
                     </div>
                 </div>
             </div>
             @endforeach
-
-            <!--Portfolio Single End-->
-            {{-- <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act2.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act2.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act3.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act3.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act4.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act4.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act5.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act5.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act6.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act6.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act7.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act7.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act8.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act8.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act9.jpg')}}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act9.jpg')}}" class="img-popup"></a>
-                        </div>                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-                            <p class="portfolio__sub-title"></p>
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-            <!--Portfolio Single Start-->
-
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            {{-- <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act3.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act3.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Donation for Football Academy (Mandalay)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>25.1.2023</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act4.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act4.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act5.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act5.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item busi custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act26.png')}}" alt="" style="
-                        width: 100%;
-                        height: 402px;
-                    ">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act26.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Donation</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="portfolio__img">
-                        <img src="{{asset('assets/photos/training1.pn')}}g" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/training1.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Training</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="portfolio__img">
-                        <img src="{{asset('assets/photos/training2.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/training2.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Training</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="portfolio__img">
-                        <img src="{{asset('assets/photos/training3.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/training3.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Training</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act17.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act17.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act10.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act10.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act18.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act18.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act13.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act13.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act12.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act12.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act11.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act11.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act16.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act16.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act14.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act14.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Portfolio Single End-->
-            <!--Portfolio Single Start-->
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single">
-                    <div class="">
-                        <img src="{{asset('assets/photos/act15.png')}}" alt="">
-                        <div class="">
-                            <a href="{{asset('assets/photos/act15.png')}}" class="img-popup"><span class=""></span></a>
-                        </div>
-                        <div class="portfolio__content">
-
-                            <h4 class="portfolio__title"><a href="#ouractivities">Team Building</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <!--Portfolio Single End-->
         </div>
     </div>
 </section>
-<!-- Our Activities End -->
-<!-- Call Head Office Start -->
-{{-- <section class="cta-one cta-three">
-    <div class="container">
-        <div class="cta-one__content">
-            <div class="cta-one__inner">
-                <div class="cta-one__left">
-                    <h3 class="cta-one__title">Call to Our Head Office</h3>
-                </div>
-                <div class="cta-one__right">
-                    <div class="cta-one__call">
-                        <div class="cta-one__call-icon">
-                            <a href="tel:959428751328"><i class="fas fa-phone"></a></i>
-                        </div>
-                        <div class="cta-one__call-number">
-                            <a href="tel:+959777048315 , +959777048316">+959777048315 , +959777048316</a>
-                            <p>Call to Our Phone</p>
-                        </div>
-                    </div>
-                    <div class="cta-one__btn-box">
-                        <a href="tel:959428751328" class="thm-btn cta-one__btn">Call</a>
-                    </div>
-                </div>
-                <div class="cta-one__img">
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-<!-- Call Head Office End -->
-<!-- Contact Us Start -->
 <section class="contact-page" id="contactus">
     <div class="container">
         <div class="row">

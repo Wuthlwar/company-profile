@@ -497,8 +497,8 @@ padding-right: 20px;
 }
 input[type="checkbox"] {
     position: relative;
-    right: 50px;
-    width: 80px;
+    right: 48px;
+    width: 84px;
     height: 15px;
     background-color: #97a2b7;
     -webkit-appearance: none;
