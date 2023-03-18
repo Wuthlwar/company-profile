@@ -1192,7 +1192,7 @@
 
         <div class="row masonary-layout" id="activitiesDiv">
                 @foreach ($acts as $act)
-                <div class="col-xl-4 col-lg-6 col-md-6 custom-img" style="height:600px;overflow:hidden;">
+                <div class="col-xl-4 col-md-6 custom-img" style="height:600px;overflow:hidden;">
                     <div class="portfolio__single">
                         <div class="">
                             <a href="{{route('act_detail',$act->id)}}">
@@ -1360,13 +1360,13 @@
                     // console.log(response)
                     $('#activitiesDiv').html('');
                     $.each(response, function (index, value) {
-                        var actDiv =`<div class="col-xl-4 col-lg-6 col-md-6 custom-img" id='act_parent'>
+                        var actDiv =`<div class="col-xl-4 col-md-6 custom-img" id='act_parent' style="height:600px;overflow:hidden;">
                                         <div class="portfolio__single ">
                                             <div class="">
                                                 <a href="{{ url("act_detail/`+value.id+`") }}">
                                                 <img src="/storage/uploads/activity/`+value.preview_img+`" alt="" style="object-fit:contain;
-                                                width:380px;
-                                                height:420px;
+                                                width:350px;
+                                                height:380px;
                                                 border: solid 1px #CCC" class="rounded">
                                                 <div>
                                                     <ul class="list-unstyled about-one__points">
