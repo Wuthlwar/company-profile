@@ -209,7 +209,14 @@ class ActivityController extends Controller
 
     public function get_activities_by_type($act_type_id)
     {
-        $activities = Activity::where('activity_type_id',$act_type_id)->get();
+        if($act_type_id==0)
+        {
+            $activities = Activity::orderBy('id','ASC')->get();
+        }
+        else{
+            $activities = Activity::where('activity_type_id',$act_type_id)->orderBy('id','ASC')->get();
+        }
+
         return response()->json($activities, 200);
     }
 }
