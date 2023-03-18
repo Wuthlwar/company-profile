@@ -1398,6 +1398,7 @@
                                                                 @if (session()->get('locale')=='en')
                                                                 <p>{{ Str::limit(`+value.description+`,70) }}</p>
                                                                 @else
+
                                                                 <p>{{ Str::limit(`+value.description_mm+`,70) }}</p>
                                                                 @endif
                                                             </div>
