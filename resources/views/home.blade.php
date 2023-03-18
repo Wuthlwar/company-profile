@@ -1179,9 +1179,9 @@
                     <p class="section-title__title">{{__('home.activities_title1')}}<br> {{__('home.activities_title2')}} </p>
                 </div>
                 <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled ">
-                    <li class="active"><span >All</span></li>
+                    <li class="active"><span >All({{count($acts) }}) </span></li>
                     @foreach ($act_types as $type)
-                        <li><button class="btn bg-transparent" data-id="filter{{ $type->name }}" id="act_type"><span onclick="addActClass('{{ $type->id }}')">{{ $type->name }}</span></button>
+                        <li><button class="btn bg-transparent" data-id="filter{{ $type->name }}" id="act_type"><span onclick="addActClass('{{ $type->id }}')">{{ $type->name }}({{ count($type->activities) }})</span></button>
                         </li >
                     @endforeach
                     {{-- <li data-filter=".stra"><span class="filter-text">EMPLOYEE ACTIVITIES</span></li>
@@ -1191,15 +1191,14 @@
         </div>
 
         <div class="row masonary-layout" id="activitiesDiv">
-
                 @foreach ($acts as $act)
                 <div class="col-xl-4 col-lg-6 col-md-6 custom-img" style="height:600px;overflow:hidden;">
-                    <div class="portfolio__single ">
+                    <div class="portfolio__single">
                         <div class="">
                             <a href="{{route('act_detail',$act->id)}}">
                             <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="" style="object-fit:contain;
-                            width:380px;
-                            height:380px;
+                            width:350px;
+                            height:360px;
                             border: solid 1px #CCC" class="rounded">
                             {{-- <div class="">
                                 <a href="{{route('act_detail',$act->id)}}">{{ $act->title }}</a>
