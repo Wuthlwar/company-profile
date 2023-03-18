@@ -206,4 +206,10 @@ class ActivityController extends Controller
             ]);
 
     }
+
+    public function get_activities_by_type($act_type_id)
+    {
+        $activities = Activity::where('activity_type_id',$act_type_id)->get();
+        return response()->json($activities, 200);
+    }
 }

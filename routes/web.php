@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -61,6 +62,6 @@ Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lan
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
-
+Route::get('getActByType/{act_type_id}',[ActivityController::class,'get_activities_by_type'])->name('get_activities_by_type');
 
 Route::resource('feedbacks',FeedbackController::class);

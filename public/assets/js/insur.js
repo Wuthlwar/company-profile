@@ -652,6 +652,7 @@
         .children(".filter-text")
         .on("click", function () {
           var Self = $(this);
+          console.log(Self);
           var selector = Self.parent().attr("data-filter");
           $(".post-filter li").removeClass("active");
           Self.parent().addClass("active");
@@ -815,6 +816,7 @@
       // on click filter links
       postFilterList.on("click", function () {
         var Self = $(this);
+
         var selector = Self.attr("data-filter");
         postFilterList.removeClass("active");
         Self.addClass("active");
