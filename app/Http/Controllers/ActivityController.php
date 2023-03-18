@@ -15,7 +15,7 @@ class ActivityController extends Controller
 
     public function index(Request $request)
     {
-        $acts = Activity::with('act_imgs')->latest()->paginate(30);
+        $acts = Activity::with('act_imgs','act_types')->latest()->paginate(30);
         $act_types = ActivityType::all();
         if($request->ajax()){
 
@@ -205,5 +205,18 @@ class ActivityController extends Controller
             'message' => 'Success Deleted image',
             ]);
 
+    }
+
+    public function get_activities_by_type($act_type_id)
+    {
+        if($act_type_id==0)
+        {
+            $activities = Activity::orderBy('id','ASC')->get();
+        }
+        else{
+            $activities = Activity::where('activity_type_id',$act_type_id)->orderBy('id','ASC')->get();
+        }
+
+        return response()->json($activities, 200);
     }
 }

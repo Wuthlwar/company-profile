@@ -1179,9 +1179,10 @@
                     <p class="section-title__title">{{__('home.activities_title1')}}<br> {{__('home.activities_title2')}} </p>
                 </div>
                 <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled ">
-                    <li data-filter=".filter-item " class="active"><span class="filter-text">All</span></li>
+                    <li class="active"><button class="btn bg-transparent"><span onclick="addActClass('0')">All({{count($acts)}}) </span></button></li>
                     @foreach ($act_types as $type)
-                        <li data-filter=".stra"><button class="btn bg-transparent" data-id="filter{{ $type->name }}" id="act_type"><span class="filter-text ">{{ $type->name }}</span></button></li>
+                        <li><button class="btn bg-transparent"><span onclick="addActClass('{{ $type->id }}')">{{ $type->name }}({{ count($type->activities) }})</span></button>
+                        </li >
                     @endforeach
                     {{-- <li data-filter=".stra"><span class="filter-text">EMPLOYEE ACTIVITIES</span></li>
                     <li data-filter=".busi"><span class="filter-text">CSR ACTIVITIES</span></li> --}}
@@ -1189,64 +1190,70 @@
             </div>
         </div>
 
-        <div class="row filter-layout masonary-layout">
-            @foreach ($acts as $act)
-            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra custom-img">
-                <div class="portfolio__single ">
-                    <div class="">
-                        <a href="{{route('act_detail',$act->id)}}">
-                        <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="" style="object-fit:contain;
-                        width:380px;
-                        height:420px;
-                        border: solid 1px #CCC" class="rounded">
-                        {{-- <div class="">
-                            <a href="{{route('act_detail',$act->id)}}">{{ $act->title }}</a>
-                        </div> --}}
-                        <div>
-                            <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        @if (session()->get('locale')=='en')
-                                            <p>{{ $act->title }} ({{ $act->location }})</p>
-                                        @else
-                                        <p>{{ $act->title_mm }} ({{ $act->location_mm }})</p>
-                                        @endif
+        <div class="row" id="activitiesDiv">
+                @foreach ($acts as $act)
+                <div class="col-xl-4 col-md-6 custom-img rounded-lg" >
+                    <div class="portfolio__single">
+                        <div class="">
+                            <a href="{{route('act_detail',$act->id)}}">
+                            <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="" style="object-fit:contain;
+                            width:380px;
+                            height:420px;
+                            border: solid 1px #CCC" class="rounded">
+                            {{-- <div class="">
+                                <a href="{{route('act_detail',$act->id)}}">{{ $act->title }}</a>
+                            </div> --}}
+                            <div>
+                                <ul class="list-unstyled about-one__points">
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="text">
+                                            @if (session()->get('locale')=='en')
+                                                <p>{{ Str::limit($act->title,20) }} ({{ Str::limit($act->location,50) }})</p>
+                                            @else
+                                            <p>{{ Str::limit($act->title_mm,20) }} ({{ Str::limit($act->location_mm,50) }})</p>
+                                            @endif
 
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>{{ $act->date }}</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        @if (session()->get('locale')=='en')
-                                        <p>{{ Str::limit($act->description,70) }}</p>
-                                        @else
-                                        <p>{{ Str::limit($act->description_mm,70) }}</p>
-                                        @endif
-                                    </div>
-                                </li>
-                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="text">
+                                            <p>{{ $act->date }}</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="text">
+                                            @if (session()->get('locale')=='en')
+                                            <p>{{ Str::limit($act->description,70) }}</p>
+                                            @else
+                                            <p>{{ Str::limit($act->description_mm,70) }}</p>
+                                            @endif
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+
                         </div>
-                    </a>
                     </div>
                 </div>
-            </div>
-            @endforeach
+                @endforeach
+
+
         </div>
     </div>
 </section>
+<!-- Our Activities End -->
+
+<!-- Contact Us Start -->
 <section class="contact-page" id="contactus">
     <div class="container">
         <div class="row">
@@ -1330,9 +1337,7 @@
 @section('script')
     <script>
         $(document).ready(function () {
-           var sessionLang = "{{session()->get('locale') }}"
-           console.log(sessionLang);
-            var switchStatus = true;
+
              var lang1 = $('#langSwitch2').val();
 
             $("#langSwitch2").on('change', function() {
@@ -1341,7 +1346,79 @@
             $("#langSwitch1").on('change', function() {
                 window.location.href="{{ route('lang','mm') }}"
             });
-
         });
+        function addActClass($type_id)
+        {
+
+            // $('#activitiesDiv').hide();
+            var url='/getActByType/'+$type_id;
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function (response)
+                {
+                    // console.log(response)
+                    $('#activitiesDiv').html('');
+                    $.each(response, function (index, value) {
+
+                        var actDiv =`<div class="col-xl-4 col-md-6 custom-img" >
+                                        <div class="portfolio__single ">
+                                            <div class="">
+                                                <a href="{{ url("act_detail/`+value.id+`") }}">
+                                                <img src="/storage/uploads/activity/`+value.preview_img+`" alt="" style="object-fit:contain;
+                                                width:380px;
+                                                height:420px;
+                                                border: solid 1px #CCC" class="rounded">
+                                                <div>
+                                                    <ul class="list-unstyled about-one__points">
+                                                        <li>
+                                                            <div class="icon">
+                                                                <i class="fa fa-check"></i>
+                                                            </div>
+                                                            <div class="text">
+                                                                @if (session()->get('locale')=='en')
+                                                                    <p>`+value.title.substring(0,20)+`(`+value.location.substring(0,50)+`)</p>
+                                                                @else
+                                                                <p> <p>`+value.title_mm.substring(0,20)+`(`+value.location_mm.substring(0,50)+`)</p></p>
+                                                                @endif
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <i class="fa fa-check"></i>
+                                                            </div>
+                                                            <div class="text">
+                                                                <p>`+value.date+`</p>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <i class="fa fa-check"></i>
+                                                            </div>
+                                                            <div class="text">
+                                                                @if (session()->get('locale')=='en')
+                                                                    <p>`+value.description.substring(0,70)+`</p>
+                                                                @else
+                                                                <p>`+value.description_mm.substring(0,70)+`</p>
+                                                                @endif
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            </div>
+                                        </div>
+                                    </div>`;
+
+                                    $('#activitiesDiv').append(actDiv)
+                        console.log(value)
+                    });
+                }
+            });
+
+
+
+        }
     </script>
 @endsection

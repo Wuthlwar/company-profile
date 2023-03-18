@@ -55,21 +55,21 @@
                         <a class="iq-sub-card" href="{{ route('lang','mm')}}">
                         <input type="checkbox" id="langSwitch1" checked>
                         <label for="langSwitch" class="onbtn languagefont">Eng</label>
-                        <label for="langSwitch" class="ofbtn languagefont">Myan</label>
+                        <label for="langSwitch" class="ofbtn languagefont">Mya</label>
                         </a>
                         @break
                         @case('mm')
                         <a class="iq-sub-card" href="{{ route('lang','en')}}">
                         <input type="checkbox" id="langSwitch2">
                         <label for="langSwitch" class="onbtn languagefont">Eng</label>
-                        <label for="langSwitch" class="ofbtn languagefont">Myan</label>
+                        <label for="langSwitch" class="ofbtn languagefont">Mya</label>
                         </a>
                         @break
                         @default
                         <a class="iq-sub-card" href="{{ route('lang','mm')}}">
                             <input type="checkbox" id="langSwitch2">
                             <label for="langSwitch" class="onbtn languagefont">Eng</label>
-                            <label for="langSwitch" class="ofbtn languagefont">Myan</label>
+                            <label for="langSwitch" class="ofbtn languagefont">Mya</label>
                         </a>
                     @endswitch
                     </div>

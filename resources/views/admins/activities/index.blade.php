@@ -18,6 +18,7 @@
             <thead class="bg-white text-uppercase">
                 <tr class="ligth ligth-data">
                     <th scope="col">#</th>
+                    <th scope="col">Activity Type</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">Activity Title</th>
