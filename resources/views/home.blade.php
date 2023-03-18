@@ -1190,15 +1190,15 @@
             </div>
         </div>
 
-        <div class="row masonary-layout" id="activitiesDiv">
+        <div class="row" id="activitiesDiv">
                 @foreach ($acts as $act)
-                <div class="col-xl-4 col-md-6 custom-img" >
+                <div class="col-xl-4 col-md-6 custom-img rounded-lg" >
                     <div class="portfolio__single">
                         <div class="">
                             <a href="{{route('act_detail',$act->id)}}">
                             <img src="{{ asset("storage/uploads/activity/$act->preview_img") }}" alt="" style="object-fit:contain;
-                            width:350px;
-                            height:360px;
+                            width:380px;
+                            height:420px;
                             border: solid 1px #CCC" class="rounded">
                             {{-- <div class="">
                                 <a href="{{route('act_detail',$act->id)}}">{{ $act->title }}</a>
@@ -1360,13 +1360,13 @@
                     // console.log(response)
                     $('#activitiesDiv').html('');
                     $.each(response, function (index, value) {
-                        var actDiv =`<div class="col-xl-4 col-md-6 custom-img" id='act_parent' style="height:600px;overflow:hidden;">
+                        var actDiv =`<div class="col-xl-4 col-md-6 custom-img" >
                                         <div class="portfolio__single ">
                                             <div class="">
                                                 <a href="{{ url("act_detail/`+value.id+`") }}">
                                                 <img src="/storage/uploads/activity/`+value.preview_img+`" alt="" style="object-fit:contain;
-                                                width:350px;
-                                                height:380px;
+                                                width:380px;
+                                                height:420px;
                                                 border: solid 1px #CCC" class="rounded">
                                                 <div>
                                                     <ul class="list-unstyled about-one__points">

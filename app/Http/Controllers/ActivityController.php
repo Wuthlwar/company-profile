@@ -15,7 +15,7 @@ class ActivityController extends Controller
 
     public function index(Request $request)
     {
-        $acts = Activity::with('act_imgs')->latest()->paginate(30);
+        $acts = Activity::with('act_imgs','act_types')->latest()->paginate(30);
         $act_types = ActivityType::all();
         if($request->ajax()){
 

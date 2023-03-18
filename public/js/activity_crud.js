@@ -15,6 +15,7 @@ for(let i = 0; i < res.acts.data.length; i++){
       htmlView += `
                     <tr style="border:1px solid #ff00!important;">
                     <td></td>
+                    <td>`+res.acts.data[i].act_types.name+`</td>
                     <td scope="col">`+res.acts.data[i].title+`</td>
                     <td scope="col">`+res.acts.data[i].description+`</td>
                     <td scope="col">`+res.acts.data[i].description+`</td>
