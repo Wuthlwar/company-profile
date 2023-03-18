@@ -73,9 +73,7 @@
                         </a>
                     @endswitch
                     </div>
-
-
-                </div>
+                    </div>
             </div>
         </div>
     </div>
