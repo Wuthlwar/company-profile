@@ -1179,9 +1179,9 @@
                     <p class="section-title__title">{{__('home.activities_title1')}}<br> {{__('home.activities_title2')}} </p>
                 </div>
                 <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled ">
-                    <li class="active"><span onclick="addActClass('0')">All({{count($acts)}}) </span></li>
+                    <li class="active"><button class="btn bg-transparent"><span onclick="addActClass('0')">All({{count($acts)}}) </span></button></li>
                     @foreach ($act_types as $type)
-                        <li><button class="btn bg-transparent" data-id="filter{{ $type->name }}" id="act_type"><span onclick="addActClass('{{ $type->id }}')">{{ $type->name }}({{ count($type->activities) }})</span></button>
+                        <li><button class="btn bg-transparent"><span onclick="addActClass('{{ $type->id }}')">{{ $type->name }}({{ count($type->activities) }})</span></button>
                         </li >
                     @endforeach
                     {{-- <li data-filter=".stra"><span class="filter-text">EMPLOYEE ACTIVITIES</span></li>
@@ -1360,6 +1360,7 @@
                     // console.log(response)
                     $('#activitiesDiv').html('');
                     $.each(response, function (index, value) {
+
                         var actDiv =`<div class="col-xl-4 col-md-6 custom-img" >
                                         <div class="portfolio__single ">
                                             <div class="">
@@ -1376,9 +1377,9 @@
                                                             </div>
                                                             <div class="text">
                                                                 @if (session()->get('locale')=='en')
-                                                                    <p>`+value.title+`(`+value.location+`)</p>
+                                                                    <p>`+value.title.substring(0,20)+`(`+value.location.substring(0,50)+`)</p>
                                                                 @else
-                                                                <p> <p>`+value.title_mm+`(`+value.location_mm+`)</p></p>
+                                                                <p> <p>`+value.title_mm.substring(0,20)+`(`+value.location_mm.substring(0,50)+`)</p></p>
                                                                 @endif
                                                             </div>
                                                         </li>
@@ -1396,10 +1397,9 @@
                                                             </div>
                                                             <div class="text">
                                                                 @if (session()->get('locale')=='en')
-                                                                <p>{{ Str::limit(`+value.description+`,70) }}</p>
+                                                                    <p>`+value.description.substring(0,70)+`</p>
                                                                 @else
-
-                                                                <p>{{ Str::limit(`+value.description_mm+`,70) }}</p>
+                                                                <p>`+value.description_mm.substring(0,70)+`</p>
                                                                 @endif
                                                             </div>
                                                         </li>
