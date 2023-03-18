@@ -1192,7 +1192,7 @@
 
         <div class="row masonary-layout" id="activitiesDiv">
                 @foreach ($acts as $act)
-                <div class="col-xl-4 col-md-6 custom-img" style="height:600px;overflow:hidden;">
+                <div class="col-xl-4 col-md-6 custom-img" >
                     <div class="portfolio__single">
                         <div class="">
                             <a href="{{route('act_detail',$act->id)}}">
