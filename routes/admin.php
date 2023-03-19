@@ -32,7 +32,8 @@ Route::group(['prefix' => 'admins'], function(){
     Route::post('/check',[HomeController::class,'checkLogin'])->name('check');
     Route::get('/logout',[HomeController::class,'logout'])->name('logout');
     Route::get('/home', function(){
-        return view('admins.app');
+        $feedbacks = Feedback::latest()->get();
+        return view('admins.home',['feedbacks'=>$feedbacks]);
     })->name('admins.home');
     // Route::resource('roles', RoleController::class);
     // Route::resource('users', UserController::class);
