@@ -22,7 +22,7 @@ return [
 
     'center_title'                  => 'Information of our currently opened centers',
     'activities_title'              =>'Our Activities',
-    'activities_title1'             => 'Let take a look at',
+    'activities_title1'             => 'Let\'s take a look at',
     'activities_title2'             => 'our company activities',
 
     'vission_detail'                => 'To be the leader of the construction material and home improvement retail industry in Myanmar.',
@@ -49,7 +49,7 @@ return [
     'e_com6'                        => 'Can place the order from anywhere.',
     'e_com7'                        => 'Delivery from all branches on Current Ecommerce Website.',
 
-    'part_1'                       => 'Let take a look at the partner companies',
+    'part_1'                       => 'Let\'s take a look at the partner companies ',
     'part_2'                       => 'we work with',
 
     'copo_1'                       => 'Accountability',
