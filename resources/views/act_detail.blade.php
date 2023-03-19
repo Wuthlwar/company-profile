@@ -17,15 +17,13 @@
 
                 </div>
                 @foreach ($act_imgs as $img)
-                    <div class="portfolio-details__img col-md-3 ">
-                        <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" >
-
+                    <div class="portfolio-details__img col-md-3 col-6">
+                        <img src="{{ asset("storage/uploads/activity_images/$img->file") }}" alt="{{ $img->name }}" style="height:200px;overflow:hidden;">
                     </div>
                 @endforeach
                 </div>
             <div class="portfolio-details__content">
                 <div class="row">
-                    <div><a class="btn btn-primary mb-2" href="{{ url('/home#ouractivities') }}"><< Back</a></div>
                     <div class="col-xl-8 col-lg-8">
                         <div class="portfolio-details__content-left">
                             @if (session()->get('locale')=='en')
@@ -37,6 +35,7 @@
                         </div>
 
                     </div>
+                    <div><a class="btn btn-primary mb-2" href="{{ url('/home#ouractivities') }}"><< Back</a></div>
                 </div>
 
             </div>
