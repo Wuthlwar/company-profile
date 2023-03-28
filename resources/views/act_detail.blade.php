@@ -35,9 +35,8 @@
                         </div>
 
                     </div>
-                    <div><a class="btn btn-primary mb-2" href="{{ url('/home#ouractivities') }}"><< Back</a></div>
+                    <div><a class="btn btn-primary mb-2 mt-4" href="{{ url('/home#ouractivities') }}"><< Back</a></div>
                 </div>
-
             </div>
     </section>
     <!--Portfolio Details End-->

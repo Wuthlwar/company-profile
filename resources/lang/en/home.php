@@ -93,11 +93,11 @@ return [
     'center_satsan4'               => 'No.05, Upper Pazundaung Road, 9th Street Bus Stop, Mingalar Taung Nyunt Township, Yangon.',
     'center_satsan5'               => 'Open Hour : 08:30 AM ~ 05:30 PM',
 
-    'center_ed1'                   => 'Satsan Branch, Yangon',
+    'center_ed1'                   => 'East Dragon Branch, Yangon',
     'center_ed2'                   => 'Show Detail',
-    'center_ed3'                   => 'PRO 1 Global Home Center (Satsan Branch)',
-    'center_ed4'                   => 'No.05, Upper Pazundaung Road, 9th Street Bus Stop, Mingalar Taung Nyunt Township, Yangon.',
-    'center_ed5'                   => 'Open Hour : 08:30 AM ~ 05:30 PM',
+    'center_ed3'                   => 'PRO 1 Global Home Center (East Dagon Branch)',
+    'center_ed4'                   => 'No.(1/ka), No(2) Main Road,15 Quarter, Near School of Nursing and Midwifery,East Dagon , Yangon.',
+    'center_ed5'                   => 'Open Hour : 08:30 AM ~ 06:00 PM',
 
     'center_hty1'                  => 'HlaingTharYar Branch, Yangon',
     'center_hty2'                  => 'Show Detail',
