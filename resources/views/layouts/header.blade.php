@@ -40,7 +40,7 @@
                                         </a>
                                         @break
                                         @default
-                                        <a class="iq-sub-card" href="{{ route('lang','mm')}}">
+                                        <a class="iq-sub-card" href="{{ route('lang','en')}}">
                                             <img src="{{ asset('assets/photos/uk.png') }}" alt="" style="width:20px">
                                         </a>
                                     @endswitch
@@ -66,7 +66,7 @@
                         </a>
                         @break
                         @default
-                        <a class="iq-sub-card" href="{{ route('lang','mm')}}">
+                        <a class="iq-sub-card" href="{{ route('lang','en')}}">
                             <input type="checkbox" id="langSwitch2">
                             <label for="langSwitch" class="onbtn languagefont">Eng</label>
                             <label for="langSwitch" class="ofbtn languagefont">Mya</label>
@@ -89,11 +89,12 @@
                             <div class="main-menu__main-menu-box-inner">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
-                                    <li class="dropdown">
+                                    <li class="dropdown {{ url()->current()==route('home')?'current':'' }}">
                                         <a href="{{route('home')}}">{{__('header.menu_1')}}</a>
 
                                     </li>
-                                    <li class="dropdown current ">
+                                   
+                                    <li class="dropdown {{ url()->current()==url('/home#ourServices')?'current':'' }} ">
                                         <a href="{{route('home')}}#ourServices">{{__('header.menu_2')}}</a>
 
                                     </li>
