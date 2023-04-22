@@ -4440,7 +4440,7 @@ label{
     position: relative;
     display: block;
     overflow: hidden;
-    padding: 25px 140px 20px;
+    padding: 5px;
     border-radius: 20px;
     background-color: var(--insur-white);
 }
