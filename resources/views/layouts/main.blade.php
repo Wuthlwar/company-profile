@@ -48,6 +48,11 @@
     <!-- template styles -->
     <link rel="stylesheet" id="langLtr" href="{{asset('assets/css/insur.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/insur-responsive.css')}}" />
+    <style>
+        .company_logo{
+            width: 130px!important;
+        }
+    </style>
 
 </head>
 

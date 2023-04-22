@@ -1091,7 +1091,7 @@
         </div>
         <div class="testimonial-one__bottom">
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-12">
                     <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel owl-loaded owl-drag" data-owl-options='{
                         "loop": true,
                         "autoplay": true,
@@ -1109,40 +1109,161 @@
                                 "items": 3
                             },
                             "992": {
-                                "items": 2
+                                "items": 3
                             },
                             "1200": {
-                                "items": 2
+                                "items": 4
                             }
                         }
                     }'>
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="partaner mb-5">
-                                        <h4>Farmer Lighting Company Limited</h4>
-                                    </div>
-                                    <div class="testimonial-one__client-info">
-                                        <div class=>
-                                           <img src="{{asset('assets/photos/Farmer Lighting Company Limited.png')}}" alt="">
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-                                            <div class="testimonial-one__client-details">
-                                                <p class="testimonial-one__client-sub-title"></p>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">Farmer Lighting Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('assets/photos/Farmer Lighting Company Limited.png')}}" alt="" >
                                 </div>
-                            </div>
+                              </div>
+
                         </div>
-                        <div class="item">
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">Zinhtet Trading Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('assets/photos/Zinhtet Trading Company Limited.jpg')}}" alt="" >
+                                </div>
+                              </div>
+
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">UPG PAINT & CONATING Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/upg.jpg')}}" alt="" >
+                                </div>
+                              </div>
+
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">Sweety Home Industry Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/sweety_home.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">Benhur Trading Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/benhur_trading.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">I.E.M Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/iem.png')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">JEWELLERY LUCK Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jewellery_luck.png')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">TMW Enterprise Limited</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/tmw.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">JOTUN MYANMAR SERVICES Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jotun.png')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">TOA PAINT (MYANMAR) Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/toa.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">Myo Thein Electronics Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/myothein_electric.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">SIKA MYANMAR LIMITED</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/sika_myamar.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">Peace Myanmar Electric Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/pme.png')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">MOTTAMA TRADING Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/mottama.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">TWJS Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/twjs.png')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">Good Brothers Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbs.png')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        <div class="item ">
+                            <div class="card testimonial-one__single p-2">
+                                <h5 class="text-center m-3">DKSH (Myanmar) Co.,Ltd</h5>
+                                <div class="card-body">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/dksh.jpg')}}" alt="" >
+                                </div>
+                              </div>
+                        </div>
+                        {{-- <div class="item ">
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__single-inner">
                                     <div class="partaner mb-5 ">
-                                        <h4>Zinhtet Trading Company Limited</h4>
+                                        <h5>Zinhtet Trading Company Limited</h4>
                                     </div>
                                     <div class="testimonial-one__client-info">
-                                        <div class=>
+                                        <div class>
                                                 <img src="{{asset('assets/photos/Zinhtet Trading Company Limited.jpg')}}" alt="">
                                         </div>
                                         <div class="testimonial-one__client-content">
@@ -1154,6 +1275,25 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="item ">
+                            <div class="testimonial-one__single">
+                                <div class="testimonial-one__single-inner">
+                                    <div class="partaner mb-5 ">
+                                        <h5>Zinhtet Trading Company Limited</h4>
+                                    </div>
+                                    <div class="testimonial-one__client-info">
+                                        <div>
+                                                <img src="{{asset('assets/photos/Zinhtet Trading Company Limited.jpg')}}" alt="">
+                                        </div>
+                                        <div class="testimonial-one__client-content">
+                                            <div class="testimonial-one__client-details">
+                                                <p class="testimonial-one__client-sub-title"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
