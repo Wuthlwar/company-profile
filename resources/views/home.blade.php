@@ -765,22 +765,6 @@
                             </a>
                         </div>
                     </div>
-                    <div class="row justify-content">
-                        <div class="col-md-6">
-                            <div class="col-4 col-sm-2">
-                                <img src="{{ asset('assets/photos/android.jpg') }}" alt="">
-                            </div>
-                            <div class="col-4 col-sm-2">
-                                <img src="{{ asset('assets/photos/android.jpg') }}" alt="">
-                            </div>
-                            <div class="col-4 col-sm-2">
-                                <img src="{{ asset('assets/photos/android.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-6">
@@ -793,7 +777,19 @@
                 </div>
             </div>
         </div>
-
+        <div class="QR">
+            <div class="d-flex justify-content ">
+                <div class="col-4 col-sm-2">
+                        <img src="{{ asset('assets/photos/android.jpg') }}" alt="">
+                    </div>
+                    <div class="col-4 col-sm-2">
+                    <img src="{{ asset('assets/photos/android.jpg') }}" alt="">
+                </div>
+                <div class="col-4 col-sm-2">
+                    <img src="{{ asset('assets/photos/android.jpg') }}" alt="">
+                </div>
+            </div>
+        </div>
 </section>
 <!-- Member Download End-->
 
