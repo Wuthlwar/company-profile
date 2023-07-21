@@ -195,7 +195,7 @@
             <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                 <div class="feature-two__single">
                     <div class="feature-two__img">
-                        <img src="{{asset('assets/photos/vb-channel.jpg')}}" alt="">
+                        <img style="height: 290px;" src="{{asset('assets/photos/vb-channel.jpg')}}" alt="">
                     </div>
                     {{-- <div class="feature-two__content">
                         <div class="feature-two__content-inner">
@@ -1126,8 +1126,8 @@
                         "loop": true,
                         "autoplay": true,
                         "margin": 30,
-                        "nav": false,
-                        "dots": false,
+                        "nav": true,
+                        "dots": true,
                         "smartSpeed": 500,
                         "autoplayTimeout": 10000,
                         "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
@@ -1147,7 +1147,7 @@
                         }
                     }'>
 
-                        <div class="item ">
+                    <div class="item ">
                             <div class="card testimonial-one__single p-2">
                                 <h5 class="text-center m-3">Farmer Lighting Co.,Ltd</h5>
                                 <div class="card-body">
