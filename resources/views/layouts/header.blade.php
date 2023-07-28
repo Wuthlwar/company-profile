@@ -93,7 +93,7 @@
                                         <a href="{{route('home')}}">{{__('header.menu_1')}}</a>
 
                                     </li>
-                                   
+
                                     <li class="dropdown {{ url()->current()==url('/home#ourServices')?'current':'' }} ">
                                         <a href="{{route('home')}}#ourServices">{{__('header.menu_2')}}</a>
 
@@ -125,7 +125,7 @@
                                 <a href="tel:959428751328"><i class="fas fa-phone"></a></i>
                             </div>
                             <div class="main-menu__call-content mt-10">
-                                <a href="tel:+959777048315 , +959777048316">+959777048315</a>
+                                <a href="tel:+959777048315 , ++959777048315">+959777048315</a>
                                 <p>{{__('header.menu_7')}}</p>
                             </div>
                         </div>
