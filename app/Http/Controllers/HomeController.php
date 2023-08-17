@@ -14,8 +14,7 @@ class HomeController extends Controller
     public function home()
     {
         $act_types = ActivityType::all();
-        $acts = Activity::orderBy('id', 'asc')
-        ->get();
+        $acts = Activity::latest()->get();
         // dd($acts);
         return view('home',compact('act_types','acts'));
     }
