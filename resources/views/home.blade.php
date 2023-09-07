@@ -1184,7 +1184,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
+                            <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">Benhur Trading Co.,Ltd</h5>
                                 <div class="card-body">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/benhur_trading.jpg')}}" alt="" >
@@ -1192,7 +1192,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
+                            <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">I.E.M Co.,Ltd</h5>
                                 <div class="card-body">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/iem.png')}}" alt="" >
@@ -1216,7 +1216,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
+                            <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">JOTUN MYANMAR SERVICES Co.,Ltd</h5>
                                 <div class="card-body">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jotun.png')}}" alt="" >
@@ -1248,7 +1248,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
+                            <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">Peace Myanmar Electric Co.,Ltd</h5>
                                 <div class="card-body">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/pme.png')}}" alt="" >
@@ -1264,7 +1264,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
+                            <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">TWJS Co.,Ltd</h5>
                                 <div class="card-body">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/twjs.png')}}" alt="" >
@@ -1272,7 +1272,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
+                            <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">Good Brothers Co.,Ltd</h5>
                                 <div class="card-body">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbs.png')}}" alt="" >
@@ -1382,10 +1382,11 @@
                                             <i class="fa fa-check"></i>
                                         </div>
                                         <div class="text">
+
                                             @if (session()->get('locale')=='en')
                                                 <p>{{ Str::limit($act->title,20) }} ({{ Str::limit($act->location,50) }})</p>
                                             @else
-                                            <p>{{ Str::limit($act->title_mm,20) }} ({{ Str::limit($act->location_mm,50) }})</p>
+                                            <p style="font-size: 18px">{{ Str::limit($act->title_mm,100) }} ({{ Str::limit($act->location_mm,50) }})</p>
                                             @endif
 
                                         </div>

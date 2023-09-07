@@ -122,10 +122,10 @@
                     <div class="main-menu__right">
                         <div class="main-menu__call">
                             <div class="main-menu__call-icon">
-                                <a href="tel:959428751328"><i class="fas fa-phone"></a></i>
+                                <a href="tel:959777048315"><i class="fas fa-phone"></a></i>
                             </div>
                             <div class="main-menu__call-content mt-10">
-                                <a href="tel:+959777048315 , ++959777048315">+959777048315</a>
+                                <a href="tel:+959777048315 , +959777048315">+959777048315</a>
                                 <p>{{__('header.menu_7')}}</p>
                             </div>
                         </div>

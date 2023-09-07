@@ -7,9 +7,9 @@
     <title> PRO 1 Global </title>
     <!-- favicons Icons -->
 
+    {{-- <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
     <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> --}}
     {{-- <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" /> --}}
     <meta name="description" content="Insur HTML 5 Template " />
 
@@ -93,11 +93,11 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@insur.com</a>
+                    <a href="mailto:needhelp@packageName__.com">info@pro1globalhomecenter.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:+959777048315">+959777048315</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
