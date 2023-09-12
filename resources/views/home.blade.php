@@ -1194,7 +1194,7 @@
                         <div class="item ">
                             <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">I.E.M Co.,Ltd</h5>
-                                <div class="card-body">
+                                <div class="card-body" style="margin-top: 50px">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/iem.png')}}" alt="" >
                                 </div>
                               </div>
@@ -1210,7 +1210,7 @@
                         <div class="item ">
                             <div class="card testimonial-one__single p-2">
                                 <h5 class="text-center m-3">TMW Enterprise Limited</h5>
-                                <div class="card-body">
+                                <div class="card-body" style="margin-top: 10px">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/tmw.jpg')}}" alt="" >
                                 </div>
                               </div>
@@ -1218,7 +1218,7 @@
                         <div class="item ">
                             <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">JOTUN MYANMAR SERVICES Co.,Ltd</h5>
-                                <div class="card-body">
+                                <div class="card-body" style="margin-top: 40px">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jotun.png')}}" alt="" >
                                 </div>
                               </div>
@@ -1250,8 +1250,8 @@
                         <div class="item ">
                             <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">Peace Myanmar Electric Co.,Ltd</h5>
-                                <div class="card-body">
-                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/pme.png')}}" alt="" >
+                                <div class="card-body" style="margin-top: 50px">
+                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/pme.png')}}" alt="">
                                 </div>
                               </div>
                         </div>
@@ -1266,7 +1266,7 @@
                         <div class="item ">
                             <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">TWJS Co.,Ltd</h5>
-                                <div class="card-body">
+                                <div class="card-body" style="margin-top: 40px">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/twjs.png')}}" alt="" >
                                 </div>
                               </div>
@@ -1274,7 +1274,7 @@
                         <div class="item ">
                             <div class="card testimonial-one__single p-2" style="height: 260px">
                                 <h5 class="text-center m-3">Good Brothers Co.,Ltd</h5>
-                                <div class="card-body">
+                                <div class="card-body" style="margin-top: 50px">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbs.png')}}" alt="" >
                                 </div>
                               </div>
