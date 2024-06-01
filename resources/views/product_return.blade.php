@@ -14,7 +14,7 @@
                 <div class="col-xl-6">
                     <div class="about-four__left">
                         <div class="about-four__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
-                            <div class="about-four__img">
+                            <div class="about-four__img" style="position: :relative;top:400px;">
                                 <img src="{{asset('/assets/photos/services/pr1.png')}}" alt="">
                             </div>
 
@@ -35,8 +35,15 @@
                             </div>
 
                         </div>
-                        <p class="about-four__text-1">
-                            At PRO1 Global Home Center, we also provide the service of exchanging products that you bought incorrectly for your convenience.{{__('productreturn.pro_return_info')}}</p>
+                        <p class="about-four__text-1">{{__('productreturn.pro_return_info1')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info2')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info3')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info4')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info5')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info6')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info7')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info8')}}</p>
+                           <p class="about-four__text-1">{{__('productreturn.pro_return_info9')}}</p>
                     </div>
                 </div>
             </div>
