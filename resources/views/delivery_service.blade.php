@@ -25,6 +25,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-6">
                     <div class="about-four__right">
                         <div class="section-title text-left">
@@ -43,6 +44,10 @@
 
 
                     </div>
+                </div>
+                <div class="image-container">
+                    <img src="{{ asset('assets/photos/DF.jpg') }}" alt="Image 1">
+                    <img src="{{ asset('assets/photos/DSA.jpg') }}" alt="Image 2">
                 </div>
             </div>
         </div>

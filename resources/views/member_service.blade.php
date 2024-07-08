@@ -20,7 +20,12 @@
 
                         </div>
                     </div>
+                    <div class="memberservice">
+                        <img src="{{ asset('assets/photos/Member1.jpg') }}" alt="Image 1" width="600" height="810">
+                        <img src="{{ asset('assets/photos/Member2.jpg') }}" alt="Image 2" width="600" height="700">
+                    </div>
                 </div>
+
                 <div class="col-xl-6">
                     <div class="about-four__right">
                         <div class="section-title text-left">
