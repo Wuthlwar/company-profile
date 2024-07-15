@@ -2122,7 +2122,10 @@ label{
 /*--------------------------------------------------------------
 # Main Slider
 --------------------------------------------------------------*/
-
+.main-slider_btn-box{
+    position: relative;
+    width: 250px;
+}
 .main-slider {
     position: relative;
     display: block;
@@ -3476,7 +3479,8 @@ label{
 
 .why-choose-one-img {
     position: absolute;
-    top: -111px;
+    padding-right: 120px;
+    top: 0;
     bottom: 0;
     right: 0;
     z-index: 3;

@@ -48,6 +48,11 @@ class HomeController extends Controller
         return view('delivery_service');
     }
 
+    public function delivery_service_area()
+    {
+        return view('delivery_service_area');
+    }
+
     public function special_order()
     {
         return view('special_order');

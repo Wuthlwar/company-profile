@@ -42,6 +42,7 @@ Route::get('/consulting_service', [HomeController::class, 'consulting_service'])
 Route::get('/contractor_information', [HomeController::class, 'contractor_information'])->name('contractor_information');
 Route::get('/member_service', [HomeController::class, 'member_service'])->name('member_service');
 Route::get('/repair_service', [HomeController::class, 'repair_service'])->name('repair_service');
+Route::get('/delivery_service_area', [HomeController::class, 'delivery_service_area'])->name('delivery_service_area');
 
 //Branches
 Route::get('/lanthit_info', [HomeController::class, 'lanthit_info'])->name('lanthit_info');
