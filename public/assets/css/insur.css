@@ -35,7 +35,7 @@ html {
     --insur-base-rgb: 1, 95, 201;
     --insur-black: #16243d;
     --insur-black-rgb: 22, 36, 61;
-    --insur-primary: #0ce0ff;
+    --insur-primary: #015fc9;
     --insur-primary-rgb: 12, 224, 255;
     --insur-extra: #f2f5f9;
     --insur-extra-rgb: 242, 245, 249;
@@ -332,7 +332,7 @@ ul {
     position: relative;
     display: inline-block;
     margin-left: 40px;
-    margin-top: 90px;
+    margin-top: 20px;
 }
 
 .section-sub-title {
@@ -9871,7 +9871,7 @@ label{
 .news-details {
     position: relative;
     display: block;
-    padding: 120px 0 120px;
+    padding: 20px 0 20px;
 }
 
 .news-details__left {
@@ -10133,8 +10133,8 @@ label{
     display: -ms-flexbox;
     display: flex;
     border-bottom: 1px solid var(--insur-bdr-color);
-    padding-bottom: 60px;
-    margin-bottom: 60px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .comment-one__content {

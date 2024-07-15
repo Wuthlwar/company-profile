@@ -111,17 +111,21 @@
 
                                     </li>
                                     <li class="dropdown">
+                                        <a href="{{route('our_opportunities')}}">{{__('header.menu_8')}}</a>
+                                    </li>
+                                    <li class="dropdown">
                                         <a href="{{route('home')}}#contactus">{{__('header.menu_6')}}</a>
 
                                     </li>
+
                                 </ul>
                             </div>
 
                         </div>
                     </div>
                     <div class="main-menu__right">
-                        <div class="main-menu__call">
-                            <div class="main-menu__call-icon">
+                        <div class="main-menu__call" style="width:60px;">
+                            <div class="main-menu__call-icon" style="height:30px;">
                                 <a href="tel:959777048315"><i class="fas fa-phone"></a></i>
                             </div>
                             <div class="main-menu__call-content mt-10">

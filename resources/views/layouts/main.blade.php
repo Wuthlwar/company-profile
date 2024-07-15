@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> PRO 1 Global </title>
     <!-- favicons Icons -->
-
+    <link href="job_banner/title.png" rel="icon">
+    <link href="job_banner/title.png" rel="apple-touch-icon">
     {{-- <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
     <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> --}}
