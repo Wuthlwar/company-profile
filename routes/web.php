@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\JobApplicationFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
@@ -32,6 +33,7 @@ Route::get('/mile_stone', [HomeController::class, 'mile_stone'])->name('mile_sto
 Route::get('/joint_venture', [HomeController::class, 'joint_venture'])->name('joint_venture');
 Route::get('/coporate', [HomeController::class, 'coporate'])->name('coporate');
 Route::get('/accountability', [HomeController::class, 'accountability'])->name('accountability');
+
 
 //Services
 Route::get('/product_information', [HomeController::class, 'product_information'])->name('product_information');
@@ -65,3 +67,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name(
 Route::get('getActByType/{act_type_id}',[ActivityController::class,'get_activities_by_type'])->name('get_activities_by_type');
 
 Route::resource('feedbacks',FeedbackController::class);
+
+//---------------------------------------------------Job Vacants---------------------------------------------
+Route::get('/our_opportunities', [HomeController::class, 'job'])->name('our_opportunities');
+Route::get('/our_all_categories_job', [HomeController::class, 'jobAllcate'])->name('our_all_categories_job');
+Route::get('/our_opportunities_detail/{id}', [HomeController::class, 'jobdetail'])->name('our_opportunities_detail');
+Route::get('/our_opportunities_categories/{id}', [HomeController::class, 'jobDetailCate'])->name('our_opportunities_categories_jobs');
+
+Route::resource('Job_Application_form',JobApplicationFormController::class);
+Route::get('/job_application_apply_successfully', [HomeController::class, 'successApply'])->name('job_application_apply_successfully');
