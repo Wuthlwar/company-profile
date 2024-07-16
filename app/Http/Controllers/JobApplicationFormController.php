@@ -100,10 +100,10 @@ class JobApplicationFormController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'resume' => 'nullable|mimes:jpeg,jpg,png,gif,pdf|max:10240', // max file size in kilobytes
+            'resume' => 'nullable|mimes:pdf|max:10240', // max file size in kilobytes
             'email' => 'required|string|email|max:255|unique:job_application_forms',
         ], [
-            'resume.mimes' => 'The resume must be a file of type: pdf, jpeg, jpg, png, gif.',
+            'resume.mimes' => 'The resume must be a file of type: pdf.',
             'resume.max' => 'The resume must not be greater than 10MB.',
             'email.email' => 'The email must be a valid email address. Email ကိုမှန်ကန်စွာဖြည့်ပါ။',
             'email.unique' => 'The email has already been taken. သင်၏ Email သည် တစ်ကြိမ်ဖောင်တင်ထားပါသည်။ ',

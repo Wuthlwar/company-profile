@@ -118,12 +118,12 @@
                                                         <font style="color:#000">Title</font><br>
                                                         <div class="comment-form__input-box">
                                                             <div class="form-check form-check-inline" style="padding:0px 30px;">
-                                                                <input class="form-check-input" type="radio" name="title" id="titleMr" value="Mr.">
+                                                                <input class="form-check-input" type="radio" name="title" id="titleMr" value="Mr." {{ old('title') == 'Mr.' ? 'checked' : '' }}>
                                                                 <label class="form-check-label" for="titleMr" style="font-size: 15px;">Mr.</label>
                                                             </div>
 
                                                             <div class="form-check form-check-inline" style="padding:0px 30px;">
-                                                                <input class="form-check-input" type="radio" name="title" id="titleMs" value="Ms.">
+                                                                <input class="form-check-input" type="radio" name="title" id="titleMs" value="Ms." {{ old('title') == 'Ms.' ? 'checked' : '' }}>
                                                                 <label class="form-check-label" for="titleMs" style="font-size: 15px;">Ms./Mrs.</label>
                                                             </div><br>
                                                             <small class="text-danger" id="titleError">Please select a title.</small>
@@ -131,10 +131,10 @@
                                                     </div>
 
                                                     <div class="col-md-6">
-                                                        <font style="color:#000">Name - Surname</font>
+                                                        <font style="color:#000">Name</font>
                                                         <div class="comment-form__input-box">
                                                             <input type="text" placeholder="Real Name" name="surname"><br>
-                                                            <small class="text-danger">Name - Surname is required.</small>
+                                                            <small class="text-danger">Name - name is required.</small>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12"><hr></div>
@@ -161,14 +161,14 @@
                                                     <div class="col-md-6">
                                                         <font style="color:#000">Current Address</font>
                                                         <div class="comment-form__input-box text-message-box">
-                                                            <textarea name="current_address" placeholder="Your Current Address"></textarea><br>
+                                                            <textarea name="current_address" placeholder="Your Current Address">{{ old('current_address') }}</textarea><br>
                                                             <small class="text-danger">Current Address is required.</small>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <font style="color:#000">Permanent/Emergency Address</font>
                                                         <div class="comment-form__input-box text-message-box">
-                                                            <textarea name="emergency_address" placeholder="Your Emergency Address"></textarea><br>
+                                                            <textarea name="emergency_address" placeholder="Your Emergency Address">{{ old('emergency_address') }}</textarea><br>
                                                             <small class="text-danger">Permanent/Emergency Address is required.</small>
                                                         </div>
                                                     </div>
@@ -176,7 +176,7 @@
                                                     <div class="col-md-12">
                                                         <font style="color:#000">Career Summary</font>
                                                         <div class="comment-form__input-box text-message-box">
-                                                            <textarea name="career_summary" placeholder="Your Career Summary"></textarea><br>
+                                                            <textarea name="career_summary" placeholder="Your Career Summary">{{ old('career_summary') }}</textarea><br>
                                                             {{-- <small class="text-danger">Career Summary is required.</small> --}}
                                                         </div>
                                                     </div>
@@ -185,10 +185,10 @@
                                                         <font style="color:#000">Please upload your resume</font>
                                                         <br><br>
                                                         <div class="comment-form__input-box text-message-box">
-                                                            <input type="file" name="resume" accept=".jpg,.jpeg,.png,.docx,.pdf">
+                                                            <input type="file" name="resume" accept=".pdf">
                                                             <br><br>
                                                             <p style="color: rgb(3, 3, 3);">
-                                                                Accepted file types: jpg, jpeg, png, docx, pdf, Max. file size: 10 MB.
+                                                                Accepted file types: pdf, Max. file size: 10 MB.
                                                             </p><br>
                                                             <small class="text-danger">Please upload your resume.</small>
                                                         </div>
@@ -198,7 +198,7 @@
                                                         <br><br>
                                                         <div class="comment-form__input-box">
                                                             <div class="form-check form-check-inline">
-                                                                <input type="checkbox" name="agree" value="agree">
+                                                                <input type="checkbox" name="agree" value="agree" {{ old('agree') ? 'checked' : '' }}>
                                                                 <br><br>
                                                                 <p style="color: rgb(3, 3, 3);">
                                                                     I certify that all statements and information in this application are true in all respects*
@@ -455,7 +455,7 @@
 
     function checkFile(input) {
         const file = input.files[0];
-        const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.docx|\.pdf)$/i;
+        const allowedExtensions = /(\.pdf)$/i;
         const maxSize = 10 * 1024 * 1024; // 10 MB
 
         if (!file) {
@@ -528,7 +528,7 @@
                 html: `
                     <p><strong>Position:</strong> ${position}</p>
                     <hr>
-                    <p><strong>Surname:</strong> ${title} ${surname}</p>
+                    <p><strong>Name:</strong> ${title} ${surname}</p>
                     <hr>
                     <p><strong>Phone:</strong> ${phone}</p>
                     <hr>

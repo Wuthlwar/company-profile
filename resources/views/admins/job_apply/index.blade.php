@@ -132,11 +132,9 @@
                     <div class="modal-dialog modal-xl">
                        <div class="modal-content">
                           <div class="modal-body">
-
                                 <div class="header-title">
                                     <h6 class="card-title">User Application Detail</h6>
                                 </div>
-
                                 <div class="col-sm-12">
                                     <div class="card">
                                         <div class="card-body">
@@ -320,7 +318,15 @@
 @endsection
 @section('script')
 {{-- <script src="{{ asset('/js/activity_type_crud.js') }}"></script> --}}
-
+<script>
+    $(document).ready(function() {
+        $('#jobcategoryname').select2({
+            theme: 'bootstrap4',
+            placeholder: 'Choose Your Category',
+            width: '100%'
+        });
+    });
+    </script>
 <script>
       function showNotification(message, type) {
         var notification = $('<div class="alert alert-' + type + ' bg-success text-light border-0 alert-dismissible fade show" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999; display: none; font-family: "Poppins", sans-serif ">'+

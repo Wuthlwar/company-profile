@@ -8,6 +8,7 @@
                 <img src="{{asset('job_banner/banner2.png')}}" class="img-fluid">
                 <br><br>
             </div>
+          <br><br>
         </div>
     </div>
 </section>
