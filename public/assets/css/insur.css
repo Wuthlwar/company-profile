@@ -44,6 +44,23 @@ html {
     --insur-bdr-radius: 10px;
     --insur-letter-spacing: -0.02em;
 }
+  .image-container {
+    display: flex;
+  }
+.image-container img {
+    width: 650px;
+    height: 800px;
+    object-fit: cover;
+    margin-top: 20px;
+    margin-right: 400px; /* Adjust the margin as needed */
+
+}
+.memberservice {
+    padding-top: 50px;
+}
+
+
+
 
 .row {
     --bs-gutter-x: 30px;
@@ -2105,7 +2122,10 @@ label{
 /*--------------------------------------------------------------
 # Main Slider
 --------------------------------------------------------------*/
-
+.main-slider_btn-box{
+    position: relative;
+    width: 250px;
+}
 .main-slider {
     position: relative;
     display: block;
@@ -3459,7 +3479,8 @@ label{
 
 .why-choose-one-img {
     position: absolute;
-    top: -111px;
+    padding-right: 120px;
+    top: 0;
     bottom: 0;
     right: 0;
     z-index: 3;

@@ -25,6 +25,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-6">
                     <div class="about-four__right">
                         <div class="section-title text-left">
@@ -40,12 +41,25 @@
 
                         </div>
                         <p class="about-four__text-1">{{__('deliveryservice.deli_information')}}</p>
+                        <div class="row">
+                            <div class="main-slider_btn-box">
+                                <a href="{{ route('delivery_service_area') }}" class="thm-btn main-slider__btn">Delivery Area</a>
+
+                            </div>
+                            <div class="main-slider_btn-box">
+                                <a href="{{ route('delivery_service_area') }}" class="thm-btn main-slider__btn">Layer Charges</a>
+
+                            </div>
+                        </div>
 
 
                     </div>
                 </div>
+
             </div>
+
         </div>
+
     </section>
     <!--About Four End-->
 
