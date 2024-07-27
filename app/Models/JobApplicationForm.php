@@ -29,4 +29,7 @@ class JobApplicationForm extends Model
     {
         return $this->belongsTo(JobCategory::class,'cat_id')->withDefault();
     }
+    public function jobvacant(){
+        return $this->belongsTo(VacantBranchUser::class,'vacant_id')->withDefault();
+    }
 }

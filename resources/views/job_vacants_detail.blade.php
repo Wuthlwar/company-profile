@@ -167,6 +167,11 @@
                                         <div class="modal-body">
                                             <form action="{{route('Job_Application_form.store')}}" method="POST" enctype="multipart/form-data" id="form" class="form">
                                                 @csrf
+
+                                                @foreach ($getbranches as $getbranch)
+                                                <input type="hidden" value="{{$getbranch->id}}" name="branch_id[]">
+                                                @endforeach
+
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <font style="color:#000">Position</font>

@@ -14,6 +14,7 @@ use App\Mail\SendReceivedHr;
 use App\Models\Branch;
 use App\Models\Logs;
 use App\Models\VacantBranch;
+use App\Models\VacantBranchUser;
 
 class JobApplicationFormController extends Controller
 {
@@ -57,7 +58,6 @@ class JobApplicationFormController extends Controller
         if ($email) {
             $query->where('email', 'LIKE', '%' . $email . '%');
         }
-
         $va_id = JobVacants::latest()->first();
         // dd($va_id->id);
 
@@ -66,6 +66,7 @@ class JobApplicationFormController extends Controller
             $query->where('jobvacant_id', $jobvacant_id);
             $apply_vacants = $query->latest()->paginate(10);
             $apply_vacants->appends(['jobvacant_id' => $jobvacant_id]);
+
         } else {
             $apply_vacants = $query->latest()->paginate(20);
             $apply_vacants->appends($request->all());
@@ -73,7 +74,10 @@ class JobApplicationFormController extends Controller
 
         $vacant_ids = $apply_vacants->pluck('id');
 
-        $branchIds = VacantBranch::where('vacant_id', $va_id->id)->pluck('branch_id');
+        $va_idg = JobApplicationForm::latest()->first();
+
+        $branchIds = VacantBranchUser::where('vacant_id', $va_idg->id)->pluck('branch_id');
+        // dd($branchIds);
         $getbranches = Branch::whereIn('id', $branchIds)->get();
 
         $apply_counts = JobApplicationForm::whereIn('jobvacant_id', $vacant_ids)
@@ -142,7 +146,7 @@ class JobApplicationFormController extends Controller
         // Send the email with the resume attachment
         Mail::to($receiver)->send(new SendReceivedHr($details, $resumePath));
 
-        JobApplicationForm::create([
+        $jobs=JobApplicationForm::create([
             'jobvacant_id' => $request['jobvacant_id'],
             'cat_id' => $request['cat_id'],
             'position' => $request['position'],
@@ -158,6 +162,15 @@ class JobApplicationFormController extends Controller
             'status' => $request['status'],
             'date' => $date
         ]);
+
+        $branchIds = $request->input('branch_id');
+
+        foreach ($branchIds as $branchId) {
+            VacantBranchUser::create([
+                'branch_id' => $branchId,
+                'vacant_id' => $jobs->id,
+            ]);
+        }
 
 
         return redirect()->route('job_application_apply_successfully')->with('success', 'Successfully saved...');

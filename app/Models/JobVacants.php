@@ -27,4 +27,9 @@ class JobVacants extends Model
     {
         return $this->belongsTo(JobCategory::class,'category_id')->withDefault();
     }
+
+    public function branch()
+    {
+        return $this->belongsTo(VacantBranch::class,'vacant_id')->withDefault();
+    }
 }

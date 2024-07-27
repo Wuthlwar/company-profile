@@ -88,6 +88,7 @@
                         <th scope="col" class="card-title" style="font-size: 15px;">Name</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Phone</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Email</th>
+                        <th scope="col" class="card-title" style="font-size: 15px;">Branch Locations</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Resume</th>
                         {{-- <th scope="col" class="card-title" style="font-size: 15px;">Status</th> --}}
                         <th scope="col" class="card-title" style="font-size: 15px;">Apply Date</th>
@@ -121,6 +122,12 @@
                     </td>
                     <td> {{$vacant->phone}}</td>
                     <td> {{$vacant->email}}</td>
+                    <td>
+                        @foreach ($getbranches as $getbranch)
+                        <span class="badge bg-primary" style="font-size: 16px;">
+                            {{$getbranch->branch_name}}
+                        </span>
+                        @endforeach</td>
                     <td><i class="fa fa-file" aria-hidden="true" style="color:#312eec;font-size:20px;" data-toggle="modal" data-target="#jobapplyresume{{$vacant->id}}"></i>
                       &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;<a href="{{ asset('storage/uploads/jobvacants/'.$vacant->resume)}}" download><i class="fa fa-download" style="color:#312eec;font-size:20px;" aria-hidden="true"></i></a>
                     </td>
@@ -252,20 +259,6 @@
                                                         </label>
                                                       </div>
                                                 </div>
-                                                <hr>
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Locations</label>
-                                                      </div>
-                                                      <div class="col-md-9">
-                                                        @foreach ($getbranches as $getbranch)
-                                                        <span class="badge bg-primary" style="font-size: 16px;">
-                                                            {{$getbranch->branch_name}}
-                                                        </span>
-                                                        @endforeach
-                                                      </div>
-                                                </div>
-
 
                                         </div>
                                     </div>
