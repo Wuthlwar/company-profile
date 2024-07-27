@@ -176,7 +176,6 @@
                             </div>
                         </div>
                         <div class="card-body">
-
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label for="categoryname" class="form-label card-title" style="font-size:15px;">Category Name <font style="color:red;">*</font></label>
@@ -191,16 +190,52 @@
                                       </div>
 
                                       <div class="col-md-12">
-                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Job Vacant Name <font style="color:red;">*</font></label>
+                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Job Title Name <font style="color:red;">*</font></label>
                                         <input type="text" class="form-control" id="vacantname" name="vacant_name" style="border:1px solid #333;height:40px;font-size:13px" required>
                                         <hr>
                                       </div>
 
                                       <div class="col-md-12">
-                                        <label for="fromDate" class="form-label" id="font-f">Job Short text <font style="color:red;">*</font></label><br>
+                                        <label for="branch" class="form-label card-title" style="font-size:15px;">
+                                            Branches<font style="color:red;">*</font>
+                                        </label>
+                                        <select class="form-control" id="branches" name="branch_id[]" multiple required>
+                                            @foreach($branches as $branch)
+                                                <option value="{{ $branch->id }}">{{ $branch->branch_name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <hr>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="male" class="form-label card-title" style="font-size:15px;">
+                                            Male
+                                        </label>
+                                        <input type="number" class="form-control" id="vacantname" name="male" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                        <hr>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="femail" class="form-label card-title" style="font-size:15px;">
+                                           Female
+                                        </label>
+                                        <input type="number" class="form-control" id="vacantname" name="female" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                        <hr>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="femail" class="form-label card-title" style="font-size:15px;">
+                                           Salary
+                                        </label>
+                                        <input type="number" class="form-control" id="vacantname" name="salary" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                        <hr>
+                                    </div>
+
+                                      <div class="col-md-12">
+                                        <label for="fromDate" class="form-label" id="font-f">Opportunities <font style="color:red;">*</font></label><br>
                                           <textarea name="jobshortxt" class="form-control" rows="4" cols="10" style="border:1px solid #333;" required></textarea>
                                           <hr>
-                                        </div>
+                                    </div>
 
                                         <div class="col-md-12">
                                             <label for="fromDate" class="form-label" id="font-f">Job Description <font style="color:red;">*</font></label><br>
@@ -211,6 +246,10 @@
                                         </div>
 
                                       <div class="col-md-12">
+
+                                      </div>
+
+                                      <div class="col-md-12">
                                           <label for="categorybanner" class="form-label card-title" style="font-size:15px;">Vacant Banner image
                                              </label>&nbsp;&nbsp;
                                           <label for="my_file">
@@ -218,6 +257,7 @@
                                           </label>
                                           <input type="file" id="my_file" style="display: none;" name="banner"/>
                                       </div>
+
 
                                       <div class="col-md-12">
                                           <div id="image_preview"></div>
@@ -460,22 +500,30 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- Select2 JS -->
 <script>
-    $(document).ready(function() {
-        $('#jobcategoryname').select2({
-            theme: 'bootstrap4',
-            placeholder: 'Choose Your Category',
-            width: '100%',
-
-        });
-
-        $('#jobcategorynameadd').select2({
-            theme: 'bootstrap4',
-            placeholder: 'Choose Your Category',
-            width: '100%',
-            dropdownParent: $('#jobModal')
-        });
+$(document).ready(function() {
+    $('#jobcategoryname').select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose Your Category',
+        width: '100%'
     });
-    </script>
+
+    $('#jobcategorynameadd').select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose Your Category',
+        width: '100%',
+        dropdownParent: $('#jobModal')
+    });
+
+    $('#branches').select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose Your branch',
+        width: '100%',
+        dropdownParent: $('#jobModal')
+    });
+});
+
+
+</script>
 
 <script>
 

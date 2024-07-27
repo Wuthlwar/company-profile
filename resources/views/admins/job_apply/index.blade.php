@@ -252,6 +252,21 @@
                                                         </label>
                                                       </div>
                                                 </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Locations</label>
+                                                      </div>
+                                                      <div class="col-md-9">
+                                                        @foreach ($getbranches as $getbranch)
+                                                        <span class="badge bg-primary" style="font-size: 16px;">
+                                                            {{$getbranch->branch_name}}
+                                                        </span>
+                                                        @endforeach
+                                                      </div>
+                                                </div>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -282,9 +297,10 @@
                                                         <div class="embed-responsive embed-responsive-16by9">
                                                             <iframe class="embed-responsive-item" src="{{ asset('storage/uploads/jobvacants/'.$vacant->resume)}}" allowfullscreen></iframe>
                                                         </div>
-
                                                         @elseif (Str::endsWith($vacant->resume, ['.jpg', '.jpeg', '.png', '.gif']))
                                                         <img src="{{ asset('storage/uploads/jobvacants/'.$vacant->resume) }}" alt="{{$vacant->resume}}" title="{{$vacant->resume}}" class="img-fluid">
+                                                        @elseif (Str::endsWith($vacant->resume, ['.docx', '.DOCX']))
+                                                        <a href="{{asset('storage/uploads/jobvacants/' . $vacant->resume)}}" target="_blank"> {{$vacant->resume}}</a>
                                                         @endif
                                                     </center>
                                                     </div>

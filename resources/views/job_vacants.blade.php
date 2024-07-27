@@ -6,9 +6,7 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12">
                 <img src="{{asset('job_banner/banner2.png')}}" class="img-fluid">
-                <br><br>
             </div>
-          <br><br>
         </div>
     </div>
 </section>
@@ -17,6 +15,24 @@
         <section class="news-details">
             <div class="container">
                 <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12" style="background-color: #172ec7; padding-top:20px;">
+                        <form method="GET" action="{{ route('job.search') }}">
+                            <div class="input-group mb-3" style="border-radius:30px;">
+                                <select class="form-control" id="jobcategoryname" name="cat_id">
+                                    @foreach($categories as $category)
+                                        @if($category->status == "online")
+                                            <option value="{{ $category->id }}" {{ request('cat_id') == $category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                <input type="text" class="form-control" name="position" placeholder="Enter Position" aria-label="Enter Position" aria-describedby="button-addon2" value="{{ request('position') }}">
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="color: #fdf8f8;">Search</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <hr><hr>
+
                     @foreach ($vacants as $vacant)
                     <div class="col-xl-12 col-lg-12">
                         <div class="news-details">
@@ -115,6 +131,17 @@
 
 @endsection
 @section('script')
+
+<script>
+    $(document).ready(function() {
+    $('#jobcategoryname').select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose Your Category',
+        width: '100%'
+    });
+
+});
+</script>
     <script>
         $(document).ready(function () {
 
@@ -216,4 +243,6 @@
         });
         }
     </script>
+
+
 @endsection

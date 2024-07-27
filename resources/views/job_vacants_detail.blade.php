@@ -54,6 +54,23 @@
 .form-control.error small{
     visibility: visible;
 }
+
+#agreeCheckbox {
+        accent-color: green;
+    }
+
+    #agreeCheckbox {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid green;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #agreeCheckbox:checked {
+        background-color: rgb(17, 194, 17);
+    }
 </style>
         <!--News Details Start-->
         <section class="news-details">
@@ -82,8 +99,59 @@
                                 </ul>
                                 <h3 class="news-details__title" style="font-size: 22px;">{{$vacant_detail->vacant_name}}</h3>
                                 <p class="news-details__text-1">
-                                    {{$vacant_detail->vacant_shortxt}}<hr>
+                                    <hr>
+
+                                    @if($vacant_detail->male!=null && $vacant_detail->female!=null)
+                                        Male / Female<br>
+                                        {{$vacant_detail->male}} / {{$vacant_detail->male}} Posts
+
+                                    @elseif($vacant_detail->male!=null)
+                                    Male - {{$vacant_detail->male}} Posts
+                                    @elseif($vacant_detail->female!=null)
+                                    Female - {{$vacant_detail->female}} Posts
+                                    @endif
+                                    <hr>
+
                                     {!! $vacant_detail->vacant_description !!}
+
+                                    Salary<br>
+                                    <i id="toggleEye" class="far fa-eye" style="cursor: pointer;" onclick="toggleSalary()"></i>
+                                    <span id="salary" style="display: none;">
+                                        {{ number_format($vacant_detail->salary) }}   MMK
+                                    </span>
+
+                                    <hr>
+
+                                    <h5>Opportunities</h5><br>
+                                    {{$vacant_detail->vacant_shortxt}}<hr>
+
+                                    Locations<br>
+                                    @foreach ($getbranches as $getbranch)
+
+                                        <span class="badge bg-primary" style="font-size: 16px;">
+                                            <i class="las la-trash" style="color: red; font-size: 20px; cursor: pointer;"
+                                            onclick="confirmDelete('{{ route('branches.delete', $getbranch->id) }}')"></i>
+                                            {{$getbranch->branch_name}}
+                                        </span>
+
+                                    @endforeach
+
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Branch Name</th>
+                                            <th scope="col">Branch Address</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($getbranches as $getbranch)
+                                          <tr>
+                                            <td>{{$getbranch->branch_name}}</td>
+                                            <td> {{$getbranch->branch_address}}</td>
+                                          </tr>
+                                          @endforeach
+                                        </tbody>
+                                      </table>
                                 </p>
 
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#apply">Apply Now</button>
@@ -188,7 +256,7 @@
                                                             <input type="file" name="resume" accept=".pdf">
                                                             <br><br>
                                                             <p style="color: rgb(3, 3, 3);">
-                                                                Accepted file types: pdf, Max. file size: 10 MB.
+                                                                Accepted file types: docx, pdf, Max. file size: 10 MB.
                                                             </p><br>
                                                             <small class="text-danger">Please upload your resume.</small>
                                                         </div>
@@ -198,7 +266,7 @@
                                                         <br><br>
                                                         <div class="comment-form__input-box">
                                                             <div class="form-check form-check-inline">
-                                                                <input type="checkbox" name="agree" value="agree" {{ old('agree') ? 'checked' : '' }}>
+                                                                <input type="checkbox" name="agree" value="agree" id="agreeCheckbox" {{ old('agree') ? 'checked' : '' }}>
                                                                 <br><br>
                                                                 <p style="color: rgb(3, 3, 3);">
                                                                     I certify that all statements and information in this application are true in all respects*
@@ -261,6 +329,23 @@
 @endsection
 @section('script')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function toggleSalary() {
+        var salaryElement = document.getElementById('salary');
+        var toggleIcon = document.getElementById('toggleEye');
+
+        if (salaryElement.style.display === 'none') {
+            salaryElement.style.display = 'inline';
+            toggleIcon.classList.remove('la-eye');
+            toggleIcon.classList.add('la-eye-slash');
+        } else {
+            salaryElement.style.display = 'none';
+            toggleIcon.classList.remove('la-eye-slash');
+            toggleIcon.classList.add('la-eye');
+        }
+    }
+</script>
+
 {{--
 <script>
     document.getElementById('form').addEventListener('submit', function(event) {
@@ -455,7 +540,8 @@
 
     function checkFile(input) {
         const file = input.files[0];
-        const allowedExtensions = /(\.pdf)$/i;
+        // const allowedExtensions = /(\.docx|\.pdf)$/i;
+        const allowedExtensions = /(\.docx|\.pdf)$/i;
         const maxSize = 10 * 1024 * 1024; // 10 MB
 
         if (!file) {

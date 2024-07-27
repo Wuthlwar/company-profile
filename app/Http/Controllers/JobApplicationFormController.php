@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\{Auth,Session};
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendReceivedHr;
+use App\Models\Branch;
 use App\Models\Logs;
+use App\Models\VacantBranch;
 
 class JobApplicationFormController extends Controller
 {
@@ -57,6 +59,7 @@ class JobApplicationFormController extends Controller
         }
 
         $va_id = JobVacants::latest()->first();
+        // dd($va_id->id);
 
         if ($request->routeIs('Job_Application_form.index') && $request->has('jobvacant_id')) {
             $jobvacant_id = $request->jobvacant_id;
@@ -68,16 +71,17 @@ class JobApplicationFormController extends Controller
             $apply_vacants->appends($request->all());
         }
 
-        // Pluck the IDs of the applied vacancies
         $vacant_ids = $apply_vacants->pluck('id');
 
-        // Get the application counts
+        $branchIds = VacantBranch::where('vacant_id', $va_id->id)->pluck('branch_id');
+        $getbranches = Branch::whereIn('id', $branchIds)->get();
+
         $apply_counts = JobApplicationForm::whereIn('jobvacant_id', $vacant_ids)
             ->select('jobvacant_id', DB::raw('count(*) as total'))
             ->groupBy('jobvacant_id')
             ->pluck('total', 'jobvacant_id');
 
-        return view('admins.job_apply.index', compact('apply_vacants', 'categories', 'apply_counts'));
+        return view('admins.job_apply.index', compact('apply_vacants', 'categories', 'apply_counts','branchIds','getbranches'));
     }
 
 
@@ -100,13 +104,13 @@ class JobApplicationFormController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'resume' => 'nullable|mimes:pdf|max:10240', // max file size in kilobytes
-            'email' => 'required|string|email|max:255|unique:job_application_forms',
+            'resume' => 'nullable|mimes:pdf,docx|max:10240', // max file size in kilobytes
+            'email' => 'required|string|email|max:255',
         ], [
-            'resume.mimes' => 'The resume must be a file of type: pdf.',
+            'resume.mimes' => 'The resume must be a file of type: docx,pdf.',
             'resume.max' => 'The resume must not be greater than 10MB.',
             'email.email' => 'The email must be a valid email address. Email ကိုမှန်ကန်စွာဖြည့်ပါ။',
-            'email.unique' => 'The email has already been taken. သင်၏ Email သည် တစ်ကြိမ်ဖောင်တင်ထားပါသည်။ ',
+            // 'email.unique' => 'The email has already been taken. သင်၏ Email သည် တစ်ကြိမ်ဖောင်တင်ထားပါသည်။ ',
         ]);
 
 

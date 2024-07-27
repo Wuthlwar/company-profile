@@ -60,7 +60,7 @@
                 </tr>
 
                 <tr>
-                    <th>Surname</th>
+                    <th>Name</th>
                     <td>{{ $details['title'] }}{{ $details['surname'] }}</td>
                 </tr>
                 <tr>

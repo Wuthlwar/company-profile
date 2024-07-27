@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\ActivityType;
+use App\Models\Branch;
 use App\Models\JobCategory;
 use App\Models\JobVacants;
 use App\Models\Logs;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Hash;
 use App\Models\User;
+use App\Models\VacantBranch;
 
 class HomeController extends Controller
 {
@@ -38,6 +40,34 @@ class HomeController extends Controller
 
         return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count'));
     }
+
+            public function jobsearch(Request $request)
+        {
+            $act_types = ActivityType::all();
+            $acts = Activity::latest()->get();
+            $categories = JobCategory::latest()->paginate(10);
+
+            $query = JobVacants::query();
+
+            if ($request->filled('cat_id')) {
+                $query->where('category_id', $request->cat_id);
+            }
+
+            if ($request->filled('position')) {
+                $query->where('vacant_name', 'like', '%' . $request->position . '%');
+            }
+
+            $vacants = $query->latest()->paginate(10);
+
+            // Get the count of vacancies for each category
+            $vacants_count = JobVacants::select('category_id', DB::raw('count(*) as total'))
+                                    ->groupBy('category_id')
+                                    ->get()
+                                    ->keyBy('category_id')
+                                    ->toArray();
+
+            return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count'));
+        }
 
     public function jobAllcate()
     {
@@ -71,7 +101,10 @@ class HomeController extends Controller
 
         $categories_for_vacant=JobCategory::latest()->get();
 
-        return view('job_vacants_detail',compact('act_types','acts','categories','vacants','vacant_detail','categories_for_vacant','get_cateID','vacant_count','vacants_tags'));
+        $branchIds = VacantBranch::where('vacant_id', $id)->pluck('branch_id');
+        $getbranches = Branch::whereIn('id', $branchIds)->get();
+
+        return view('job_vacants_detail',compact('act_types','acts','categories','vacants','vacant_detail','categories_for_vacant','get_cateID','vacant_count','vacants_tags','branchIds','getbranches'));
     }
 
     public function jobDetailCate($id)

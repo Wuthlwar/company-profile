@@ -86,5 +86,8 @@ Route::group(['prefix' => 'admins'], function(){
     Route::resource('Logs/Logs_tracking',LogsController::class);
     Route::match(['get', 'post'], '/logs_search', [LogsController::class, 'searchLogs'])->name('logs.search');
     Route::match(['post', 'put','delete'],'/logs_delete', [LogsController::class,'destroyLogs'])->name('destroyLogs.delete');
+
+    Route::get('/branches/delete/{id}', [JobVacantsController::class, 'deleteBranch'])->name('branches.delete');
+
 });
 

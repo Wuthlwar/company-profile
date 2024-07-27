@@ -44,13 +44,60 @@
                           </div>
 
                           <div class="col-md-12">
-                            <label for="vacantname" class="form-label card-title" style="font-size:15px;">Job Vacant Name <font style="color:red;">*</font></label>
+                            <label for="branch" class="form-label card-title" style="font-size:15px;">
+                                Branches<font style="color:red;">*</font>
+                            </label>
+                            <select class="form-control" id="branch" name="branch_id[]" multiple>
+                                @foreach($branches as $branch)
+                                    <option value="{{ $branch->id }}">{{ $branch->branch_name }}</option>
+                                @endforeach
+                            </select>
+                            <br>
+                            @foreach ($getbranches as $getbranch)
+                                <span class="badge bg-primary" style="font-size: 16px;">
+                                    <i class="las la-trash" style="color: red; font-size: 20px; cursor: pointer;"
+                                    onclick="confirmDelete('{{ route('branches.delete', $getbranch->id) }}')"></i>
+                                    {{$getbranch->branch_name}}
+                                </span>
+                            @endforeach
+                            <hr>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="male" class="form-label card-title" style="font-size:15px;">
+                                Male
+                            </label>
+                            <input type="number" class="form-control" id="vacantname" name="male" style="border:1px solid #333;height:40px;font-size:13px" value="{{$vacant_detail->male}}" required>
+                            <hr>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="femail" class="form-label card-title" style="font-size:15px;">
+                               Female
+                            </label>
+                            <input type="number" class="form-control" id="vacantname" name="female" style="border:1px solid #333;height:40px;font-size:13px" value="{{$vacant_detail->female}}" required>
+                            <hr>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="femail" class="form-label card-title" style="font-size:15px;">
+                               Salary
+                            </label>
+                            <input type="number" class="form-control" id="vacantname" name="salary" style="border:1px solid #333;height:40px;font-size:13px" value="{{$vacant_detail->salary}}" required>
+                            <hr>
+                        </div>
+
+                          <div class="col-md-12">
+                            <label for="vacantname" class="form-label card-title" style="font-size:15px;">Job Title Name <font style="color:red;">*</font></label>
                             <input type="text" class="form-control" id="vacantname" value="{{$vacant_detail->vacant_name}}" name="vacant_name" style="border:1px solid #333;height:40px;font-size:13px" required>
                             <hr>
                           </div>
 
                           <div class="col-md-12">
-                            <label for="fromDate" class="form-label" id="font-f">Job Short text <font style="color:red;">*</font></label><br>
+                          </div>
+
+                          <div class="col-md-12">
+                            <label for="fromDate" class="form-label" id="font-f">Opportunities <font style="color:red;">*</font></label><br>
                               <textarea name="vacant_shortxt" class="form-control" rows="4" cols="10" style="border:1px solid #333;" required>{{$vacant_detail->vacant_shortxt}}</textarea>
                               <hr>
                             </div>
@@ -126,7 +173,23 @@
 @endsection
 @section('script')
 {{-- <script src="{{ asset('/js/activity_type_crud.js') }}"></script> --}}
-
+<script>
+    function confirmDelete(url) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+            }
+        })
+    }
+</script>
 <script>
     function showNotification(message, type) {
         var notification = $('<div class="alert alert-' + type + ' bg-success text-light border-0 alert-dismissible fade show" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999; display: none; font-family: "Poppins", sans-serif ">'+
@@ -325,6 +388,12 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#jobcategoryname').select2({
             theme: 'bootstrap4',
             placeholder: 'Choose Your Category',
+            width: '100%'
+        });
+
+        $('#branch').select2({
+            theme: 'bootstrap4',
+            placeholder: 'Choose Your Branch',
             width: '100%'
         });
     });

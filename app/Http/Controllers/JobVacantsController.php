@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use App\Models\JobApplicationForm;
 use App\Models\JobVacants;
 use App\Models\JobCategory;
 use App\Models\Logs;
+use App\Models\VacantBranch;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\{Auth,Session};
@@ -19,6 +21,7 @@ class JobVacantsController extends Controller
      */
     public function index(Request $request)
     {
+        $branches = Branch::latest()->get();
         $categories = JobCategory::all();
         $vacants = JobVacants::OrderBy('id')->paginate(20);
 
@@ -57,7 +60,7 @@ class JobVacantsController extends Controller
             ->groupBy('jobvacant_id')
             ->pluck('total', 'jobvacant_id');
 
-        return view('admins.job_vacants.index', compact('vacants', 'categories', 'apply_counts'));
+        return view('admins.job_vacants.index', compact('vacants', 'categories', 'apply_counts','branches'));
     }
 
 
@@ -79,6 +82,7 @@ class JobVacantsController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'banner' => 'nullable|mimes:jpeg,jpg,png,gif',
             'tumb' => 'nullable|mimes:jpeg,jpg,png,gif'
@@ -110,12 +114,15 @@ class JobVacantsController extends Controller
 
         $category_id=$request->category_name;
 
-        JobVacants::create([
+        $jobVacant = JobVacants::create([
             'vacant_banner' => $file_banner,
             'vacant_image'  => $file_tumb,
             'vacant_name'   => $request['vacant_name'],
             'vacant_description'   => $request['jobrequired'],
             'vacant_shortxt'   => $request['jobshortxt'],
+            'male'   => $request['male'],
+            'female'   => $request['female'],
+            'salary'   => $request['salary'],
             'category_id'   => $category_id,
             'status'          => $status,
             'date'          => $date,
@@ -130,6 +137,15 @@ class JobVacantsController extends Controller
             'date' => now()->format('Y-m-d'),
         ]);
 
+        $branchIds = $request->input('branch_id');
+
+        foreach ($branchIds as $branchId) {
+            VacantBranch::create([
+                'branch_id' => $branchId,
+                'vacant_id' => $jobVacant->id,
+            ]);
+        }
+
         return back()->with('success', 'Successfully saved...');
     }
 
@@ -142,7 +158,8 @@ class JobVacantsController extends Controller
     public function show($id)
     {
         $vacant_detail=JobVacants::find($id);
-        return view('admins.job_vacants.edit',compact('vacant_detail'));
+        $branches = Branches::latest()->get();
+        return view('admins.job_vacants.edit',compact('vacant_detail','branches'));
     }
 
     /**
@@ -153,9 +170,12 @@ class JobVacantsController extends Controller
      */
     public function edit($id)
     {
+        $branches = Branch::latest()->get();
         $categories = JobCategory::all();
         $vacant_detail=JobVacants::find($id);
-        return view('admins.job_vacants.edit',compact('vacant_detail','categories'));
+        $branchIds = VacantBranch::where('vacant_id', $id)->pluck('branch_id');
+        $getbranches = Branch::whereIn('id', $branchIds)->get();
+        return view('admins.job_vacants.edit',compact('vacant_detail','categories','branches','branchIds','getbranches'));
     }
 
     /**
@@ -182,6 +202,9 @@ class JobVacantsController extends Controller
         $vacant->vacant_name = $request->vacant_name;
         $vacant->category_id = $request->category_id;
         $vacant->vacant_shortxt = $request->vacant_shortxt;
+        $vacant->male = $request->male;
+        $vacant->female = $request->female;
+        $vacant->salary = $request->salary;
         $vacant->vacant_description = $request->vacant_description;
 
         $vacant->status = $request->has('status') ? 'online' : 'offline';
@@ -225,6 +248,19 @@ class JobVacantsController extends Controller
             'ip' => $request->ip(),
             'date' => now()->format('Y-m-d'),
         ]);
+
+        $branchIds = $request->input('branch_id');
+
+        if($branchIds!=null){
+            foreach ($branchIds as $branchId) {
+                VacantBranch::create([
+                    'branch_id' => $branchId,
+                    'vacant_id' => $vacant->id,
+                ]);
+            }
+        }
+
+
 
         return back()->with('success','Job vacant Successfully updated');
     }
@@ -290,6 +326,7 @@ class JobVacantsController extends Controller
 
     public function searchvacant(Request $request)
     {
+        $branches = Branches::latest()->get();
         $categories = JobCategory::all();
         $query = JobVacants::query();
 
@@ -329,8 +366,16 @@ class JobVacantsController extends Controller
             ->groupBy('jobvacant_id')
             ->pluck('total', 'jobvacant_id');
 
-        return view('admins.job_vacants.index', compact('vacants','apply_counts','categories'));
-
+        return view('admins.job_vacants.index', compact('vacants','apply_counts','categories','branches'));
 
     }
+
+    public function deleteBranch($id) {
+        $branch = Branch::find($id);
+        if ($branch) {
+            $branch->delete();
+        }
+        return redirect()->back()->with('success', 'Branch Deleted Successfully');
+    }
+
 }

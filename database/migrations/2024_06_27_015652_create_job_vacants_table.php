@@ -21,6 +21,9 @@ class CreateJobVacantsTable extends Migration
             $table->string('vacant_image')->nullable();
             $table->text('vacant_description')->nullable();
             $table->text('vacant_shortxt')->nullable();
+            $table->text('male')->nullable();
+            $table->text('female')->nullable();
+            $table->text('salary')->nullable();
             $table->string('status')->nullable();
             $table->string('date')->nullable();
             $table->timestamps();

@@ -15,6 +15,9 @@ class JobVacants extends Model
         'vacant_image',
         'vacant_description',
         'vacant_shortxt',
+        'male',
+        'female',
+        'salary',
         'status',
         'date',
     ];
