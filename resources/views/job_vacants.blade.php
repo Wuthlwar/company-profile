@@ -19,6 +19,7 @@
                         <form method="GET" action="{{ route('job.search') }}">
                             <div class="input-group mb-3" style="border-radius:30px;">
                                 <select class="form-control" id="jobcategoryname" name="cat_id">
+                                    <option value="">Select Category</option>
                                     @foreach($categories as $category)
                                         @if($category->status == "online")
                                             <option value="{{ $category->id }}" {{ request('cat_id') == $category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
@@ -41,7 +42,7 @@
                                     <div class="news-three__client-img" style="width:70px;">
                                         @if ($vacant->vacant_image == null)
 
-                                        <a href="{{route('our_opportunities_detail',$vacant->id)}}"><img src="job_banner/title.png" alt="" style="width:70px;"></a>
+                                        <a href="{{route('our_opportunities_detail',$vacant->id)}}"><img src="{{asset('job_banner/title.png')}}" alt="" style="width:70px;"></a>
 
                                         @else
                                         <a href="{{route('our_opportunities_detail',$vacant->id)}}"><img src="{{asset('storage/uploads/jobvacants/' . $vacant->vacant_image)}}" alt="" style="width:70px;"></a>

@@ -67,6 +67,7 @@ class JobApplicationFormController extends Controller
             $apply_vacants = $query->latest()->paginate(10);
             $apply_vacants->appends(['jobvacant_id' => $jobvacant_id]);
 
+
         } else {
             $apply_vacants = $query->latest()->paginate(20);
             $apply_vacants->appends($request->all());
@@ -74,11 +75,19 @@ class JobApplicationFormController extends Controller
 
         $vacant_ids = $apply_vacants->pluck('id');
 
-        $va_idg = JobApplicationForm::latest()->first();
+        $vacant_ids = $vacant_ids->toArray();
 
-        $branchIds = VacantBranchUser::where('vacant_id', $va_idg->id)->pluck('branch_id');
-        // dd($branchIds);
-        $getbranches = Branch::whereIn('id', $branchIds)->get();
+        $getbranches = collect();
+        $branchIds = collect();
+        $id_g = JobApplicationForm::whereIn('id', $vacant_ids)->latest()->first();
+
+        if ($id_g) {
+            $branchIds = VacantBranchUser::where('vacant_id', $id_g->id)
+                ->distinct()
+                ->pluck('branch_id');
+
+            $getbranches = Branch::whereIn('id', $branchIds)->distinct()->get();
+        }
 
         $apply_counts = JobApplicationForm::whereIn('jobvacant_id', $vacant_ids)
             ->select('jobvacant_id', DB::raw('count(*) as total'))
