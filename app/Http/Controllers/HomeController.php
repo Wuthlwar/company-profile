@@ -19,11 +19,23 @@ class HomeController extends Controller
 {
     public function home()
     {
+        // dd('hi');
         $act_types = ActivityType::all();
         $acts = Activity::latest()->get();
-        // dd($acts);
-        return view('home',compact('act_types','acts'));
+        $vacantCounts = JobVacants::select('category_id', DB::raw('count(*) as total'))
+            ->groupBy('category_id')
+            ->with('category')
+            ->get()
+            ->map(function($vacant) {
+                return [
+                    'name' => $vacant->category->name . ' (' . $vacant->total . ')',
+                    'y' => $vacant->total
+                ];
+            });
+
+        return view('home', compact('act_types', 'acts', 'vacantCounts'));
     }
+
     public function job()
     {
         $act_types = ActivityType::all();
@@ -76,7 +88,6 @@ class HomeController extends Controller
         $categories = JobCategory::latest()->paginate(10);
         $vacants = JobVacants::latest()->paginate(10);
 
-        // Get the count of vacancies for each category
         $vacants_count = JobVacants::select('category_id', DB::raw('count(*) as total'))
                                    ->groupBy('category_id')
                                    ->get()
@@ -291,6 +302,7 @@ class HomeController extends Controller
             ]);
 
             // Redirect to the intended page
+
             return redirect('/admins/home');
         }
 
