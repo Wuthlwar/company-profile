@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Hash;
 use App\Models\User;
+use App\Models\UserViewCount;
 use App\Models\VacantBranch;
 
 class HomeController extends Controller
@@ -52,6 +53,20 @@ class HomeController extends Controller
 
         return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count'));
     }
+
+            public function ViewCounts(Request $request,$id){
+                    $vacant = JobVacants::findOrFail($id);
+
+                    $vacant->increment('view_count');
+
+                    UserViewCount::create([
+                        'vacant_id' => $vacant->id,
+                        'view_count' => $vacant->view_count,
+                    ]);
+
+                    return redirect()->route('our_opportunities_detail', $vacant->id);
+            }
+
 
             public function jobsearch(Request $request)
         {

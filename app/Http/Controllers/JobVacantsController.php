@@ -6,6 +6,7 @@ use App\Models\Branch;
 use App\Models\JobApplicationForm;
 use App\Models\JobVacants;
 use App\Models\JobCategory;
+use App\Models\Jobroles;
 use App\Models\Logs;
 use App\Models\VacantBranch;
 use Illuminate\Http\Request;
@@ -55,6 +56,7 @@ class JobVacantsController extends Controller
 
         $vacant_ids = $vacants->pluck('id');
 
+
         $apply_counts = JobApplicationForm::whereIn('jobvacant_id', $vacant_ids)
             ->select('jobvacant_id', DB::raw('count(*) as total'))
             ->groupBy('jobvacant_id')
@@ -71,7 +73,9 @@ class JobVacantsController extends Controller
      */
     public function create()
     {
-        //
+        $categories = JobCategory::all();
+        $branches = Branch::latest()->get();
+        return view('admins.job_vacants.job_add',compact('categories','branches'));
     }
 
     /**
@@ -85,10 +89,16 @@ class JobVacantsController extends Controller
         // dd($request->all());
         $request->validate([
             'banner' => 'nullable|mimes:jpeg,jpg,png,gif',
-            'tumb' => 'nullable|mimes:jpeg,jpg,png,gif'
+            'tumb' => 'nullable|mimes:jpeg,jpg,png,gif',
+            'offer' => 'required|array',
+            'offer.*' => 'string',
+            'qualification' => 'required|array',
+            'qualification.*' => 'string',
         ], [
             'banner.mimes' => 'The banner must be a file of type: jpeg, jpg, png, gif.',
-            'tumb.mimes' => 'The tumb must be a file of type: jpeg, jpg, png, gif.'
+            'tumb.mimes' => 'The tumb must be a file of type: jpeg, jpg, png, gif.',
+            'offer.required' => 'Please select at least one offer.',
+            'qualification.required' => 'Please select at least one qualification.',
         ]);
 
         $file_banner = null;
@@ -103,29 +113,43 @@ class JobVacantsController extends Controller
             $pathfile_tumb = Storage::putFileAs('uploads/jobvacants', $request->file('tumb'), $file_tumb);
         }
 
-        $status=$request['status'];
-        if($status == 'online'){
-            $status = 'online';
-        }else{
-            $status = 'offline';
-        }
+        $status = $request['status'] === 'online' ? 'online' : 'offline';
+        $date = now()->format('Y-m-d');
+        $category_id = $request->category_name;
 
-        $date=now()->format('Y-m-d');
+        $offerArray = $request->input('offer');
+        $offerString = json_encode($offerArray);
 
-        $category_id=$request->category_name;
+        $qualificationArray = $request->input('qualification');
+        $qualificationString = json_encode($qualificationArray);
 
         $jobVacant = JobVacants::create([
             'vacant_banner' => $file_banner,
             'vacant_image'  => $file_tumb,
             'vacant_name'   => $request['vacant_name'],
+            'industry'   => $request['industry'],
+            'emptype'   => $request['emptype'],
+            'no_vacant'   => $request['no_vacant'],
+            'qualification'   => $qualificationString,
+            'experience'   => $request['experience'],
             'vacant_description'   => $request['jobrequired'],
-            'vacant_shortxt'   => $request['jobshortxt'],
-            'male'   => $request['male'],
-            'female'   => $request['female'],
+            'vacant_spec'   => $request['vacant_spec'],
+            'gender'   => $request['gender'],
             'salary'   => $request['salary'],
+            'currency'   => $request['currency'],
+            'min'   => $request['min'],
+            'max'   => $request['max'],
+            'offer'   => $offerString,
+            'q1'   => $request['q1'],
+            'q2'   => $request['q2'],
+            'q3'   => $request['q3'],
+            'region'   => $request['region'],
+            'township'   => $request['township'],
+            'address'   => $request['address'],
             'category_id'   => $category_id,
-            'status'          => $status,
-            'date'          => $date,
+            'job_role'   => $request['job_role'],
+            'status'   => $status,
+            'date'   => $date,
         ]);
 
         Logs::create([
@@ -138,7 +162,6 @@ class JobVacantsController extends Controller
         ]);
 
         $branchIds = $request->input('branch_id');
-
         foreach ($branchIds as $branchId) {
             VacantBranch::create([
                 'branch_id' => $branchId,
@@ -158,7 +181,7 @@ class JobVacantsController extends Controller
     public function show($id)
     {
         $vacant_detail=JobVacants::find($id);
-        $branches = Branches::latest()->get();
+        $branches = Branch::latest()->get();
         return view('admins.job_vacants.edit',compact('vacant_detail','branches'));
     }
 
@@ -175,7 +198,8 @@ class JobVacantsController extends Controller
         $vacant_detail=JobVacants::find($id);
         $branchIds = VacantBranch::where('vacant_id', $id)->pluck('branch_id');
         $getbranches = Branch::whereIn('id', $branchIds)->get();
-        return view('admins.job_vacants.edit',compact('vacant_detail','categories','branches','branchIds','getbranches'));
+        $vacants = Jobroles::where('category_id',$vacant_detail->category_id)->get();
+        return view('admins.job_vacants.edit',compact('vacant_detail','categories','branches','branchIds','getbranches','vacants'));
     }
 
     /**
@@ -187,7 +211,7 @@ class JobVacantsController extends Controller
      */
     public function update(Request $request, $id)
     {
-         // dd('hi');
+
          $request->validate([
             'vacant_name' => 'required',
             'vacant_banner' => 'nullable|mimes:jpeg,jpg,png,gif',
@@ -199,13 +223,41 @@ class JobVacantsController extends Controller
 
         $vacant = JobVacants::find($id);
 
+
         $vacant->vacant_name = $request->vacant_name;
-        $vacant->category_id = $request->category_id;
-        $vacant->vacant_shortxt = $request->vacant_shortxt;
-        $vacant->male = $request->male;
-        $vacant->female = $request->female;
-        $vacant->salary = $request->salary;
+        $vacant->industry = $request->industry;
+        $vacant->emptype = $request->emptype;
+        $vacant->no_vacant = $request->no_vacant;
+        $vacant->qualification = $request->qualification;
+        $vacant->experience = $request->experience;
+        $vacant->qualification = $request->qualification;
+        $vacant->gender = $request->gender;
+
+
+        $vacant->category_id = $request->category_name;
+        $vacant->job_role = $request->job_role;
         $vacant->vacant_description = $request->vacant_description;
+        $vacant->vacant_spec = $request->vacant_spec;
+        $vacant->region = $request->region;
+        $vacant->township = $request->township;
+        $vacant->address = $request->address;
+
+        if($request->salary=='Range'){
+            $vacant->currency = $request->currency;
+            $vacant->min = $request->min;
+            $vacant->max = $request->max;
+            $vacant->salary = $request->salary;
+            }else{
+                $vacant->currency = null;
+                $vacant->min = null;
+                $vacant->max = null;
+                $vacant->salary = $request->salary;
+        }
+
+        $vacant->offer = $request->offer;
+        $vacant->q1 = $request->q1;
+        $vacant->q2 = $request->q2;
+        $vacant->q3 = $request->q3;
 
         $vacant->status = $request->has('status') ? 'online' : 'offline';
 
@@ -260,8 +312,6 @@ class JobVacantsController extends Controller
             }
         }
 
-
-
         return back()->with('success','Job vacant Successfully updated');
     }
 
@@ -275,7 +325,6 @@ class JobVacantsController extends Controller
     {
         //
     }
-
 
 
     public function jobupdateStatus(Request $request, $id)
@@ -326,7 +375,7 @@ class JobVacantsController extends Controller
 
     public function searchvacant(Request $request)
     {
-        $branches = Branches::latest()->get();
+        $branches = Branch::latest()->get();
         $categories = JobCategory::all();
         $query = JobVacants::query();
 
@@ -377,5 +426,28 @@ class JobVacantsController extends Controller
         }
         return redirect()->back()->with('success', 'Branch Deleted Successfully');
     }
+
+
+        public function getJobRoles($category_id)
+    {
+        $jobRoles = Jobroles::where('category_id', $category_id)->pluck('job_role', 'id');
+        return response()->json($jobRoles);
+    }
+
+
+
+    public function UpdateStatus1(Request $request, $id) {
+        $vacant = JobVacants::find($id);
+
+        if($vacant->status1 = $request->status1){
+            $vacant->status = "offline";
+        }
+        $vacant->remark = $request->remark;
+        $vacant->save();
+        return redirect()->back()->with('success', 'Status and remark updated successfully.');
+    }
+
+
+
 
 }

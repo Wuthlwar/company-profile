@@ -7,7 +7,9 @@
                 <h4 class="mb-3">Job Vacant Lists</h4>
             </div>
             {{-- <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add</a> --}}
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#jobModal"><i class="las la-plus mr-3"></i>Add</button>
+            <a href="{{route('Job_vacant_lists.create')}}" style="color: #fff;"><button type="button" class="btn btn-primary mt-2"><i class="las la-plus mr-3"></i>
+                Add
+            </button></a>
         </div>
     </div>
     <div class="col-lg-12">
@@ -30,12 +32,11 @@
                         <select class="form-control" id="jobcategoryname" name="category_id">
                             @foreach($categories as $category)
                                 @if($category->status=="online")
-                                <option value="{{session($category->id)}}" {{session('category_id')==$category->id? 'selected':''}}>{{$category->category_name}}</option>
+                                <option value="{{$category->id}}" >{{$category->category_name}}</option>
                             @endif
                             @endforeach
                         </select>
                     </div>
-
 
                     <div class="col-md-2">
                         <label for="cateGory" class="form-label">Vacant Name</label>
@@ -49,7 +50,7 @@
                             <option value="offline" {{session('status')=='offline' ?'selected':''}}>Offline</option>
                           </select>
                     </div>
-`
+
                     <div class="col-md-2">
                         <label for="inputZip" class="form-label" style="color: #fff;">Search</label><br>
                         <button type="submit" class="btn btn-primary" style="border:1px solid #333;height:30px;font-size:13px;padding:5px;">
@@ -67,25 +68,31 @@
 
         <div class="table-responsive rounded mb-3">
 
-        <table class="table table-striped" id="statusForm">
-            <thead class="bg-white text-uppercase">
+        <table class="table table-striped" id="statusForm" style="font-size: 13px;">
+            <thead class="bg-white">
                 <tr class="ligth ligth-data">
                     <tr>
-                        <th scope="col" class="card-title" style="font-size: 15px;">No</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">
+                        <th scope="col" class="card-title" style="font-size: 13px;">No</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">
                             @if (Auth()->user()->role=='1')
-                        <input type="checkbox" id="select-all" class="form-check-input" style="border:1px solid #312eec;"> Bulk actions
+                        <input type="checkbox" id="select-all" class="form-check-input" style="border:1px solid #313eec;"> Bulk actions
                         @else
                         Bulk actions
                         @endif
                         </th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Job Vacant Banner</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Vacant tumbnail</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Job Vacant Name</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Categories</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Status</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Created Date</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Updated Date</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Banner</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Tumbnail</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Views</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Apps</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Job Vacant Name</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Categories</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Status</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Location</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Branch</th>
+
+                        <th scope="col" class="card-title" style="font-size: 13px;">Created</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Updated</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Option</th>
                       </tr>
                 </tr>
             </thead>
@@ -98,9 +105,9 @@
                         @if (Auth()->user()->role=='1')
                         <input type="checkbox" name="selected_items[]" value="{{ $vacant->id }}" class="item-checkbox form-check-input" style="border:1px solid #312eec;">
                         &nbsp;&nbsp;&nbsp;
-                        <a href="{{route('Job_vacant_lists.edit',$vacant->id)}}"><i class="la la-eye" style="font-size: 25px;color:#312eec;" data-toggle="modal" data-target="#jobupdateModal{{$vacant->id}}"></i></a>
+                        <a href="{{route('Job_vacant_lists.edit',$vacant->id)}}"><i class="la la-eye" style="font-size: 25px;color:#312eec;"></i></a>
                         @else
-                        <a href="{{route('Job_vacant_lists.edit',$vacant->id)}}"><i class="la la-eye" style="font-size: 25px;color:#312eec;" data-toggle="modal" data-target="#jobupdateModal{{$vacant->id}}"></i></a>
+                        <a href="{{route('Job_vacant_lists.edit',$vacant->id)}}"><i class="la la-eye" style="font-size: 25px;color:#312eec;"></i></a>
                         @endif
                     </span>
                     </th>
@@ -108,9 +115,12 @@
                     <td>
                         <img src="{{ $vacant->vacant_banner ? asset('storage/uploads/jobvacants/' . $vacant->vacant_banner) : asset('assets/img/notfound.jpg') }}" class="img-fluid" style="width:100px;height:50px;">
                     </td>
+
                     <td>
                         <img src="{{ $vacant->vacant_image ? asset('storage/uploads/jobvacants/' . $vacant->vacant_image) : asset('assets/img/notfound.jpg') }}" class="img-fluid" style="width:100px;height:50px;">
                     </td>
+                    <td>{{ $vacant->view_count }}</td>
+                    <td><a href="{{ route('Job_Application_form.index', ['jobvacant_id' => $vacant->id]) }}" style="color:#8383f1;">{{ $apply_counts[$vacant->id] ?? '0' }} CVs</a></td>
                     <td>
                         {{ $vacant->vacant_name }}
                         <span class="badge badge-danger">
@@ -134,8 +144,53 @@
                                 </div>
                         </div>
                     </td>
+                    <td>{{$vacant->region}} | {{$vacant->township}}</td>
+                    <td>
+                        {{-- {{$vacant->vacant_branches}} --}}
+                        @foreach ( $vacant->vacant_branches as $bran)
+                        {{ $bran->branches->branch_name }},
+                         @endforeach
+                    </td>
+
                     <td>{{$vacant->date}}</td>
                     <td>{{$vacant->updated_at}}</td>
+                    <td>
+                        <i class="las la-ellipsis-v" style="font-size:27px;" data-toggle="modal" data-target="#deactive{{$vacant->id}}"></i>
+
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id='deactive{{$vacant->id}}'>
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="col-sm-12">
+                                            <div class="card" style="padding: 40px;">
+
+                                                <form action="{{ route('job-vacants.update-status1', $vacant->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('POST')
+                                                    <p>{{ $vacant->vacant_name }}</p>
+                                                    <label for="inputState" class="form-label card-title" style="font-size:15px;">Choose Status</label><br>
+                                                    <select id="inputState" class="form-control mb-3" name="status1" style="border:1px solid #333;" required>
+                                                        <option value="Deactive" {{$vacant->status1=='Deactive'? 'selected':''}}>Deactive</option>
+                                                        <option value="Get Employee" {{$vacant->status1=='Get Employee'? 'selected':''}}>Get Employee</option>
+                                                        <option value="Other" {{$vacant->status1=='Other'? 'selected':''}}>Other</option>
+                                                    </select>
+                                                    <hr>
+                                                    <label for="remark" class="form-label card-title" style="font-size:15px;">Remark</label><br>
+                                                    <textarea id="remark" class="form-control" name="remark" style="border:1px solid #333;" rows="5" required>
+                                                        {{$vacant->remark}}
+                                                    </textarea>
+                                                    <hr>
+                                                    <button type="submit" class="btn btn-success" style="width: 160px;">Save</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
                   </tr>
                   <!------------------------------------Update----------------------------------------------->
 
@@ -155,153 +210,6 @@
     </div>
 </div>
 
-{{-- Create Modal  --}}
-<div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"  aria-hidden="true" id='jobModal'>
-    <div class="modal-dialog modal-xl">
-       <div class="modal-content">
-          {{-- <div class="modal-header">
-             <h5 class="modal-title"> Add New Job Category</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-             </button>
-          </div> --}}
-          <form action="{{route('Job_vacant_lists.store')}}" method="post" enctype="multipart/form-data" class="row g-3" id="jobForm">
-            @csrf
-          <div class="modal-body">
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between rounded-sm">
-                            <div class="header-title">
-                                <h6 class="card-title">Add New Job Vacant</h6>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label for="categoryname" class="form-label card-title" style="font-size:15px;">Category Name <font style="color:red;">*</font></label>
-                                        <select class="form-control" id="jobcategorynameadd" name="category_name" required>
-                                            @foreach($categories as $category)
-                                                @if($category->status=="online")
-                                                <option value="{{$category->id}}">{{$category->category_name}}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                        <hr>
-                                      </div>
-
-                                      <div class="col-md-12">
-                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Job Title Name <font style="color:red;">*</font></label>
-                                        <input type="text" class="form-control" id="vacantname" name="vacant_name" style="border:1px solid #333;height:40px;font-size:13px" required>
-                                        <hr>
-                                      </div>
-
-                                      <div class="col-md-12">
-                                        <label for="branch" class="form-label card-title" style="font-size:15px;">
-                                            Branches<font style="color:red;">*</font>
-                                        </label>
-                                        <select class="form-control" id="branches" name="branch_id[]" multiple required>
-                                            @foreach($branches as $branch)
-                                                <option value="{{ $branch->id }}">{{ $branch->branch_name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <hr>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="male" class="form-label card-title" style="font-size:15px;">
-                                            Male
-                                        </label>
-                                        <input type="number" class="form-control" id="vacantname" name="male" style="border:1px solid #333;height:40px;font-size:13px" required>
-                                        <hr>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="femail" class="form-label card-title" style="font-size:15px;">
-                                           Female
-                                        </label>
-                                        <input type="number" class="form-control" id="vacantname" name="female" style="border:1px solid #333;height:40px;font-size:13px" required>
-                                        <hr>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <label for="femail" class="form-label card-title" style="font-size:15px;">
-                                           Salary
-                                        </label>
-                                        <input type="number" class="form-control" id="vacantname" name="salary" style="border:1px solid #333;height:40px;font-size:13px" required>
-                                        <hr>
-                                    </div>
-
-                                      <div class="col-md-12">
-                                        <label for="fromDate" class="form-label" id="font-f">Opportunities <font style="color:red;">*</font></label><br>
-                                          <textarea name="jobshortxt" class="form-control" rows="4" cols="10" style="border:1px solid #333;" required></textarea>
-                                          <hr>
-                                    </div>
-
-                                        <div class="col-md-12">
-                                            <label for="fromDate" class="form-label" id="font-f">Job Description <font style="color:red;">*</font></label><br>
-                                            <div id="deseditor" style="height: 500px;"></div>
-                                            <!-- Hidden input to store Quill content -->
-                                            <input type="hidden" name="jobrequired" id="jobrequired" required>
-                                            <hr>
-                                        </div>
-
-                                      <div class="col-md-12">
-
-                                      </div>
-
-                                      <div class="col-md-12">
-                                          <label for="categorybanner" class="form-label card-title" style="font-size:15px;">Vacant Banner image
-                                             </label>&nbsp;&nbsp;
-                                          <label for="my_file">
-                                            <i class="la la-file-upload btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="category banner click the button." style="font-size: 25px;"></i>
-                                          </label>
-                                          <input type="file" id="my_file" style="display: none;" name="banner"/>
-                                      </div>
-
-
-                                      <div class="col-md-12">
-                                          <div id="image_preview"></div>
-                                          <font style="color:#8d8c8c;" id="font-s">Recommend width:1500px height:300px<br>
-                                          File type accept JPG,PNG,JPEG,GIF.
-                                          </font>
-                                          <hr>
-                                      </div>
-
-                                      <div class="col-md-12">
-                                          <label for="inputName5" class="form-label card-title" style="font-size:15px;">Vacant tumbnail image</label>
-                                          &nbsp;&nbsp;<label for="my_file1">
-                                            <i class="la la-file-upload btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="category tumbnail click the button." style="font-size: 25px;"></i>
-                                          </label>
-                                          <input type="file" id="my_file1" style="display: none;" name="tumb"/>
-                                      </div>
-
-                                      <div class="col-md-12">
-                                          <div id="image_preview_tumb"></div>
-                                          <font style="color:#8d8c8c;" id="font-s">Recommend width:250px height:300px<br>
-                                              File type accept JPG,PNG,JPEG,GIF.
-                                          </font>
-                                          <hr>
-                                      </div>
-
-                                      <div class="col-md-12">
-                                      <div class="form-check form-switch">
-                                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="status" value="online">Online
-                                      </div>
-                                      </div>
-                                </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" id   ="btn-create">Save changes</button>
-                         </div>
-                    </div>
-                </div>
-          </div>
-
-        </form>
-       </div>
-    </div>
- </div>
 @endsection
 @section('script')
 {{-- <script src="{{ asset('/js/activity_type_crud.js') }}"></script> --}}
@@ -517,6 +425,13 @@ $(document).ready(function() {
     $('#branches').select2({
         theme: 'bootstrap4',
         placeholder: 'Choose Your branch',
+        width: '100%',
+        dropdownParent: $('#jobModal')
+    });
+
+    $('#qual').select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose Your Qualification',
         width: '100%',
         dropdownParent: $('#jobModal')
     });

@@ -92,45 +92,122 @@
                                 {{$get_cateID->category_name}}, Job founds</h3><hr>
                             <div class="news-details__content">
                                 <ul class="list-unstyled news-details__meta">
+                                    <li>
+                                        <font style="color: #172ec7;font-size:14px;"><i class="far fa-eye"></i> {{ $vacant_detail->view_count}} Views</font>
+                                    </li>
                                     <li><i class="far fa-calendar"></i> {{$vacant_detail->created_at->format('d F Y')}}
                                     </li>
-                                    <li> {{ $vacant_detail->created_at->diffForHumans() }}</a>
+                                    <li>{{ $vacant_detail->created_at->diffForHumans() }}</a>
                                     </li>
                                 </ul>
                                 <h3 class="news-details__title" style="font-size: 22px;">{{$vacant_detail->vacant_name}}</h3>
+                                {{-- {{ $vacant_detail->job_role}} --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row" style="font-size:15px;color:#000;">
+                                        <div class="col-md-3">
+                                            <i class="fas fa-hand-holding-usd" style="color: rgb(16, 29, 216);"></i> Basic Salary
+                                            @if ($vacant_detail->salary=='Range')
+                                            <i id="toggleEye" class="far fa-eye" style="cursor: pointer;" onclick="toggleSalary()"></i>
+                                            @endif
+                                            <br>
+
+                                            @if ($vacant_detail->salary=='Range')
+                                            <span id="salary" style="display: none;">
+                                                {{ number_format($vacant_detail->min)}}
+                                                to
+                                                {{ number_format($vacant_detail->max)}}
+                                                {{ $vacant_detail->currency}}
+                                            </span>
+                                            @else
+                                            {{ $vacant_detail->salary}}
+                                            @endif
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <i class="fas fa-venus-mars" style="color: rgb(16, 29, 216);"></i> Gender<br>
+                                            @if ($vacant_detail->gender=='Both')
+                                            Male/Female
+                                            @else
+                                            {{ $vacant_detail->gender}}
+                                            @endif
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <i class="fa fa-industry" style="color: rgb(16, 29, 216);"></i> Industry<br>
+                                            {{ $vacant_detail->industry}}
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <i class="fa fa-users" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Vacancy<br>
+                                            {{ $vacant_detail->no_vacant}} Posts
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <br>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <i class="fa fa-graduation-cap" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Qualification<br>
+                                            <?php
+
+                                            $array = json_decode($vacant_detail->qualification, true);
+
+                                            if (is_array($array)) {
+                                                $result = implode(', ', $array);
+                                                echo $result;
+                                            }
+                                            ?>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <i class="fa fa-clock" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Job Type<br>
+                                            {{ $vacant_detail->emptype}}
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <i class="fa fa-location-arrow" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Location<br>
+                                            <font style="text-transform: capitalize;">{{ $vacant_detail->region}} | {{ $vacant_detail->township}}</font>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <i class="fa fa-suitcase" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Experience<br>
+                                            {{ $vacant_detail->experience}}
+                                        </div>
+
+                                        </div>
+                                    </div>
+                                  </div>
+
                                 <p class="news-details__text-1">
                                     <hr>
 
-                                    @if($vacant_detail->male!=null && $vacant_detail->female!=null)
-                                        Male / Female<br>
-                                        {{$vacant_detail->male}} / {{$vacant_detail->male}} Posts
-
-                                    @elseif($vacant_detail->male!=null)
-                                    Male - {{$vacant_detail->male}} Posts
-                                    @elseif($vacant_detail->female!=null)
-                                    Female - {{$vacant_detail->female}} Posts
-                                    @endif
-                                    <hr>
-
                                     {!! $vacant_detail->vacant_description !!}
+                                    <hr>
+                                    {!!$vacant_detail->vacant_spec!!}
 
-                                    Salary<br>
-                                    <i id="toggleEye" class="far fa-eye" style="cursor: pointer;" onclick="toggleSalary()"></i>
-                                    <span id="salary" style="display: none;">
-                                        {{ number_format($vacant_detail->salary) }}   MMK
-                                    </span>
+                                    <hr>
+                                    <h5>Offer</h5><br>
+                                    <?php
+
+                                    $array = json_decode($vacant_detail->offer, true);
+
+                                    if (is_array($array)) {
+                                        $result = implode(' ', $array);
+                                        echo $result;
+                                    }
+                                    ?>
 
                                     <hr>
 
-                                    <h5>Opportunities</h5><br>
-                                    {{$vacant_detail->vacant_shortxt}}<hr>
-
-                                    Locations<br>
+                                  Branch Locations<br>
                                     @foreach ($getbranches as $getbranch)
 
                                         <span class="badge bg-primary" style="font-size: 16px;">
-                                            <i class="las la-trash" style="color: red; font-size: 20px; cursor: pointer;"
-                                            onclick="confirmDelete('{{ route('branches.delete', $getbranch->id) }}')"></i>
                                             {{$getbranch->branch_name}}
                                         </span>
 
@@ -176,7 +253,6 @@
                                                     <div class="col-md-12">
                                                         <font style="color:#000">Position</font>
                                                         <div class="comment-form__input-box">
-
                                                             <input type="hidden" placeholder="Your name" name="cat_id" value=" {{$get_cateID->id}}">
                                                             <input type="hidden" placeholder="Your name" name="jobvacant_id" value="{{$vacant_detail->id}}">
                                                             <input type="text" placeholder="Your name" name="position" value="{{$vacant_detail->vacant_name}}" readonly>
@@ -187,6 +263,7 @@
                                                         <h5> PERSONAL INFORMATION</h5>
                                                         <hr>
                                                     </div>
+
                                                     <div class="col-md-6">
                                                         <font style="color:#000">Title</font><br>
                                                         <div class="comment-form__input-box">
@@ -246,13 +323,85 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12"><hr></div>
-                                                    <div class="col-md-12">
+
+                                                    <div class="col-md-6">
                                                         <font style="color:#000">Career Summary</font>
                                                         <div class="comment-form__input-box text-message-box">
                                                             <textarea name="career_summary" placeholder="Your Career Summary">{{ old('career_summary') }}</textarea><br>
                                                             {{-- <small class="text-danger">Career Summary is required.</small> --}}
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-md-6">
+                                                        <font style="color:#000">Expected salary</font>
+                                                        <div class="comment-form__input-box">
+                                                            {{-- <input type="text" placeholder="09" minlength="11" name="phone"> --}}
+                                                            <input type="text" placeholder="expected salary" name="salary"  maxlength="8" title="Please enter expected salary">
+                                                            <br>
+                                                            <small class="text-danger">Expected salary is required.</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12"><hr></div>
+
+                                                    @if($vacant_detail->q1!=null)
+                                                    <div class="col-md-12">
+                                                        <input type="hidden" value="{{$vacant_detail->q1}}" name="q1">
+                                                        <p style="text-align: justify;">{{$vacant_detail->q1}}</p><br>
+                                                            <div class="comment-form__input-box">
+                                                                <div class="form-check form-check-inline" style="padding:0px 30px;">
+                                                                    <input class="form-check-input" type="radio" name="ans1" id="ans1y" value="Yes" {{ old('ans1') == 'Yes' ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="ans1" style="font-size: 15px;">Yes</label>
+                                                                </div>
+
+                                                                <div class="form-check form-check-inline" style="padding:0px 30px;">
+                                                                    <input class="form-check-input" type="radio" name="ans1" id="ans1n" value="No" {{ old('ans1') == 'No' ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="ans1" style="font-size: 15px;">No</label>
+                                                                </div><br>
+                                                                {{-- <small class="text-danger" id="titleError">Please choose your answer.</small> --}}
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-12"><hr></div>
+                                                    @endif
+
+                                                    @if($vacant_detail->q2!=null)
+                                                    <div class="col-md-12">
+                                                        <input type="hidden" value="{{$vacant_detail->q2}}" name="q2">
+                                                        <p style="text-align: justify;">{{$vacant_detail->q2}}</p><br>
+                                                        <div class="comment-form__input-box">
+                                                            <div class="form-check form-check-inline" style="padding:0px 30px;">
+                                                                <input class="form-check-input" type="radio" name="ans2" id="q2y" value="Yes" {{ old('ans2') == 'Yes' ? 'checked' : '' }}>
+                                                                <label class="form-check-label" for="ans2" style="font-size: 15px;">Yes</label>
+                                                            </div>
+
+                                                            <div class="form-check form-check-inline" style="padding:0px 30px;">
+                                                                <input class="form-check-input" type="radio" name="ans2" id="ans2n" value="No" {{ old('ans2') == 'No' ? 'checked' : '' }}>
+                                                                <label class="form-check-label" for="ans2" style="font-size: 15px;">No</label>
+                                                            </div><br>
+                                                            {{-- <small class="text-danger" id="titleError">Please choose your answer.</small> --}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12"><hr></div>
+                                                    @endif
+                                                    @if($vacant_detail->q3!=null)
+                                                    <div class="col-md-12">
+                                                        <input type="hidden" value="{{$vacant_detail->q3}}" name="q3">
+                                                        <p style="text-align: justify;">{{$vacant_detail->q3}}</p><br>
+                                                            <div class="comment-form__input-box">
+                                                                <div class="form-check form-check-inline" style="padding:0px 30px;">
+                                                                    <input class="form-check-input" type="radio" name="ans3" id="ans3y" value="Yes" {{ old('ans3') == 'Yes' ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="ans3" style="font-size: 15px;">Yes</label>
+                                                                </div>
+
+                                                                <div class="form-check form-check-inline" style="padding:0px 30px;">
+                                                                    <input class="form-check-input" type="radio" name="ans3" id="ans3n" value="No" {{ old('ans3') == 'No' ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="ans3" style="font-size: 15px;">No</label>
+                                                                </div><br>
+                                                                {{-- <small class="text-danger" id="titleError">Please choose your answer.</small> --}}
+                                                            </div>
+                                                    </div>
+                                                    @endif
+
                                                     <div class="col-md-12"><hr></div>
                                                     <div class="col-md-6">
                                                         <font style="color:#000">Please upload your resume</font>
@@ -295,11 +444,18 @@
                                 </div>
                             </div>
                             <div class="news-details__bottom">
+                                <form method="POST">
                                 <p class="news-details__tags">
-                                    {{-- <span>Tags</span> --}}
+                                    <span>Tags</span>
                                     @foreach ( $vacants_tags as  $vacants_tag)
-                                    <a href="{{route('our_opportunities_detail',$vacants_tag->id)}}" style="color: #000;">{{$vacants_tag->vacant_name}}</a>
+                                    {{-- <a href="{{route('our_opportunities_detail',$vacants_tag->id)}}" style="color: #000;">{{$vacants_tag->vacant_name}}</a> --}}
+
+                                        @csrf
+                                        <input type="hidden" name="vacant_id" value="{{ $vacants_tag->id }}">
+                                        <button type="submit" formaction="{{ route('view_counts', $vacants_tag->id) }}" class="btn btn-primary">{{$vacants_tag->vacant_name}}</button>
+
                                     @endforeach
+                                </form>
                                 </p>
                             </div>
                         </div>

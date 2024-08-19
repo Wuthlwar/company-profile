@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\JobCategory;
+use App\Models\Jobroles;
 use App\Models\Logs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -92,14 +93,13 @@ class JobCategoryController extends Controller
 
         $date=now()->format('Y-m-d');
 
-        JobCategory::create([
+        $jobs=JobCategory::create([
             'category_banner' => $file_banner,
             'category_image'  => $file_tumb,
             'category_name'   => $request['category_name'],
             'status'          => $status,
             'date'          => $date,
         ]);
-
 
         Logs::create([
             'name' => Auth()->user()->name,
@@ -109,6 +109,18 @@ class JobCategoryController extends Controller
             'ip' => $request->ip(),
             'date' => now()->format('Y-m-d'),
         ]);
+
+        $job_roles=$request->input('job_role');
+
+        if($job_roles!=null){
+        foreach ($job_roles as $job_role) {
+            Jobroles::create([
+                'category_id' => $jobs->id,
+                'job_role' => $job_role,
+            ]);
+        }
+        }
+
 
         return back()->with('success', 'Successfully saved...');
     }
@@ -134,7 +146,7 @@ class JobCategoryController extends Controller
     public function edit($id)
     {
         $category = JobCategory::find($id);
-        return view('admins.job_categories.detail', compact('category'));
+        return view('admins.job_categories.job_categories_detail', compact('category'));
     }
 
     /**
@@ -146,7 +158,7 @@ class JobCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd('hi');
+        // Validate the incoming request
         $request->validate([
             'category_name' => 'required',
             'category_banner' => 'nullable|mimes:jpeg,jpg,png,gif',
@@ -156,40 +168,53 @@ class JobCategoryController extends Controller
             'category_image.mimes' => 'The image must be a file of type: jpeg, jpg, png, gif.'
         ]);
 
+        // Find the JobCategory by ID
         $category = JobCategory::find($id);
 
+        // Update the category name and status
         $category->category_name = $request->category_name;
-
         $category->status = $request->has('status') ? 'online' : 'offline';
 
+        // Handle category banner update
+        if ($request->hasFile('category_banner')) {
+            $destination = 'app/public/uploads/jobvacants/'.$category->category_banner;
+            if (Storage::exists($destination)) {
+                unlink(storage_path($destination));
+            }
 
-    if ($request->hasFile('category_banner')) {
-        $destination = 'app/public/uploads/jobvacants/'.$category->category_banner;
-        if (Storage::exists($destination)) {
-            unlink(storage_path('app/public/uploads/jobvacants/'.$category->category_banner));
+            $banner = rand(0,999999)."_".$request->file('category_banner')->getClientOriginalName();
+            $path = Storage::putFileAs('uploads/jobvacants/', $request->file('category_banner'), $banner);
+            $category->category_banner = $banner;
+        } else {
+            $category->category_banner = $request->input('banner_old');
         }
 
-        $banner = rand(0,999999)."_".$request->file('category_banner')->getClientOriginalName();
-        $path = Storage::putFileAs('uploads/jobvacants/', $request->file('category_banner'), $banner);
+        // Handle category image update
+        if ($request->hasFile('category_image')) {
+            $destination = 'app/public/uploads/jobvacants/'.$category->category_image;
+            if (Storage::exists($destination)) {
+                unlink(storage_path($destination));
+            }
 
-        $category->category_banner = $banner;
-    } else {
-        $category->category_banner = $request->banner_old;
-    }
-
-    if ($request->hasFile('category_image')) {
-        $destination = 'app/public/uploads/jobvacants/'.$category->category_image;
-        if (Storage::exists($destination)) {
-            unlink(storage_path('app/public/uploads/jobvacants/'.$category->category_image));
+            $img = rand(0,999999)."_".$request->file('category_image')->getClientOriginalName();
+            $path = Storage::putFileAs('uploads/jobvacants/', $request->file('category_image'), $img);
+            $category->category_image = $img;
+        } else {
+            $category->category_image = $request->input('tumb_old');
         }
 
-        $img = rand(0,999999)."_".$request->file('category_image')->getClientOriginalName();
-        $path = Storage::putFileAs('uploads/jobvacants/', $request->file('category_image'), $img);
 
-        $category->category_image = $img;
-    } else {
-        $category->category_image = $request->tumb_old;
-    }
+        $job_roles = $request->input('job_role');
+        if (!is_null($job_roles)) {
+            foreach ($job_roles as $job_role) {
+                if (!empty($job_role)) {
+                    Jobroles::create([
+                        'category_id' => $category->id,
+                        'job_role' => $job_role,
+                    ]);
+                }
+            }
+        }
 
         $category->save();
 
@@ -202,8 +227,7 @@ class JobCategoryController extends Controller
             'date' => now()->format('Y-m-d'),
         ]);
 
-        return back()->with('success','Job Category Successfully updated');
-
+        return back()->with('success', 'Job Category Successfully updated');
     }
 
     /**
@@ -293,5 +317,13 @@ class JobCategoryController extends Controller
         return view('admins.job_categories.index', compact('categories'));
 
 
+    }
+
+    public function deleteRole($id) {
+        $role = Jobroles::find($id);
+        if ($role) {
+            $role->delete();
+        }
+        return redirect()->back()->with('success', 'Job Deleted Successfully');
     }
 }

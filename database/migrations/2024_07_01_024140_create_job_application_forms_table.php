@@ -28,6 +28,18 @@ class CreateJobApplicationFormsTable extends Migration
             $table->text('resume')->nullable();
             $table->string('agree')->nullable();
             $table->string('status')->nullable();
+            $table->string('remark')->nullable();
+            $table->string('salary')->nullable();
+
+            $table->string('q1')->nullable();
+            $table->string('ans1')->nullable();
+
+            $table->string('q2')->nullable();
+            $table->string('ans2')->nullable();
+
+            $table->string('q3')->nullable();
+            $table->string('ans3')->nullable();
+
             $table->string('date')->nullable();
             $table->timestamps();
         });

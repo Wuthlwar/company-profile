@@ -73,6 +73,7 @@
                         <th scope="col" class="card-title" style="font-size: 15px;">Category tumbnail</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Category</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Status</th>
+                        <th scope="col" class="card-title" style="font-size: 15px;">Job roles</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Created Date</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Updated Date</th>
                       </tr>
@@ -87,7 +88,7 @@
                         @if (Auth()->user()->role=='1')
                         <input type="checkbox" name="selected_items[]" value="{{ $category->id }}" class="item-checkbox form-check-input" style="border:1px solid #312eec;">
                         &nbsp;&nbsp;&nbsp;
-                        <i class="la la-eye" style="font-size: 25px;color:#312eec;" data-toggle="modal" data-target="#jobupdateModal{{$category->id}}"></i>
+                        <a href="{{route('Job_categories.edit',$category->id)}}"><i class="la la-eye" style="font-size: 25px;color:#312eec;"></i></a>
                         @elseif(Auth()->user()->role=='2' || Auth()->user()->role=='3')
                         <i class="la la-eye" style="font-size: 25px;color:#312eec;" data-toggle="modal" data-target="#jobupdateModal{{$category->id}}"></i>
                         @endif
@@ -112,12 +113,18 @@
                                 </div>
                         </div>
                     </td>
+
+                    <td>
+                        @foreach ( getJobrole($category->id) as $job_role)
+                        {{ $job_role->job_role }},
+                         @endforeach
+                    </td>
                     <td>{{$category->date}}</td>
                     <td>{{$category->updated_at}}</td>
                   </tr>
                   <!------------------------------------Update----------------------------------------------->
                         {{-- Create Modal  --}}
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true" id='jobupdateModal{{$category->id}}'>
+                        {{-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true" id='jobupdateModal{{$category->id}}'>
                             <div class="modal-dialog modal-lg">
                             <div class="modal-content">
 
@@ -181,10 +188,33 @@
                                                                 <label for="status" class="form-label card-title" style="font-size:15px;">Status</label>
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="checkbox" name="status" value="online" {{ $category->status == 'online' ? 'checked' : '' }}>
-                                                                    <label for=" {{$category->status=='online' ? 'online' : 'offline'}}">  {{$category->status=='online' ? 'online' : 'offline'}}</label>
+                                                                    <label for="{{$category->status=='online' ? 'online' : 'offline'}}">  {{$category->status=='online' ? 'online' : 'offline'}}</label>
                                                                     <br>
                                                                 </div>
+                                                                <hr>
                                                             </div>
+
+                                                            <div class="col-md-12">
+                                                                @foreach ( getJobrole($category->id) as $job_role)
+                                                                <span class="badge bg-primary" style="font-size: 16px;">
+                                                                <i class="las la-trash" style="color: rgb(243, 2, 2); font-size: 16px; cursor: pointer;"
+                                                                onclick="confirmDelete('{{ route('job_roles.delete', $job_role->id) }}')"></i>{{ $job_role->job_role }}
+                                                                </span>
+                                                                 @endforeach
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <label for="fromDate" class="form-label" id="font-f">Add New Job Roles</label>
+                                                                <h5 class="card-title" style="font-size:15px;">Job Role Name</h5>
+                                                                <input type="text" class="form-control" name="job_role1[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+
+                                                                <br>
+                                                                <div id="showquestionedit{{$category->id}}"></div>
+                                                                <br>
+                                                                <i class="btn btn-success addbtnedit" id="addbtnedit{{$category->id}}" data-count="0">Add Job Role</i>
+                                                                <hr>
+                                                            </div>
+
                                                         </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -199,7 +229,7 @@
                                 </form>
                             </div>
                             </div>
-                        </div>
+                        </div> --}}
                   <!----------------------------------------------------------------------------------->
                 @endforeach
                 <tr>
@@ -221,12 +251,7 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true" id='jobModal'>
     <div class="modal-dialog modal-lg">
        <div class="modal-content">
-          {{-- <div class="modal-header">
-             <h5 class="modal-title"> Add New Job Category</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-             </button>
-          </div> --}}
+
           <form action="{{route('Job_categories.store')}}" method="post" enctype="multipart/form-data" class="row g-3">
             @csrf
           <div class="modal-body">
@@ -283,7 +308,23 @@
                                       <div class="form-check form-switch">
                                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="status" value="online">Online
                                       </div>
+                                      <hr>
                                       </div>
+
+                                      <div class="col-md-12">
+                                        <label for="fromDate" class="form-label" id="font-f">Add New Job Roles</label>
+                                        <h5 class="card-title" style="font-size:15px;">Job Role Name</h5>
+                                        <input type="text" class="form-control" id="job_role" name="job_role[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+
+                                        <br>
+                                            <div  id="showquestion">
+                                            </div>
+                                            <br>
+                                             <i class="btn btn-success" id="addbtn"> Add Job Role</i>
+                                        <hr>
+                                    </div>
+
+
                                 </div>
                         </div>
                         <div class="modal-footer">
@@ -300,7 +341,110 @@
  </div>
 @endsection
 @section('script')
-{{-- <script src="{{ asset('/js/activity_type_crud.js') }}"></script> --}}
+
+<script>
+    function confirmDelete(url) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+            }
+        })
+    }
+</script>
+
+<script>
+    $(document).ready(function (){
+        var max_fields = 5;
+        var x = 0;
+
+        $('#addbtn').on('click',function(){
+            if(x<max_fields){
+                x++;
+                console.log(x);
+                var wrapperquestion =`
+                        <div class="row">
+                                <div class="col-md-10">
+                                <h5 class="card-title" style="font-size:15px;">Job Role Name</h5>
+                            <input type="text" class="form-control" id="job_role" name="job_role[]" style="border:1px solid #333;height:40px;font-size:13px" required></div>
+                            <div class="col-md-2">
+                                <br>
+                            <i class="las la-minus-circle removebtn" style="color:red;font-size:27px;"></i>
+                            </div>
+                            <div class="col-md-12">
+                                <hr>
+                            </div>
+                        </div>
+                `;
+                $('#showquestion').append(wrapperquestion);
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Maximum fields limit reached!',
+                });
+            }
+        });
+
+        $('#showquestion').on('click','.removebtn', function(){
+            $(this).closest('.row').remove();
+            x--;
+        });
+    });
+
+</script>
+
+{{-- <script>
+$(document).ready(function () {
+    var max_fields = 5;
+
+    $('.addbtnedit').on('click', function(){
+        var x = $(this).data('count') || 0;
+        if (x < max_fields) {
+            x++;
+            $(this).data('count', x);
+
+            var wrapperquestion = `
+                <div class="row">
+                    <div class="col-md-10">
+                        <h5 class="card-title" style="font-size:15px;">Job Role Name</h5>
+                        <input type="text" class="form-control" name="job_role1[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+                    </div>
+                    <div class="col-md-2">
+                        <br>
+                        <i class="las la-minus-circle removebtnedit" style="color:red;font-size:27px; cursor:pointer;"></i>
+                    </div>
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+            `;
+
+            $(this).siblings(`#showquestionedit${$(this).attr('id').replace('addbtnedit', '')}`).append(wrapperquestion);
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Maximum fields limit reached!',
+            });
+        }
+    });
+
+    $(document).on('click', '.removebtnedit', function(){
+        var addBtn = $(this).closest('.modal-content').find('.addbtnedit');
+        var x = addBtn.data('count') || 0;
+        $(this).closest('.row').remove();
+        addBtn.data('count', --x);
+    });
+});
+</script> --}}
 
 <script>
     function showNotification(message, type) {
@@ -457,6 +601,7 @@ document.getElementById('my_file1').addEventListener('click', function() {
 });
 });
 </script>
+
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {

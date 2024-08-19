@@ -49,18 +49,27 @@
                                         @endif
 
                                     </div>
+                                    <a href="{{route('our_opportunities_detail',$vacant->id)}}" style="color:rgb(2, 36, 128);">
                                     <div class="comment-one__content" style="color:#000;">
-                                        <h3><a href="{{route('our_opportunities_detail',$vacant->id)}}" style="color:rgb(2, 36, 128);">{{$vacant->vacant_name}}</a></h3>
+                                        <h3>{{$vacant->vacant_name}}</h3>
                                         <p>
-                                            {!!html_entity_decode($vacant->vacant_shortxt)!!}
+                                            {!! html_entity_decode(Str::limit($vacant->vacant_description, 600, '. . .')) !!}
                                         </p>
                                         <p style="color:blue;">
                                             <i class="far fa-calendar"></i>&nbsp;&nbsp; Posted on {{ $vacant->created_at->format('d F Y') }}
                                         </p>
-                                        <p style="font-size: 13px;">{{ $vacant->created_at->diffForHumans() }}</p>
 
-                                        <a href="{{route('our_opportunities_detail',$vacant->id)}}" class="thm-btn comment-one__btn">View Detail</a>
+                                        <p style="font-size: 13px;">{{ $vacant->created_at->diffForHumans() }}</p>
+                                        <font style="color: #172ec7;font-size:14px;"><i class="far fa-eye"></i> {{ $vacant->view_count}} Views</font>
+
+                                        <form method="POST">
+                                            @csrf
+                                            <input type="hidden" name="vacant_id" value="{{ $vacant->id }}">
+                                            <button type="submit" formaction="{{ route('view_counts', $vacant->id) }}" class="thm-btn comment-one__btn">View Detail</button>
+                                        </form>
+
                                     </div>
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +132,10 @@
                     @endif
                     @endforeach
                     {{-- {{ $categories->links('pagination::bootstrap-4') }} --}}
-                    <a href="{{route('our_all_categories_job')}}" style="color:#2b49f3">See More</a>
+                    <form>
+
+                    <a href="{{route('our_all_categories_job')}}" style="color:#2b49f3" formaction="">See More</a>
+                    </form>
                     <!--News Three Single End-->
                 </div>
             </div>

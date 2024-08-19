@@ -88,6 +88,13 @@ Route::group(['prefix' => 'admins'], function(){
     Route::match(['post', 'put','delete'],'/logs_delete', [LogsController::class,'destroyLogs'])->name('destroyLogs.delete');
 
     Route::get('/branches/delete/{id}', [JobVacantsController::class, 'deleteBranch'])->name('branches.delete');
+    Route::get('/categories/delete/{id}', [JobCategoryController::class, 'deleteRole'])->name('job_roles.delete');
+
+    Route::get('get-job-roles/{category_id}', [JobVacantsController::class, 'getJobRoles']);
+
+    Route::post('/job-vacants/update-status1/{id}', [JobVacantsController::class, 'UpdateStatus1'])->name('job-vacants.update-status1');
+
+
 
 });
 

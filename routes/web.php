@@ -71,6 +71,9 @@ Route::resource('feedbacks',FeedbackController::class);
 
 //---------------------------------------------------Job Vacants---------------------------------------------
 Route::get('/our_opportunities', [HomeController::class, 'job'])->name('our_opportunities');
+
+Route::post('/view-counts/{id}', [HomeController::class, 'ViewCounts'])->name('view_counts');
+
 Route::get('/our_all_categories_job', [HomeController::class, 'jobAllcate'])->name('our_all_categories_job');
 Route::get('/our_opportunities_detail/{id}', [HomeController::class, 'jobdetail'])->name('our_opportunities_detail');
 Route::get('/our_opportunities_categories/{id}', [HomeController::class, 'jobDetailCate'])->name('our_opportunities_categories_jobs');

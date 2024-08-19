@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Branch extends Model
+class UserViewCount extends Model
 {
     use HasFactory;
-    protected $fillable =['branch_code','branch_short_name','branch_name_eng','branch_name','branch_address'];
-
-
-
+    protected $fillable =[
+        'user_id',
+        'vacant_id',
+        'view_count',
+    ];
 }

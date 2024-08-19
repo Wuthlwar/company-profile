@@ -72,32 +72,32 @@
         <div class="table-responsive rounded mb-3">
 
         <table class="table table-striped" id="statusForm">
-            <thead class="bg-white text-uppercase">
-                <tr class="ligth ligth-data">
+            <thead class="bg-white">
+                <tr class="ligth ligth-data" style="font-size: 13px;">
                     <tr>
-                        <th scope="col" class="card-title" style="font-size: 15px;">No</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">
+                        <th scope="col" class="card-title" style="font-size: 13px;">No</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">
                             @if (Auth()->user()->role=='1')
                             <input type="checkbox" id="select-all" class="form-check-input" style="border:1px solid #312eec;"> Bulk actions
                             @else
                             Bulk actions
                             @endif
                         </th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Categories</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Job Vacant/Position</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Name</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Phone</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Email</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Branch Locations</th>
-                        <th scope="col" class="card-title" style="font-size: 15px;">Resume</th>
-                        {{-- <th scope="col" class="card-title" style="font-size: 15px;">Status</th> --}}
-                        <th scope="col" class="card-title" style="font-size: 15px;">Apply Date</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Categories</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Job Vacant/Position</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Name</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Phone</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Email</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Branch Locations</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Resume</th>
+                        {{-- <th scope="col" class="card-title" style="font-size: 13px;">Status</th> --}}
+                        <th scope="col" class="card-title" style="font-size: 13px;">Apply Date</th>
                       </tr>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($apply_vacants as $vacant)
-                <tr id="font-s">
+                <tr id="font-s" style="font-size:13px;">
                     <th scope="row">{{($apply_vacants->currentPage()-1)*$apply_vacants->perPage()+$loop->index+1}}.</th>
                     <th scope="row">
                         <span class="d-flex align-items-center">
@@ -124,7 +124,7 @@
                     <td> {{$vacant->email}}</td>
                     <td>
                         @foreach ($getbranches as $getbranch)
-                        <span class="badge bg-primary" style="font-size: 16px;">
+                        <span class="badge bg-primary" style="font-size: 13px;">
                             {{$getbranch->branch_name}}
                         </span>
                         @endforeach</td>
@@ -246,6 +246,41 @@
                                                       </div>
                                                 </div>
                                                 <hr>
+
+                                                @if($vacant->q1!=null)
+                                                <div class="row" style="color: #000;">
+                                                    <div class="col-md-12">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Question 1</label><br>
+                                                        <p style="text-align: justify;">{{$vacant->q1}}<br>
+                                                        Ans : {{$vacant->ans1}}</p>
+                                                      </div>
+                                                </div>
+                                                <hr>
+                                                @endif
+
+                                                @if($vacant->q2!=null)
+
+                                                <div class="row" style="color: #000;">
+                                                    <div class="col-md-12">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Question 2</label><br>
+                                                        <p style="text-align: justify;">{{$vacant->q2}}<br>
+                                                        Ans : {{$vacant->ans2}}</p>
+                                                      </div>
+                                                </div>
+                                                <hr>
+                                                @endif
+                                                @if($vacant->q3!=null)
+                                                <div class="row" style="color: #000;">
+                                                    <div class="col-md-12">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Question 3</label><br>
+                                                        <p style="text-align: justify;">{{$vacant->q3}}<br>
+                                                        Ans : {{$vacant->ans3}}</p>
+                                                      </div>
+                                                </div>
+                                                <hr>
+                                                @endif
+
+
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <label for="vacantname" class="form-label card-title" style="font-size:15px;">Terms & Conditions</label>
@@ -296,6 +331,8 @@
                                                         <a href="{{asset('storage/uploads/jobvacants/' . $vacant->resume)}}" target="_blank"> {{$vacant->resume}}</a>
                                                         @endif
                                                     </center>
+                                                    <br>
+                                                    <a href="{{asset('storage/uploads/jobvacants/' . $vacant->resume)}}" target="_blank"> {{$vacant->resume}}</a>
                                                     </div>
                                                 </div>
                                         </div>

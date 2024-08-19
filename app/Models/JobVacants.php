@@ -10,17 +10,40 @@ class JobVacants extends Model
     use HasFactory;
     protected $fillable =[
         'vacant_name',
+        'industry',
+        'emptype',
+        'no_vacant',
+        'qualification',
+        'experience',
+        'gender',
+
         'category_id',
+        'job_role',
+        'vacant_description',
+        'vacant_spec',
+        'region',
+        'township',
+        'address',
+
+        'salary',
+        'currency',
+        'min',
+        'max',
+        'offer',
+        'q1',
+        'q2',
+        'q3',
         'vacant_banner',
         'vacant_image',
-        'vacant_description',
-        'vacant_shortxt',
-        'male',
-        'female',
-        'salary',
-        'status',
         'date',
+        'status',
+        'status1',
+        'remark',
+        'view_count'
     ];
+
+
+
 
 
     public function category()
@@ -32,4 +55,15 @@ class JobVacants extends Model
     {
         return $this->belongsTo(VacantBranch::class,'vacant_id')->withDefault();
     }
+
+    public function job_roleget()
+    {
+        return $this->belongsTo(Jobroles::class,'job_role')->withDefault();
+    }
+
+    public function vacant_branches()
+    {
+        return $this->hasMany(VacantBranch::class,'vacant_id','id');
+    }
+
 }

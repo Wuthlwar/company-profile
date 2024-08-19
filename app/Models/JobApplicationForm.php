@@ -22,7 +22,20 @@ class JobApplicationForm extends Model
         'resume',
         'agree',
         'status',
+        'remark',
+        'salary',
+
+        'q1',
+        'ans1',
+
+        'q2',
+        'ans2',
+
+        'q3',
+        'ans3',
+
         'date',
+
     ];
 
     public function category()

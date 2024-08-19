@@ -29,7 +29,7 @@
 
                     </div>
                     <div class="news-details__content">
-                        <h4>
+                        <h5>
                             <span class="badge rounded-pill bg-primary">
                                 <i class="fa fa-check-circle" style="font-size:20px;color:rgb(234, 233, 236);"></i>
                                 &nbsp;{{ count($vacant_count) }}
@@ -38,7 +38,7 @@
                             @if ($vacants_first)
                                 {{ $vacants_first->category->category_name }}
                             @endif
-
+                        </h5>
                         <br><br>
 
                         @foreach ($vacants_categories as $vacant)
@@ -58,18 +58,24 @@
                                             @endif
 
                                         </div>
+                                        <a href="{{route('our_opportunities_detail',$vacant->id)}}" style="color:rgb(2, 36, 128);">
                                         <div class="comment-one__content" style="color:#000;">
-                                            <h3><a href="{{route('our_opportunities_detail',$vacant->id)}}" style="color:rgb(2, 36, 128);">{{$vacant->vacant_name}}</a></h3>
+                                            <h3>{{$vacant->vacant_name}}</h3>
                                             <p>
-                                                {!!html_entity_decode($vacant->vacant_shortxt)!!}
+                                                {!! html_entity_decode(Str::limit($vacant->vacant_description, 600, '. . .')) !!}
                                             </p>
                                             <p style="color:blue;">
                                                 <i class="far fa-calendar"></i>&nbsp;&nbsp; Posted on {{ $vacant->created_at->format('d F Y') }}
                                             </p>
                                             <p style="font-size: 13px;">{{ $vacant->created_at->diffForHumans() }}</p>
-
-                                            <a href="{{route('our_opportunities_detail',$vacant->id)}}" class="thm-btn comment-one__btn">View Detail</a>
+                                            <font style="color: #172ec7;font-size:14px;"><i class="far fa-eye"></i> {{ $vacant->view_count}} Views</font>
+                                            <form method="POST">
+                                                @csrf
+                                                <input type="hidden" name="vacant_id" value="{{ $vacant->id }}">
+                                                <button type="submit" formaction="{{ route('view_counts', $vacant->id) }}" class="thm-btn comment-one__btn">View Detail</button>
+                                            </form>
                                         </div>
+                                    </a>
                                     </div>
                                 </div>
                             </div>

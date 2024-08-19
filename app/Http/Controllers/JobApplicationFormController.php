@@ -169,18 +169,31 @@ class JobApplicationFormController extends Controller
             'resume' => $resume,
             'agree' => $request['agree'],
             'status' => $request['status'],
+            'salary' => $request['salary'],
+
+            'q1' => $request['q1'],
+            'ans1' => $request['ans1'],
+
+            'q2' => $request['q2'],
+            'ans2' => $request['ans2'],
+
+            'q3' => $request['q3'],
+            'ans3' => $request['ans3'],
+
+            'status' => $request['status'],
             'date' => $date
         ]);
 
         $branchIds = $request->input('branch_id');
 
+        if($branchIds!=null){
         foreach ($branchIds as $branchId) {
             VacantBranchUser::create([
                 'branch_id' => $branchId,
                 'vacant_id' => $jobs->id,
             ]);
         }
-
+    }
 
         return redirect()->route('job_application_apply_successfully')->with('success', 'Successfully saved...');
     }
