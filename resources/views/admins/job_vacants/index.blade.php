@@ -87,6 +87,7 @@
                         <th scope="col" class="card-title" style="font-size: 13px;">Job Vacant Name</th>
                         <th scope="col" class="card-title" style="font-size: 13px;">Categories</th>
                         <th scope="col" class="card-title" style="font-size: 13px;">Status</th>
+                        <th scope="col" class="card-title" style="font-size: 13px;">Job App Status</th>
                         <th scope="col" class="card-title" style="font-size: 13px;">Location</th>
                         <th scope="col" class="card-title" style="font-size: 13px;">Branch</th>
 
@@ -144,6 +145,7 @@
                                 </div>
                         </div>
                     </td>
+                    <td>{{$vacant->status1}}</td>
                     <td>{{$vacant->region}} | {{$vacant->township}}</td>
                     <td>
                         {{-- {{$vacant->vacant_branches}} --}}
@@ -198,7 +200,7 @@
                 <tr>
                     <td></td>
                     <td colspan="7">
-                        @if (Auth()->user()->role=='1')
+                        @if (Auth()->user()->role=='1' && count($vacants)>0)
                         <button type="button" class="btn btn-danger rounded-pill" id="delete-button" style="height:30px;width:80px;font-size:13px;padding:5px;">Delete</button>
                         @endif
                     </td>
