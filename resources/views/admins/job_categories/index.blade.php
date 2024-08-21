@@ -235,7 +235,7 @@
                 <tr>
                     <td></td>
                     <td colspan="7">
-                        @if (Auth()->user()->role=='1')
+                        @if (Auth()->user()->role=='1' && count($categories)>0)
                         <button type="button" class="btn btn-danger rounded-pill" id="delete-button" style="height:30px;width:80px;font-size:13px;padding:5px;">Delete</button>
                         @endif
                     </td>

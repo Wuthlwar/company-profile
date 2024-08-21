@@ -18,6 +18,7 @@ use App\Http\Controllers\JobVacantsController;
 use App\Http\Controllers\JobApplicationFormController;
 use App\Http\Controllers\LogsController;
 use App\Http\Controllers\UserRoleController;
+use App\Http\Controllers\PhotoGalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,7 +95,12 @@ Route::group(['prefix' => 'admins'], function(){
 
     Route::post('/job-vacants/update-status1/{id}', [JobVacantsController::class, 'UpdateStatus1'])->name('job-vacants.update-status1');
 
+    //--------------------------------------------------Gallery--------------------------------------------
 
-
+    Route::resource('photo_gallery/all_photo_gallery',PhotoGalleryController::class);
+    Route::delete('/photo-galleries/delete-multiple', [PhotoGalleryController::class, 'deleteMultiple'])->name('photoGalleries.deleteMultiple');
+    Route::get('/Gallery/delete/{id}', [PhotoGalleryController::class, 'deleteGallery'])->name('gallery_get.delete');
+    Route::get('/photo_name/delete/{id}', [PhotoGalleryController::class, 'deletePhotoname'])->name('photo_get.delete');
+    Route::match(['get', 'post'], '/Galley_search', [PhotoGalleryController::class, 'searchGallery'])->name('gallery.search');
 });
 
