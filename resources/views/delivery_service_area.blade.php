@@ -36,9 +36,10 @@
                                 <img src="assets/images/shapes/section-title-shape-4.png" alt="">
                             </div>
                         </div>
-                        <h1 class="section-title__title">PRO 1 Global မှ သတ်မှတ်ထားသော Delivery ဧရိယာများ</h1>
+                        <h1 class="section-title__title">Delivery areas specified by PRO 1 Global</h1>
                     </div>
-                    <p class="why-choose-one__text">500,000 ကျပ်ဖိုးဝယ်ယူပါက သတ်မှတ်ထားတဲ့ ဧရိယာအတွင်းသို့ ပို့ဆောင်ခ (အခမဲ့)ဖြစ်ပါသည်။ 500,000 ကျပ်ဖိုးအောက်ဝယ်ယူမှုဖြစ်ပါက Delivery Fee 5,000 ကျပ်ဖြင့် သတ်မှတ်ထားတဲ့ ဧရိယာအတွင်းသို့ ပို့ဆောင်ပေးပါသည်။  နယ် Customer များအတွက် ကားဂိတ်အရောက်ပို့ဆောင်ပေးပါသည်။</p>
+                    <p class="why-choose-one__text">If you purchase 500,000 Kyats, the delivery fee is (free) within the specified area. If the purchase price is less than 500,000 kyat, delivery fee of 5,000 kyat will be delivered to the specified area. Delivery to the bus station for native customers.
+                        Note:Offer excludes purchases of Structure Items.</p>
                     <div class="why-choose-one__list-box">
                         <ul class="list-unstyled why-choose-one__list">
                             <li>

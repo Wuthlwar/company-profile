@@ -572,7 +572,7 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="download__right">
                     <div class="download__img wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
-                        <img src="{{asset('assets/photos/ecommerceapp.png')}}" alt="">
+                        <img src="{{asset('assets/photos/onlinestore.png')}}" alt="">
                         <div class="download__badge">
                         </div>
                     </div>

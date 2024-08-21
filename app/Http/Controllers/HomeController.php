@@ -67,6 +67,18 @@ class HomeController extends Controller
                     return redirect()->route('our_opportunities_detail', $vacant->id);
             }
 
+            public function Faq(){
+
+
+                return view('Faq');
+        }
+
+        public function Knowledge_Sharing(){
+
+
+            return view('Knowledge_Sharing');
+    }
+
 
             public function jobsearch(Request $request)
         {

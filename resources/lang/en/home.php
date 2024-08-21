@@ -78,6 +78,8 @@ return [
     'footer_10'                    => '- Go To E-commerce Website',
     'footer_11'                    => 'Contact',
     'footer_12'                    => 'Call to Our Head Office',
+    'footer_13'                    => '- FAQ(Pro1 Online Store)',
+    'footer_14'                   => ' - Knowledge Sharing',
 
     'center_header'                => 'Our Center',
     'center_yangon'                => 'Yangon Region',

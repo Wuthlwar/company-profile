@@ -81,4 +81,6 @@ Route::get('/our_opportunities_categories/{id}', [HomeController::class, 'jobDet
 Route::resource('Job_Application_form',JobApplicationFormController::class);
 Route::get('/job_application_apply_successfully', [HomeController::class, 'successApply'])->name('job_application_apply_successfully');
 Route::get('/job/search', [HomeController::class, 'jobsearch'])->name('job.search');
+Route::get('/Faq', [HomeController::class, 'Faq'])->name('Faq');
+Route::get('/Knowledge_Sharing', [HomeController::class, 'Knowledge_Sharing'])->name('Knowledge_Sharing');
 
