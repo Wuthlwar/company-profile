@@ -273,13 +273,13 @@ fieldset {
                                         </a>
                                 </li>
                                 <li class="">
-                                    <a href="{{route('all_photo_gallery.index')}}">
-                                        <i class="las la-minus"></i><span style="color: #000;">Knowledge Sharing</span>
+                                    <a href="{{route('knowledge_sharing.index')}}">
+                                        <i class="las la-share-alt"></i><span style="color: #000;">Knowledge Sharing</span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="{{route('all_photo_gallery.index')}}">
-                                        <i class="las la-minus"></i><span style="color: #000;">FAQ</span>
+                                    <a href="{{route('frequently_asked_question.index')}}">
+                                        <i class="las la-question-circle"></i><span style="color: #000;">FAQ</span>
                                     </a>
                                 </li>
                         </ul>

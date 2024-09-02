@@ -13,7 +13,7 @@
 
         </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-4 col-md-4">
         <form id="galleryForm" action="{{ route('all_photo_gallery.store') }}" method="post" enctype="multipart/form-data" class="row g-3">
             @csrf
             <div class="modal-body">
@@ -64,7 +64,7 @@
         </form>
     </div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-8 col-md-8">
                 <!-- Multi Columns Form -->
                 <form action="{{ route('gallery.search') }}" method="post" class="row g-3 card-title" style="margin: 10px; font-size: 12px;">
                     @csrf
@@ -115,12 +115,12 @@
                                 <a href="{{route('all_photo_gallery.edit',$photoName->id)}}">Edit</a>
                             </h5>
                             <p>
-                                @if ($photoName->photoGalleries->isEmpty())
+                                @if ($photoName->photoGalleries->isEmpty() && Auth()->user()->role=='1')
                                     <span class="badge" style="font-size: 16px;">
                                         <i class="las la-trash" style="color: rgb(243, 2, 2); font-size: 26px; cursor: pointer;"
                                            onclick="confirmDeleteonly('{{ route('photo_get.delete', $photoName->id) }}')"></i>
                                     </span>
-                                @else
+                                @elseif (Auth()->user()->role=='1')
                                     <input type="checkbox" id="select-all-checkbox" onclick="selectAllGalleries(this)">&nbsp;&nbsp;Select All
                                 @endif
                             </p>
@@ -132,7 +132,9 @@
                                         <div class="card mb-3">
                                             <img src="{{ asset('storage/' . $photoGallery->file) }}" class="card-img-top" alt="Gallery Image">
                                             <div class="card-body">
+                                                @if (Auth()->user()->role=='1')
                                                 <input type="checkbox" class="gallery-checkbox" name="selected_galleries[]" value="{{ $photoGallery->id }}">
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -142,7 +144,7 @@
                     </div>
                 @endforeach
 
-                @if (count($photoNames) > 0 && !$photoName->photoGalleries->isEmpty())
+                @if (Auth()->user()->role=='1' && (count($photoNames) > 0 && !$photoName->photoGalleries->isEmpty()))
                     <button type="submit" id="delete-selected-button" class="btn btn-danger" disabled onclick="confirmDelete(event)">Delete Selected</button>
                 @endif
             </form>

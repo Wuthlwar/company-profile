@@ -80,6 +80,7 @@ return [
     'footer_12'                    => 'Call to Our Head Office',
     'footer_13'                    => '- FAQ(Pro1 Online Store)',
     'footer_14'                   => ' - Knowledge Sharing',
+    'footer_15'                   => ' - Photo Gallery',
 
     'center_header'                => 'Our Center',
     'center_yangon'                => 'Yangon Region',

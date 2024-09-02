@@ -170,7 +170,7 @@
 
 
                                 <div class="col-md-12">
-                                    <label for="fromDate" class="form-label" id="font-f">Job Description <font style="color:red;">*</font></label><br>
+                                    <label for="fromDate" class="form-label" id="font-f">Job Description (Roles & Responsibilities)<font style="color:red;">*</font></label><br>
                                     <div id="deseditor" style="height: 400px;"></div>
                                     <!-- Hidden input to store Quill content -->
                                     <input type="hidden" name="jobrequired" id="jobrequired" required>
@@ -178,7 +178,7 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label for="fromDate" class="form-label" id="font-f">Job Specification (Job Requirements) <font style="color:red;">*</font></label><br>
+                                    <label for="fromDate" class="form-label" id="font-f">Job Specification (Skills & Requirements) <font style="color:red;">*</font></label><br>
                                     <div id="jobspec" style="height: 400px;"></div>
                                     <!-- Hidden input to store Quill content -->
                                     <input type="hidden" name="vacant_spec" id="jobspecreq" required>
