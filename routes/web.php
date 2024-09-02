@@ -83,4 +83,5 @@ Route::get('/job_application_apply_successfully', [HomeController::class, 'succe
 Route::get('/job/search', [HomeController::class, 'jobsearch'])->name('job.search');
 Route::get('/Faq', [HomeController::class, 'Faq'])->name('Faq');
 Route::get('/Knowledge_Sharing', [HomeController::class, 'Knowledge_Sharing'])->name('Knowledge_Sharing');
+Route::get('/Our_Photo_Gallery', [HomeController::class, 'Our_gallery'])->name('our_photo_gallery');
 

@@ -20,6 +20,12 @@
                                 <p><a href="mailto:info@pro1globalhomecenter.com">info@pro1globalhomecenter.com</a></p>
                             </div>
                         </li>
+                        <li>
+                            <div class="text">
+                                <p><i class="fa fa-phone" style="color: rgb(93, 93, 247);"></i> <a href="tel:+959777048315 , +959777048315">+959777048315</a>
+                               {{__('header.menu_7')}}</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="main-header__top-right">
@@ -89,33 +95,44 @@
                             <div class="main-menu__main-menu-box-inner">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
-                                    <li class="dropdown {{ url()->current()==route('home')?'current':'' }}">
-                                        <a href="{{route('home')}}">{{__('header.menu_1')}}</a>
 
+                                    <li class="dropdown {{ url()->current()==route('home')?'current':'' }}">
+                                        <a href="{{route('home')}}" style="font-size: 15px;">{{__('header.menu_1')}}</a>
                                     </li>
 
                                     <li class="dropdown {{ url()->current()==url('/home#ourServices')?'current':'' }} ">
-                                        <a href="{{route('home')}}#ourServices">{{__('header.menu_2')}}</a>
+                                        <a href="{{route('home')}}#ourServices" style="font-size: 14px;">{{__('header.menu_2')}}</a>
 
                                     </li>
                                     <li class="dropdown ">
-                                        <a href="{{route('home')}}#ourCenter">{{__('header.menu_3')}}</a>
+                                        <a href="{{route('home')}}#ourCenter" style="font-size: 14px;">{{__('header.menu_3')}}</a>
 
                                     </li>
+
                                     <li class="dropdown">
-                                        <a href="{{route('home')}}#ourPatner">{{__('header.menu_4')}}</a>
+                                        <a href="{{route('home')}}#ourPatner" style="font-size: 14px;">{{__('header.menu_4')}}</a>
 
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="{{route('home')}}#ouractivities">{{__('header.menu_5')}}</a>
 
-                                    </li>
                                     <li class="dropdown">
-                                        <a href="{{route('our_opportunities')}}">{{__('header.menu_8')}}</a>
+                                        <a href="{{route('home')}}#ouractivities" style="font-size: 14px;">{{__('header.menu_5')}}</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="{{route('home')}}#contactus">{{__('header.menu_6')}}</a>
 
+                                    <li class="dropdown">
+                                        <a href="{{route('our_photo_gallery')}}" style="font-size: 14px;">{{__('header.menu_15')}}</a>
+                                    </li>
+
+
+                                    <li class="dropdown">
+                                        <a href="{{route('Knowledge_Sharing')}}" style="font-size: 14px;">{{__('header.menu_16')}}</a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="{{route('our_opportunities')}}" style="font-size: 14px;">{{__('header.menu_8')}}</a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="{{route('home')}}#contactus" style="font-size: 14px;">{{__('header.menu_6')}}</a>
                                     </li>
 
                                 </ul>
@@ -123,7 +140,7 @@
 
                         </div>
                     </div>
-                    <div class="main-menu__right">
+                    {{-- <div class="main-menu__right">
                         <div class="main-menu__call" style="width:60px;">
                             <div class="main-menu__call-icon" style="height:30px;">
                                 <a href="tel:959777048315"><i class="fas fa-phone"></a></i>
@@ -133,7 +150,7 @@
                                 <p>{{__('header.menu_7')}}</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

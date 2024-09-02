@@ -79,12 +79,10 @@
                                 <img src="{{ asset('storage/' . $getG->file) }}" class="card-img-top" alt="Gallery Image">
                                 <div class="card-body">
                                     {{-- <p class="card-text">Image {{ $loop->iteration }}</p> --}}
-                                    @if (Auth()->user()->role=='1')
                                     <span class="badge" style="font-size: 16px;">
                                         <i class="las la-trash" style="color: rgb(243, 2, 2); font-size: 26px; cursor: pointer;"
                                         onclick="confirmDelete('{{ route('gallery_get.delete', $getG->id) }}')"></i>
                                     </span>
-                                    @endif
                                 </div>
                             </div>
                         </div>

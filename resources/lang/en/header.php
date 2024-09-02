@@ -10,5 +10,7 @@ return [
     'menu_6'               => 'Contact Us',
     'menu_7'               => 'Call to Our Head Office',
     'menu_8'               => 'Job Vacants',
+    'menu_15'              => 'Our Gallery',
+    'menu_16'              => 'Ecommerce Tips & Knowledge',
 
 ];

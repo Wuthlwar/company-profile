@@ -16,9 +16,11 @@ use App\Http\Controllers\JobCategoryController;
 use App\Http\Controllers\JobHeaderController;
 use App\Http\Controllers\JobVacantsController;
 use App\Http\Controllers\JobApplicationFormController;
+use App\Http\Controllers\KnowledgeSharingController;
 use App\Http\Controllers\LogsController;
 use App\Http\Controllers\UserRoleController;
 use App\Http\Controllers\PhotoGalleryController;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,5 +104,20 @@ Route::group(['prefix' => 'admins'], function(){
     Route::get('/Gallery/delete/{id}', [PhotoGalleryController::class, 'deleteGallery'])->name('gallery_get.delete');
     Route::get('/photo_name/delete/{id}', [PhotoGalleryController::class, 'deletePhotoname'])->name('photo_get.delete');
     Route::match(['get', 'post'], '/Galley_search', [PhotoGalleryController::class, 'searchGallery'])->name('gallery.search');
+    //------------------------------------------------------------------------------------------------------
+
+    //--------------------------------------------------Knowledge Sharing--------------------------------------------
+    Route::resource('knowledge_sharing/knowledge_sharing',KnowledgeSharingController::class);
+    Route::match(['get', 'post','put','delete'],'/knowledge-sharing/bulk-delete', [KnowledgeSharingController::class, 'bulkDelete'])->name('knowledge_sharing.bulk_delete');
+    Route::match(['get', 'post'], '/knowledge_sharing_search', [KnowledgeSharingController::class, 'searchKnowledge'])->name('searchknowledge.search');
+    //------------------------------------------------------------------------------------------------------
+
+     //--------------------------------------------------FAQ--------------------------------------------
+     Route::resource('faq_ans/frequently_asked_question',FaqController::class);
+     Route::match(['get', 'post','put'], 'faq_ans/question_and_answer/{id}',[FaqController::class,'Updatequestion'])->name('question_and_answer.update');
+     Route::delete('/faqs/question_and_answer/{id}', [FaqController::class, 'destroyQuestion'])->name('question_and_answerfaq.destroy');
+
+     Route::match(['get', 'post','put'],'faqs/question_and_answer_again', [FaqController::class, 'AddagainQuestion'])->name('question_question.add');
+     Route::match(['get', 'post'], '/question_and_answer_search', [FaqController::class, 'searchFaq'])->name('searchfaq.search');
 });
 

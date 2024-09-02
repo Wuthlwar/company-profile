@@ -342,7 +342,7 @@ ul {
     line-height: 26px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 .section-title-shape-1 {
@@ -7427,7 +7427,7 @@ label{
 .news-two {
     position: relative;
     display: block;
-    padding: 120px 0 90px;
+    /* padding: 120px 0 90px; */
 }
 
 .news-two .section-sub-title-box {
@@ -11427,7 +11427,7 @@ label{
 .faq-one {
     position: relative;
     display: block;
-    padding: 120px 0 100px;
+    padding: 0px 0 100px;
 }
 
 .faq-one .section-sub-title-box {

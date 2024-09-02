@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use App\Models\ActivityType;
 use App\Models\Branch;
+use App\Models\Faq;
 use App\Models\JobCategory;
 use App\Models\JobVacants;
+use App\Models\KnowledgeSharing;
 use App\Models\Logs;
+use App\Models\PhotoName;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -69,15 +72,21 @@ class HomeController extends Controller
 
             public function Faq(){
 
-
-                return view('Faq');
+                $faqs = Faq::latest()->paginate(1);
+                return view('Faq',compact('faqs'));
         }
 
         public function Knowledge_Sharing(){
 
+            $knowledgeSharings = KnowledgeSharing::latest()->paginate(12);
+            return view('Knowledge_Sharing',compact('knowledgeSharings'));
+        }
 
-            return view('Knowledge_Sharing');
-    }
+        public function Our_gallery()
+        {
+            $photoGallery = PhotoName::with('photoGalleries')->latest()->paginate(10);
+            return view('Our_gallery', compact('photoGallery'));
+        }
 
 
             public function jobsearch(Request $request)

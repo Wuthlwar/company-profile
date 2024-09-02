@@ -12,7 +12,7 @@
 
         </div>
     </div>
-    <div class="col-lg-12">
+    <div class="col-lg-12 col-md-12">
                 <!-- Multi Columns Form -->
                 <form action="{{route('job_vacant_apply.search')}}" method="post" class="row g-3 card-title" style="margin: 10px;font-size:12px;">
                     @csrf

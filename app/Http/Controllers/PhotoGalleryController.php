@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Logs;
 use App\Models\PhotoGallery;
 use App\Models\PhotoName;
 use Illuminate\Http\Request;
@@ -34,7 +35,6 @@ class PhotoGalleryController extends Controller
         if ($name) {
             $query->where('name', 'LIKE', '%' . $name . '%');
         }
-
 
         $photoNames->appends($request->except('page'));
         $photoNames->appends($request->all());
@@ -78,6 +78,16 @@ class PhotoGalleryController extends Controller
                 ]);
             }
         }
+
+        Logs::create([
+            'name' => Auth()->user()->name,
+            'email' => Auth()->user()->email,
+            'form_name' => 'Photo Gallery Form',
+            'tracking' => 'Photo Gallery Created',
+            'ip' => $request->ip(),
+            'date' => now()->format('Y-m-d'),
+        ]);
+
 
         return back()->with('success', 'Successfully uploaded');
     }
@@ -138,6 +148,15 @@ class PhotoGalleryController extends Controller
             }
         }
 
+        Logs::create([
+            'name' => Auth()->user()->name,
+            'email' => Auth()->user()->email,
+            'form_name' => 'Photo Gallery Form',
+            'tracking' => 'Photo Gallery Updated',
+            'ip' => $request->ip(),
+            'date' => now()->format('Y-m-d'),
+        ]);
+
         return back()->with('success', 'Successfully updated');
     }
 
@@ -180,6 +199,15 @@ class PhotoGalleryController extends Controller
                 $name->delete();
             }
 
+            Logs::create([
+                'name' => Auth()->user()->name,
+                'email' => Auth()->user()->email,
+                'form_name' => 'Photo Gallery Form',
+                'tracking' => 'Photo Gallery Deleted',
+                'ip' => $request->ip(),
+                'date' => now()->format('Y-m-d'),
+            ]);
+
             return back()->with('success', 'All selected items from gallery deleted successfully.');
         } else {
 
@@ -195,23 +223,51 @@ class PhotoGalleryController extends Controller
                 $gallery->delete();
             }
 
+            Logs::create([
+                'name' => Auth()->user()->name,
+                'email' => Auth()->user()->email,
+                'form_name' => 'Photo Gallery Form',
+                'tracking' => 'Photo Gallery Deleted',
+                'ip' => $request->ip(),
+                'date' => now()->format('Y-m-d'),
+            ]);
+
             return back()->with('success', 'Selected galleries deleted successfully.');
         }
     }
 
-    public function deleteGallery($id) {
+    public function deleteGallery(Request $request,$id) {
         $gall = PhotoGallery::find($id);
         if ($gall) {
             $gall->delete();
         }
+
+        Logs::create([
+            'name' => Auth()->user()->name,
+            'email' => Auth()->user()->email,
+            'form_name' => 'Photo Gallery Form',
+            'tracking' => 'Photo Gallery Deleted',
+            'ip' => $request->ip(),
+            'date' => now()->format('Y-m-d'),
+        ]);
+
         return redirect()->back()->with('success', 'Gallery Deleted Successfully');
     }
 
-    public function deletePhotoname($id) {
+    public function deletePhotoname(Request $request,$id) {
         $gall = PhotoName::find($id);
         if ($gall) {
             $gall->delete();
         }
+
+        Logs::create([
+            'name' => Auth()->user()->name,
+            'email' => Auth()->user()->email,
+            'form_name' => 'Photo Gallery Form',
+            'tracking' => 'Photo Gallery Deleted',
+            'ip' => $request->ip(),
+            'date' => now()->format('Y-m-d'),
+        ]);
         return redirect()->back()->with('success', 'Gallery Deleted Successfully');
     }
 

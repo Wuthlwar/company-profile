@@ -88,8 +88,26 @@
                             </div>
 
                             <h3 style="font-size: 20px;">
-                                <span class="badge rounded-pill bg-primary"> {{count($vacant_count)}}</span>
-                                {{$get_cateID->category_name}}, Job founds</h3><hr>
+                                {{-- <span class="badge rounded-pill bg-primary"> {{count($vacant_count)}}</span>
+                                {{$get_cateID->category_name}}, Job founds --}}
+                                {{$vacant_detail->vacant_name}}<br>
+                            </h3>
+                            <br>
+                            <p style="font-size:15px;color:#000;">
+                            Open To<br>
+                            <i class="far fa-check-circle" style="color: #2ecc71;"></i> New graduates &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @if ($vacant_detail->gender=='Both')
+                            Male/Female
+                            @else
+                            {{ $vacant_detail->gender}}
+                            @endif
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {{ $vacant_detail->no_vacant}} Posts
+
+                            </p>
+                                <hr>
                             <div class="news-details__content">
                                 <ul class="list-unstyled news-details__meta">
                                     <li>
@@ -100,12 +118,13 @@
                                     <li>{{ $vacant_detail->created_at->diffForHumans() }}</a>
                                     </li>
                                 </ul>
-                                <h3 class="news-details__title" style="font-size: 22px;">{{$vacant_detail->vacant_name}}</h3>
+                                {{-- <h3 class="news-details__title" style="font-size: 22px;">{{$vacant_detail->vacant_name}}</h3> --}}
                                 {{-- {{ $vacant_detail->job_role}} --}}
+                                <br>
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row" style="font-size:15px;color:#000;">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <i class="fas fa-hand-holding-usd" style="color: rgb(16, 29, 216);"></i> Basic Salary
                                             @if ($vacant_detail->salary=='Range')
                                             <i id="toggleEye" class="far fa-eye" style="cursor: pointer;" onclick="toggleSalary()"></i>
@@ -123,7 +142,7 @@
                                             {{ $vacant_detail->salary}}
                                             @endif
                                         </div>
-
+{{--
                                         <div class="col-md-3">
                                             <i class="fas fa-venus-mars" style="color: rgb(16, 29, 216);"></i> Gender<br>
                                             @if ($vacant_detail->gender=='Both')
@@ -131,24 +150,14 @@
                                             @else
                                             {{ $vacant_detail->gender}}
                                             @endif
-                                        </div>
+                                        </div> --}}
 
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <i class="fa fa-industry" style="color: rgb(16, 29, 216);"></i> Industry<br>
                                             {{ $vacant_detail->industry}}
                                         </div>
 
-
-                                        <div class="col-md-3">
-                                            <i class="fa fa-users" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Vacancy<br>
-                                            {{ $vacant_detail->no_vacant}} Posts
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <br>
-                                        </div>
-
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <i class="fa fa-graduation-cap" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Qualification<br>
                                             <?php
 
@@ -162,19 +171,29 @@
                                         </div>
 
 
-                                        <div class="col-md-3">
+                                        {{-- <div class="col-md-3">
+                                            <i class="fa fa-users" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Vacancy<br>
+                                            {{ $vacant_detail->no_vacant}} Posts
+                                        </div> --}}
+
+                                        <div class="col-md-12">
+                                            <br>
+                                        </div>
+
+
+                                        <div class="col-md-4">
                                             <i class="fa fa-clock" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Job Type<br>
                                             {{ $vacant_detail->emptype}}
                                         </div>
 
 
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <i class="fa fa-location-arrow" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Location<br>
                                             <font style="text-transform: capitalize;">{{ $vacant_detail->region}} | {{ $vacant_detail->township}}</font>
                                         </div>
 
 
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <i class="fa fa-suitcase" aria-hidden="true" style="color: rgb(16, 29, 216);"></i> Experience<br>
                                             {{ $vacant_detail->experience}}
                                         </div>
@@ -185,22 +204,26 @@
 
                                 <p class="news-details__text-1">
                                     <hr>
-
+                                    <h5>Roles & Responsibilities</h5><br>
                                     {!! $vacant_detail->vacant_description !!}
                                     <hr>
+                                    <h5>Skills & Requirements</h5><br>
                                     {!!$vacant_detail->vacant_spec!!}
 
                                     <hr>
-                                    <h5>Offer</h5><br>
-                                    <?php
+                                    <h5>What We Can Offer</h5><br>
+                                        <?php
+                                                $array = json_decode($vacant_detail->offer, true);
 
-                                    $array = json_decode($vacant_detail->offer, true);
+                                                if (is_array($array)) {
+                                                    $result = implode(' ', $array);
 
-                                    if (is_array($array)) {
-                                        $result = implode(' ', $array);
-                                        echo $result;
-                                    }
-                                    ?>
+
+                                                    $result = rtrim($result, ', ');
+
+                                                    echo $result;
+                                                }
+                                                ?>
 
                                     <hr>
 
