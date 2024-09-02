@@ -1125,7 +1125,7 @@
                     <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel owl-loaded owl-drag" data-owl-options='{
                         "loop": true,
                         "autoplay": true,
-                        "margin": 30,
+                        "margin": 40,
                         "nav": true,
                         "dots": true,
                         "smartSpeed": 500,
@@ -1147,9 +1147,73 @@
                         }
                     }'>
 
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-5">
+                            <h5 class="text-center m-3">SCG Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/scg-logo.jpg')}}" alt="" >
+                            </div>
+                          </div>
 
+                    </div>
+
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-4">
+                            <h5 class="text-center m-3">Global House Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbh1.png')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-3">
+                            <h5 class="text-center m-3">COTTO Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/cotto.jpg')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-3">
+                            <h5 class="text-center m-3">UPG Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/upg.jpg')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-3">
+                            <h5 class="text-center m-3">Marcopolo Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/marcopolo-logo.png')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-3">
+                            <h5 class="text-center m-3">Zhangshi  Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/Zhangshi-logo.jpg')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-4">
+                            <h5 class="text-center m-3">HAFELE Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/hafele-logo.jpg')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
+                            <div class="card testimonial-one__single p-1">
                                 <h5 class="text-center m-3">Farmer Lighting Co.,Ltd</h5>
                                 <div class="card-body">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('assets/photos/Farmer Lighting Company Limited.png')}}" alt="" >
