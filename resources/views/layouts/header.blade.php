@@ -28,6 +28,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="main-header__top-right">
                     <div class="main-header__top-menu-box">
                         <ul class="list-unstyled main-header__top-menu">
@@ -80,6 +81,7 @@
                     @endswitch
                     </div>
                     </div>
+
             </div>
         </div>
     </div>

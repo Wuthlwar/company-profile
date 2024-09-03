@@ -318,30 +318,27 @@
     </div>
 </div>
 
-{{-- Create Modal  --}}
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true" id='jobModal'>
-    <div class="modal-dialog modal-lg">
-       <div class="modal-content">
-        <form action="{{route('frequently_asked_question.store')}}" method="post" enctype="multipart/form-data" class="row g-3">
-            @csrf
-            <div class="modal-body">
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between rounded-sm">
-                            <div class="header-title">
-                                <h6 class="card-title">Add New FAQ</h6>
+<!-- Create Modal  -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id='jobModal'>
+    <div class="modal-dialog modal-lg modal-fullscreen">
+        <div class="modal-content">
+            <form action="{{route('frequently_asked_question.store')}}" method="post" enctype="multipart/form-data" class="row g-3">
+                @csrf
+                <div class="modal-body">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between rounded-sm">
+                                <div class="header-title">
+                                    <h6 class="card-title">Add New FAQ</h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <!-- Title for English -->
+                            <div class="card-body">
+                                <!-- Title and Content for English -->
                                 <div class="col-md-12">
                                     <label for="title_en" class="form-label card-title" style="font-size:15px;">Title (English) <font style="color:red;">*</font></label>
                                     <input type="text" class="form-control" id="title_en" name="title_en" style="border:1px solid #333;height:40px;font-size:13px" required>
                                     <hr>
                                 </div>
-
-                                <!-- Content for English -->
                                 <div class="col-md-12">
                                     <label for="content_en" class="form-label card-title" style="font-size:15px;">Content (English) <font style="color:red;">*</font></label>
                                     <div id="content_en" style="height: 200px;"></div>
@@ -349,14 +346,12 @@
                                     <hr>
                                 </div>
 
-                                <!-- Title for Myanmar -->
+                                <!-- Title and Content for Myanmar -->
                                 <div class="col-md-12">
                                     <label for="title_my" class="form-label card-title" style="font-size:15px;">Title (Myanmar) <font style="color:red;">*</font></label>
                                     <input type="text" class="form-control" id="title_my" name="title_my" style="border:1px solid #333;height:40px;font-size:13px" required>
                                     <hr>
                                 </div>
-
-                                <!-- Content for Myanmar -->
                                 <div class="col-md-12">
                                     <label for="content_my" class="form-label card-title" style="font-size:15px;">Content (Myanmar) <font style="color:red;">*</font></label>
                                     <div id="content_my" style="height: 200px;"></div>
@@ -364,52 +359,26 @@
                                     <hr>
                                 </div>
 
-                                <!-- English Question and Answer -->
+                                <!-- FAQs Section -->
                                 <div class="col-md-12">
-                                    <label for="fromDate" class="form-label" id="font-f">Add New FAQ (English)</label>
-                                    <h5 class="card-title" style="font-size:15px;">Question (English)</h5>
-                                    <input type="text" class="form-control" id="question_en" name="question_en[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                    <h5 class="card-title" style="font-size:15px;">FAQs limit 10 question and answer.</h5>
 
-                                    <label for="faq" class="form-label card-title" style="font-size:15px;">Answer (English) <font style="color:red;">*</font></label>
-                                    <div id="ans_en" style="height: 200px;"></div>
-                                    <input type="hidden" name="ans_en[]" id="ans_en_input" required>
-                                    <br>
+                                    <div id="showquestion"></div>
+                                    <button type="button" class="btn btn-success" id="addbtn">Add FAQ</button>
 
-                                    <div id="showquestion_en"></div>
-                                    <br>
-                                    <i class="btn btn-success" id="addbtn_en"> Add FAQ (English)</i>
-                                    <hr>
-                                </div>
-
-                                <!-- Myanmar Question and Answer -->
-                                <div class="col-md-12">
-                                    <label for="fromDate" class="form-label" id="font-f">Add New FAQ (Myanmar)</label>
-                                    <h5 class="card-title" style="font-size:15px;">Question (Myanmar)</h5>
-                                    <input type="text" class="form-control" id="question_my" name="question_my[]" style="border:1px solid #333;height:40px;font-size:13px" required>
-
-                                    <label for="faq" class="form-label card-title" style="font-size:15px;">Answer (Myanmar) <font style="color:red;">*</font></label>
-                                    <div id="ans_my" style="height: 200px;"></div>
-                                    <input type="hidden" name="ans_my[]" id="ans_my_input" required>
-                                    <br>
-
-                                    <div id="showquestion_my"></div>
-                                    <br>
-                                    <i class="btn btn-success" id="addbtn_my"> Add FAQ (Myanmar)</i>
-                                    <hr>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" id="btn-create">Save changes</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="btn-create">Save changes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
-       </div>
+            </form>
+        </div>
     </div>
- </div>
+</div>
 
 @endsection
 @section('script')
@@ -537,15 +506,11 @@
     </script>
 @endforeach
 
-
 <script>
     $(document).ready(function() {
-        // Initialize Quill editors for content and answers
+        // Initialize Quill editors for content
         const quillEn = new Quill('#content_en', { theme: 'snow' });
         const quillMy = new Quill('#content_my', { theme: 'snow' });
-
-        const answEn = new Quill('#ans_en', { theme: 'snow' });
-        const answMy = new Quill('#ans_my', { theme: 'snow' });
 
         // Update hidden inputs on content change
         quillEn.on('text-change', function () {
@@ -556,65 +521,37 @@
             $('#content_my_input').val(quillMy.root.innerHTML);
         });
 
-        answEn.on('text-change', function () {
-            $('#ans_en_input').val(answEn.root.innerHTML);
-        });
+        // Dynamic addition of FAQs
+        var max_fields = 10;
+        var x = 0;
 
-        answMy.on('text-change', function () {
-            $('#ans_my_input').val(answMy.root.innerHTML);
-        });
-
-        // Dynamic addition of FAQs in English
-        var max_fields = 6;
-        var x_en = 0;
-        $('#addbtn_en').on('click', function () {
-            if (x_en < max_fields) {
-                x_en++;
-                var wrapperQuestionEn = `
+        $('#addbtn').on('click', function () {
+            if (x < max_fields) {
+                x++;
+                var wrapperQuestion = `
                     <div class="row">
+                        <!-- English FAQ -->
                         <div class="col-md-12">
-                            <label for="fromDate" class="form-label" id="font-f">${x_en}. Add New FAQ (English)</label>
+                            <label for="fromDate" class="form-label" id="font-f">${x}. Add New FAQ (English)</label>
                             <h5 class="card-title" style="font-size:15px;">Question (English)</h5>
-                            <input type="text" class="form-control" id="question_en${x_en}" name="question_en[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+                            <input type="text" class="form-control" id="question_en${x}" name="question_en[]" style="border:1px solid #333;height:40px;font-size:13px" required>
 
                             <label for="categoryname" class="form-label card-title" style="font-size:15px;">Answer (English) <font style="color:red;">*</font></label>
-                            <div id="ans_en${x_en}" style="height: 200px;"></div>
-                            <input type="hidden" name="ans_en[]" id="ans_en${x_en}-input" required>
-                            <i class="las la-minus-circle removebtn_en" style="color:red;font-size:27px;"></i>
+                            <div id="ans_en${x}" style="height: 200px;"></div>
+                            <input type="hidden" name="ans_en[]" id="ans_en${x}-input" required>
+                            <i class="las la-minus-circle removebtn" style="color:red;font-size:27px;"></i>
                         </div>
 
+                        <!-- Myanmar FAQ -->
                         <div class="col-md-12">
-                            <hr>
-                        </div>
-                    </div>
-                `;
-                $('#showquestion_en').append(wrapperQuestionEn);
-
-                var quillEn = new Quill(`#ans_en${x_en}`, { theme: 'snow' });
-                quillEn.on('text-change', function () {
-                    $(`#ans_en${x_en}-input`).val(quillEn.root.innerHTML);
-                });
-            } else {
-                Swal.fire({ icon: 'error', title: 'Oops...', text: 'Maximum fields limit reached!' });
-            }
-        });
-
-        // Dynamic addition of FAQs in Myanmar
-        var x_my = 0;
-        $('#addbtn_my').on('click', function () {
-            if (x_my < max_fields) {
-                x_my++;
-                var wrapperQuestionMy = `
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label for="fromDate" class="form-label" id="font-f">${x_my}. Add New FAQ (Myanmar)</label>
+                            <label for="fromDate" class="form-label" id="font-f">${x}. Add New FAQ (Myanmar)</label>
                             <h5 class="card-title" style="font-size:15px;">Question (Myanmar)</h5>
-                            <input type="text" class="form-control" id="question_my${x_my}" name="question_my[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+                            <input type="text" class="form-control" id="question_my${x}" name="question_my[]" style="border:1px solid #333;height:40px;font-size:13px" required>
 
                             <label for="categoryname" class="form-label card-title" style="font-size:15px;">Answer (Myanmar) <font style="color:red;">*</font></label>
-                            <div id="ans_my${x_my}" style="height: 200px;"></div>
-                            <input type="hidden" name="ans_my[]" id="ans_my${x_my}-input" required>
-                            <i class="las la-minus-circle removebtn_my" style="color:red;font-size:27px;"></i>
+                            <div id="ans_my${x}" style="height: 200px;"></div>
+                            <input type="hidden" name="ans_my[]" id="ans_my${x}-input" required>
+                            <i class="las la-minus-circle removebtn" style="color:red;font-size:27px;"></i>
                         </div>
 
                         <div class="col-md-12">
@@ -622,11 +559,18 @@
                         </div>
                     </div>
                 `;
-                $('#showquestion_my').append(wrapperQuestionMy);
+                $('#showquestion').append(wrapperQuestion);
 
-                var quillMy = new Quill(`#ans_my${x_my}`, { theme: 'snow' });
-                quillMy.on('text-change', function () {
-                    $(`#ans_my${x_my}-input`).val(quillMy.root.innerHTML);
+                // Initialize Quill editors for the new FAQ
+                var quillAnsEn = new Quill(`#ans_en${x}`, { theme: 'snow' });
+                var quillAnsMy = new Quill(`#ans_my${x}`, { theme: 'snow' });
+
+                quillAnsEn.on('text-change', function () {
+                    $(`#ans_en${x}-input`).val(quillAnsEn.root.innerHTML);
+                });
+
+                quillAnsMy.on('text-change', function () {
+                    $(`#ans_my${x}-input`).val(quillAnsMy.root.innerHTML);
                 });
             } else {
                 Swal.fire({ icon: 'error', title: 'Oops...', text: 'Maximum fields limit reached!' });
@@ -634,25 +578,19 @@
         });
 
         // Remove FAQ row
-        $('#showquestion_en').on('click', '.removebtn_en', function () {
+        $('#showquestion').on('click', '.removebtn', function () {
             $(this).closest('.row').remove();
-            x_en--;
-        });
-
-        $('#showquestion_my').on('click', '.removebtn_my', function () {
-            $(this).closest('.row').remove();
-            x_my--;
+            x--;
         });
 
         // Set the hidden inputs on form submit
         $('form').on('submit', function () {
             $('#content_en_input').val(quillEn.root.innerHTML);
             $('#content_my_input').val(quillMy.root.innerHTML);
-            $('#ans_en_input').val(answEn.root.innerHTML);
-            $('#ans_my_input').val(answMy.root.innerHTML);
         });
     });
 </script>
+
 
 
 @endsection

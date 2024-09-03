@@ -73,7 +73,6 @@ class FaqController extends Controller
 
     //     return back()->with('success', 'Successfully saved...');
     // }
-
     public function store(Request $request)
 {
     // Validate the incoming request
@@ -126,6 +125,7 @@ class FaqController extends Controller
     // Redirect with success message
     return back()->with('success', 'Successfully saved...');
 }
+
 
 
     /**
@@ -337,7 +337,7 @@ class FaqController extends Controller
 
             if ($request->filled('title')) {
                 $title = $request->input('title');
-                $query->where('title', 'LIKE', '%' . $title . '%');
+                $query->where('title_en', 'LIKE', '%' . $title . '%')->orWhere('title_my', 'LIKE', '%' . $title . '%');
             }
 
 
