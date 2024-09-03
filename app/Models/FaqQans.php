@@ -11,10 +11,8 @@ class FaqQans extends Model
     protected $fillable =[
         'faq_id',
         'language',
-        'question_en',
-        'answer_en',
-        'question_my',
-        'answer_my',
+        'question',
+        'answer',
     ];
 
     public function faqQan()

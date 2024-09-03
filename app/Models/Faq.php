@@ -13,6 +13,7 @@ class Faq extends Model
         'content_en',
         'title_my',
         'content_my',
+        'status',
     ];
 
     public function faqQans()

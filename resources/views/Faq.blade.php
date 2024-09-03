@@ -16,6 +16,7 @@
                 </div>
 
                 @foreach($faqs as $faq)
+                @if($faq->status=='online')
                     @php
                         $locale = session()->get('locale', 'en'); // Default to 'en' if locale is not set
                     @endphp
@@ -56,6 +57,9 @@
                                 </div>
                             @endif
                         @endforeach
+                    @endif
+
+
                     @endif
                 @endforeach
 

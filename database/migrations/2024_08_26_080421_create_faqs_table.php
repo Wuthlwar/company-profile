@@ -19,6 +19,7 @@ class CreateFaqsTable extends Migration
             $table->text('content_en')->nullable();
             $table->string('title_my')->nullable();
             $table->text('content_my')->nullable();
+            $table->text('status')->nullable();
             $table->timestamps();
         });
     }

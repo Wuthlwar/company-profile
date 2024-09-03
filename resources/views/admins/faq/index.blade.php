@@ -36,7 +36,7 @@
                       </div>
 
                       <div class="col-md-3">
-                          <label for="cateGory" class="form-label">Title</label>
+                          <label for="cateGory" class="form-label">Title (EN or MM)</label>
                           <input type="text" class="form-control" id="title" name="title" value="{{session('title')}}" style="border:1px solid #333;height:30px;font-size:13px">
                       </div>
 
@@ -73,11 +73,24 @@
                             <tr>
                                 {{-- <th><input type="checkbox" id="select-all" class="select-item" style="border:1px solid #312eec;"></th> --}}
                                 <th scope="row">{{($faqs->currentPage()-1)*$faqs->perPage()+$loop->index+1}}.</th>
-                                <td>{{ $faq->title_en }}<hr>
-                                    {{ $faq->title_my }}<br>
-                                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addq{{$faq->id}}"><font style="font-size;20px;">+ Add Question</font></button>
+                                <td>{{ $faq->title_en }}<br><hr>
+                                    {{ $faq->title_my }}<br><br>
+                                    @method('POST')
+                                         @if (Auth()->user()->role == '1' || Auth()->user()->role == '2')
+                                            <input class="form-check-input" type="checkbox" name="status"
+                                                value="{{ $faq->status == 'online' ? 'offline' : 'online' }}"
+                                                {{ $faq->status == 'online' ? 'checked' : '' }}
+                                                id="status{{ $faq->id }}"
+                                                data-faq-id="{{ $faq->id }}">
+                                            {{ $faq->status == 'online' ? 'online' : 'offline' }}
+                                        @else
+                                            {{ $faq->status == 'online' ? 'online' : 'offline' }}
+                                        @endif
+                                        |
 
-                                    <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#title{{$faq->id}}">Edit</button>
+                                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addq{{$faq->id}}"><font style="font-size;20px;">+ Add Question</font></button> |
+
+                                    <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#title{{$faq->id}}">Edit</button> |
                                     @if (Auth()->user()->role=='1')
                                     <form id="delete-form-{{ $faq->id }}" action="{{ route('frequently_asked_question.destroy', $faq->id) }}" method="POST" style="display: none;">
                                         @csrf
@@ -115,7 +128,7 @@
                                           </div>
                                           @error('ans_ed')
                                           <span class="text-danger">{{ $message }}</span>
-                                      @enderror
+                                          @enderror
 
                                         <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#questiona{{$faqQans->id}}">Edit</button>
                                         @if (Auth()->user()->role=='1')
@@ -294,7 +307,6 @@
                                                                 <input type="hidden" name="ansr_my" id="qumy_my{{$faq->id}}-input" required>
                                                                 <hr>
                                                             </div>
-
 
                                                         </div>
                                                     </div>
@@ -589,6 +601,48 @@
             $('#content_my_input').val(quillMy.root.innerHTML);
         });
     });
+</script>
+
+<script>
+$(document).ready(function () {
+    $('input[type="checkbox"]').on('change', function () {
+        var status = $(this).prop('checked') ? 'online' : 'offline';
+        var faqId = $(this).data('faq-id');
+
+        $.ajax({
+            url: "/admins/update-faq-status/" + faqId,
+            type: "POST",
+            data: {
+                _token: "{{ csrf_token() }}",
+                _method: "PUT",
+                status: status
+            },
+            success: function (response) {
+                // SweetAlert for success notification
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Status Updated',
+                    text: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    // Refresh the page after the alert
+                    location.reload();
+                });
+            },
+            error: function (error) {
+                // SweetAlert for error notification
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'An error occurred while updating the status.',
+                });
+            }
+        });
+    });
+});
+
+
 </script>
 
 

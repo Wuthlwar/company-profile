@@ -347,6 +347,21 @@ class FaqController extends Controller
             return view('admins.faq.index', compact('faqs'));
         }
 
+        public function updateStatus(Request $request, $id)
+        {
+            $faq = Faq::find($id);
+            if ($faq) {
+                $faq->status = $request->status;
+                $faq->save();
+
+                return response()->json(['message' => 'Status updated successfully!']);
+            }
+
+            return response()->json(['message' => 'FAQ not found!'], 404);
+        }
+
+
+
 
 
 }

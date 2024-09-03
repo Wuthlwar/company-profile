@@ -119,5 +119,9 @@ Route::group(['prefix' => 'admins'], function(){
 
      Route::match(['get', 'post','put'],'faqs/question_and_answer_again', [FaqController::class, 'AddagainQuestion'])->name('question_question.add');
      Route::match(['get', 'post'], '/question_and_answer_search', [FaqController::class, 'searchFaq'])->name('searchfaq.search');
+
+     Route::match(['post','put'], '/update-faq-status/{id}', [FaqController::class, 'updateStatus']);
+
+
 });
 
