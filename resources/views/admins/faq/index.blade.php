@@ -73,7 +73,8 @@
                             <tr>
                                 {{-- <th><input type="checkbox" id="select-all" class="select-item" style="border:1px solid #312eec;"></th> --}}
                                 <th scope="row">{{($faqs->currentPage()-1)*$faqs->perPage()+$loop->index+1}}.</th>
-                                <td>{{ $faq->title }}<br>
+                                <td>{{ $faq->title_en }}<hr>
+                                    {{ $faq->title_my }}<br>
                                     <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addq{{$faq->id}}"><font style="font-size;20px;">+ Add Question</font></button>
 
                                     <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#title{{$faq->id}}">Edit</button>
@@ -86,10 +87,12 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {!! $faq->content !!}
+                                    {!! $faq->content_en !!}<hr>
+                                    {!! $faq->content_my !!}
 
                                 </td>
                                 <td>
+
                                     @if($faq->faqQans)
                                         @foreach($faq->faqQans as $faqQans)
                                         {{-- <strong>Q:</strong> {{ $faqQans->question }}<br>
@@ -110,6 +113,9 @@
                                                 </div>
                                             </div>
                                           </div>
+                                          @error('ans_ed')
+                                          <span class="text-danger">{{ $message }}</span>
+                                      @enderror
 
                                         <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#questiona{{$faqQans->id}}">Edit</button>
                                         @if (Auth()->user()->role=='1')
@@ -139,14 +145,14 @@
                                                                     <div class="row">
                                                                         <div class="col-md-12">
                                                                             <label for="title" class="form-label card-title" style="font-size:15px;">Question <font style="color:red;">*</font></label>
-                                                                            <input type="text" class="form-control" id="qu{{$faqQans->id}}" name="question" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faqQans->question }}" required>
+                                                                            <input type="text" class="form-control" id="qu_ed{{$faqQans->id}}" name="question_ed" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faqQans->question }}" required>
                                                                             <hr>
                                                                         </div>
 
                                                                         <div class="col-md-12">
                                                                             <label for="answer{{$faqQans->id}}" class="form-label card-title" style="font-size:15px;">Answer <font style="color:red;">*</font></label>
-                                                                            <div id="answer{{$faqQans->id}}" style="height: 200px;">{!! $faqQans->answer !!}</div>
-                                                                            <input type="hidden" name="ans" id="answer{{$faqQans->id}}-input" value="{{ $faqQans->answer }}" required>
+                                                                            <div id="answer_ed{{$faqQans->id}}" style="height: 200px;">{!! $faqQans->answer !!}</div>
+                                                                            <input type="hidden" name="ans_ed" id="answer_ed{{$faqQans->id}}-input" value="{{ $faqQans->answer }}" required>
                                                                             <hr>
                                                                         </div>
                                                                     </div>
@@ -191,18 +197,34 @@
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Title <font style="color:red;">*</font></label>
-                                                                <input type="text" class="form-control" id="title{{$faq->id}}" name="title" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faq->title }}" required>
+                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Title (English)<font style="color:red;">*</font></label>
+                                                                <input type="text" class="form-control" id="title{{$faq->id}}" name="title_en" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faq->title_en }}" required>
                                                                 <hr>
                                                             </div>
 
                                                             <div class="col-md-12">
-                                                                <label for="content{{$faq->id}}" class="form-label card-title" style="font-size:15px;">Content <font style="color:red;">*</font></label>
-                                                                <div id="content{{$faq->id}}" style="height: 200px;">{!! $faq->content !!}</div>
-                                                                <input type="hidden" name="content" id="content{{$faq->id}}-input" value="{{ $faq->content }}" required>
+                                                                <label for="content{{$faq->id}}" class="form-label card-title" style="font-size:15px;">Content (English) <font style="color:red;">*</font></label>
+                                                                <div id="content{{$faq->id}}" style="height: 200px;">{!! $faq->content_en !!}</div>
+                                                                <input type="hidden" name="content_en" id="content{{$faq->id}}-input" value="{{ $faq->content_en }}" required>
                                                                 <hr>
                                                             </div>
                                                         </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Title (Myanmar)<font style="color:red;">*</font></label>
+                                                                <input type="text" class="form-control" id="title{{$faq->id}}" name="title_my" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faq->title_my }}" required>
+                                                                <hr>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <label for="content{{$faq->id}}" class="form-label card-title" style="font-size:15px;">Content (Myanmar) <font style="color:red;">*</font></label>
+                                                                <div id="content_my{{$faq->id}}" style="height: 200px;">{!! $faq->content_my !!}</div>
+                                                                <input type="hidden" name="content_my" id="content_my{{$faq->id}}-input" value="{{ $faq->content_my }}" required>
+                                                                <hr>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,25 +255,47 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="row">
-                                                            <div class="col-md-12">
-                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Title <font style="color:red;">*</font></label>
+                                                            <div class="col-md-6">
+                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Title (English)<font style="color:red;">*</font></label>
                                                                 <input type="hidden" name="id" value="{{$faq->id}}" class="form-control">
-                                                                <input type="text" class="form-control" id="title{{$faq->id}}" name="title" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faq->title }}" readonly>
+                                                                <input type="text" class="form-control" id="title{{$faq->id}}" name="title_en" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faq->title_en }}" readonly>
+                                                                <hr>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Title (Myanmar)<font style="color:red;">*</font></label>
+                                                                <input type="hidden" name="id" value="{{$faq->id}}" class="form-control">
+                                                                <input type="text" class="form-control" id="title{{$faq->id}}" name="title_my" style="border:1px solid #333;height:40px;font-size:13px" value="{{ $faq->title_my }}" readonly>
                                                                 <hr>
                                                             </div>
 
                                                             <div class="col-md-12">
-                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Question <font style="color:red;">*</font></label>
-                                                                <input type="text" class="form-control" id="ques{{$faq->id}}" name="que" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Question (English)<font style="color:red;">*</font></label>
+                                                                <input type="text" class="form-control" id="ques_en{{$faq->id}}" name="que_en" style="border:1px solid #333;height:40px;font-size:13px" required>
                                                                 <hr>
                                                             </div>
 
                                                             <div class="col-md-12">
-                                                                <label for="content{{$faq->id}}" class="form-label card-title" style="font-size:15px;">Answer <font style="color:red;">*</font></label>
-                                                                <div id="qu{{$faq->id}}" style="height: 200px;"></div>
-                                                                <input type="hidden" name="ansr" id="qu{{$faq->id}}-input" required>
+                                                                <label for="content{{$faq->id}}" class="form-label card-title" style="font-size:15px;">Answer (English)<font style="color:red;">*</font></label>
+                                                                <div id="quen_en{{$faq->id}}" style="height: 200px;"></div>
+                                                                <input type="hidden" name="ansr_en" id="quen_en{{$faq->id}}-input" required>
                                                                 <hr>
                                                             </div>
+
+                                                            <div class="col-md-12">
+                                                                <label for="title" class="form-label card-title" style="font-size:15px;">Question (Myanmar) <font style="color:red;">*</font></label>
+                                                                <input type="text" class="form-control" id="qu_my{{$faq->id}}" name="qum_my" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                                                <hr>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <label for="content{{$faq->id}}" class="form-label card-title" style="font-size:15px;">Answer (Myanmar)<font style="color:red;">*</font></label>
+                                                                <div id="qumy_my{{$faq->id}}" style="height: 200px;"></div>
+                                                                <input type="hidden" name="ansr_my" id="qumy_my{{$faq->id}}-input" required>
+                                                                <hr>
+                                                            </div>
+
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -278,9 +322,9 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true" id='jobModal'>
     <div class="modal-dialog modal-lg">
        <div class="modal-content">
-          <form action="{{route('frequently_asked_question.store')}}" method="post" enctype="multipart/form-data" class="row g-3">
+        <form action="{{route('frequently_asked_question.store')}}" method="post" enctype="multipart/form-data" class="row g-3">
             @csrf
-          <div class="modal-body">
+            <div class="modal-body">
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between rounded-sm">
@@ -289,48 +333,79 @@
                             </div>
                         </div>
                         <div class="card-body">
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label for="title" class="form-label card-title" style="font-size:15px;">Title <font style="color:red;">*</font></label>
-                                        <input type="text" class="form-control" id="title" name="title" style="border:1px solid #333;height:40px;font-size:13px" required>
-                                        <hr>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <label for="content" class="form-label card-title" style="font-size:15px;">Content <font style="color:red;">*</font></label>
-                                        <div id="content" style="height: 200px;"></div>
-                                        <input type="hidden" name="content" id="contenti" required>
-                                        <hr>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <label for="fromDate" class="form-label" id="font-f">Add New FAQ</label>
-                                        <h5 class="card-title" style="font-size:15px;">Question</h5>
-                                        <input type="text" class="form-control" id="question" name="question[]" style="border:1px solid #333;height:40px;font-size:13px" required>
-
-                                        <label for="faq" class="form-label card-title" style="font-size:15px;">Answer <font style="color:red;">*</font></label>
-                                        <div id="answ" style="height: 200px;"></div>
-                                        <input type="hidden" name="ans[]" id="ans" required>
-                                        <br>
-                                            <div  id="showquestion">
-                                            </div>
-                                            <br>
-                                             <i class="btn btn-success" id="addbtn"> Add FAQ</i>
-                                        <hr>
-                                    </div>
-
-
+                            <div class="row">
+                                <!-- Title for English -->
+                                <div class="col-md-12">
+                                    <label for="title_en" class="form-label card-title" style="font-size:15px;">Title (English) <font style="color:red;">*</font></label>
+                                    <input type="text" class="form-control" id="title_en" name="title_en" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                    <hr>
                                 </div>
+
+                                <!-- Content for English -->
+                                <div class="col-md-12">
+                                    <label for="content_en" class="form-label card-title" style="font-size:15px;">Content (English) <font style="color:red;">*</font></label>
+                                    <div id="content_en" style="height: 200px;"></div>
+                                    <input type="hidden" name="content_en" id="content_en_input" required>
+                                    <hr>
+                                </div>
+
+                                <!-- Title for Myanmar -->
+                                <div class="col-md-12">
+                                    <label for="title_my" class="form-label card-title" style="font-size:15px;">Title (Myanmar) <font style="color:red;">*</font></label>
+                                    <input type="text" class="form-control" id="title_my" name="title_my" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                    <hr>
+                                </div>
+
+                                <!-- Content for Myanmar -->
+                                <div class="col-md-12">
+                                    <label for="content_my" class="form-label card-title" style="font-size:15px;">Content (Myanmar) <font style="color:red;">*</font></label>
+                                    <div id="content_my" style="height: 200px;"></div>
+                                    <input type="hidden" name="content_my" id="content_my_input" required>
+                                    <hr>
+                                </div>
+
+                                <!-- English Question and Answer -->
+                                <div class="col-md-12">
+                                    <label for="fromDate" class="form-label" id="font-f">Add New FAQ (English)</label>
+                                    <h5 class="card-title" style="font-size:15px;">Question (English)</h5>
+                                    <input type="text" class="form-control" id="question_en" name="question_en[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+
+                                    <label for="faq" class="form-label card-title" style="font-size:15px;">Answer (English) <font style="color:red;">*</font></label>
+                                    <div id="ans_en" style="height: 200px;"></div>
+                                    <input type="hidden" name="ans_en[]" id="ans_en_input" required>
+                                    <br>
+
+                                    <div id="showquestion_en"></div>
+                                    <br>
+                                    <i class="btn btn-success" id="addbtn_en"> Add FAQ (English)</i>
+                                    <hr>
+                                </div>
+
+                                <!-- Myanmar Question and Answer -->
+                                <div class="col-md-12">
+                                    <label for="fromDate" class="form-label" id="font-f">Add New FAQ (Myanmar)</label>
+                                    <h5 class="card-title" style="font-size:15px;">Question (Myanmar)</h5>
+                                    <input type="text" class="form-control" id="question_my" name="question_my[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+
+                                    <label for="faq" class="form-label card-title" style="font-size:15px;">Answer (Myanmar) <font style="color:red;">*</font></label>
+                                    <div id="ans_my" style="height: 200px;"></div>
+                                    <input type="hidden" name="ans_my[]" id="ans_my_input" required>
+                                    <br>
+
+                                    <div id="showquestion_my"></div>
+                                    <br>
+                                    <i class="btn btn-success" id="addbtn_my"> Add FAQ (Myanmar)</i>
+                                    <hr>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" id   ="btn-create">Save changes</button>
-                         </div>
+                            <button type="submit" class="btn btn-primary" id="btn-create">Save changes</button>
+                        </div>
                     </div>
                 </div>
-          </div>
-
+            </div>
         </form>
        </div>
     </div>
@@ -389,6 +464,18 @@
             });
         @endforeach
     });
+
+    $(document).ready(function() {
+        @foreach($faqs as $faq)
+            var quill{{$faq->id}} = new Quill(`#content_my{{$faq->id}}`, {
+                theme: 'snow'
+            });
+
+            quill{{$faq->id}}.on('text-change', function () {
+                $(`#content_my{{$faq->id}}-input`).val(quill{{$faq->id}}.root.innerHTML);
+            });
+        @endforeach
+    });
 </script>
 
 <script>
@@ -405,16 +492,45 @@
     });
 </script>
 
+<script>
+    $(document).ready(function() {
+        @foreach($faqs as $faq)
+            var quill{{$faq->id}} = new Quill(`#quen_en{{$faq->id}}`, {
+                theme: 'snow'
+            });
+
+            quill{{$faq->id}}.on('text-change', function () {
+                $(`#quen_en{{$faq->id}}-input`).val(quill{{$faq->id}}.root.innerHTML);
+            });
+        @endforeach
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        @foreach($faqs as $faq)
+            var quill{{$faq->id}} = new Quill(`#qumy_my{{$faq->id}}`, {
+                theme: 'snow'
+            });
+
+            quill{{$faq->id}}.on('text-change', function () {
+                $(`#qumy_my{{$faq->id}}-input`).val(quill{{$faq->id}}.root.innerHTML);
+            });
+        @endforeach
+    });
+</script>
+
+
 @foreach($faqs as $faq)
     <script>
         $(document).ready(function() {
             @foreach($faq->faqQans as $faqQans)
-                var quill{{ $faqQans->id }} = new Quill(`#answer{{ $faqQans->id }}`, {
+                var quill{{ $faqQans->id }} = new Quill(`#answer_ed{{ $faqQans->id }}`, {
                     theme: 'snow'
                 });
 
                 quill{{ $faqQans->id }}.on('text-change', function () {
-                    $(`#answer{{ $faqQans->id }}-input`).val(quill{{ $faqQans->id }}.root.innerHTML);
+                    $(`#answer_ed{{ $faqQans->id }}-input`).val(quill{{ $faqQans->id }}.root.innerHTML);
                 });
             @endforeach
         });
@@ -424,40 +540,47 @@
 
 <script>
     $(document).ready(function() {
-        const quill = new Quill('#content', {
-            theme: 'snow'
+        // Initialize Quill editors for content and answers
+        const quillEn = new Quill('#content_en', { theme: 'snow' });
+        const quillMy = new Quill('#content_my', { theme: 'snow' });
+
+        const answEn = new Quill('#ans_en', { theme: 'snow' });
+        const answMy = new Quill('#ans_my', { theme: 'snow' });
+
+        // Update hidden inputs on content change
+        quillEn.on('text-change', function () {
+            $('#content_en_input').val(quillEn.root.innerHTML);
         });
 
-        const answ = new Quill('#answ', {
-            theme: 'snow'
+        quillMy.on('text-change', function () {
+            $('#content_my_input').val(quillMy.root.innerHTML);
         });
 
-        quill.on('text-change', function () {
-            $('#contenti').val(quill.root.innerHTML);
+        answEn.on('text-change', function () {
+            $('#ans_en_input').val(answEn.root.innerHTML);
         });
 
-
-        answ.on('text-change', function () {
-            $('#ans').val(answ.root.innerHTML);
+        answMy.on('text-change', function () {
+            $('#ans_my_input').val(answMy.root.innerHTML);
         });
 
+        // Dynamic addition of FAQs in English
         var max_fields = 6;
-        var x = 0;
-
-        $('#addbtn').on('click', function () {
-            if (x < max_fields) {
-                x++;
-                var wrapperquestion = `
+        var x_en = 0;
+        $('#addbtn_en').on('click', function () {
+            if (x_en < max_fields) {
+                x_en++;
+                var wrapperQuestionEn = `
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="fromDate" class="form-label" id="font-f">${x}. Add New FAQ</label>
-                            <h5 class="card-title" style="font-size:15px;">Question</h5>
-                            <input type="text" class="form-control" id="question" name="question[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+                            <label for="fromDate" class="form-label" id="font-f">${x_en}. Add New FAQ (English)</label>
+                            <h5 class="card-title" style="font-size:15px;">Question (English)</h5>
+                            <input type="text" class="form-control" id="question_en${x_en}" name="question_en[]" style="border:1px solid #333;height:40px;font-size:13px" required>
 
-                            <label for="categoryname" class="form-label card-title" style="font-size:15px;">Answer <font style="color:red;">*</font></label>
-                            <div id="ans${x}" style="height: 200px;"></div>
-                            <input type="hidden" name="ans[]" id="ans${x}-input" required>
-                            <i class="las la-minus-circle removebtn" style="color:red;font-size:27px;"></i>
+                            <label for="categoryname" class="form-label card-title" style="font-size:15px;">Answer (English) <font style="color:red;">*</font></label>
+                            <div id="ans_en${x_en}" style="height: 200px;"></div>
+                            <input type="hidden" name="ans_en[]" id="ans_en${x_en}-input" required>
+                            <i class="las la-minus-circle removebtn_en" style="color:red;font-size:27px;"></i>
                         </div>
 
                         <div class="col-md-12">
@@ -465,35 +588,71 @@
                         </div>
                     </div>
                 `;
-                $('#showquestion').append(wrapperquestion);
+                $('#showquestion_en').append(wrapperQuestionEn);
 
-                var quill = new Quill(`#ans${x}`, {
-                    theme: 'snow'
-                });
-
-                quill.on('text-change', function () {
-                    $(`#ans${x}-input`).val(quill.root.innerHTML);
+                var quillEn = new Quill(`#ans_en${x_en}`, { theme: 'snow' });
+                quillEn.on('text-change', function () {
+                    $(`#ans_en${x_en}-input`).val(quillEn.root.innerHTML);
                 });
             } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Maximum fields limit reached!',
-                });
+                Swal.fire({ icon: 'error', title: 'Oops...', text: 'Maximum fields limit reached!' });
             }
         });
 
-        $('#showquestion').on('click', '.removebtn', function () {
-            $(this).closest('.row').remove();
-            x--;
+        // Dynamic addition of FAQs in Myanmar
+        var x_my = 0;
+        $('#addbtn_my').on('click', function () {
+            if (x_my < max_fields) {
+                x_my++;
+                var wrapperQuestionMy = `
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="fromDate" class="form-label" id="font-f">${x_my}. Add New FAQ (Myanmar)</label>
+                            <h5 class="card-title" style="font-size:15px;">Question (Myanmar)</h5>
+                            <input type="text" class="form-control" id="question_my${x_my}" name="question_my[]" style="border:1px solid #333;height:40px;font-size:13px" required>
+
+                            <label for="categoryname" class="form-label card-title" style="font-size:15px;">Answer (Myanmar) <font style="color:red;">*</font></label>
+                            <div id="ans_my${x_my}" style="height: 200px;"></div>
+                            <input type="hidden" name="ans_my[]" id="ans_my${x_my}-input" required>
+                            <i class="las la-minus-circle removebtn_my" style="color:red;font-size:27px;"></i>
+                        </div>
+
+                        <div class="col-md-12">
+                            <hr>
+                        </div>
+                    </div>
+                `;
+                $('#showquestion_my').append(wrapperQuestionMy);
+
+                var quillMy = new Quill(`#ans_my${x_my}`, { theme: 'snow' });
+                quillMy.on('text-change', function () {
+                    $(`#ans_my${x_my}-input`).val(quillMy.root.innerHTML);
+                });
+            } else {
+                Swal.fire({ icon: 'error', title: 'Oops...', text: 'Maximum fields limit reached!' });
+            }
         });
 
+        // Remove FAQ row
+        $('#showquestion_en').on('click', '.removebtn_en', function () {
+            $(this).closest('.row').remove();
+            x_en--;
+        });
+
+        $('#showquestion_my').on('click', '.removebtn_my', function () {
+            $(this).closest('.row').remove();
+            x_my--;
+        });
+
+        // Set the hidden inputs on form submit
         $('form').on('submit', function () {
-            $('#contenti').val(quill.root.innerHTML);
-            $('#ans').val(answ.root.innerHTML);
+            $('#content_en_input').val(quillEn.root.innerHTML);
+            $('#content_my_input').val(quillMy.root.innerHTML);
+            $('#ans_en_input').val(answEn.root.innerHTML);
+            $('#ans_my_input').val(answMy.root.innerHTML);
         });
     });
-    </script>
+</script>
 
 
 @endsection
