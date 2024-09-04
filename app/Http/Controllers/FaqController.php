@@ -18,8 +18,8 @@ class FaqController extends Controller
     public function index()
     {
         $faqs = Faq::with(['faqQans' => function($query) {
-            $query->orderBy('updated_at', 'desc');
-        }])->orderBy('updated_at', 'desc')->paginate(5);
+            $query->orderBy('id', 'desc');
+        }])->orderBy('id', 'desc')->paginate(5);
 
         return view('admins.faq.index', compact('faqs'));
     }
@@ -40,39 +40,92 @@ class FaqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // public function store(Request $request)
+    // {
+    //     // dd($request->all());
+
+    //     $faq = Faq::create([
+    //         'title' => $request['title'],
+    //         'content' => $request['content'],
+    //     ]);
+
+    //     $questions = $request->input('question');
+    //     $answers = $request->input('ans');
+
+    //     if ($questions && $answers) {
+    //         foreach ($questions as $index => $question) {
+    //             FaqQans::create([
+    //                 'faq_id' => $faq->id,
+    //                 'question' => $question,
+    //                 'answer' => $answers[$index],
+    //             ]);
+    //         }
+    //     }
+
+    //     Logs::create([
+    //         'name' => Auth()->user()->name,
+    //         'email' => Auth()->user()->email,
+    //         'form_name' => 'FAQ Form',
+    //         'tracking' => 'FAQ Created',
+    //         'ip' => $request->ip(),
+    //         'date' => now()->format('Y-m-d'),
+    //     ]);
+
+    //     return back()->with('success', 'Successfully saved...');
+    // }
     public function store(Request $request)
-    {
-        // dd($request->all());
+{
+    // Validate the incoming request
+    $request->validate([
+        'title_en' => 'required|string|max:255',
+        'content_en' => 'required|string',
+        'title_my' => 'required|string|max:255',
+        'content_my' => 'required|string',
+        'question_en.*' => 'required|string|max:255',
+        'ans_en.*' => 'required|string',
+        'question_my.*' => 'required|string|max:255',
+        'ans_my.*' => 'required|string',
+    ]);
 
-        $faq = Faq::create([
-            'title' => $request['title'],
-            'content' => $request['content'],
-        ]);
+    // Create a new FAQ
+    $faq = new Faq();
+    $faq->title_en = $request->input('title_en');
+    $faq->content_en = $request->input('content_en');
+    $faq->title_my = $request->input('title_my');
+    $faq->content_my = $request->input('content_my');
+    $faq->save();
 
-        $questions = $request->input('question');
-        $answers = $request->input('ans');
+    // Get the newly created FAQ ID
+    $faqId = $faq->id;
 
-        if ($questions && $answers) {
-            foreach ($questions as $index => $question) {
-                FaqQans::create([
-                    'faq_id' => $faq->id,
-                    'question' => $question,
-                    'answer' => $answers[$index],
-                ]);
-            }
+    // Save English Questions and Answers
+    if ($request->has('question_en') && is_array($request->input('question_en'))) {
+        foreach ($request->input('question_en') as $index => $question) {
+            $faqQan = new FaqQans();
+            $faqQan->faq_id = $faqId;
+            $faqQan->language = 'en'; // Assuming 'en' for English
+            $faqQan->question = $question;
+            $faqQan->answer = $request->input('ans_en')[$index];
+            $faqQan->save();
         }
-
-        Logs::create([
-            'name' => Auth()->user()->name,
-            'email' => Auth()->user()->email,
-            'form_name' => 'FAQ Form',
-            'tracking' => 'FAQ Created',
-            'ip' => $request->ip(),
-            'date' => now()->format('Y-m-d'),
-        ]);
-
-        return back()->with('success', 'Successfully saved...');
     }
+
+    // Save Myanmar Questions and Answers
+    if ($request->has('question_my') && is_array($request->input('question_my'))) {
+        foreach ($request->input('question_my') as $index => $question) {
+            $faqQan = new FaqQans();
+            $faqQan->faq_id = $faqId;
+            $faqQan->language = 'my'; // Assuming 'my' for Myanmar
+            $faqQan->question = $question;
+            $faqQan->answer = $request->input('ans_my')[$index];
+            $faqQan->save();
+        }
+    }
+
+    // Redirect with success message
+    return back()->with('success', 'Successfully saved...');
+}
+
 
 
     /**
@@ -108,15 +161,19 @@ class FaqController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'title_en' => 'required|string|max:255',
+            'content_en' => 'required|string',
+            'title_my' => 'required|string|max:255',
+            'content_my' => 'required|string',
         ]);
 
         $faq = Faq::findOrFail($id);
 
         $faq->update([
-            'title' => $request->input('title'),
-            'content' => $request->input('content'),
+            'title_en' => $request->input('title_en'),
+            'content_en' => $request->input('content_en'),
+            'title_my' => $request->input('title_my'),
+            'content_my' => $request->input('content_my'),
         ]);
 
         // $questions = $request->input('question');
@@ -176,18 +233,19 @@ class FaqController extends Controller
         {
 
             $request->validate([
-                'question' => 'required|string|max:255',
-                'ans' => 'required|string',
+                'question_ed' => 'required|string|max:255',
+                'ans_ed' => 'required|string',
             ]);
 
+            // dd($request->all());
 
-            $faqQ = FaqQans::findOrFail($id);
+            $faqQ = FaqQans::Find($id);
+            // dd($faqQ);
 
+            $faqQ->question = $request->question_ed;
+            $faqQ->answer = $request->ans_ed;
 
-            $faqQ->update([
-                'question' => $request->input('question'),
-                'answer' => $request->input('ans'),
-            ]);
+            $faqQ->save();
 
             Logs::create([
                 'name' => Auth()->user()->name,
@@ -198,8 +256,9 @@ class FaqController extends Controller
                 'date' => now()->format('Y-m-d'),
             ]);
 
-            // Redirect back with success message
-            return back()->with('success', 'FAQ updated successfully.');
+
+
+            return back()->with('success', 'FAQ for question and answer updated successfully.');
         }
 
 
@@ -223,14 +282,44 @@ class FaqController extends Controller
 
             public function AddagainQuestion(Request $request)
             {
-                $faq = FaqQans::create([
-                    'faq_id' => $request['id'],
-                    'question' => $request['que'],
-                    'answer' => $request['ansr'],
-                ]);
-                return back()->with('success', 'Add question and answer successfully.');
+                // dd($request->all());
 
+                // $request->validate([
+                //     'id' => 'required|exists:faqs,id',
+                //     'que_en' => 'required|string|max:255',
+                //     'ansr_en' => 'required|string',
+                //     'que_my' => 'required|string|max:255',
+                //     'ansr_my' => 'required|string',
+                // ]);
+
+                $faqQansEn = new FaqQans();
+                $faqQansEn->faq_id = $request->input('id');
+                $faqQansEn->language = 'en';
+                $faqQansEn->question = $request->input('que_en');
+                $faqQansEn->answer = $request->input('ansr_en');
+                $faqQansEn->save();
+
+                $faqQansMy = new FaqQans();
+                $faqQansMy->faq_id = $request->input('id');
+                $faqQansMy->language = 'my';
+                $faqQansMy->question = $request->input('qum_my');
+                $faqQansMy->answer = $request->input('ansr_my');
+                $faqQansMy->save();
+
+
+
+                Logs::create([
+                    'name' => auth()->user()->name,
+                    'email' => auth()->user()->email,
+                    'form_name' => 'FAQ Question and Answer Form',
+                    'tracking' => 'FAQ Question and Answer added again',
+                    'ip' => $request->ip(),
+                    'date' => now()->format('Y-m-d'),
+                ]);
+
+                return back()->with('success', 'Added question and answer successfully.');
             }
+
 
         public function searchFaq(Request $request)
                 {
@@ -248,7 +337,7 @@ class FaqController extends Controller
 
             if ($request->filled('title')) {
                 $title = $request->input('title');
-                $query->where('title', 'LIKE', '%' . $title . '%');
+                $query->where('title_en', 'LIKE', '%' . $title . '%')->orWhere('title_my', 'LIKE', '%' . $title . '%');
             }
 
 
@@ -257,6 +346,21 @@ class FaqController extends Controller
 
             return view('admins.faq.index', compact('faqs'));
         }
+
+        public function updateStatus(Request $request, $id)
+        {
+            $faq = Faq::find($id);
+            if ($faq) {
+                $faq->status = $request->status;
+                $faq->save();
+
+                return response()->json(['message' => 'Status updated successfully!']);
+            }
+
+            return response()->json(['message' => 'FAQ not found!'], 404);
+        }
+
+
 
 
 

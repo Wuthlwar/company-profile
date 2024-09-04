@@ -15,10 +15,13 @@ class CreateFaqQansTable extends Migration
     {
         Schema::create('faq_qans', function (Blueprint $table) {
             $table->id();
-            $table->integer('faq_id')->nullable();
+            $table->unsignedBigInteger('faq_id');
+            $table->string('language')->nullable();
             $table->text('question')->nullable();
             $table->text('answer')->nullable();
             $table->timestamps();
+
+            $table->foreign('faq_id')->references('id')->on('faqs')->onDelete('cascade');
         });
     }
 

@@ -28,6 +28,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="main-header__top-right">
                     <div class="main-header__top-menu-box">
                         <ul class="list-unstyled main-header__top-menu">
@@ -80,6 +81,7 @@
                     @endswitch
                     </div>
                     </div>
+
             </div>
         </div>
     </div>
@@ -123,9 +125,9 @@
                                     </li>
 
 
-                                    <li class="dropdown">
+                                    {{-- <li class="dropdown">
                                         <a href="{{route('Knowledge_Sharing')}}" style="font-size: 14px;">{{__('header.menu_16')}}</a>
-                                    </li>
+                                    </li> --}}
 
                                     <li class="dropdown">
                                         <a href="{{route('our_opportunities')}}" style="font-size: 14px;">{{__('header.menu_8')}}</a>

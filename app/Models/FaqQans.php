@@ -10,6 +10,7 @@ class FaqQans extends Model
     use HasFactory;
     protected $fillable =[
         'faq_id',
+        'language',
         'question',
         'answer',
     ];
