@@ -1148,7 +1148,7 @@
                     }'>
 
                     <div class="item ">
-                        <div class="card testimonial-one__single p-5">
+                        <div class="card testimonial-one__single p-5php ">
                             <h5 class="text-center m-3">SCG Co.,Ltd</h5>
                             <div class="card-body">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/scg-logo.jpg')}}" alt="" >
