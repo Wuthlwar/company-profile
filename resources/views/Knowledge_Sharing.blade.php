@@ -27,7 +27,9 @@
                             @if($knowledge->media=='Youtube')
                             <iframe width="350" height="250" src="{{$knowledge->link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             @else
+                            <a href="{{$knowledge->link}}" target="_blank" style="color: #5160e9">
                             <img src="{{ asset('storage/uploads/knowledge/' . $knowledge->file) }}" alt="Cover Image" class="img-thumbnail" width="450" height="350">
+                            </a>
                             @endif
                         </div>
 
@@ -55,11 +57,9 @@
                         @elseif($knowledge->media=='X')
                         <i class="fab fa-twitter" style="font-size: 15px;float:right;"></i>&nbsp;&nbsp;
                         @endif
-
                     </div>
                 </div>
                 @endforeach
-
 
                 {{ $knowledgeSharings->links('pagination::bootstrap-4') }}
             </div>
