@@ -72,7 +72,7 @@ class HomeController extends Controller
 
             public function Faq(){
 
-                $faqs = Faq::latest()->paginate(1);
+                $faqs = Faq::where('status','online')->latest()->paginate(1);
                 return view('Faq',compact('faqs'));
         }
 
