@@ -1239,7 +1239,7 @@
                           </div>
 
                     </div>
-=======
+
                         <div class="item ">
                             <div class="card testimonial-one__single p-1">
                                 <h5 class="text-center m-3">Farmer Lighting Co.,Ltd</h5>
