@@ -71,10 +71,13 @@
                     <th>Email</th>
                     <td>{{ $details['email'] }}</td>
                 </tr>
+
                 <tr>
                     <th>Current Address</th>
                     <td>{{ $details['current_address'] }}</td>
                 </tr>
+
+
                 <tr>
                     <th>Emergency Address</th>
                     <td>{{ $details['emergency_address'] }}</td>
@@ -82,6 +85,11 @@
                 <tr>
                     <th>Career Summary</th>
                     <td>{{ $details['career_summary'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Expected salary</th>
+                    <td>{{ $details['salary'] }}</td>
                 </tr>
 
                 <tr>

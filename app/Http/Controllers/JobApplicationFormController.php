@@ -144,6 +144,7 @@ class JobApplicationFormController extends Controller
             'email' => $receiver,
             'current_address' => $request->current_address,
             'career_summary' => $request->career_summary,
+            'salary' => $request->salary,
             'emergency_address' => $request->emergency_address,
             'agree' => $request->agree,
             'date' => $date,
