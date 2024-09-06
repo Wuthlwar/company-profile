@@ -1148,7 +1148,7 @@
                     }'>
 
                     <div class="item ">
-                        <div class="card testimonial-one__single p-5">
+                        <div class="card testimonial-one__single p-5php ">
                             <h5 class="text-center m-3">SCG Co.,Ltd</h5>
                             <div class="card-body">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/scg-logo.jpg')}}" alt="" >
@@ -1212,6 +1212,34 @@
                           </div>
 
                     </div>
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-5">
+                            <h5 class="text-center m-3">DOS Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/Logo DOS-01.jpg')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-4">
+                            <h5 class="text-center m-3">OPPLE Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/opple.png')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="item ">
+                        <div class="card testimonial-one__single p-3">
+                            <h5 class="text-center m-3">UPG Co.,Ltd</h5>
+                            <div class="card-body">
+                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/upg.jpg')}}" alt="" >
+                            </div>
+                          </div>
+
+                    </div>
+
                         <div class="item ">
                             <div class="card testimonial-one__single p-1">
                                 <h5 class="text-center m-3">Farmer Lighting Co.,Ltd</h5>
