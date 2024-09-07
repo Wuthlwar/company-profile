@@ -208,6 +208,7 @@ fieldset {
           <div class="data-scrollbar" data-scroll="1">
               <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="iq-menu">
+                    @if (Auth()->user()->role=='1' || Auth()->user()->role=='2' || Auth()->user()->role=='3')
                       <li class="{{ request()->url()==url('/admins/home')?'active':'' }}">
                           <a href="{{url('/admins/home')}}" class="svg-icon">
                               <svg  class="svg-icon" id="p-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -216,6 +217,8 @@ fieldset {
                               <span class="ml-4">Dashboard</span>
                           </a>
                       </li>
+                      @endif
+                      @if ((Auth()->user()->role=='1' || Auth()->user()->role=='3') || (Auth()->user()->role=='2' && Auth()->user()->department=='MKT'))
                       <li class="">
                           <a href="#product" class="collapsed" data-toggle="collapse" aria-expanded="false">
                                 <i class="fas fa-people-carry"></i>
@@ -235,10 +238,8 @@ fieldset {
                                     <i class="las la-minus"></i><span style="color: #000;">Activity</span>
                                 </a>
                             </li>
-
                           </ul>
                       </li>
-
                       <li class=" ">
                           <a href="#sale" class="collapsed" data-toggle="collapse" aria-expanded="false">
                             <i class="fas fa-comments"></i>
@@ -285,6 +286,37 @@ fieldset {
                         </ul>
                     </li>
 
+                    @elseif ((Auth()->user()->role=='1' || Auth()->user()->role=='3') || (Auth()->user()->role=='2' && Auth()->user()->department=='Online'))
+
+                    <li class=" ">
+                        <a href="#support" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                            <i class="las la-chalkboard-teacher" style="color: #000;font-size:20px;"></i>
+                            <span class="ml-4" style="color: #000;">Our Support</span>
+                            <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                            </svg>
+                        </a>
+                        <ul id="support" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                        <a href="{{route('all_photo_gallery.index')}}">
+                                            <i class="las la-photo-video"></i><span style="color: #000;">Photo Gallery</span>
+                                        </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{route('knowledge_sharing.index')}}">
+                                        <i class="las la-share-alt"></i><span style="color: #000;">Knowledge Sharing</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{route('frequently_asked_question.index')}}">
+                                        <i class="las la-question-circle"></i><span style="color: #000;">FAQ</span>
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+                    @endif
+
+                    @if(((Auth()->user()->role=='1' || Auth()->user()->role=='3') ||(Auth()->user()->role=='2' && Auth()->user()->department=='HR')))
                       <li class=" ">
                         <a href="#category" class="collapsed" data-toggle="collapse" aria-expanded="false">
                             <i class="las la-suitcase" style="color: #000;font-size:20px;"></i>
@@ -312,6 +344,7 @@ fieldset {
 
                         </ul>
                     </li>
+                    @endif
 
                     <li class=" ">
                         <a href="#acc" class="collapsed" data-toggle="collapse" aria-expanded="false">
@@ -327,10 +360,12 @@ fieldset {
                                             <i class="las la-minus"></i><span style="color: #000;">User Accounts</span>
                                         </a>
                                 </li>
+                                @if(Auth()->user()->role=='1')
                                 <li class="">
                                     <a href="{{route('Logs_tracking.index')}}">
                                         <i class="las la-minus"></i><span style="color: #000;">Logs</span>
                                     </a>
+                                @endif
                             </li>
                         </ul>
                     </li>
@@ -416,6 +451,7 @@ fieldset {
                                                       class="rounded profile-img img-fluid avatar-70">
                                               </div>
                                               <div class="p-3">
+                                                {{ Auth()->user()->department }}
                                                   <h5 class="mb-1">
                                                     {{ Auth()->user()->name }}<br>
                                                     {{ Auth()->user()->email }}<br>
@@ -426,6 +462,7 @@ fieldset {
                                                     @else
                                                     User
                                                     @endif
+
                                                   </h5>
 
                                                   <div class="d-flex align-items-center justify-content-center mt-3">

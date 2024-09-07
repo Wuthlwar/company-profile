@@ -34,7 +34,6 @@ Route::get('/joint_venture', [HomeController::class, 'joint_venture'])->name('jo
 Route::get('/coporate', [HomeController::class, 'coporate'])->name('coporate');
 Route::get('/accountability', [HomeController::class, 'accountability'])->name('accountability');
 
-
 //Services
 Route::get('/product_information', [HomeController::class, 'product_information'])->name('product_information');
 Route::get('/delivery_service', [HomeController::class, 'delivery_service'])->name('delivery_service');
@@ -70,13 +69,13 @@ Route::get('getActByType/{act_type_id}',[ActivityController::class,'get_activiti
 Route::resource('feedbacks',FeedbackController::class);
 
 //---------------------------------------------------Job Vacants---------------------------------------------
-Route::get('/our_opportunities', [HomeController::class, 'job'])->name('our_opportunities');
+Route::get('/our_job_vacancy', [HomeController::class, 'job'])->name('our_opportunities');
 
 Route::post('/view-counts/{id}', [HomeController::class, 'ViewCounts'])->name('view_counts');
 
 Route::get('/our_all_categories_job', [HomeController::class, 'jobAllcate'])->name('our_all_categories_job');
-Route::get('/our_opportunities_detail/{id}', [HomeController::class, 'jobdetail'])->name('our_opportunities_detail');
-Route::get('/our_opportunities_categories/{id}', [HomeController::class, 'jobDetailCate'])->name('our_opportunities_categories_jobs');
+Route::get('/our_job_vacancy_detail/{id}', [HomeController::class, 'jobdetail'])->name('our_opportunities_detail');
+Route::get('/our_job_vacancy_categories/{id}', [HomeController::class, 'jobDetailCate'])->name('our_opportunities_categories_jobs');
 
 Route::resource('Job_Application_form',JobApplicationFormController::class);
 Route::get('/job_application_apply_successfully', [HomeController::class, 'successApply'])->name('job_application_apply_successfully');

@@ -66,6 +66,7 @@
 
 </style>
 
+@if ((Auth()->user()->role=='1' || Auth()->user()->role=='3' )|| (Auth()->user()->role=='2' && Auth()->user()->department=='HR'))
 
 <div class="row">
     <div class="col-lg-12">
@@ -120,7 +121,6 @@
         @endphp
     </div>
 
-
     <div class="col-lg-12" style="border: 1px solid #000;border-radius:20px;padding:20px;">
         <form method="GET" action="{{ route('admins.home') }}">
             <label for="start_date">Start Date:</label>
@@ -167,14 +167,173 @@
     <div class="col-md-12">
         <br><br><br>
     </div>
-
 </div>
+@endif
+
+@if(Auth()->user()->role=='2' && Auth()->user()->department=='Online')
+    <div class="row">
+
+        <div class="col-lg-4">
+            <a href="{{route('all_photo_gallery.index')}}"  style="color:#000">
+            <div class="alert alert-success" role="alert" style="color: #000;">
+                <center>
+                <h4 class="alert-heading"><i class="las la-images" style="font-size: 30px;"></i> Photo Gallery</h4><br>
+                <font style="font-size: 20px;">
+
+                <i class="las la-bars"></i> Total
+                {{$countGallery}}
+
+                </font>
+                </center>
+              </div>
+            </a>
+        </div>
+
+        <div class="col-lg-4">
+            <a href="{{route('knowledge_sharing.index')}}"  style="color:#000">
+            <div class="alert alert-warning" role="alert" style="color: #000;">
+                <center>
+                <h4 class="alert-heading"><i class="las la-share-alt" style="font-size: 30px;"></i> Knowledge Sharing</h4><br>
+                <font style="font-size: 20px;">
+
+                <i class="las la-bars"></i> Total
+                {{$countGallery}}
+
+                </font>
+               </center>
+              </div>
+            </a>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="alert alert-primary" role="alert" style="color: #000;">
+                <a href="{{route('frequently_asked_question.index')}}"  style="color:#000">
+                <center>
+                <h4 class="alert-heading"><i class="lar la-question-circle" style="font-size: 30px;"></i>Frequently Asked Questions (FAQ)</h4><br>
+                <font style="font-size: 20px;">
+
+                <i class="las la-bars"></i> Total
+                {{$countFaq}}
+
+                </font>
+                </center>
+              </div>
+            </a>
+        </div>
+
+    </div>
+@endif
+
+@if(Auth()->user()->role=='2' && Auth()->user()->department=='MKT')
+<div class="row">
+    <div class="col-lg-4">
+        <a href="{{ route('activity_type.index') }}"  style="color:#000">
+        <div class="alert alert-success" role="alert" style="color: #000;">
+            <center>
+            <h4 class="alert-heading"><i class="las la-users" style="font-size: 30px;"></i> Activity Type </h4><br>
+            <font style="font-size: 20px;">
+            <i class="las la-bars"></i> Total
+            {{$countActype}}
+            </font>
+            </center>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-lg-4">
+        <a href="{{ route('activities.index') }}"  style="color:#000">
+        <div class="alert alert-warning" role="alert" style="color: #000;">
+            <center>
+            <h4 class="alert-heading"><i class="las la-users" style="font-size: 30px;"></i> Activity</h4><br>
+            <font style="font-size: 20px;">
+
+            <i class="las la-bars"></i> Total
+            {{$countAct}}
+
+            </font>
+           </center>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="alert alert-primary" role="alert" style="color: #000;">
+            <a href="{{ route('feedbacks.index') }}"  style="color:#000">
+            <center>
+            <h4 class="alert-heading"><i class="las la-comments" style="font-size: 30px;"></i>Feedback</h4><br>
+            <font style="font-size: 20px;">
+
+            <i class="las la-bars"></i> Total
+            {{$countFeed}}
+            </font>
+            </center>
+          </div>
+        </a>
+    </div>
+</div>
+<br>
+    <hr>
+<br>
+
+
+    <div class="row">
+
+        <div class="col-lg-4">
+            <a href="{{route('all_photo_gallery.index')}}"  style="color:#000">
+            <div class="alert alert-success" role="alert" style="color: #000;">
+                <center>
+                <h4 class="alert-heading"><i class="las la-images" style="font-size: 30px;"></i> Photo Gallery</h4><br>
+                <font style="font-size: 20px;">
+
+                <i class="las la-bars"></i> Total
+                {{$countGallery}}
+                </font>
+                </center>
+              </div>
+            </a>
+        </div>
+
+        <div class="col-lg-4">
+            <a href="{{route('knowledge_sharing.index')}}"  style="color:#000">
+            <div class="alert alert-warning" role="alert" style="color: #000;">
+                <center>
+                <h4 class="alert-heading"><i class="las la-share-alt" style="font-size: 30px;"></i> Knowledge Sharing</h4><br>
+                <font style="font-size: 20px;">
+
+                <i class="las la-bars"></i> Total
+                {{$countGallery}}
+
+                </font>
+               </center>
+              </div>
+            </a>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="alert alert-primary" role="alert" style="color: #000;">
+                <a href="{{route('frequently_asked_question.index')}}"  style="color:#000">
+                <center>
+                <h4 class="alert-heading"><i class="lar la-question-circle" style="font-size: 30px;"></i>Frequently Asked Questions (FAQ)</h4><br>
+                <font style="font-size: 20px;">
+
+                <i class="las la-bars"></i> Total
+                {{$countFaq}}
+
+                </font>
+                </center>
+              </div>
+            </a>
+        </div>
+    </div>
+
+@endif
 
 @endsection
 @section('script')
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+@if ((Auth()->user()->role=='1' || Auth()->user()->role=='3' )|| (Auth()->user()->role=='2' && Auth()->user()->department=='HR'))
 <script>
         document.addEventListener('DOMContentLoaded', function () {
         const container = document.getElementById('container-apply-branches');
@@ -466,5 +625,5 @@
     });
 });
 </script>
-
+@endif
 @endsection

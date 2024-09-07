@@ -9,12 +9,10 @@
             </div>
             {{-- <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add</a> --}}
             <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#jobModal"><i class="las la-plus mr-3"></i>Add</button>
-
         </div>
     </div>
 
     <div class="col-lg-12 col-md-12">
-
         @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -86,11 +84,14 @@
                                         @else
                                             {{ $faq->status == 'online' ? 'online' : 'offline' }}
                                         @endif
+                                        @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                         |
 
                                     <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addq{{$faq->id}}"><font style="font-size;20px;">+ Add Question</font></button> |
 
                                     <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#title{{$faq->id}}">Edit</button> |
+                                    @endif
+
                                     @if (Auth()->user()->role=='1')
                                     <form id="delete-form-{{ $faq->id }}" action="{{ route('frequently_asked_question.destroy', $faq->id) }}" method="POST" style="display: none;">
                                         @csrf
@@ -102,7 +103,6 @@
                                 <td>
                                     {!! $faq->content_en !!}<hr>
                                     {!! $faq->content_my !!}
-
                                 </td>
                                 <td>
 
@@ -130,7 +130,10 @@
                                           <span class="text-danger">{{ $message }}</span>
                                           @enderror
 
+                                        @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                         <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#questiona{{$faqQans->id}}">Edit</button>
+                                        @endif
+
                                         @if (Auth()->user()->role=='1')
                                         <form id="delete-form-{{ $faqQans->id }}" action="{{ route('question_and_answerfaq.destroy', $faqQans->id) }}" method="POST" style="display: none;">
                                             @csrf

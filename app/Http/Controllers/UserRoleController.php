@@ -18,7 +18,7 @@ class UserRoleController extends Controller
     public function index()
     {
         $getUserid=Auth()->user()->id;
-        if (auth()->user()->role == '3') {
+        if (auth()->user()->role == '3'|| auth()->user()->role == '2') {
             $users = User::latest()->where('id',$getUserid)->paginate(1);
         } else {
             $users = User::latest()->paginate(20);
@@ -51,6 +51,7 @@ class UserRoleController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'role' => 'required',
+            'department' => 'required',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
@@ -61,6 +62,7 @@ class UserRoleController extends Controller
         $user->email = $request->email;
         $user->role = $request->role;
         $user->date = $date;
+        $user->department =  $request->department;
         $user->password = Hash::make($request->password);
         $user->save();
 
@@ -114,6 +116,7 @@ class UserRoleController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'role' => 'required',
+            'department' => 'required',
             'password' => 'nullable|string|min:8|confirmed',
         ]);
 
@@ -121,6 +124,7 @@ class UserRoleController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->role = $request->role;
+        $user->department = $request->department;
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
         }

@@ -184,7 +184,6 @@
                         <select class="form-control" id="jobrole" name="job_role" required>
                             @foreach ($vacants as $vacant)
                             <option value="{{$vacant->id}}">{{$vacant->job_role}}</option>
-
                             @endforeach
                             {{-- <option value="{{ $vacant_detail->job_role==$vacant_detail->job_roleget->id }}" {{ $vacant_detail->job_role==$vacant_detail->job_roleget->id ? 'selected':''}}>{{ $vacant_detail->job_roleget }}</option> --}}
                         </select>
@@ -266,8 +265,10 @@
 
                             @foreach ($getbranches as $getbranch)
                             <span class="badge bg-primary" style="font-size: 16px;">
+                                @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                 <i class="las la-trash" style="color: red; font-size: 20px; cursor: pointer;"
                                 onclick="confirmDelete('{{ route('branches.delete', $getbranch->id) }}')"></i>
+                                @endif
                                 {{$getbranch->branch_name}}
                             </span>
                         @endforeach

@@ -6,13 +6,13 @@
         <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
             <div>
                 <h4 class="mb-3">Photo Gallery</h4>
-
             </div>
             {{-- <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add</a> --}}
             {{-- <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#gallery"><i class="las la-plus mr-3"></i>Add</button> --}}
 
         </div>
     </div>
+    @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
     <div class="col-lg-4 col-md-4">
         <form id="galleryForm" action="{{ route('all_photo_gallery.store') }}" method="post" enctype="multipart/form-data" class="row g-3">
             @csrf
@@ -42,7 +42,7 @@
                                     </label>
                                     <div id="drop-area" class="border border-dashed border-secondary p-3 text-center" onclick="document.getElementById('gallery').click();">
                                         <p>Drag and drop files here, or click to select files</p>
-                                        တစ်ပုံထက်ပိုတွဲမည်ဆိုပါ Ctrl ကိုဖိထား၍ မိမိတွဲလိုပုံများကို click နှိပ်ပြီးတွဲနိုင်သည်။<br><br>
+                                        တစ်ပုံထက်ပိုတွဲမည်ဆိုပါက ပုံများကို Ctrl ကိုဖိထား၍ မိမိတွဲလိုပုံများကို click နှိပ်ပြီးတွဲနိုင်သည်။<br><br>
                                         <input type="file" id="gallery" name="gallery[]" multiple accept="image/*" class="d-none" onchange="handleFiles(this.files)">
                                     </div>
 
@@ -63,8 +63,13 @@
             </div>
         </form>
     </div>
+@endif
 
+@if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
     <div class="col-lg-8 col-md-8">
+@else
+<div class="col-lg-12 col-md-12">
+@endif
                 <!-- Multi Columns Form -->
                 <form action="{{ route('gallery.search') }}" method="post" class="row g-3 card-title" style="margin: 10px; font-size: 12px;">
                     @csrf
@@ -112,7 +117,9 @@
                     <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between">
                             <h5>{{ $photoName->name }} <br><br>
+                                @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                 <a href="{{route('all_photo_gallery.edit',$photoName->id)}}">Edit</a>
+                                @endif
                             </h5>
                             <p>
                                 @if ($photoName->photoGalleries->isEmpty() && Auth()->user()->role=='1')
