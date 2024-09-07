@@ -48,7 +48,7 @@
                                     </label>
                                     <div id="drop-area" class="border border-dashed border-secondary p-3 text-center" onclick="document.getElementById('gallery').click();">
                                         <p>Drag and drop files here, or click to select files</p>
-                                        တစ်ပုံထက်ပိုတွဲမည်ဆိုပါ Ctrl ကိုဖိထား၍ မိမိတွဲလိုပုံများကို click နှိပ်ပြီးတွဲနိုင်သည်။<br><br>
+                                        တစ်ပုံထက်ပိုတွဲမည်ဆိုပါက ပုံများကို Ctrl ကိုဖိထား၍ မိမိတွဲလိုပုံများကို click နှိပ်ပြီးတွဲနိုင်သည်။<br><br>
                                         <input type="file" id="gallery" name="gallery[]" multiple accept="image/*" class="d-none" onchange="handleFiles(this.files)">
                                     </div>
                                     <div id="imagePreview" class="mt-3 d-flex flex-wrap"></div>

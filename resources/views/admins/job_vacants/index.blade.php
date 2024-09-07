@@ -7,9 +7,11 @@
                 <h4 class="mb-3">Job Vacant Lists</h4>
             </div>
             {{-- <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add</a> --}}
+            @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
             <a href="{{route('Job_vacant_lists.create')}}" style="color: #fff;"><button type="button" class="btn btn-primary mt-2"><i class="las la-plus mr-3"></i>
                 Add
             </button></a>
+            @endif
         </div>
     </div>
     <div class="col-lg-12 col-md-12">

@@ -10,6 +10,7 @@ use App\Models\JobCategory;
 use App\Models\JobVacants;
 use App\Models\KnowledgeSharing;
 use App\Models\Logs;
+use App\Models\PhotoGallery;
 use App\Models\PhotoName;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -36,6 +37,7 @@ class HomeController extends Controller
                     'y' => $vacant->total
                 ];
             });
+
 
         return view('home', compact('act_types', 'acts', 'vacantCounts'));
     }

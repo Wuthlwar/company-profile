@@ -21,6 +21,12 @@ use App\Http\Controllers\LogsController;
 use App\Http\Controllers\UserRoleController;
 use App\Http\Controllers\PhotoGalleryController;
 use App\Http\Controllers\FaqController;
+use App\Models\Activity;
+use App\Models\ActivityType;
+use App\Models\Faq;
+use App\Models\KnowledgeSharing;
+use App\Models\PhotoGallery;
+use App\Models\PhotoName;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +49,13 @@ Route::group(['prefix' => 'admins'], function(){
     Route::get('/logout',[HomeController::class,'logout'])->name('logout');
     Route::get('/home', function(){
         $feedbacks = Feedback::latest()->get();
-        return view('admins.home',['feedbacks'=>$feedbacks]);
+        $countGallery= PhotoGallery::count();
+        $countKnowledge= KnowledgeSharing::count();
+        $countFaq= Faq::count();
+        $countAct= Activity::count();
+        $countActype= ActivityType::count();
+        $countFeed= Feedback::count();
+        return view('admins.home',['feedbacks'=>$feedbacks],compact('countGallery','countKnowledge','countFaq','countAct','countActype','countFeed'));
     })->name('admins.home');
     // Route::resource('roles', RoleController::class);
     // Route::resource('users', UserController::class);
