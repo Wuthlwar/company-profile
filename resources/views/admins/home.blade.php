@@ -262,7 +262,6 @@
             <center>
             <h4 class="alert-heading"><i class="las la-comments" style="font-size: 30px;"></i>Feedback</h4><br>
             <font style="font-size: 20px;">
-
             <i class="las la-bars"></i> Total
             {{$countFeed}}
             </font>
@@ -274,7 +273,6 @@
 <br>
     <hr>
 <br>
-
 
     <div class="row">
 
