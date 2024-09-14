@@ -64,12 +64,30 @@
                     <td>{{ $details['title'] }}{{ $details['surname'] }}</td>
                 </tr>
                 <tr>
+                    <th>Father Name</th>
+                    <td>{{ $details['father'] }}</td>
+                </tr>
+                <tr>
+                    <th>DOB</th>
+                    <td>{{ $details['dob'] }}</td>
+                </tr>
+                <tr>
                     <th>Phone</th>
                     <td>{{ $details['phone'] }}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
                     <td>{{ $details['email'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Education</th>
+                    <td>{{ $details['education'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>>Work Experience</th>
+                    <td>{{ $details['experience'] }}</td>
                 </tr>
 
                 <tr>

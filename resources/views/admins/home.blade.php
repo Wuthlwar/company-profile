@@ -77,6 +77,120 @@
         </div>
     </div>
 
+    <div class="col-lg-12 col-md-12">
+        <!-- Multi Columns Form -->
+        {{-- <form action="{{route('job_vacant.search')}}" method="post" class="row g-3 card-title" style="margin: 10px;font-size:12px;">
+            @csrf
+            @method('post')
+            <div class="col-md-2">
+              <label for="fromDate" class="form-label">From Date </label>
+              <input type="date" class="form-control" id="fromDate" name="start_date" style="border:1px solid #076b45;height:30px;font-size:13px;" value="{{ session('start_date') ? session('start_date') : date('Y-m-d') }}">
+            </div>
+
+            <div class="col-md-2">
+              <label for="toDate" class="form-label">To Date</label>
+              <input type="date" class="form-control" id="toDate" name="end_date" style="border:1px solid #333;height:30px;font-size:13px" value="{{ session('end_date') ? session('end_date') : date('Y-m-d')}}">
+            </div>
+
+            <div class="col-md-2">
+                <label for="cateGory" class="form-label">Category</label>
+                <select class="form-control" id="jobcategoryname" name="category_id">
+                    @foreach($categories as $category)
+                        @if($category->status=="online")
+                        <option value="{{$category->id}}" >{{$category->category_name}}</option>
+                    @endif
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label for="cateGory" class="form-label">Vacant Name</label>
+                <input type="text" class="form-control" id="cateGory" name="vacant_name" value="{{session('vacant_name')}}" style="border:1px solid #333;height:30px;font-size:13px">
+            </div>
+
+            <div class="col-md-2">
+                <label for="cateGory" class="form-label">Status</label>
+                <select id="inputState" class="form-control mb-3" name="status" style="border:1px solid #333;height:30px;font-size:13px">
+                    <option value="online" {{session('status')=='online' ?'selected':''}}>Online</option>
+                    <option value="offline" {{session('status')=='offline' ?'selected':''}}>Offline</option>
+                  </select>
+            </div>
+
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label" style="color: #fff;">Search</label><br>
+                <button type="submit" class="btn btn-primary" style="border:1px solid #333;height:30px;font-size:13px;padding:5px;">
+                    <i class="bi bi-search"></i>&nbsp;Search</button> &nbsp;|&nbsp;
+                    <button type="button" class="btn" style="border:1px solid #333;height:30px;font-size:13px;padding:5px;">
+                    <font  style="font-size: 13px;"><a href="{{route('Job_vacant_lists.index')}}"><i class="bi bi-x"></i> Reset</a></font>
+                    </button>
+            </div>
+          </form> --}}
+
+      <a href="{{route('Job_vacant_lists.index')}}" class="btn btn-primary" style="float: right;">
+        <i class="las la-minus"></i><span style="color: #000;">Job Vacants</span>
+    </a>
+<div class="table-responsive rounded mb-3">
+
+<table class="table table-striped" id="statusForm" style="font-size: 13px;">
+    <thead class="bg-white">
+        <tr class="ligth ligth-data">
+            <tr>
+                <th scope="col" class="card-title" style="font-size: 13px;">No</th>
+                <th scope="col" class="card-title" style="font-size: 13px;">Views</th>
+                <th scope="col" class="card-title" style="font-size: 13px;">Apps</th>
+                <th scope="col" class="card-title" style="font-size: 13px;">Position</th>
+                <th scope="col" class="card-title" style="font-size: 13px;">Categories</th>
+
+                <th scope="col" class="card-title" style="font-size: 13px;">Location</th>
+                <th scope="col" class="card-title" style="font-size: 13px;">Branch</th>
+
+                <th scope="col" class="card-title" style="font-size: 13px;">Created</th>
+                <th scope="col" class="card-title" style="font-size: 13px;">Updated</th>
+                <th scope="col" class="card-title" style="font-size: 13px;">Detail</th>
+
+              </tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($vacants as $vacant)
+        <tr id="font-s">
+            <th scope="row">{{($vacants->currentPage()-1)*$vacants->perPage()+$loop->index+1}}.</th>
+            <td>{{ $vacant->view_count }}</td>
+            <td><a href="{{ route('Job_Application_form.index', ['jobvacant_id' => $vacant->id]) }}" style="color:#8383f1;">{{ $apply_counts[$vacant->id] ?? '0' }} CVs</a></td>
+            <td>
+                {{ $vacant->vacant_name }}
+                <span class="badge badge-danger">
+                    <a href="{{ route('Job_Application_form.index', ['jobvacant_id' => $vacant->id]) }}" style="color:#efeff7;">
+                       <u>{{ $apply_counts[$vacant->id] ?? '0' }}</u>
+                    </a>
+                </span>
+            </td>
+            <td>{{ $vacant->category->category_name ?? 'N/A' }}</td>
+
+            <td>{{$vacant->region}} | {{$vacant->township}}</td>
+            <td>
+                {{-- {{$vacant->vacant_branches}} --}}
+                @foreach ( $vacant->vacant_branches as $bran)
+                {{ $bran->branches->branch_name }},
+                 @endforeach
+            </td>
+            <td>{{$vacant->date}}</td>
+            <td>{{$vacant->updated_at}}</td>
+            <td><a href="{{route('Job_vacant_lists.edit',$vacant->id)}}">View Detail</a></td>
+
+
+          </tr>
+          <!------------------------------------Update----------------------------------------------->
+
+        @endforeach
+
+    </tbody>
+</table>
+{{$vacants->links('pagination::bootstrap-4')}}
+</div>
+<hr>
+</div>
+
     <div class="col-lg-4" style="border: 1px solid #000;border-radius:20px;padding:20px;">
         <div id="container-cate" style="width: 100%; height: 400px;"></div>
         @php
@@ -620,6 +734,14 @@
             data: vacantCounts,
 
         }]
+    });
+});
+
+$(document).ready(function() {
+    $('#jobcategoryname').select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose Your Category',
+        width: '100%'
     });
 });
 </script>

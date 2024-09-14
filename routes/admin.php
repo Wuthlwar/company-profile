@@ -1,7 +1,7 @@
 <?php
 
 // use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductController;
@@ -27,7 +27,14 @@ use App\Models\Faq;
 use App\Models\KnowledgeSharing;
 use App\Models\PhotoGallery;
 use App\Models\PhotoName;
-
+use Illuminate\Support\Facades\Request;
+use App\Models\Branch;
+use App\Models\JobApplicationForm;
+use App\Models\JobVacants;
+use App\Models\JobCategory;
+use App\Models\Jobroles;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\{Auth,Session};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +54,7 @@ Route::group(['prefix' => 'admins'], function(){
     Route::get('/login',[HomeController::class,'login'])->name('login');
     Route::post('/check',[HomeController::class,'checkLogin'])->name('check');
     Route::get('/logout',[HomeController::class,'logout'])->name('logout');
+
     Route::get('/home', function(){
         $feedbacks = Feedback::latest()->get();
         $countGallery= PhotoGallery::count();
@@ -55,8 +63,49 @@ Route::group(['prefix' => 'admins'], function(){
         $countAct= Activity::count();
         $countActype= ActivityType::count();
         $countFeed= Feedback::count();
-        return view('admins.home',['feedbacks'=>$feedbacks],compact('countGallery','countKnowledge','countFaq','countAct','countActype','countFeed'));
+        $branches = Branch::latest()->get();
+        $categories = JobCategory::all();
+        $vacants = JobVacants::orderBy('id')->paginate(20);
+
+        $start_date = request()->input('start_date') ?: Session::get('start_date');
+        $end_date = request()->input('end_date') ?: Session::get('end_date');
+        $category_id = request()->input('category_name') ?: Session::get('category_id');
+        $vacant_name = request()->input('vacant_name') ?: Session::get('vacant_name');
+        $status = request()->input('status') ?: Session::get('status');
+
+        $query = JobVacants::query();
+        if ($start_date && $end_date) {
+            $query->whereBetween('date', [$start_date, $end_date]);
+        } elseif ($start_date) {
+            $query->where('date', 'LIKE', '%' . $start_date . '%');
+        }
+
+        if ($category_id) {
+            $query->where('category_id', 'LIKE', '%' . $category_id . '%');
+        }
+
+        if ($vacant_name) {
+            $query->where('vacant_name', 'LIKE', '%' . $vacant_name . '%');
+        }
+
+        if ($status) {
+            $query->where('status', 'LIKE', '%' . $status . '%');
+        }
+
+        $vacants = $query->latest()->paginate(20);
+        $vacants->appends(request()->all());
+
+        $vacant_ids = $vacants->pluck('id');
+
+        $apply_counts = JobApplicationForm::whereIn('jobvacant_id', $vacant_ids)
+            ->select('jobvacant_id', DB::raw('count(*) as total'))
+            ->groupBy('jobvacant_id')
+            ->pluck('total', 'jobvacant_id');
+
+        return view('admins.home', compact('feedbacks', 'countGallery', 'countKnowledge', 'countFaq', 'countAct', 'countActype', 'countFeed', 'vacants', 'categories', 'apply_counts', 'branches'));
     })->name('admins.home');
+
+
     // Route::resource('roles', RoleController::class);
     // Route::resource('users', UserController::class);
     // Route::resource('permissions', PermissionController::class);

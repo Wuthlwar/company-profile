@@ -174,7 +174,7 @@
                                                     <p>{{ $vacant->vacant_name }}</p>
                                                     <label for="inputState" class="form-label card-title" style="font-size:15px;">Choose Status</label><br>
                                                     <select id="inputState" class="form-control mb-3" name="status1" style="border:1px solid #333;" required>
-                                                        <option value="Deactive" {{$vacant->status1=='Deactive'? 'selected':''}}>Deactive</option>
+                                                        <option value="Deactivate" {{$vacant->status1=='Deactive'? 'selected':''}}>Deactivate</option>
                                                         <option value="Get Employee" {{$vacant->status1=='Get Employee'? 'selected':''}}>Get Employee</option>
                                                         <option value="Other" {{$vacant->status1=='Other'? 'selected':''}}>Other</option>
                                                     </select>

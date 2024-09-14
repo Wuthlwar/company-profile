@@ -69,13 +69,13 @@ Route::get('getActByType/{act_type_id}',[ActivityController::class,'get_activiti
 Route::resource('feedbacks',FeedbackController::class);
 
 //---------------------------------------------------Job Vacants---------------------------------------------
-Route::get('/our_job_vacancy', [HomeController::class, 'job'])->name('our_opportunities');
+Route::get('/our_career', [HomeController::class, 'job'])->name('our_opportunities');
 
 Route::post('/view-counts/{id}', [HomeController::class, 'ViewCounts'])->name('view_counts');
 
 Route::get('/our_all_categories_job', [HomeController::class, 'jobAllcate'])->name('our_all_categories_job');
-Route::get('/our_job_vacancy_detail/{id}', [HomeController::class, 'jobdetail'])->name('our_opportunities_detail');
-Route::get('/our_job_vacancy_categories/{id}', [HomeController::class, 'jobDetailCate'])->name('our_opportunities_categories_jobs');
+Route::get('/our_career_detail/{id}', [HomeController::class, 'jobdetail'])->name('our_opportunities_detail');
+Route::get('/our_career_categories/{id}', [HomeController::class, 'jobDetailCate'])->name('our_opportunities_categories_jobs');
 
 Route::resource('Job_Application_form',JobApplicationFormController::class);
 Route::get('/job_application_apply_successfully', [HomeController::class, 'successApply'])->name('job_application_apply_successfully');

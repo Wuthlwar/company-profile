@@ -18,7 +18,7 @@
                 <div class="section-title text-center">
                     <div class="section-sub-title-box">
                         {{-- <p class="section-sub-title">recent news feed</p> --}}
-                        <h4 class="section-title__title" style="font-size:25px;">Job By Categories</h4>
+                        <h4 class="section-title__title" style="font-size:25px;">Job Functions</h4>
                         <div class="section-title-shape-1">
                             <img src="assets/images/shapes/section-title-shape-1.png" alt="">
                         </div>

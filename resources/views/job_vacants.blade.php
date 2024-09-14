@@ -1,6 +1,34 @@
 @extends('layouts.main')
 @section('content')
+<style>
+    .select2-container {
+        border: 1px solid #000;
+        background-color: #fff;
+        color: #0f0e0e;
+        height: 50px;
+        padding: 5px;
+    }
 
+    .select2-search__field  {
+        border: 1px solid #000;
+        background-color: #fff;
+        color: #0f0e0e;
+        height: px;
+    }
+
+    .select2-selection--single .select2-selection__placeholder {
+    color: #0e0d0d !important;
+
+
+}
+
+ .select2-selection--multiple .select2-selection__placeholder {
+    color: #0c0b0b !important;
+
+}
+
+
+</style>
 <section>
     <div class="container-fluid">
         <div class="row">
@@ -15,24 +43,50 @@
         <section class="news-details">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12" style="background-color: #172ec7; padding-top:20px;">
+                    <div class="col-xl-12 col-lg-12 col-md-12" style="background-color: #2466eb; padding-top:20px;">
                         <form method="GET" action="{{ route('job.search') }}">
                             <div class="input-group mb-3" style="border-radius:30px;">
-                                <select class="form-control" id="jobcategoryname" name="cat_id">
-                                    <option value="">Select Category</option>
-                                    @foreach($categories as $category)
-                                        @if($category->status == "online")
-                                            <option value="{{ $category->id }}" {{ request('cat_id') == $category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
-                                        @endif
+                                    <select class="form-control" id="multiple-select-field-cat" name="cat_id" data-placeholder="Choose your Job Function">
+                                        <option value="">Select Your Job Function</option>
+                                        @foreach($categories as $category)
+                                            @if($category->status == "online")
+                                                <option value="{{ $category->id }}" {{ request('cat_id') == $category->id ? 'selected' : '' }}>
+                                                    {{ $category->category_name }}
+                                                </option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+
+                                    <select class="form-control" id="multiple-select-field" data-placeholder="Choose your branch location"  name="branch_id[]"  multiple>
+                                        <option value="">Select Your Branch Location</option>
+                                        @foreach($branches as $branch)
+                                            <option value="{{ $branch->id }}" {{ in_array($branch->id, request('branch_id', [])) ? 'selected' : '' }}>
+                                                {{ $branch->branch_name }}  {{ $branch->branch_address }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                <input type="text" class="form-control" name="position" placeholder="All Position, Job Description, Keywords"
+                                    aria-label="Job Function" aria-describedby="button-addon2" value="{{ request('position') }}" list="position">
+                                <datalist id="position">
+                                    @foreach ($vacants as $vacant)
+                                        <option value="{{ $vacant->vacant_name }}"></option>
                                     @endforeach
-                                </select>
-                                <input type="text" class="form-control" name="position" placeholder="Enter Position" aria-label="Enter Position" aria-describedby="button-addon2" value="{{ request('position') }}">
-                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="color: #fdf8f8;">Search</button>
+                                </datalist>
+
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="color: #fdf8f8;">
+                                        Search
+                                    </button>
+
                             </div>
+
                         </form>
                     </div>
 
-                    <hr><hr>
+                    @if(isset($message))
+                    <div class="alert alert-info" style="width:200px;margin-top:5px;">{{ $message }}</div>
+                    @endif
+                    <hr>
 
                     @foreach ($vacants as $vacant)
                     <div class="col-xl-12 col-lg-12">
@@ -49,7 +103,7 @@
                                         @endif
 
                                     </div>
-                                    <a href="{{route('our_opportunities_detail',$vacant->id)}}" style="color:rgb(2, 36, 128);">
+
                                     <div class="comment-one__content" style="color:#000;">
                                         <h3>{{$vacant->vacant_name}}</h3>
                                         <p>
@@ -69,7 +123,7 @@
                                         </form>
 
                                     </div>
-                                </a>
+
                                 </div>
                             </div>
                         </div>
@@ -88,7 +142,7 @@
                 <div class="section-title text-center">
                     <div class="section-sub-title-box">
                         {{-- <p class="section-sub-title">recent news feed</p> --}}
-                        <h4 class="section-title__title" style="font-size:25px;">Job By Categories</h4>
+                        <h4 class="section-title__title" style="font-size:25px;">Job Functions</h4>
                         <div class="section-title-shape-1">
                             <img src="assets/images/shapes/section-title-shape-1.png" alt="">
                         </div>
@@ -144,16 +198,23 @@
 
 @endsection
 @section('script')
+<!-- Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-    $('#jobcategoryname').select2({
-        theme: 'bootstrap4',
-        placeholder: 'Choose Your Category',
-        width: '100%'
-    });
+$( '#multiple-select-field-cat' ).select2( {
 
-});
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+
+$( '#multiple-select-field' ).select2( {
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
 </script>
     <script>
         $(document).ready(function () {

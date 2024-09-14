@@ -181,6 +181,40 @@
                                                 <hr>
                                                 <div class="row">
                                                     <div class="col-md-3">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Father Name</label>
+                                                      </div>
+                                                      <div class="col-md-9">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">
+                                                            {{$vacant->father}}
+                                                        </label>
+                                                      </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Date Of Birth</label>
+                                                      </div>
+                                                      <div class="col-md-9">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">
+                                                            {{$vacant->dob}}
+                                                        </label>
+                                                      </div>
+                                                </div>
+
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">NRC No:</label>
+                                                      </div>
+                                                      <div class="col-md-9">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">
+                                                            {{$vacant->nrc}}
+                                                        </label>
+                                                      </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-3">
                                                         <label for="vacantname" class="form-label card-title" style="font-size:15px;">Phone Number</label>
                                                       </div>
                                                       <div class="col-md-9">
@@ -197,6 +231,29 @@
                                                       <div class="col-md-9">
                                                         <label for="vacantname" class="form-label card-title" style="font-size:15px;">
                                                            {{$vacant->email}}
+                                                        </label>
+                                                      </div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Education</label>
+                                                      </div>
+                                                      <div class="col-md-9">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">
+                                                            {{$vacant->education}}
+                                                        </label>
+                                                      </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">Work Experience</label>
+                                                      </div>
+                                                      <div class="col-md-9">
+                                                        <label for="vacantname" class="form-label card-title" style="font-size:15px;">
+                                                            {{$vacant->experience}}
                                                         </label>
                                                       </div>
                                                 </div>

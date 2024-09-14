@@ -9,8 +9,7 @@ return [
     'menu_5'               => 'Our Activities',
     'menu_6'               => 'Contact Us',
     'menu_7'               => 'Call to Our Head Office',
-    'menu_8'               => 'Job Vacancy',
+    'menu_8'               => 'Career',
     'menu_15'              => 'Our Gallery',
     'menu_16'              => 'PRO 1 Online Store & Knowledge',
-
 ];
