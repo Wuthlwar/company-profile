@@ -77,7 +77,7 @@
                                         <option value="">Select Qualification</option>
                                         <option value="Unspecified">Unspecified</option>
                                         <option value="Certificate">Certificate</option>
-                                        <option value="Middle School">Moddle School</option>
+                                        <option value="Middle School">Middle School</option>
                                         <option value="High School">Hight School</option>
                                         <option value="Postgraduate">Postgraduate</option>
                                         <option value="Diploma">Diploma</option>
