@@ -1148,7 +1148,7 @@
                     }'>
 
                     <div class="item ">
-                        <div class="card testimonial-one__single p-5php ">
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center m-3">SCG Co.,Ltd</h5>
                             <div class="card-body">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/scg-logo.jpg')}}" alt="" >
@@ -1175,15 +1175,7 @@
                           </div>
 
                     </div>
-                    <div class="item ">
-                        <div class="card testimonial-one__single p-3">
-                            <h5 class="text-center m-3">UPG Co.,Ltd</h5>
-                            <div class="card-body">
-                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/upg.jpg')}}" alt="" >
-                            </div>
-                          </div>
-
-                    </div>
+                    
 
                     <div class="item ">
                         <div class="card testimonial-one__single p-3">
@@ -1230,6 +1222,10 @@
                           </div>
 
                     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> b6d21de188bb6033a2bfa8397794f6efc77837ae
                     <div class="item ">
                         <div class="card testimonial-one__single p-3">
                             <h5 class="text-center m-3">UPG Co.,Ltd</h5>
@@ -1258,7 +1254,7 @@
                               </div>
 
                         </div>
-                        <div class="item ">
+                        <!-- <div class="item ">
                             <div class="card testimonial-one__single p-2">
                                 <h5 class="text-center m-3">UPG PAINT & CONATING Co.,Ltd</h5>
                                 <div class="card-body">
@@ -1266,7 +1262,7 @@
                                 </div>
                               </div>
 
-                        </div>
+                        </div> -->
                         <div class="item ">
                             <div class="card testimonial-one__single p-2">
                                 <h5 class="text-center m-3">Sweety Home Industry Co.,Ltd</h5>
