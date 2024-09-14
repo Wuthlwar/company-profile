@@ -311,6 +311,31 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12"><hr></div>
+
+                                                    <div class="col-md-6">
+                                                        <font style="color:#000">Father Name</font>
+                                                        <div class="comment-form__input-box">
+                                                            <input type="text" placeholder="Father Name" name="father"><br>
+                                                            <small class="text-danger">Father - name is required.</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-2">
+                                                        <font style="color:#000">Date of Birth</font>
+                                                        <div class="comment-form__input-box">
+                                                            <input type="date" placeholder="Date of Birth" name="dob"><br>
+                                                            <small class="text-danger">Date of Birth  is required.</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <font style="color:#000">NRC No:</font>
+                                                        <div class="comment-form__input-box">
+                                                            <input type="text" placeholder="NRC No" name="nrc"><br>
+                                                            <small class="text-danger">NRC No  is required.</small>
+                                                        </div>
+                                                    </div>
+
                                                     <div class="col-md-6">
                                                         <font style="color:#000">Phone Number</font>
                                                         <div class="comment-form__input-box">
@@ -331,6 +356,22 @@
                                                 </div>
                                                 <div class="col-md-12"><hr></div>
                                                 <div class="row">
+                                                    <div class="col-md-6">
+                                                        <font style="color:#000">Education</font>
+                                                        <div class="comment-form__input-box">
+                                                            <input type="text" placeholder="Education" name="education"><br>
+                                                            <small class="text-danger">Education  is required.</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <font style="color:#000">Work Experience</font>
+                                                        <div class="comment-form__input-box text-message-box">
+                                                            <textarea name="experience" placeholder="Your Work Experience">{{ old('experience') }}</textarea><br>
+                                                            <small class="text-danger">Work Experience is required.</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12"><hr></div>
                                                     <div class="col-md-6">
                                                         <font style="color:#000">Current Address</font>
                                                         <div class="comment-form__input-box text-message-box">
@@ -692,6 +733,11 @@
     const form = document.getElementById('form');
     const email = document.querySelector('input[name="email"]');
     const surname = document.querySelector('input[name="surname"]');
+    const father = document.querySelector('input[name="father"]');
+    const dob = document.querySelector('input[name="dob"]');
+    const nrc = document.querySelector('input[name="nrc"]');
+    const education = document.querySelector('input[name="education"]');
+    const experience = document.querySelector('textarea[name="experience"]');
     const phone = document.querySelector('input[name="phone"]');
     const current_add = document.querySelector('textarea[name="current_address"]');
     const emer_add = document.querySelector('textarea[name="emergency_address"]');
@@ -748,7 +794,7 @@
     }
 
     function checkForm() {
-        const inputs = [surname, phone, current_add, emer_add, resume, agree];
+        const inputs = [surname, phone, current_add, emer_add, resume, agree, father,dob,nrc,education,experience];
         let isValid = true;
 
         inputs.forEach(input => {
@@ -784,6 +830,11 @@
             var position = document.querySelector('input[name="position"]').value;
             var title = document.querySelector('input[name="title"]:checked') ? document.querySelector('input[name="title"]:checked').value : '';
             var surname = document.querySelector('input[name="surname"]').value;
+            var father = document.querySelector('input[name="father"]').value;
+            var dob = document.querySelector('input[name="dob"]').value;
+            var nrc = document.querySelector('input[name="nrc"]').value;
+            var education = document.querySelector('input[name="education"]').value;
+            var experience = document.querySelector('textarea[name="experience"]').value;
             var phone = document.querySelector('input[name="phone"]').value;
             var email = document.querySelector('input[name="email"]').value;
             var current_address = document.querySelector('textarea[name="current_address"]').value;
@@ -803,6 +854,16 @@
                     <p><strong>Phone:</strong> ${phone}</p>
                     <hr>
                     <p><strong>Email:</strong> ${email}</p>
+                    <hr>
+                     <p><strong>Father Name:</strong> ${father}</p>
+                    <hr>
+                     <p><strong>Date of birth:</strong> ${dob}</p>
+                    <hr>
+                     <p><strong>NRC No:</strong> ${nrc}</p>
+                    <hr>
+                     <p><strong>Education:</strong> ${education}</p>
+                    <hr>
+                       <p><strong>Work Experience:</strong> ${experience}</p>
                     <hr>
                     <p><strong>Current Address:</strong> ${current_address}</p>
                     <hr>

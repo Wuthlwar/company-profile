@@ -64,6 +64,14 @@
                     <td>{{ $details['title'] }}{{ $details['surname'] }}</td>
                 </tr>
                 <tr>
+                    <th>Father Name</th>
+                    <td>{{ $details['father'] }}</td>
+                </tr>
+                <tr>
+                    <th>DOB</th>
+                    <td>{{ $details['dob'] }}</td>
+                </tr>
+                <tr>
                     <th>Phone</th>
                     <td>{{ $details['phone'] }}</td>
                 </tr>
@@ -71,10 +79,23 @@
                     <th>Email</th>
                     <td>{{ $details['email'] }}</td>
                 </tr>
+
+                <tr>
+                    <th>Education</th>
+                    <td>{{ $details['education'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>>Work Experience</th>
+                    <td>{{ $details['experience'] }}</td>
+                </tr>
+
                 <tr>
                     <th>Current Address</th>
                     <td>{{ $details['current_address'] }}</td>
                 </tr>
+
+
                 <tr>
                     <th>Emergency Address</th>
                     <td>{{ $details['emergency_address'] }}</td>
@@ -82,6 +103,11 @@
                 <tr>
                     <th>Career Summary</th>
                     <td>{{ $details['career_summary'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Expected salary</th>
+                    <td>{{ $details['salary'] }}</td>
                 </tr>
 
                 <tr>

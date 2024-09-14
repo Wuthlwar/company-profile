@@ -10,14 +10,17 @@ use App\Models\JobCategory;
 use App\Models\JobVacants;
 use App\Models\KnowledgeSharing;
 use App\Models\Logs;
+use App\Models\PhotoGallery;
 use App\Models\PhotoName;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\{Auth,Session};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Hash;
 use App\Models\User;
 use App\Models\UserViewCount;
 use App\Models\VacantBranch;
+use App\Models\Branches;
+
 
 class HomeController extends Controller
 {
@@ -37,24 +40,63 @@ class HomeController extends Controller
                 ];
             });
 
+
         return view('home', compact('act_types', 'acts', 'vacantCounts'));
     }
 
-    public function job()
+    public function job(Request $request)
     {
         $act_types = ActivityType::all();
         $acts = Activity::latest()->get();
         $categories = JobCategory::latest()->paginate(10);
         $vacants = JobVacants::latest()->paginate(10);
+        $query = JobVacants::query();
 
-        // Get the count of vacancies for each category
+        if ($request->filled('cat_id')) {
+            $query->where('category_id', $request->cat_id);
+        }
+
+        if ($request->filled('position')) {
+            $query->where('vacant_name', 'like', '%' . $request->position . '%');
+        }
+
+        if ($request->filled('branch_id')) {
+            $branch_ids = $request->branch_id; // This is an array of selected branch IDs
+            $query->whereHas('branches', function ($q) use ($branch_ids) {
+                $q->whereIn('branch_id', $branch_ids);
+            });
+        }
+
+
+        $vacants = $query->latest()->paginate(10);
+
         $vacants_count = JobVacants::select('category_id', DB::raw('count(*) as total'))
                                    ->groupBy('category_id')
                                    ->get()
                                    ->keyBy('category_id')
                                    ->toArray();
 
-        return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count'));
+                                   $message = null;
+                                   if ($request->filled('cat_id')) {
+                                       $vacant_total=$vacants->total();
+                                       $message = $vacants->isEmpty() ? 'No Job Found.' : $vacant_total .' Job Founds.';
+                                       }elseif ($request->filled('branch_id')) {
+                                        $vacant_total=$vacants->total();
+                                        $message = $vacants->isEmpty() ? 'No Job Found.' : $vacant_total .' Job Founds.';
+                                       }
+                                       elseif($request->filled('cat_id') && $request->filled('position') && $request->filled('branch_id') ){
+                                           $vacant_total=$vacants->total();
+                                           $message = $vacants->isEmpty() ? 'Job Not Founds.' : $vacant_total .' Job Founds.';
+                                       }elseif($request->filled('cat_id')==null && $request->filled('position')==null && $request->filled('branch_id')==null){
+                                           //null
+                                       }
+                                       else{
+                                           $vacant_total=$vacants->total();
+                                           $message = $vacants->isEmpty() ? 'Job Not Founds.' : $vacant_total .' Job Founds.';
+                                       }
+        $branches=Branch::all();
+
+        return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count','message','branches'));
     }
 
             public function ViewCounts(Request $request,$id){
@@ -89,33 +131,61 @@ class HomeController extends Controller
         }
 
 
-            public function jobsearch(Request $request)
-        {
-            $act_types = ActivityType::all();
-            $acts = Activity::latest()->get();
-            $categories = JobCategory::latest()->paginate(10);
+        public function jobsearch(Request $request)
+                    {
+                        $act_types = ActivityType::all();
+                        $acts = Activity::latest()->get();
+                        $categories = JobCategory::latest()->paginate(10);
 
-            $query = JobVacants::query();
+                        $query = JobVacants::query();
 
-            if ($request->filled('cat_id')) {
-                $query->where('category_id', $request->cat_id);
-            }
+                        if ($request->filled('cat_id')) {
+                            $query->where('category_id', $request->cat_id);
+                        }
 
-            if ($request->filled('position')) {
-                $query->where('vacant_name', 'like', '%' . $request->position . '%');
-            }
+                        if ($request->filled('position')) {
+                            $query->where('vacant_name', 'like', '%' . $request->position . '%');
+                        }
 
-            $vacants = $query->latest()->paginate(10);
+                        if ($request->filled('branch_id')) {
+                            $branch_ids = $request->branch_id; // This is an array of selected branch IDs
+                            $query->whereHas('branches', function ($q) use ($branch_ids) {
+                                $q->whereIn('branch_id', $branch_ids);
+                            });
+                        }
 
-            // Get the count of vacancies for each category
-            $vacants_count = JobVacants::select('category_id', DB::raw('count(*) as total'))
-                                    ->groupBy('category_id')
-                                    ->get()
-                                    ->keyBy('category_id')
-                                    ->toArray();
+                        $vacants = $query->latest()->paginate(10);
 
-            return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count'));
-        }
+                        $vacants_count = JobVacants::select('category_id', DB::raw('count(*) as total'))
+                                                    ->groupBy('category_id')
+                                                    ->get()
+                                                    ->keyBy('category_id')
+                                                    ->toArray();
+
+                                                    $message = null;
+                                                    if ($request->filled('cat_id')) {
+                                                        $vacant_total=$vacants->total();
+                                                        $message = $vacants->isEmpty() ? 'No Job Found.' : $vacant_total .' Job Founds.';
+                                                        }elseif ($request->filled('branch_id')) {
+                                                         $vacant_total=$vacants->total();
+                                                         $message = $vacants->isEmpty() ? 'No Job Found.' : $vacant_total .' Job Founds.';
+                                                        }
+                                                        elseif($request->filled('cat_id') && $request->filled('position') && $request->filled('branch_id') ){
+                                                            $vacant_total=$vacants->total();
+                                                            $message = $vacants->isEmpty() ? 'Job Not Founds.' : $vacant_total .' Job Founds.';
+                                                        }elseif($request->filled('cat_id')==null && $request->filled('position')==null && $request->filled('branch_id')==null){
+                                                            //null
+                                                        }
+                                                        else{
+                                                            $vacant_total=$vacants->total();
+                                                            $message = $vacants->isEmpty() ? 'Job Not Founds.' : $vacant_total .' Job Founds.';
+                                                        }
+
+                            $branches=Branch::all();
+
+                        return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count', 'message','branches'));
+                    }
+
 
     public function jobAllcate()
     {

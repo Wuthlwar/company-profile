@@ -52,6 +52,27 @@
                         <label for="cateGory" class="form-label">Email</label>
                         <input type="text" class="form-control" id="cateGory" name="email" value="{{session('email')}}" style="border:1px solid #333;height:30px;font-size:13px">
                     </div>
+                        <div class="col-md-2">
+                            <label for="status" class="form-label card-title" style="font-size:15px;">Department <font style="color:red;">*</font></label>
+                            <select id="status" class="form-control mb-3 @error('department') is-invalid @enderror" name="role" style="border:1px solid #333;height:30px;font-size:13px" required>
+                                @if (auth()->user()->department=='HR')
+                                <option value="HR" {{old('department')=='HR' ?'selected':''}}>HR</option>
+                                @elseif (auth()->user()->department=='Online')
+                                <option value="Online" {{old('department')=='Online' ?'selected':''}}>Online</option>
+                                @elseif (auth()->user()->department=='MKT')
+                                <option value="MKT" {{old('department')=='MKT' ?'selected':''}}>MKT</option>
+                                @elseif (auth()->user()->department=='SD' && auth()->user()->role=='1')
+                                <option value="SD" {{old('department')=='SD' ?'selected':''}}>System Development</option>
+                                <option value="HR" {{old('department')=='HR' ?'selected':''}}>HR</option>
+                                <option value="Online" {{old('department')=='Online' ?'selected':''}}>Online</option>
+                                <option value="MKT" {{old('department')=='MKT' ?'selected':''}}>MKT</option>
+                                @endif
+                            </select>
+                            @error('role')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                            <hr>
+                        </div>
 
                     <div class="col-md-2">
                         <label for="cateGory" class="form-label">Role</label>
@@ -61,7 +82,7 @@
                             <option value="3" {{session('role')=='3' ?'selected':''}}>User</option>
                           </select>
                     </div>
-`
+
                     <div class="col-md-2">
                         <label for="inputZip" class="form-label" style="color: #fff;">Search</label><br>
                         <button type="submit" class="btn btn-primary" style="border:1px solid #333;height:30px;font-size:13px;padding:5px;">
@@ -93,6 +114,7 @@
                         <th scope="col" class="card-title" style="font-size: 15px;">Name</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Email / Username</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Role</th>
+                        <th scope="col" class="card-title" style="font-size: 15px;">Department</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Created Date</th>
                         <th scope="col" class="card-title" style="font-size: 15px;">Updated Date</th>
                       </tr>
@@ -126,6 +148,7 @@
                         User
                         @endif
                     </td>
+                    <td>{{$user->department}}</td>
                     <td>{{$user->date}}</td>
                     <td>{{$user->updated_at}}</td>
                   </tr>
@@ -197,6 +220,31 @@
                                                             <hr>
                                                         </div>
                                                     </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <label for="status" class="form-label card-title" style="font-size:15px;">Department <font style="color:red;">*</font></label>
+                                                            <select id="status" class="form-control mb-3 @error('department') is-invalid @enderror" name="department" style="border:1px solid #333;height:30px;font-size:13px" required>
+                                                                @if (auth()->user()->department=='HR')
+                                                                <option value="HR" {{ old('department', $user->department) == 'HR'}}>HR</option>
+                                                                @elseif (auth()->user()->department=='Online')
+                                                                <option value="Online" {{ old('department', $user->department) == 'Online'}}>Online</option>
+                                                                @elseif (auth()->user()->department=='MKT')
+                                                                <option value="MKT" {{old('department')=='MKT' ?'selected':''}}>MKT</option>
+                                                                @elseif (auth()->user()->department=='SD' && auth()->user()->role=='1')
+                                                                <option value="SD" {{old('department')=='SD' ?'selected':''}}>System Development</option>
+                                                                <option value="HR" {{old('department')=='HR' ?'selected':''}}>HR</option>
+                                                                <option value="Online" {{old('department')=='Online' ?'selected':''}}>Online</option>
+                                                                <option value="MKT" {{old('department')=='MKT' ?'selected':''}}>MKT</option>
+                                                                @endif
+                                                            </select>
+                                                            @error('role')
+                                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+
 
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -285,6 +333,18 @@
                             </div>
 
                             <div class="row">
+                            <div class="col-md-12">
+                                <label for="cateGory" class="form-label">Department</label>
+                                <select id="inputState" class="form-control mb-3" name="department" style="border:1px solid #333;height:30px;font-size:13px">
+                                    <option value="SD" {{old('department')=='SD' ?'selected':''}}>System Development</option>
+                                    <option value="HR" {{old('department')=='HR' ?'selected':''}}>HR</option>
+                                    <option value="Online" {{old('department')=='Online' ?'selected':''}}>Online</option>
+                                    <option value="MKT" {{old('department')=='MKT' ?'selected':''}}>MKT</option>
+                                </select>
+                            </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-md-12">
                                     <label for="status" class="form-label card-title" style="font-size:15px;">Role <font style="color:red;">*</font></label>
                                     <select id="status" class="form-control mb-3 @error('role') is-invalid @enderror" name="role" style="border:1px solid #333;height:30px;font-size:13px" required>
@@ -292,7 +352,7 @@
                                         <option value="2" {{ old('role') == 2 ? 'selected' : '' }}>Admin</option>
                                         <option value="3" {{ old('role') == 3 ? 'selected' : '' }}>User</option>
                                     </select>
-                                    @error('status')
+                                    @error('department')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                     <hr>

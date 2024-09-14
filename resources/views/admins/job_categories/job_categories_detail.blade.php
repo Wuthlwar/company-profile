@@ -74,7 +74,7 @@
                                         </div>
                                         <hr>
                                     </div>
-
+                                    @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                     <div class="col-md-12">
                                         <label for="fromDate" class="form-label" id="font-f">Add New Job Roles</label>
 
@@ -83,12 +83,15 @@
                                         <i class="btn btn-success addbtn" id="addbtn" data-count="0">Add Job Role</i>
                                         <hr>
                                     </div>
-
+                                    @endif
                                     <div class="col-md-12">
                                         @foreach ( getJobrole($category->id) as $job_role)
                                         <span class="badge bg-primary" style="font-size: 16px;">
+                                        @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                         <i class="las la-trash" style="color: rgb(243, 2, 2); font-size: 16px; cursor: pointer;"
-                                        onclick="confirmDelete('{{ route('job_roles.delete', $job_role->id) }}')"></i>{{ $job_role->job_role }}
+                                        onclick="confirmDelete('{{ route('job_roles.delete', $job_role->id) }}')"></i>
+                                        @endif
+                                        {{ $job_role->job_role }}
                                         </span>
                                          @endforeach
                                     </div>

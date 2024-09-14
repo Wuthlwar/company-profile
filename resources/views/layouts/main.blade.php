@@ -45,10 +45,13 @@
     <link rel="stylesheet" href="{{asset('assets/vendors/jquery-ui/jquery-ui.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendors/timepicker/timePicker.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendors/ion.rangeSlider/css/ion.rangeSlider.min.css')}}">
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.1/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- template styles -->
     <link rel="stylesheet" id="langLtr" href="{{asset('assets/css/insur.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/insur-responsive.css')}}" />
+
     <style>
         .company_logo{
             width: 130px!important;

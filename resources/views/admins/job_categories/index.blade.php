@@ -8,8 +8,9 @@
 
             </div>
             {{-- <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add</a> --}}
+            @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
             <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#jobModal"><i class="las la-plus mr-3"></i>Add</button>
-
+            @endif
         </div>
     </div>
     <div class="col-lg-12 col-md-12">
@@ -90,7 +91,7 @@
                         &nbsp;&nbsp;&nbsp;
                         <a href="{{route('Job_categories.edit',$category->id)}}"><i class="la la-eye" style="font-size: 25px;color:#312eec;"></i></a>
                         @elseif(Auth()->user()->role=='2' || Auth()->user()->role=='3')
-                        <i class="la la-eye" style="font-size: 25px;color:#312eec;" data-toggle="modal" data-target="#jobupdateModal{{$category->id}}"></i>
+                        <a href="{{route('Job_categories.edit',$category->id)}}"><i class="la la-eye" style="font-size: 25px;color:#312eec;"></i></a>
                         @endif
                         </span>
                     </th>

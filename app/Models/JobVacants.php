@@ -66,4 +66,10 @@ class JobVacants extends Model
         return $this->hasMany(VacantBranch::class,'vacant_id','id');
     }
 
+    public function branches()
+{
+    return $this->hasMany(VacantBranch::class, 'vacant_id');
+}
+
+
 }

@@ -13,6 +13,7 @@
 
         </div>
     </div>
+    @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
     <div class="col-lg-4">
         @if (session('success'))
         <div class="alert alert-success">
@@ -26,7 +27,7 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between rounded-sm">
                             <div class="header-title">
-                                <h6 class="card-title">Add New Knowledge Sharing</h6>
+                                <h4 class="mb-4">Knowledge Sharing List</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -89,9 +90,13 @@
         </form>
 
     </div>
-
+@endif
+@if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
     <div class="col-lg-8 col-md-8">
-        <h4 class="mb-4">Knowledge Sharing List</h4>
+        @else
+        <div class="col-lg-12 col-md-12">
+@endif
+
         <form action="{{ route('searchknowledge.search') }}" method="post" class="row g-3 card-title" style="margin: 10px; font-size: 12px;">
             @csrf
             @method('post')
@@ -144,11 +149,15 @@
                         <thead class="bg-white text-uppercase">
                             <tr class="ligth ligth-data">
                                 <tr>
+                                @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                 @if (count($knowledgeSharings)>0)
                                 <th scope="col" class="card-title" style="font-size: 15px;"><input type="checkbox" id="select-all"></th>
                                 @endif
+                                @endif
                                 <th scope="col" class="card-title" style="font-size: 15px;">#</th>
+                                @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                 <th scope="col" class="card-title" style="font-size: 15px;">Edit</th>
+                                @endif
                                 <th scope="col" class="card-title" style="font-size: 15px;">Name</th>
                                 <th scope="col" class="card-title" style="font-size: 15px;">Social Media</th>
                                 <th scope="col" class="card-title" style="font-size: 15px;">Link</th>
@@ -160,12 +169,15 @@
                         <tbody>
                             @foreach($knowledgeSharings as $index => $sharing)
                                 <tr id="font-s">
+                                    @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                     <th scope="row">
                                     <input type="checkbox" name="ids[]" value="{{ $sharing->id }}" class="select-item">
                                     </th>
-
+                                    @endif
                                     <th>{{ $index + 1 }}</th>
+                                    @if (Auth()->user()->role=='1' || Auth()->user()->role=='2')
                                     <th><a href="{{route('knowledge_sharing.edit',$sharing->id)}}">Edit</a></th>
+                                    @endif
                                     <th>{{ $sharing->name }}</th>
                                     <th>{{ $sharing->media }}</th>
                                     <th><a href="{{ $sharing->link }}" target="_blank">{{ Str::limit($sharing->link,30,'...') }}</a></th>

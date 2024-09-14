@@ -131,8 +131,8 @@ class JobApplicationFormController extends Controller
         $pathfile_banner = Storage::putFileAs('uploads/jobvacants', $request->file('resume'), $resume);
 
         $date = now()->format('Y-m-d');
-        $receiver = $request->email;
-
+        $customerEmail = $request->email; // e.g., nyinyi@gmail.com
+        $hrEmail = 'waiminmaung@pro1globalhomecenter.com';
         $details = [
             'resume' => $resume,
             'jobvacant_id' => $request->jobvacant_id,
@@ -140,20 +140,37 @@ class JobApplicationFormController extends Controller
             'position' => $request->position,
             'title' => $request->title,
             'surname' => $request->surname,
+            'father' => $request->father,
+            'dob' => $request->dob,
+            'education' => $request->education,
+            'experience' => $request->experience,
+            'nrc' => $request->nrc,
             'phone' => $request->phone,
-            'email' => $receiver,
+            'email' => $customerEmail,
             'current_address' => $request->current_address,
             'career_summary' => $request->career_summary,
+            'salary' => $request->salary,
             'emergency_address' => $request->emergency_address,
             'agree' => $request->agree,
             'date' => $date,
         ];
 
         $resumePath = storage_path('app/public/uploads/jobvacants/' . $resume);
-        // dd($resumePath);
 
-        // Send the email with the resume attachment
-        Mail::to($receiver)->send(new SendReceivedHr($details, $resumePath));
+        try {
+
+            Mail::to($customerEmail)->send(new SendReceivedHr($details, $resumePath));
+
+
+            Mail::to($customerEmail)
+            ->bcc($hrEmail)
+            ->send(new SendReceivedHr($details, $resumePath));
+
+        } catch (\Exception $e) {
+
+            \Log::error('Failed to send email: ' . $e->getMessage());
+        }
+
 
         $jobs=JobApplicationForm::create([
             'jobvacant_id' => $request['jobvacant_id'],
@@ -161,8 +178,13 @@ class JobApplicationFormController extends Controller
             'position' => $request['position'],
             'title' => $request['title'],
             'surname' => $request['surname'],
+            'father' => $request['father'],
+            'dob' => $request['dob'],
+            'education' => $request['education'],
+            'experience' => $request['experience'],
+            'nrc' => $request['nrc'],
             'phone' => $request['phone'],
-            'email' => $receiver,
+            'email' => $customerEmail,
             'current_address' => $request['current_address'],
             'emergency_address' => $request['emergency_address'],
             'career_summary' => $request['career_summary'],
