@@ -129,8 +129,8 @@ class HomeController extends Controller
                                                     : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
                                     }
 
-        $branchIds = [1, 2, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30];
-        $branches = Branch::whereIn('id', $branchIds)->get();
+        // $branchIds = [1, 2, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30];
+        $branches = Branch::where('region_id', 1)->get();
         $regions = Region::all();
         
         
@@ -240,8 +240,8 @@ class HomeController extends Controller
                             : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
             }
             
-            $branchIds = [1, 2, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30];
-            $branches = Branch::whereIn('id', $branchIds)->get();
+            // $branchIds = [1, 2, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30];
+            $branches = Branch::where('region_id', 1)->get();;
             $regions = Region::all();
 
             return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count', 'message','branches','regions'));
@@ -476,6 +476,13 @@ class HomeController extends Controller
         // If authentication fails, redirect back to login with error
         return back()->with('fails', 'Invalid email or password');
 
+    }
+
+    public function getBranchesByRegion($region_id)
+    {
+        $branches = Branch::where('region_id', $region_id)->get();
+
+        return response()->json($branches);
     }
 
 }

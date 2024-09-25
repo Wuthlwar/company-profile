@@ -82,7 +82,8 @@
                                         <option value="">Select Your Branch Location</option>
                                         @foreach($branches as $branch)
                                             <option value="{{ $branch->id }}" {{ in_array($branch->id, request('branch_id', [])) ? 'selected' : '' }}>
-                                                {{ $branch->branch_name }}  {{ $branch->branch_address }}
+                                                {{ $branch->branch_address }}  
+                                                {{-- {{ $branch->branch_address }} --}}
                                             </option>
                                         @endforeach
                                     </select>
@@ -248,6 +249,30 @@ $( '#multiple-select-field' ).select2( {
 </script>
     <script>
         $(document).ready(function () {
+
+            $('#region').change(function() {
+                var regionId = $(this).val();
+                $('#multiple-select-field').empty(); // Clear the branch dropdown
+
+                if (regionId) {
+                    $.ajax({
+                        url: '/branches/' + regionId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#multiple-select-field').append('<option value="">Select Branch</option>'); // Add default option
+                            $.each(data, function(index, branch) {
+                                $('#multiple-select-field').append('<option value="' + branch.id + '">' + branch.branch_name_eng + '</option>');
+                            });
+                        },
+                        error: function(xhr) {
+                            console.log('Error fetching branches: ', xhr);
+                        }
+                    });
+                } else {
+                    $('#branch').append('<option value="">Select Branch</option>'); // Reset if no region is selected
+                }
+            });
 
             // $('#region').change(function() {
             //     var selectedRegion = $(this).val(); // Get the selected region

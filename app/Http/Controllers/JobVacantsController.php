@@ -453,11 +453,11 @@ class JobVacantsController extends Controller
 
 
     public function getBranchesByRegion($region_id)
-{
-    $branches = Branch::where('region_id', $region_id)->get();
+    {
+        $branches = Branch::where('region_id', $region_id)->get();
 
-    return response()->json($branches);
-}
+        return response()->json($branches);
+    }
 
 
 
