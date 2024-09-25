@@ -183,6 +183,8 @@ Route::group(['prefix' => 'admins'], function(){
 
      Route::match(['post','put'], '/update-faq-status/{id}', [FaqController::class, 'updateStatus']);
 
+     Route::get('branches/{region_id}', [JobVacantsController::class, 'getBranchesByRegion']);
+
 
 });
 
