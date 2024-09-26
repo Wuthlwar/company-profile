@@ -45,7 +45,15 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12" style="background-color: #2466eb; padding-top:20px;">
                         <form method="GET" action="{{ route('job.search') }}">
-                            <div class="input-group mb-3" style="border-radius:30px;">
+                                    <div class="input-group mb-3" style="border-radius:30px;">
+                                        <input type="text" style="font-size: 13px;" class="form-control" name="position" placeholder="All Position, Job Description, Keywords"
+                                        aria-label="Job Function" aria-describedby="button-addon2" value="{{ request('position') }}" list="position">
+                                    <datalist id="position">
+                                        @foreach ($vacants as $vacant)
+                                            <option value="{{ $vacant->vacant_name }}"></option>
+                                        @endforeach
+                                    </datalist>
+
                                     <select class="form-control" id="multiple-select-field-cat" name="cat_id" data-placeholder="Choose your Job Function">
                                         <option value="">Select Your Job Function</option>
                                         @foreach($categories as $category)
@@ -57,22 +65,26 @@
                                         @endforeach
                                     </select>
 
+                                    <select class="form-control" id="region" name="region" data-placeholder="Choose your Region">
+                                        <option value="">Select Your Region</option>                    
+                                        @foreach ($regions as $region)
+                                            <option value="{{ $region->id }}" {{ request('region') == $region->id ? 'selected' : '' }}>{{ $region->name }}</option>
+                                        @endforeach
+                                    </select>
+
                                     <select class="form-control" id="multiple-select-field" data-placeholder="Choose your branch location"  name="branch_id[]"  multiple>
                                         <option value="">Select Your Branch Location</option>
                                         @foreach($branches as $branch)
                                             <option value="{{ $branch->id }}" {{ in_array($branch->id, request('branch_id', [])) ? 'selected' : '' }}>
-                                                {{ $branch->branch_name }}  {{ $branch->branch_address }}
+                                                {{ $branch->branch_address }}  
                                             </option>
                                         @endforeach
                                     </select>
 
-                                <input type="text" class="form-control" name="position" placeholder="All Position, Job Description, Keywords"
-                                    aria-label="Job Function" aria-describedby="button-addon2" value="{{ request('position') }}" list="position">
-                                <datalist id="position">
-                                    @foreach ($vacants as $vacant)
-                                        <option value="{{ $vacant->vacant_name }}"></option>
-                                    @endforeach
-                                </datalist>
+
+
+                     
+
 
                                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="color: #fdf8f8;">
                                         Search
@@ -92,42 +104,51 @@
                     <div class="col-xl-12 col-lg-12">
                         <div class="news-details">
                             <div class="comment-one">
-                                <div class="comment-one__single">
+                                <div class="comment-one__single d-flex">
                                     <div class="news-three__client-img" style="width:70px;">
                                         @if ($vacant->vacant_image == null)
-
-                                        <a href="{{route('our_opportunities_detail',$vacant->id)}}"><img src="{{asset('job_banner/title.png')}}" alt="" style="width:70px;"></a>
-
+                                            <a href="{{route('our_opportunities_detail',$vacant->id)}}">
+                                                <img src="{{asset('job_banner/title.png')}}" alt="" style="width:70px;">
+                                            </a>
                                         @else
-                                        <a href="{{route('our_opportunities_detail',$vacant->id)}}"><img src="{{asset('storage/uploads/jobvacants/' . $vacant->vacant_image)}}" alt="" style="width:70px;"></a>
+                                            <a href="{{route('our_opportunities_detail',$vacant->id)}}">
+                                                <img src="{{asset('storage/uploads/jobvacants/' . $vacant->vacant_image)}}" alt="" style="width:70px;">
+                                            </a>
                                         @endif
-
                                     </div>
-
-                                    <div class="comment-one__content" style="color:#000;">
-                                        <h3>{{$vacant->vacant_name}}</h3>
-                                        <p>
-                                            {!! html_entity_decode(Str::limit($vacant->vacant_description, 600, '. . .')) !!}
-                                        </p>
-                                        <p style="color:blue;">
-                                            <i class="far fa-calendar"></i>&nbsp;&nbsp; Posted on {{ $vacant->created_at->format('d F Y') }}
-                                        </p>
-
-                                        <p style="font-size: 13px;">{{ $vacant->created_at->diffForHumans() }}</p>
-                                        <font style="color: #172ec7;font-size:14px;"><i class="far fa-eye"></i> {{ $vacant->view_count}} Views</font>
-
-                                        <form method="POST">
-                                            @csrf
-                                            <input type="hidden" name="vacant_id" value="{{ $vacant->id }}">
-                                            <button type="submit" formaction="{{ route('view_counts', $vacant->id) }}" class="thm-btn comment-one__btn">View Detail</button>
-                                        </form>
-
+                    
+                                    <div class="d-flex flex-column w-100">
+                                        <!-- Main Content Section -->
+                                        <div class="comment-one__content flex-grow-1">
+                                            <h3>{{$vacant->vacant_name}}</h3>
+                                            <p>{!! html_entity_decode(Str::limit($vacant->vacant_description, 600, '. . .')) !!}</p>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <p style="color:blue;">
+                                                    <i class="far fa-calendar"></i>&nbsp;&nbsp; Posted on {{ $vacant->created_at->format('d F Y') }}
+                                                </p>
+                                                <p style="font-size: 13px;">{{ $vacant->created_at->diffForHumans() }}</p>
+                                                <font style="color: #172ec7; font-size:14px;">
+                                                    <i class="far fa-eye"></i> {{ $vacant->view_count}} Views
+                                                </font>
+                                            </div>
+                    
+                                            <!-- Button Section (Aligned Right) -->
+                                            <form method="POST" class="ml-auto">
+                                                @csrf
+                                                <input type="hidden" name="vacant_id" value="{{ $vacant->id }}">
+                                                <button type="submit" formaction="{{ route('view_counts', $vacant->id) }}" class="thm-btn comment-one__btn">View Detail</button>
+                                            </form>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    
                     @endforeach
                     {{ $vacants->links('pagination::bootstrap-4') }}
                 </div>
@@ -206,9 +227,15 @@
 
 <script>
 $( '#multiple-select-field-cat' ).select2( {
-
     placeholder: $( this ).data( 'placeholder' ),
     closeOnSelect: false,
+    allowClear: true
+} );
+
+$( '#region' ).select2( {
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    allowClear: true
 } );
 
 $( '#multiple-select-field' ).select2( {
@@ -218,6 +245,53 @@ $( '#multiple-select-field' ).select2( {
 </script>
     <script>
         $(document).ready(function () {
+
+            $('#region').change(function() {
+                var regionId = $(this).val();
+                $('#multiple-select-field').empty(); // Clear the branch dropdown
+
+                if (regionId) {
+                    $.ajax({
+                        url: '/branches/' + regionId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#multiple-select-field').append('<option value="">Select Branch</option>'); // Add default option
+                            $.each(data, function(index, branch) {
+                                $('#multiple-select-field').append('<option value="' + branch.id + '">' + branch.branch_address + '</option>');
+                            });
+                        },
+                        error: function(xhr) {
+                            console.log('Error fetching branches: ', xhr);
+                        }
+                    });
+                } else {
+                    $('#branch').append('<option value="">Select Branch</option>'); // Reset if no region is selected
+                }
+            });
+
+            // $('#region').change(function() {
+            //     var selectedRegion = $(this).val(); // Get the selected region
+
+            //     // Show or hide branch options based on selected region
+            //     $('#multiple-select-field option').each(function() {
+            //         var branchRegion = $(this).data('region'); // Get the region ID from the option
+
+            //         if (selectedRegion === "" || branchRegion == selectedRegion) {
+            //             $(this).show();  // Show branches of the selected region
+            //         } else {
+            //             $(this).hide();  // Hide branches not in the selected region
+            //         }
+            //     });
+
+            //     $('#multiple-select-field').val([]); // Reset selected branches when region changes
+            // });
+
+            // // Trigger change on page load in case a region is already selected
+            // $('#region').trigger('change');
+
+
+
 
              var lang1 = $('#langSwitch2').val();
 

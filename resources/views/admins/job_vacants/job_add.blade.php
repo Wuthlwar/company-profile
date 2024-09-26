@@ -194,7 +194,11 @@
                                         Region<font style="color:red;">*</font>
                                     </label>
                                     <select class="form-control" id="region" name="region" style="border:1px solid #333;" required>
-                                        <option value="">Select Region</option>
+                                        @foreach ($regions as $region)
+                                            <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                        @endforeach
+                                    </select>
+                                                                            {{-- <option value="">Select Region</option>
                                         <option value="ayeyarwady">Ayeyarwady</option>
                                         <option value="bago">Bago</option>
                                         <option value="chin">Chin</option>
@@ -209,12 +213,12 @@
                                         <option value="shan">Shan</option>
                                         <option value="tanintharyi">Tanintharyi</option>
                                         <option value="naypyidaw">Naypyidaw</option>
-                                        <option value="yangon">Yangon</option>
-                                    </select>
+                                        <option value="yangon">Yangon</option> --}}
+                                        {{-- <option value="">Select Region</option> --}}
                                     <hr>
                                 </div>
 
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <label for="township" class="form-label card-title" style="font-size:15px;">
                                         Township<font style="color:red;">*</font>
                                     </label>
@@ -222,15 +226,7 @@
                                         <option value="">Select Township</option>
                                     </select>
                                     <hr>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <label for="femail" class="form-label card-title" style="font-size:15px;">
-                                       Address
-                                    </label>
-                                    <input type="text" class="form-control" id="address" name="address" style="border:1px solid #333;height:40px;font-size:13px" required>
-                                    <hr>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-md-6">
                                     <label for="branch" class="form-label card-title" style="font-size:15px;">
@@ -244,7 +240,27 @@
                                     <hr>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <label for="femail" class="form-label card-title" style="font-size:15px;">
+                                       Address
+                                    </label>
+                                    <input type="text" class="form-control" id="address" name="address" style="border:1px solid #333;height:40px;font-size:13px" required>
+                                    <hr>
+                                </div>
+
+                                {{-- <div class="col-md-6">
+                                    <label for="branch" class="form-label card-title" style="font-size:15px;">
+                                        Branches<font style="color:red;">*</font>
+                                    </label>
+                                    <select class="form-control" id="branches" name="branch_id[]" multiple required>
+                                        @foreach($branches as $branch)
+                                            <option value="{{ $branch->id }}">{{ $branch->branch_name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <hr>
+                                </div> --}}
+
+                                <div class="col-md-12">
                                     <label for="salary" class="form-label card-title" style="font-size:15px;">
                                         Salary <font style="color:red;">*</font>
                                     </label><br>
@@ -1025,6 +1041,34 @@ $(document).ready(function() {
 
 <script>
 $(document).ready(function() {
+
+
+    $('#region').change(function() {
+ 
+        var regionId = $(this).val();
+        console.log(regionId);
+        $('#branches').empty(); // Clear the branch dropdown
+
+        if (regionId) {
+            $.ajax({
+                url: '/admins/branches/' + regionId,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    $('#branches').append('<option value="">Select Branch</option>'); // Add default option
+                    $.each(data, function(index, branch) {
+                        $('#branches').append('<option value="' + branch.id + '">' + branch.branch_name_eng + '</option>');
+                    });
+                },
+                error: function(xhr) {
+                    console.log('Error fetching branches: ', xhr);
+                }
+            });
+        } else {
+            $('#branch').append('<option value="">Select Branch</option>'); // Reset if no region is selected
+        }
+    });
+
 
     $('#jobcategorynameadd').on('change', function() {
         var categoryId = $(this).val();

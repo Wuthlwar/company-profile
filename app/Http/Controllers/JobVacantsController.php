@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Logs;
 use App\Models\Branch;
-use App\Models\JobApplicationForm;
+use App\Models\Region;
+use App\Models\Jobroles;
 use App\Models\JobVacants;
 use App\Models\JobCategory;
-use App\Models\Jobroles;
-use App\Models\Logs;
 use App\Models\VacantBranch;
 use Illuminate\Http\Request;
+use App\Models\JobApplicationForm;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\{Auth,Session};
-use Illuminate\Support\Facades\DB;
+
 class JobVacantsController extends Controller
 {
     /**
@@ -74,8 +76,10 @@ class JobVacantsController extends Controller
     public function create()
     {
         $categories = JobCategory::all();
-        $branches = Branch::latest()->get();
-        return view('admins.job_vacants.job_add',compact('categories','branches'));
+        // $branches = Branch::latest()->get();
+        $branches = Branch::where('region_id', 1)->get();
+        $regions = Region::all();
+        return view('admins.job_vacants.job_add',compact('categories','branches','regions'));
     }
 
     /**
@@ -86,7 +90,6 @@ class JobVacantsController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'banner' => 'nullable|mimes:jpeg,jpg,png,gif',
             'tumb' => 'nullable|mimes:jpeg,jpg,png,gif',
@@ -447,6 +450,13 @@ class JobVacantsController extends Controller
         return redirect()->back()->with('success', 'Status and remark updated successfully.');
     }
 
+
+    public function getBranchesByRegion($region_id)
+    {
+        $branches = Branch::where('region_id', $region_id)->get();
+
+        return response()->json($branches);
+    }
 
 
 
