@@ -262,7 +262,7 @@ $( '#multiple-select-field' ).select2( {
                         success: function(data) {
                             $('#multiple-select-field').append('<option value="">Select Branch</option>'); // Add default option
                             $.each(data, function(index, branch) {
-                                $('#multiple-select-field').append('<option value="' + branch.id + '">' + branch.branch_name_eng + '</option>');
+                                $('#multiple-select-field').append('<option value="' + branch.id + '">' + branch.branch_address + '</option>');
                             });
                         },
                         error: function(xhr) {
