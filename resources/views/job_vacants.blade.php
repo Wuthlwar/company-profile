@@ -66,13 +66,7 @@
                                     </select>
 
                                     <select class="form-control" id="region" name="region" data-placeholder="Choose your Region">
-                                        <option value="">Select Your Region</option>
-                                        {{-- <option value="1">Yangon</option>
-                                        <option value="2">Mandalay</option>
-                                        <option value="3">Mawlamyine</option>
-                                        <option value="4">Taunggyi</option>
-                                        <option value="5">Bago</option> --}}
-                                        
+                                        <option value="">Select Your Region</option>                    
                                         @foreach ($regions as $region)
                                             <option value="{{ $region->id }}" {{ request('region') == $region->id ? 'selected' : '' }}>{{ $region->name }}</option>
                                         @endforeach
@@ -234,12 +228,13 @@ $( '#multiple-select-field-cat' ).select2( {
 
     placeholder: $( this ).data( 'placeholder' ),
     closeOnSelect: false,
+    allowClear: true
 } );
 
 $( '#region' ).select2( {
-
     placeholder: $( this ).data( 'placeholder' ),
     closeOnSelect: false,
+    allowClear: true
 } );
 
 $( '#multiple-select-field' ).select2( {
