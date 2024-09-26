@@ -46,7 +46,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12" style="background-color: #2466eb; padding-top:20px;">
                         <form method="GET" action="{{ route('job.search') }}">
                                     <div class="input-group mb-3" style="border-radius:30px;">
-                                        <input type="text" class="form-control" name="position" placeholder="All Position, Job Description, Keywords"
+                                        <input type="text" style="font-size: 13px;" class="form-control" name="position" placeholder="All Position, Job Description, Keywords"
                                         aria-label="Job Function" aria-describedby="button-addon2" value="{{ request('position') }}" list="position">
                                     <datalist id="position">
                                         @foreach ($vacants as $vacant)
@@ -77,11 +77,13 @@
                                         @foreach($branches as $branch)
                                             <option value="{{ $branch->id }}" {{ in_array($branch->id, request('branch_id', [])) ? 'selected' : '' }}>
                                                 {{ $branch->branch_address }}  
-                                                {{-- {{ $branch->branch_address }} --}}
                                             </option>
                                         @endforeach
                                     </select>
 
+
+
+                     
 
 
                                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="color: #fdf8f8;">
@@ -225,7 +227,6 @@
 
 <script>
 $( '#multiple-select-field-cat' ).select2( {
-
     placeholder: $( this ).data( 'placeholder' ),
     closeOnSelect: false,
     allowClear: true

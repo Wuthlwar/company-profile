@@ -90,7 +90,6 @@ class JobVacantsController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'banner' => 'nullable|mimes:jpeg,jpg,png,gif',
             'tumb' => 'nullable|mimes:jpeg,jpg,png,gif',

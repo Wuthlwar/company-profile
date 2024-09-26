@@ -129,8 +129,10 @@ class HomeController extends Controller
                                                     : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
                                     }
 
-        // $branchIds = [1, 2, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30];
-        $branches = Branch::where('region_id', 1)->get();
+        $branchIds = [1, 2, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30];
+        // $branches = Branch::where('region_id', 1)->get();
+        $branches = Branch::whereIn('id', $branchIds)
+                            ->get();
         $regions = Region::all();
         
         
@@ -239,10 +241,45 @@ class HomeController extends Controller
                             ? 'No Job Found.' 
                             : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
             }
-            
-            // $branchIds = [1, 2, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30];
-            $branches = Branch::where('region_id', 1)->get();;
-            $regions = Region::all();
+
+            if($request->region == '') {
+                $branchIds = [1, 3, 7, 9, 10, 11, 13, 19, 21, 22, 23, 27, 28, 30, 31, 32];
+                $branches = Branch::whereIn('id', $branchIds)
+                ->get();
+                $regions = Region::all();
+            } else if ($request->region == 1) {
+                $branchIds = [1, 3, 7, 9, 13, 19, 22, 27, 28, 30, 31, 32];
+                $branches = Branch::whereIn('id', $branchIds)
+                ->get();
+                $regions = Region::all();
+            } else if ($request->region == 2) {
+                // $branchIds = [2, 11];
+                $branches = Branch::where('region_id', 2)
+                ->get();
+                $regions = Region::all();
+            } else if ($request->region == 3) {
+                $branchIds = [10];
+                $branches = Branch::whereIn('id', $branchIds)
+                ->get();
+                $regions = Region::all();
+            } else if ($request->region == 4) {
+                $branchIds = [21];
+                $branches = Branch::whereIn('id', $branchIds)
+                ->get();
+                $regions = Region::all();
+            } else if ($request->region == 5) {
+                $branchIds = [23];
+                $branches = Branch::whereIn('id', $branchIds)
+                ->get();
+                $regions = Region::all();
+            }
+
+            // $branchIds_two = [11,31];
+            // $branchIds_three = [10];
+            // $branchIds_four = [21];
+            // $branchIds_five = [23];
+            // $branches = Branch::where('region_id', 1)->get();
+
 
             return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count', 'message','branches','regions'));
         }
