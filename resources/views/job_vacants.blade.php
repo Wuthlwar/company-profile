@@ -1,31 +1,30 @@
 @extends('layouts.main')
 @section('content')
 <style>
-    .select2-container {
+    .select2{
         border: 1px solid #000;
         background-color: #fff;
         color: #0f0e0e;
         height: 50px;
-        padding: 5px;
-    }
-
-    .select2-search__field  {
-        border: 1px solid #000;
-        background-color: #fff;
-        color: #0f0e0e;
-        height: px;
+        padding: 10px 5px 5px 5px;
+        
     }
 
     .select2-selection--single .select2-selection__placeholder {
-    color: #0e0d0d !important;
+        color: #0e0d0d !important;
+        margin: 10px;
+    }
 
+    .select2-selection--multiple .select2-selection__placeholder {
+        color: #0c0b0b !important;
+        padding: 10px;
+    }
 
-}
-
- .select2-selection--multiple .select2-selection__placeholder {
-    color: #0c0b0b !important;
-
-}
+    .select2-container .select2-selection__arrow {
+        /* display: none !important; */
+        margin-right: 5px;
+        margin-top: 10px;
+    }
 
 
 </style>
@@ -121,6 +120,20 @@
                                         <!-- Main Content Section -->
                                         <div class="comment-one__content flex-grow-1">
                                             <h3>{{$vacant->vacant_name}}</h3>
+                                            @php
+                                                $offers = is_array(json_decode($vacant->offer)) ? json_decode($vacant->offer) : explode(',', $vacant->offer);
+                                            @endphp
+                                            @if (!empty($offers))
+                                            <div class="offers-section d-flex flex-wrap align-items-center">
+                                                
+                                                @foreach ($offers as $offer)
+                                                    <div class="offer-item d-flex align-items-center mr-3" style="margin-bottom: 10px;">
+                                                        <i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> <!-- Example icon -->
+                                                        <span class="offer-text">{{ trim($offer, '"') }}</span>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            @endif
                                             <p>{!! html_entity_decode(Str::limit($vacant->vacant_description, 600, '. . .')) !!}</p>
                                         </div>
                                         
@@ -228,19 +241,19 @@
 <script>
 $( '#multiple-select-field-cat' ).select2( {
     placeholder: $( this ).data( 'placeholder' ),
-    closeOnSelect: false,
+    // closeOnSelect: false,
     allowClear: true
 } );
 
 $( '#region' ).select2( {
     placeholder: $( this ).data( 'placeholder' ),
-    closeOnSelect: false,
+    // closeOnSelect: false,
     allowClear: true
 } );
 
 $( '#multiple-select-field' ).select2( {
     placeholder: $( this ).data( 'placeholder' ),
-    closeOnSelect: false,
+    // closeOnSelect: false,
 } );
 </script>
     <script>
