@@ -44,7 +44,8 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12" style="background-color: #2466eb; padding-top:20px;">
                         <form method="GET" action="{{ route('job.search') }}">
-                                    <div class="input-group mb-3" style="border-radius:30px;">
+                        
+                                    <div class="input-group mb-3" style="border-radius:30px; positin:relative">
                                         <input type="text" style="font-size: 13px;" class="form-control" name="position" placeholder="All Position, Job Description, Keywords"
                                         aria-label="Job Function" aria-describedby="button-addon2" value="{{ request('position') }}" list="position">
                                     <datalist id="position">
@@ -52,7 +53,7 @@
                                             <option value="{{ $vacant->vacant_name }}"></option>
                                         @endforeach
                                     </datalist>
-
+                                    <span style="position: absolute; top: 15px; left: 250px;"><i class="fas fa-search"></i></span>
                                     <select class="form-control" id="multiple-select-field-cat" name="cat_id" data-placeholder="Choose your Job Function">
                                         <option value="">Select Your Job Function</option>
                                         @foreach($categories as $category)
