@@ -1121,7 +1121,7 @@
         </div>
         <div class="testimonial-one__bottom">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 companypartner">
                     <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel owl-loaded owl-drag" data-owl-options='{
                         "loop": true,
                         "autoplay": true,
@@ -1148,28 +1148,27 @@
                     }'>
 
                     <div class="item ">
-                        <div class="card testimonial-one__single p-5">
-                            <h5 class="text-center m-3">SCG Co.,Ltd</h5>
-                            <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">SCG PUBLIC COMPANY LIMITED</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/scg-logo.jpg')}}" alt="" >
                             </div>
                           </div>
-
                     </div>
 
                     <div class="item ">
-                        <div class="card testimonial-one__single p-4">
-                            <h5 class="text-center m-3">Global House Co.,Ltd</h5>
-                            <div class="card-body">
-                                <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbh1.png')}}" alt="" >
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">GLOBAL HOUSE PUBLIC COMPANY LIMITED</h5>
+                            <div class="card-body" style="height:100px;">
+                            <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbh1.png')}}" alt="" >
                             </div>
                           </div>
-
                     </div>
-                    <div class="item ">
-                        <div class="card testimonial-one__single p-3">
-                            <h5 class="text-center m-3">COTTO Co.,Ltd</h5>
-                            <div class="card-body">
+                    
+                    <div class="item">
+                    <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">SCG DECOR PUBLIC COMPANY LIMITED</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/cotto.jpg')}}" alt="" >
                             </div>
                           </div>
@@ -1177,55 +1176,56 @@
                     </div>
                     
 
-                    <div class="item ">
-                        <div class="card testimonial-one__single p-3">
-                            <h5 class="text-center m-3">Marcopolo Co.,Ltd</h5>
-                            <div class="card-body">
+                    <div class="item">
+                    <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">MARCOPOLO Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/marcopolo-logo.png')}}" alt="" >
                             </div>
                           </div>
 
                     </div>
                     <div class="item ">
-                        <div class="card testimonial-one__single p-3">
-                            <h5 class="text-center m-3">Zhangshi  Co.,Ltd</h5>
-                            <div class="card-body">
+                    <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">ZHANGSHI Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/Zhangshi-logo.jpg')}}" alt="" >
                             </div>
                           </div>
 
                     </div>
                     <div class="item ">
-                        <div class="card testimonial-one__single p-4">
-                            <h5 class="text-center m-3">HAFELE Co.,Ltd</h5>
-                            <div class="card-body">
+                    <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">HAFELE Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/hafele-logo.jpg')}}" alt="" >
                             </div>
                           </div>
 
                     </div>
                     <div class="item ">
-                        <div class="card testimonial-one__single p-5">
-                            <h5 class="text-center m-3">DOS Co.,Ltd</h5>
-                            <div class="card-body">
+                    <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">DOS Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/Logo DOS-01.jpg')}}" alt="" >
                             </div>
                           </div>
 
                     </div>
                     <div class="item ">
-                        <div class="card testimonial-one__single p-4">
-                            <h5 class="text-center m-3">OPPLE Co.,Ltd</h5>
-                            <div class="card-body">
+                    <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">OPPLE Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/opple.png')}}" alt="" >
                             </div>
                           </div>
 
+
                     </div>
                     <div class="item ">
-                        <div class="card testimonial-one__single p-3">
-                            <h5 class="text-center m-3">UPG Co.,Ltd</h5>
-                            <div class="card-body">
+                    <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">UPG Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/upg.jpg')}}" alt="" >
                             </div>
                           </div>
@@ -1233,140 +1233,133 @@
                     </div>
 
                         <div class="item ">
-                            <div class="card testimonial-one__single p-1">
-                                <h5 class="text-center m-3">Farmer Lighting Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">FARMER LLIGHTING Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('assets/photos/Farmer Lighting Company Limited.png')}}" alt="" >
                                 </div>
                               </div>
 
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">Zinhtet Trading Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">ZINHTET TRADING Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('assets/photos/Zinhtet Trading Company Limited.jpg')}}" alt="" >
                                 </div>
                               </div>
 
                         </div>
-                        <!-- <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">UPG PAINT & CONATING Co.,Ltd</h5>
-                                <div class="card-body">
-                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/upg.jpg')}}" alt="" >
-                                </div>
-                              </div>
-
-                        </div> -->
+                        
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">Sweety Home Industry Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">SWEETY HOME INDUSTRY Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/sweety_home.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2" style="height: 260px">
-                                <h5 class="text-center m-3">Benhur Trading Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">BENHUR TRADING Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/benhur_trading.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2" style="height: 260px">
-                                <h5 class="text-center m-3">I.E.M Co.,Ltd</h5>
-                                <div class="card-body" style="margin-top: 50px">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">I.E.M Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/iem.png')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">JEWELLERY LUCK Co.,Ltd</h5>
-                                <div class="card-body">
-                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jewellery_luck.png')}}" alt="" >
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">JEWELLERY LUCK Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
+                            <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jewellery_luck.png')}}" alt="" >
                                 </div>
                               </div>
                         </div>
+                        
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">TMW Enterprise Limited</h5>
-                                <div class="card-body" style="margin-top: 10px">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">TMW ENTERPRISE Limited</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/tmw.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2" style="height: 260px">
-                                <h5 class="text-center m-3">JOTUN MYANMAR SERVICES Co.,Ltd</h5>
-                                <div class="card-body" style="margin-top: 40px">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">JOTUN MYANMAR SERVICES Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jotun.png')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">TOA PAINT (MYANMAR) Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">JTOA PAINT (MYANMAR) Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/toa.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">Myo Thein Electronics Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">MYO THEIN ELECTRONIC Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/myothein_electric.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">SIKA MYANMAR LIMITED</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">SIKA MYANMAR Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/sika_myamar.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2" style="height: 260px">
-                                <h5 class="text-center m-3">Peace Myanmar Electric Co.,Ltd</h5>
-                                <div class="card-body" style="margin-top: 50px">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">PEACE MYANMAR ELECTRIC Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/pme.png')}}" alt="">
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">MOTTAMA TRADING Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">MOTTAMA TRADING Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/mottama.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2" style="height: 260px">
-                                <h5 class="text-center m-3">TWJS Co.,Ltd</h5>
-                                <div class="card-body" style="margin-top: 40px">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">TWJS Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/twjs.png')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2" style="height: 260px">
-                                <h5 class="text-center m-3">Good Brothers Co.,Ltd</h5>
-                                <div class="card-body" style="margin-top: 50px">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">GOOD BROTHERS Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbs.png')}}" alt="" >
                                 </div>
                               </div>
                         </div>
                         <div class="item ">
-                            <div class="card testimonial-one__single p-2">
-                                <h5 class="text-center m-3">DKSH (Myanmar) Co.,Ltd</h5>
-                                <div class="card-body">
+                        <div class="card testimonial-one__single p-5">                           
+                            <h5 class="text-center" style="height:100px;">DKSH (Myanmar) Co.,Ltd</h5>
+                            <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/dksh.jpg')}}" alt="" >
                                 </div>
                               </div>

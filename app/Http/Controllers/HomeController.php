@@ -78,7 +78,10 @@ class HomeController extends Controller
             });
         }
 
-        $vacants = $query->latest()->paginate(10);
+        // $vacants = $query->latest()->paginate(10);
+        $vacants = $query->whereNull('status1')
+        ->latest()
+        ->paginate(10);
 
         $vacants_count = JobVacants::select('category_id', DB::raw('count(*) as total'))
                                    ->groupBy('category_id')
