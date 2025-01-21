@@ -78,8 +78,7 @@ class HomeController extends Controller
             });
         }
 
-        // $vacants = $query->latest()->paginate(10);
-        $vacants = $query->whereNull('status1')
+        $vacants = $query->where('status1', 'Activate')
         ->latest()
         ->paginate(10);
 

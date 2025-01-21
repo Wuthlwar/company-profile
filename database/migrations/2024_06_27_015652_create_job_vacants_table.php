@@ -44,7 +44,7 @@ class CreateJobVacantsTable extends Migration
             $table->string('vacant_image')->nullable();
 
             $table->string('status')->nullable();
-            $table->string('status1')->nullable();
+            $table->string('status1')->default('Activate');
             $table->string('remark')->nullable();
             $table->string('date')->nullable();
             $table->unsignedBigInteger('view_count')->default(0);
