@@ -22,7 +22,7 @@
                     </div> -->
                     <div class="portfolio-details__img">
                         <h3 class="portfolio-details__title">Our Milestone</h3>
-                        <img src="{{asset('assets/photos/milestone.jpg')}}" alt="">
+                        <img src="{{asset('assets/photos/mile_stone.jpg')}}" alt="">
                         <img src="{{asset('assets/photos/currentbranch.jpg')}}" alt="">
                     </div>
                 </div>

@@ -21,14 +21,14 @@ return [
     'company_mission'               => 'Company Mission',
 
     'center_title'                  => 'Information of our currently opened centers',
-    'activities_title'              =>'Our Activities',
+    'activities_title'              => 'Our Activities',
     'activities_title1'             => 'Let\'s take a look at',
     'activities_title2'             => 'our company activities',
 
     'vission_detail'                => 'To be the leader of the construction material and home improvement retail industry in Myanmar.',
     'vission_title'                 => 'Company Vision',
 
-    'mission_title'                 =>'Company Mission',
+    'mission_title'                 => 'Company Mission',
     'mission_detail'                => 'To be "One place, get all" with competitive price and innovative products to improve people living standard. To do operation excellence and make customer satisfy. To be sustainable growth together with the stakeholders. To do emphasize to develop PRO 1 Global people capabilities by good organization, working culture and welfare. To apply innovation technology to develop business efficiency. To operate based on social-responsible and good relationships with the environment.',
 
     'about_title'                   => 'About Company',
@@ -37,17 +37,17 @@ return [
     'about_emptitle'                => 'Total Employee',
     'about_empdetail'               => 'We can employ 3000 employees in various PRO 1 company departments.',
     'about_curbranch1'              => 'Current Branch',
-    'about_curbranch2'              => 'Our PRO1 Company has been able to open 12 branches in various regions.',
+    'about_curbranch2'              => 'Our PRO1 Company has been able to open 14 branches in various regions.',
     'about_division1'               => 'Division or Region',
-    'about_division2'               => 'We have been able to open branches in 5 divisions and regions of Myanmar.',
+    'about_division2'               => 'We have been able to open 14 branches in 5 divisions and regions of Myanmar.',
 
-    'e_com1'                        => 'E-commerce website',
-    'e_com2'                        => 'Benefit of our e-commerce website:',
+    'e_com1'                        => 'PRO 1 Global Online Store',
+    'e_com2'                        => 'Benefit of our PRO 1 Global Online Store:',
     'e_com3'                        => 'Can find the product from anywhere.',
     'e_com4'                        => 'Can check the promotion and special offer.',
     'e_com5'                        => 'Can check product information and service information.',
     'e_com6'                        => 'Can place the order from anywhere.',
-    'e_com7'                        => 'Delivery from all branches on Current Ecommerce Website.',
+    'e_com7'                        => 'Delivery from all branches on Current Online Store.',
 
     'part_1'                       => 'Let\'s take a look at the partner companies ',
     'part_2'                       => 'we work with',
@@ -122,9 +122,15 @@ return [
 
     'center_spt1'                  => 'Shwe Pyi Thar Branch, Yangon',
     'center_spt2'                  => 'Show Detail',
-    'center_spt3'                  => 'PRO 1 Global Home Center(Shwe Pyi Thar Branch)',
+    'center_spt3'                  => 'PRO 1 Global Home Center Branch(Shwe Pyi Thar)',
     'center_spt4'                  => 'No (103/104), Bayint Naung Street, Industrial Zone (4), Shwe Pyi Thar Township, Yangon.',
     'center_spt5'                  => 'Open Hour : 09:00 AM ~ 05:00 PM',
+
+    'center_mgld1'                 => 'Mingalardon Branch, Yangon',
+    'center_mgld2'                 => 'Show Detail',
+    'center_mgld3'                 => 'PRO 1 Global Home Center(Mingalardon Branch)',
+    'center_mgld4'                 => 'No. (3/Ka1), No. (3) Main Road, Thitseintkone Ward, Thinkan Kyun Gyi, Mingalardon Township.',
+    'center_mgld5'                 => 'Open Hour : 09:00 AM ~ 05:30 PM',
 
     'center_title2'                => 'Mandalay Region',
     'center_Tp1'                   => 'Theikpan Branch, Mandalay',
@@ -154,11 +160,18 @@ return [
     'center_mon5'                  => 'Open Hour : 08:30 AM ~ 05:30 PM',
 
     'center_title5'                => 'Shan Region',
-    'center_shan1'                 => 'Aye Tharyar Branch, Mandalay',
+    'center_shan1'                 => 'Aye Tharyar Branch, Shan',
     'centershan2'                  => 'Show Detail',
     'center_shan3'                 => 'PRO 1 Global Home Center (Aye Tharyar Branch )',
     'center_shan4'                 => 'No. (6 to 17), Pyi Htaung Su Road, 5-Quarter, Aye Tharyar, Taunggyi Township,Shan State',
     'center_shan5'                 => 'Open Hour : 08:30 AM ~ 05:30 PM',
+
+    'center_title6'                => 'Nay Pyi Taw Region',
+    'center_npt1'                 => 'Nay Pyi Taw Branch, Nay Pyi Taw',
+    'centernpt2'                  => 'Show Detail',
+    'center_npt3'                 => 'PRO 1 Global Home Center (Nay Pyi Taw)',
+    'center_npt4'                 => 'No. (12+23), East of Bawgathiri Car Park, Ah Sint Myint Motor Repair Work Shop, Near Max Petrol Station, Old Yangon-Mandalay Road, Nay Pyi Taw.',
+    'center_npt5'                 => 'Open Hour : 09:00 AM ~ 05:00 PM',
 
     'part_title'                   => 'OUR PARTNERS',
 

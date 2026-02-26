@@ -70,7 +70,7 @@ class HomeController extends Controller
         }
 
         if ($request->filled('region_id')) {
-            $region_id = $request->region; 
+            $region_id = $request->region;
             $branch_ids = Branch::where('region_id', $region_id)->pluck('id'); // Get branches in the selected region
             dd($branch_ids);
             $query->whereHas('branches', function ($q) use ($branch_ids) {
@@ -109,25 +109,25 @@ class HomeController extends Controller
 
                                        if ($request->filled('cat_id')) {
                                         $vacant_total = $vacants->total();
-                                        $message = $vacants->isEmpty() 
-                                                    ? 'No Job Found.' 
+                                        $message = $vacants->isEmpty()
+                                                    ? 'No Job Found.'
                                                     : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
                                     } elseif ($request->filled('branch_id')) {
                                         $vacant_total = $vacants->total();
-                                        $message = $vacants->isEmpty() 
-                                                    ? 'No Job Found.' 
+                                        $message = $vacants->isEmpty()
+                                                    ? 'No Job Found.'
                                                     : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
                                     } elseif ($request->filled('cat_id') && $request->filled('position') && $request->filled('branch_id')) {
                                         $vacant_total = $vacants->total();
-                                        $message = $vacants->isEmpty() 
-                                                    ? 'No Job Found.' 
+                                        $message = $vacants->isEmpty()
+                                                    ? 'No Job Found.'
                                                     : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
                                     } elseif ($request->filled('cat_id') == null && $request->filled('position') == null && $request->filled('branch_id') == null) {
                                         // Handle the case where all filters are null
                                     } else {
                                         $vacant_total = $vacants->total();
-                                        $message = $vacants->isEmpty() 
-                                                    ? 'No Job Found.' 
+                                        $message = $vacants->isEmpty()
+                                                    ? 'No Job Found.'
                                                     : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
                                     }
 
@@ -136,8 +136,8 @@ class HomeController extends Controller
         $branches = Branch::whereIn('id', $branchIds)
                             ->get();
         $regions = Region::all();
-        
-        
+
+
         return view('job_vacants', compact('act_types', 'acts', 'categories', 'vacants', 'vacants_count','message','branches','regions'));
     }
 
@@ -178,24 +178,24 @@ class HomeController extends Controller
             $act_types = ActivityType::all();
             $acts = Activity::latest()->get();
             $categories = JobCategory::latest()->paginate(10);
-            
+
             $query = JobVacants::query();
-            
+
             if ($request->filled('cat_id')) {
                 $query->where('category_id', $request->cat_id);
             }
-            
+
             if ($request->filled('position')) {
                 $query->whereRaw('LOWER(vacant_name) LIKE ?', ['%' . strtolower($request->position) . '%']);
             }
-            
+
             if ($request->filled('branch_id')) {
                 $branch_ids = $request->branch_id; // This is an array of selected branch IDs
                 $query->whereHas('branches', function ($q) use ($branch_ids) {
                     $q->whereIn('branch_id', $branch_ids);
                 });
             }
-            
+
             // Region-based filtering
             if ($request->filled('region')) {
                 $region_id = $request->region;
@@ -204,43 +204,43 @@ class HomeController extends Controller
                     $q->whereIn('branch_id', $branch_ids);
                 });
             }
-            
+
             $vacants = $query->latest()->paginate(10);
-            
+
             $vacants_count = JobVacants::select('category_id', DB::raw('count(*) as total'))
                                         ->groupBy('category_id')
                                         ->get()
                                         ->keyBy('category_id')
                                         ->toArray();
-            
+
             $message = null;
-            
+
             if ($request->filled('cat_id')) {
                 $vacant_total = $vacants->total();
-                $message = $vacants->isEmpty() 
-                            ? 'No Job Found.' 
+                $message = $vacants->isEmpty()
+                            ? 'No Job Found.'
                             : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
             } elseif ($request->filled('branch_id')) {
                 $vacant_total = $vacants->total();
-                $message = $vacants->isEmpty() 
-                            ? 'No Job Found.' 
+                $message = $vacants->isEmpty()
+                            ? 'No Job Found.'
                             : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
             } elseif ($request->filled('region')) { // For region filtering
                 $vacant_total = $vacants->total();
-                $message = $vacants->isEmpty() 
-                            ? 'No Job Found in this Region.' 
+                $message = $vacants->isEmpty()
+                            ? 'No Job Found in this Region.'
                             : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found. ';
             } elseif ($request->filled('cat_id') && $request->filled('position') && $request->filled('branch_id')) {
                 $vacant_total = $vacants->total();
-                $message = $vacants->isEmpty() 
-                            ? 'No Job Found.' 
+                $message = $vacants->isEmpty()
+                            ? 'No Job Found.'
                             : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
             } elseif ($request->filled('cat_id') == null && $request->filled('position') == null && $request->filled('branch_id') == null) {
                 // Handle the case where all filters are null
             } else {
                 $vacant_total = $vacants->total();
-                $message = $vacants->isEmpty() 
-                            ? 'No Job Found.' 
+                $message = $vacants->isEmpty()
+                            ? 'No Job Found.'
                             : $vacant_total . ' Job' . ($vacant_total > 1 ? 's' : '') . ' Found.';
             }
 
@@ -468,6 +468,11 @@ class HomeController extends Controller
     public function ayetharyar_info()
     {
         return view('ayetharyar_info');
+    }
+
+    public function mingalardon_info()
+    {
+        return view('mingalardon_info');
     }
 
     public function logout()

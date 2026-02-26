@@ -90,6 +90,28 @@
                     </div>
                 </div>
             </div>
+            <div class="swiper-slide">
+                <div class="image-layer" style="background-image: url({{asset('assets/photos/banner/MLD.jpg')}})"></div>
+
+                <div class="main-slider-shape-1 float-bob-x">
+                    <img src="{{asset('assets/photos/banner/MLD.jpg')}}" alt="">
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider__content">
+                                <h2 class="main-slider__title"><span>PRO1 GLOBAL </span><br> HOME CENTER
+                                </h2>
+                                <p class="main-slider__text"><span class="fw-bold text-dark">{{__('home.slide_word_1')}}<br> {{__('home.slide_word_2')}}</span></p>
+                                <div class="main-slider__btn-box">
+                                    <a target="blank" href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18" class="thm-btn main-slider__btn">{{__('home.buy_now')}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="main-slider__nav">
             <div class="swiper-button-prev" id="main-slider__swiper-button-next">
@@ -302,7 +324,7 @@
                         <li>
                             <div class="about-two__counter-single">
                                 <div class="about-two__counter-count count-box">
-                                    <h3 class="count-text" data-speed="4000" data-stop="12">00</h3>
+                                    <h3 class="count-text" data-speed="4000" data-stop="14">00</h3>
                                 </div>
                                 <p class="about-two__counter-text-1">{{__('home.about_curbranch1')}}</p>
                                 <p class="about-two__counter-text-2">{{__('home.about_curbranch2')}}
@@ -312,7 +334,7 @@
                         <li>
                             <div class="about-two__counter-single">
                                 <div class="about-two__counter-count count-box">
-                                    <h3 class="count-text" data-speed="4000" data-stop="5">00</h3>
+                                    <h3 class="count-text" data-speed="4000" data-stop="6">00</h3>
                                 </div>
                                 <p class="about-two__counter-text-1">{{__('home.about_division1')}}</p>
                                 <p class="about-two__counter-text-2">{{__('home.about_division2')}}
@@ -957,6 +979,24 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi poli">
+                <div class="portfolio__single">
+                    <div class="portfolio__img">
+                        <img src="{{asset('assets/photos/banner/MLD.jpg')}}" alt="">
+                        <div class="portfolio__plus">
+                            <a href="{{asset('assets/photos/banner/MLD.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title">{{__('home.center_mgld1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('mingalardon_info')}}">{{__('home.center_mgld2')}}</a></h4>
+                        </div>
+                        <div>&nbsp;{{__('home.center_mgld3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;{{__('home.center_mgld4')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_mgld5')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000818 / 09-777005393,09-777000753</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1087,6 +1127,36 @@
         </div>
     </div>
 </section>
+
+{{-- NPT --}}
+<section class="ourcenter mt-5" id="ourCenter">
+    <div class="container">
+        <div class="section-sub-title-box">
+            <h3 class="section-sub-title"><i class="fas fa-map-marker-alt p-2"></i>{{__('home.center_title6')}}<i class="fas fa-map-marker-alt px-2"></i></h3>
+        </div>
+        <div class="row filter-layout masonary-layout mt-3">
+            <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
+                <div class="portfolio__single">
+                    <div class="portfolio__img">
+                        <img src="{{asset('assets/photos/npt.jpg')}}" alt="">
+                        <div class="portfolio__plus">
+                            <a href="{{asset('assets/photos/npt.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
+                        </div>
+                        <div class="portfolio__content">
+                            <p class="portfolio__sub-title">{{__('home.center_npt1')}}</p>
+                            <h4 class="portfolio__title"><a href="{{route('ayetharyar_info')}}">{{__('home.center_npt2')}}</a></h4>
+                        </div>
+                        <div>&nbsp;{{__('home.center_npt3')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp; {{__('home.center_npt4')}} </div>
+                        <div>&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;{{__('home.center_npt5')}}</div>
+                        <div>&nbsp;<i class="fa-solid fa-phone-flip"></i>&nbsp;09-777000630</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{-- NPT End --}}
 <!-- Our Center End -->
 <!-- Our Partner Start -->
 <section class="testimonial-one" id="ourPatner">
@@ -1148,7 +1218,7 @@
                     }'>
 
                     <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">SCG PUBLIC COMPANY LIMITED</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/scg-logo.jpg')}}" alt="" >
@@ -1157,16 +1227,16 @@
                     </div>
 
                     <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">GLOBAL HOUSE PUBLIC COMPANY LIMITED</h5>
                             <div class="card-body" style="height:100px;">
                             <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbh1.png')}}" alt="" >
                             </div>
                           </div>
                     </div>
-                    
+
                     <div class="item">
-                    <div class="card testimonial-one__single p-5">                           
+                    <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">SCG DECOR PUBLIC COMPANY LIMITED</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/cotto.jpg')}}" alt="" >
@@ -1174,10 +1244,10 @@
                           </div>
 
                     </div>
-                    
+
 
                     <div class="item">
-                    <div class="card testimonial-one__single p-5">                           
+                    <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">MARCOPOLO Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/marcopolo-logo.png')}}" alt="" >
@@ -1186,7 +1256,7 @@
 
                     </div>
                     <div class="item ">
-                    <div class="card testimonial-one__single p-5">                           
+                    <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">ZHANGSHI Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/Zhangshi-logo.jpg')}}" alt="" >
@@ -1195,7 +1265,7 @@
 
                     </div>
                     <div class="item ">
-                    <div class="card testimonial-one__single p-5">                           
+                    <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">HAFELE Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/hafele-logo.jpg')}}" alt="" >
@@ -1204,7 +1274,7 @@
 
                     </div>
                     <div class="item ">
-                    <div class="card testimonial-one__single p-5">                           
+                    <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">DOS Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/Logo DOS-01.jpg')}}" alt="" >
@@ -1213,7 +1283,7 @@
 
                     </div>
                     <div class="item ">
-                    <div class="card testimonial-one__single p-5">                           
+                    <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">OPPLE Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/opple.png')}}" alt="" >
@@ -1223,7 +1293,7 @@
 
                     </div>
                     <div class="item ">
-                    <div class="card testimonial-one__single p-5">                           
+                    <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">UPG Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                 <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/upg.jpg')}}" alt="" >
@@ -1233,7 +1303,7 @@
                     </div>
 
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">FARMER LLIGHTING Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('assets/photos/Farmer Lighting Company Limited.png')}}" alt="" >
@@ -1242,7 +1312,7 @@
 
                         </div>
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">ZINHTET TRADING Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('assets/photos/Zinhtet Trading Company Limited.jpg')}}" alt="" >
@@ -1250,50 +1320,117 @@
                               </div>
 
                         </div>
-                        
-                        <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+
+                        <div class="item">
+                            <div class="card testimonial-one__single p-5"
+                                style="height:auto!important; display:flex!important; flex-direction:column!important; justify-content:space-between!important;">
+
+                                <h5 class="text-center" style="height:60px;">
+                                    SWEETY HOME INDUSTRY Co.,Ltd
+                                </h5>
+
+                                <div class="card-body"
+                                    style="height:135px; display:flex; align-items:center; justify-content:center;">
+
+                                    <img src="{{asset('companies/sweety_home.jpg')}}"
+                                        style="width:220px; object-fit:contain;"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="item ">
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">SWEETY HOME INDUSTRY Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/sweety_home.jpg')}}" alt="" >
                                 </div>
                               </div>
-                        </div>
+                        </div> -->
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
-                            <h5 class="text-center" style="height:100px;">BENHUR TRADING Co.,Ltd</h5>
-                            <div class="card-body" style="height:100px;">
-                                    <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/benhur_trading.jpg')}}" alt="" >
+                            <div class="card testimonial-one__single p-5">
+                                <h5 class="text-center" style="height:100px;">BENHUR TRADING Co.,Ltd</h5>
+                                <div class="card-body" style="height:100px;">
+                                        <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/benhur_trading.jpg')}}" alt="" >
                                 </div>
-                              </div>
+                            </div>
                         </div>
-                        <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="item">
+                            <div class="card testimonial-one__single p-5"
+                                style="height:auto!important; display:flex!important; flex-direction:column!important; justify-content:space-between!important;">
+
+                                <h5 class="text-center" style="height:60px;">
+                                    I.E.M Co.,Ltd
+                                </h5>
+
+                                <div class="card-body"
+                                    style="height:135px; display:flex; align-items:center; justify-content:center;">
+
+                                    <img src="{{ asset('companies/iem.png') }}"
+                                        style="width:220px; object-fit:contain;"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="item">
+                            <div class="card testimonial-one__single p-5 company-card">
+                                <h5 class="text-center company-title">I.E.M Co.,Ltd</h5>
+
+                                <div class="card-body company-logo-wrap">
+                                    <img class="company-logo"
+                                    style="max-height:100%; width:220px; object-fit:contain;"
+                                        src="{{ asset('companies/iem.png') }}"
+                                        alt="IEM Logo">
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="item ">
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">I.E.M Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/iem.png')}}" alt="" >
                                 </div>
                               </div>
-                        </div>
+                        </div> -->
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">JEWELLERY LUCK Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                             <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jewellery_luck.png')}}" alt="" >
                                 </div>
                               </div>
                         </div>
-                        
-                        <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+
+                        <div class="item">
+                            <div class="card testimonial-one__single p-5"
+                                style="height:auto!important; display:flex!important; flex-direction:column!important; justify-content:space-between!important;">
+
+                                <h5 class="text-center" style="height:60px;">
+                                    TMW ENTERPRISE Limited
+                                </h5>
+
+                                <div class="card-body"
+                                    style="height:135px; display:flex; align-items:center; justify-content:center;">
+
+                                    <img src="{{asset('companies/tmw.jpg')}}"
+                                        style="width:220px; object-fit:contain;"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="item ">
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">TMW ENTERPRISE Limited</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/tmw.jpg')}}" alt="" >
                                 </div>
                               </div>
-                        </div>
+                        </div> -->
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">JOTUN MYANMAR SERVICES Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/jotun.png')}}" alt="" >
@@ -1301,7 +1438,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">JTOA PAINT (MYANMAR) Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/toa.jpg')}}" alt="" >
@@ -1309,7 +1446,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">MYO THEIN ELECTRONIC Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/myothein_electric.jpg')}}" alt="" >
@@ -1317,23 +1454,41 @@
                               </div>
                         </div>
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">SIKA MYANMAR Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/sika_myamar.jpg')}}" alt="" >
                                 </div>
                               </div>
                         </div>
-                        <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+
+                        <div class="item">
+                            <div class="card testimonial-one__single p-5"
+                                style="height:auto!important; display:flex!important; flex-direction:column!important; justify-content:space-between!important;">
+
+                                <h5 class="text-center" style="height:60px;">
+                                    PEACE MYANMAR ELECTRIC Co.,Ltd
+                                </h5>
+
+                                <div class="card-body"
+                                    style="height:135px; display:flex; align-items:center; justify-content:center;">
+
+                                    <img src="{{asset('companies/pme.png')}}"
+                                        style="width:220px; object-fit:contain;"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="item ">
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">PEACE MYANMAR ELECTRIC Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/pme.png')}}" alt="">
                                 </div>
                               </div>
-                        </div>
+                        </div> -->
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">MOTTAMA TRADING Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/mottama.jpg')}}" alt="" >
@@ -1341,7 +1496,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">TWJS Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/twjs.png')}}" alt="" >
@@ -1349,7 +1504,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">GOOD BROTHERS Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/gbs.png')}}" alt="" >
@@ -1357,7 +1512,7 @@
                               </div>
                         </div>
                         <div class="item ">
-                        <div class="card testimonial-one__single p-5">                           
+                        <div class="card testimonial-one__single p-5">
                             <h5 class="text-center" style="height:100px;">DKSH (Myanmar) Co.,Ltd</h5>
                             <div class="card-body" style="height:100px;">
                                     <img class="img-fluid company_logo mx-auto d-block" src="{{asset('companies/dksh.jpg')}}" alt="" >

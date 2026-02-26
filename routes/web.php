@@ -58,7 +58,7 @@ Route::get('/tampawady_info', [HomeController::class, 'tampawady_info'])->name('
 Route::get('/bago_info', [HomeController::class, 'bago_info'])->name('bago_info');
 Route::get('/mawlamyine_info', [HomeController::class, 'mawlamyine_info'])->name('mawlamyine_info');
 Route::get('/ayetharyar_info', [HomeController::class, 'ayetharyar_info'])->name('ayetharyar_info');
-Route::get('/ayetharyar_info', [HomeController::class, 'ayetharyar_info'])->name('ayetharyar_info');
+Route::get('/mingalardon_info', [HomeController::class, 'mingalardon_info'])->name('mingalardon_info');
 
 Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
 

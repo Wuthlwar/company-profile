@@ -56,6 +56,27 @@
         .company_logo{
             width: 130px!important;
         }
+        .company-card{
+                height: 320px;   /* card အမြင့် */
+            }
+
+            .company-title{
+                height: 60px;
+            }
+
+            .company-logo-wrap{
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .company-logo{
+                max-height: 180px;
+                max-width: 100%;
+                object-fit: contain;   /* logo မပျက်အောင် */
+            }
+
     </style>
 
 </head>
