@@ -10,7 +10,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/Photos/PRO1LOGO (2).png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Insur HTML 5 Template " />
+    <meta name="description" content="PRO 1 Global Home Center" />
+
+    <meta property="og:title" content="PRO 1 Global">
+<meta property="og:description" content="PRO 1 Global">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pro1global.com/">
+<meta property="og:image" content="https://pro1global.com/job_banner/title.png">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

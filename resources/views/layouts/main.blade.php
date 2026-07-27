@@ -8,11 +8,7 @@
     <!-- favicons Icons -->
     <link href="job_banner/title.png" rel="icon">
     <link href="job_banner/title.png" rel="apple-touch-icon">
-    {{-- <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/photos/favicon.png')}}" />
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> --}}
-    {{-- <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" /> --}}
-    <meta name="description" content="Insur HTML 5 Template " />
+    <meta name="description" content="PRO 1 Global Home Center" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +53,7 @@
             width: 130px!important;
         }
         .company-card{
-                height: 320px;   /* card အမြင့် */
+                height: 320px;  
             }
 
             .company-title{
@@ -74,7 +70,7 @@
             .company-logo{
                 max-height: 180px;
                 max-width: 100%;
-                object-fit: contain;   /* logo မပျက်အောင် */
+                object-fit: contain;  
             }
 
     </style>
