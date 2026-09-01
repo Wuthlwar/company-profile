@@ -106,6 +106,7 @@
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="https://pro1globalhomecenter.com/work_with_us_data.html?divisionId=1&townshipId=18">{{__('home.footer_8')}}</a></p>
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="https://pro1globalhomecenter.com/supplier_info.html?divisionId=1&townshipId=18">{{__('home.footer_9')}}</a></p>
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="https://pro1globalhomecenter.com/home.html?divisionId=1&townshipId=18">{{__('home.footer_10')}}</a></p>
+                        <p class="footer-widget__newsletter-text "><a href="{{ route('our_app_policies') }}">- Our Application Ploicies</a></p>
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="{{ route('Faq') }}">{{__('home.footer_13')}}</a></p>
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="{{ route('Knowledge_Sharing') }}">{{__('home.footer_14')}}</a></p>
                         <p class="footer-widget__newsletter-text "><a target="_blank " href="{{ route('our_photo_gallery') }}">{{__('home.footer_15')}}</a></p>

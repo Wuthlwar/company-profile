@@ -12,4 +12,5 @@ return [
     'menu_8'               => 'Career',
     'menu_15'              => 'Our Gallery',
     'menu_16'              => 'PRO 1 Online Store & Knowledge',
+    'menu_17'              => 'Our App Policies',
 ];

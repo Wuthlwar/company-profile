@@ -8,6 +8,7 @@
 
     <section class="portfolio-details">
         <div class="container">
+            @include('partials.back-button')
             <div class="row">
                 <div class="col-xl-12">
                     <div class="portfolio-details__img">

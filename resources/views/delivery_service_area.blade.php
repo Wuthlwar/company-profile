@@ -23,6 +23,7 @@
         <img src="{{ asset('assets/photos/DSA.jpg') }}" alt="Image 2" width="930px" height="800">
     </div>
     <div class="container">
+        @include('partials.back-button')
         <div class="row">
             <div class="col-xl-6 col-lg-7">
                 <div class="why-choose-one__left">

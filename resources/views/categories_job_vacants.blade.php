@@ -13,6 +13,7 @@
 </section> --}}
 <section class="news-details">
     <div class="container">
+        @include('partials.back-button')
         <div class="row">
             <div class="col-xl-8 col-lg-7">
                 <div class="news-details__left">

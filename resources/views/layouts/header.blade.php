@@ -124,7 +124,6 @@
                                         <a href="{{route('our_photo_gallery')}}" style="font-size: 14px;">{{__('header.menu_15')}}</a>
                                     </li>
 
-
                                     {{-- <li class="dropdown">
                                         <a href="{{route('Knowledge_Sharing')}}" style="font-size: 14px;">{{__('header.menu_16')}}</a>
                                     </li> --}}

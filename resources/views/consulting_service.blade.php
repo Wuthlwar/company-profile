@@ -6,6 +6,7 @@
     </div>
     <section class="about-four">
         <div class="container">
+            @include('partials.back-button')
             <div class="row">
                 <div class="col-xl-6">
                     <div class="about-four__left">

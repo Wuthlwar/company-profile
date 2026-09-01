@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'selector_title' => 'Our App Policies',
+    'selector_lead' => 'Choose an application to view its rules and policies.',
+    'ecommerce_rules_title' => 'PRO 1 Global Rules',
+    'member_rules_title' => 'PRO 1 Membership Rules',
+    'rules_lead' => 'Please read the rules and policies for this application.',
+    'ecommerce_policy' => 'PRO 1 Global Policy',
+    'member_policy' => 'PRO 1 Membership Policy',
+    'back_to_policies' => 'Back to Policies',
+    'notice' => 'These policy summaries may be updated from time to time. The current version will be published on this page.',
+    'sections' => [
+        ['title' => 'Terms and Policy', 'text' => 'By downloading, accessing, or using this application, you agree to these terms and policies. PRO 1 Global Home Center may amend them at any time. Continued use means that you accept the updated terms. These terms are governed by the laws of Myanmar, and the application is intended for use in Myanmar only.'],
+        ['title' => 'Definitions', 'text' => '“User” means a user of this application, including a PRO 1 Global member. “Application” means the relevant PRO 1 Global application. “We” and “Us” mean PRO 1 Global Co., Ltd. “Account” means the registered member ID.'],
+        ['title' => 'Limitation and Intellectual Property', 'text' => 'All content, information, photographs, artwork, names, logos, and trademarks in the application are protected by law and belong to PRO 1 Global or the relevant owner. They may not be copied, reproduced, distributed, sold, published, or otherwise used without permission.'],
+        ['title' => 'Privacy and Accountability', 'text' => 'Users are responsible for keeping their account details and PIN secure and for transactions made while their account is signed in. If a device is lost, please contact PRO 1 Global Home Center immediately so that we can help protect the account.'],
+        ['title' => 'Member Benefits', 'text' => 'Eligible users may receive benefits such as e-coupons, wallet services, gift-card top-ups, and point-expiry alerts. Available benefits may vary according to user preferences and current promotions.'],
+        ['title' => 'Notifications', 'text' => 'The application may send notifications about promotions, events, e-coupons, and points that are nearing expiry. Please enable notifications to receive these updates.'],
+        ['title' => 'Login', 'text' => 'Users enter their registered PRO 1 Global Member ID and receive a verification code through their registered phone number or email. A PIN is required for login and for confirming relevant transactions. Profile changes may require identity verification at a PRO 1 Global customer service counter.'],
+        ['title' => 'Points', 'text' => 'Users earn 1 point for every 5,000 Ks spent on eligible products. Points may be deducted when products are returned, expire after one year from the date earned, and cannot be exchanged for cash. Eligible product lists may change without prior notice.'],
+        ['title' => 'Point Transfer', 'text' => 'Points may be transferred only to another PRO 1 Global member. Users must provide correct receiver information. Transferred points retain their original expiry date, and invalid recipient details may cause the transfer to be rejected.'],
+        ['title' => 'Point Redemption', 'text' => 'Users may redeem points for eligible rewards through the application and PRO 1 Global customer service.'],
+        ['title' => 'Wallet', 'text' => 'Wallet top-ups and gift-card balances are subject to PRO 1 Global procedures. Users should verify top-up information and use the QR code generated in the application when paying at the POS.'],
+        ['title' => 'E-Coupon', 'text' => 'E-coupons provide special benefits for eligible users. Each e-coupon has an expiry date, and offers may vary according to PRO 1 Global Home Center criteria.'],
+        ['title' => 'User Profile', 'text' => 'Please keep profile information accurate to receive relevant benefits. Some information, including date of birth, email, and phone number, may require verification by PRO 1 Global customer service before it can be changed.'],
+        ['title' => 'Application Usage', 'text' => 'We work to keep the application available and accurate, but temporary interruptions or errors may occur during maintenance or upgrades. Please report issues to a PRO 1 Global customer service counter, our Facebook page, or the hotline.'],
+        ['title' => 'Privacy and Protection', 'text' => 'We protect user data and use it to provide convenient services and relevant offers in accordance with applicable Myanmar data-protection requirements.'],
+        ['title' => 'Contact Us', 'text' => 'For questions about this application or its policies, please contact PRO 1 Global Home Center.'],
+    ],
+];
