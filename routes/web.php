@@ -83,6 +83,8 @@ Route::get('/job/search', [HomeController::class, 'jobsearch'])->name('job.searc
 Route::get('/Faq', [HomeController::class, 'Faq'])->name('Faq');
 Route::get('/Knowledge_Sharing', [HomeController::class, 'Knowledge_Sharing'])->name('Knowledge_Sharing');
 Route::get('/Our_Photo_Gallery', [HomeController::class, 'Our_gallery'])->name('our_photo_gallery');
+Route::view('/pro-1-membership-policy', 'pro_1_membership_policy')
+    ->name('pro_1_membership_policy');
 Route::view('/our-app-policies', 'app_policies')->name('our_app_policies');
 Route::view('/our-app-policies/{policy}', 'app_policies')
     ->where('policy', 'ecommerce|member')
